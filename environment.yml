@@ -1,0 +1,11 @@
+name: alemira
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - black
+  - python
+  - requests
+  - locust
+  - pyyaml
+prefix: /Users/ketai/miniconda3/envs/alemira
