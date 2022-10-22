@@ -1,6 +1,6 @@
 from curses.ascii import US
 from endpoint import EndPoint
-import requests
+import requests, logging
 
 
 class Users(EndPoint):
@@ -15,10 +15,22 @@ class Users(EndPoint):
             users = r.json()
             return users
         except requests.exceptions.JSONDecodeError:
-            print("Response could not be decoded as JSON")
+            logging.error("Response could not be decoded as JSON")
+
+    def create_user(self):
+
+        r = requests.post(
+            self.url,
+        )
 
 
 def main():
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)s:%(message)s",
+        datefmt="%d/%m/%Y %H:%M:%S %z",
+        encoding="utf-8",
+        level=logging.DEBUG,
+    )
     users_api = Users()
     print(users_api.get_users())
 
