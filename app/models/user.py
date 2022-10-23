@@ -1,44 +1,44 @@
 from app.utils.string import gen_random_name, gen_random_email, gen_random_middle_name
+from app.models.model import Model
 from app.models.detail import Detail
 
 
-class User:
-    def __init__(self, user: dict):
-        self.id = user["id"]
-        self.username = user["username"]
-        self.email = user["email"]
-        self.firstName = user["firstName"]
-        self.middleName = user["middleName"]
-        self.lastName = user["lastName"]
-        self.externalId = user["externalId"]
-        self.tenant = user["tenant"]
-        self.details = user["details"]
+class User(Model):
+    FIELD_NAMES = (
+        "id",
+        "externalId",
+        "firstName",
+        "middleName",
+        "lastName",
+        "email",
+        "username",
+        "details",
+        "tenant",
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(
+            self.FIELD_NAMES,
+            *args,
+            **kwargs,
+        )
 
     @staticmethod
-    def gen_random_user() -> "User":
-        firstName = gen_random_name()
-        middleName = gen_random_middle_name()
-        lastName = gen_random_name()
-        email = gen_random_email()
-        username = email
-        details = Detail.gen_random_detail()
-        return User(
-            {
-                "id": None,
-                "externalId": None,
-                "firstName": firstName,
-                "middleName": middleName,
-                "lastName": lastName,
-                "email": email,
-                "username": username,
-                "details": details,
-                "tenant": None,
-            }
-        )
+    def gen_random_object() -> "User":
+        user_dict = dict()
+        user_dict["firstName"] = gen_random_name()
+        user_dict["middleName"] = gen_random_middle_name()
+        user_dict["lastName"] = gen_random_name()
+        user_dict["email"] = gen_random_email()
+        user_dict["username"] = user_dict["email"]
+        user_dict["details"] = Detail.gen_random_object()
+        return User(user_dict)
 
 
 def main():
-    print(vars(User.gen_random_user()))
+    user = User.gen_random_object()
+    print(vars(user))
+    print(user.to_dict())
 
 
 if __name__ == "__main__":
