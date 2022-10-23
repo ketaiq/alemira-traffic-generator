@@ -19,11 +19,11 @@ def gen_random_email() -> str:
 
 def _add_dots_in_email(email_part) -> str:
     """
-    Add dots in email randomly.
+    Add at most 3 dots in email randomly.
 
     Dot is not the first or last character and it will not come one after the other.
     """
-    dot_count = random.randrange(0, len(email_part) // 2)
+    dot_count = random.randrange(0, 4)
     for _ in range(dot_count):
         pos = random.randrange(1, len(email_part) - 1)
         while email_part[pos] == "." or email_part[pos - 1] == ".":
@@ -40,8 +40,12 @@ def gen_random_name() -> str:
     return name
 
 
+def gen_random_bool() -> bool:
+    return random.choice([True, False])
+
+
 def gen_random_middle_name() -> str:
-    has_middleName = random.choice([True, False])
+    has_middleName = gen_random_bool()
     if has_middleName:
         middleName = gen_random_name()
     else:

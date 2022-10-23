@@ -1,4 +1,9 @@
-from app.utils.string import gen_random_name, gen_random_email, gen_random_middle_name
+from app.utils.string import (
+    gen_random_name,
+    gen_random_email,
+    gen_random_middle_name,
+    gen_random_bool,
+)
 from app.models.model import Model
 from app.models.detail import Detail
 

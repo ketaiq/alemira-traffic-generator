@@ -5,7 +5,7 @@ class EndPoint:
     def __init__(self):
         config = self._read_config()
         self.headers = {
-            "accept": "text/plain",
+            "accept": "*/*",
             "Authorization": "Bearer " + config["alemira"]["userapi"]["token"],
         }
         self.uri = config["alemira"]["userapi"]["uri"]

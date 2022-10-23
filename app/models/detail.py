@@ -1,5 +1,5 @@
 from app.models.model import Model
-from app.utils.string import gen_random_city, gen_random_school, gen_random_grade
+from app.utils.string import gen_random_city, gen_random_school, gen_random_grade, gen_random_bool
 
 
 class Detail(Model):
@@ -10,9 +10,13 @@ class Detail(Model):
 
     @staticmethod
     def gen_random_object() -> "Detail":
-        city = gen_random_city()
-        school = gen_random_school()
-        grade = gen_random_grade()
+        city = school = grade = ""
+        if gen_random_bool():
+            city = gen_random_city()
+        if gen_random_bool():
+            school = gen_random_school()
+        if gen_random_bool():
+            grade = gen_random_grade()
         return Detail({"city": city, "school": school, "grade": grade})
 
 
