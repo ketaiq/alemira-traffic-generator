@@ -21,6 +21,10 @@ class Model(ABC):
     def gen_random_object() -> "Model":
         pass
 
+    @abstractmethod
+    def gen_random_update(self):
+        pass
+
     def to_dict(self) -> dict:
         data = dict()
         for field, value in self.__dict__.items():

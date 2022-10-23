@@ -6,6 +6,7 @@ from app.utils.string import (
 )
 from app.models.model import Model
 from app.models.detail import Detail
+from app.models.tenant import Tenant
 
 
 class User(Model):
@@ -20,6 +21,16 @@ class User(Model):
         "details",
         "tenant",
     )
+    RESERVED_EMAILS = (
+        "chen@company.com",
+        "alice@company.com",
+        "bob@company.com",
+        "jane@company.com",
+        "elena@company.com",
+        "david@company.com",
+        "alex@company.com",
+        "lucy@company.com",
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(
@@ -27,6 +38,10 @@ class User(Model):
             *args,
             **kwargs,
         )
+        if self.details is not None:
+            self.details = Detail(self.details)
+        if self.tenant is not None:
+            self.tenant = Tenant(self.tenant)
 
     @staticmethod
     def gen_random_object() -> "User":
@@ -38,6 +53,26 @@ class User(Model):
         user_dict["username"] = user_dict["email"]
         user_dict["details"] = Detail.gen_random_object()
         return User(user_dict)
+
+    def gen_random_update(self):
+        changed = False
+        if gen_random_bool():
+            self.firstName = gen_random_name()
+            changed = True
+        if gen_random_bool():
+            self.lastName = gen_random_name()
+            changed = True
+        if gen_random_bool() or not changed:
+            self.middleName = gen_random_middle_name()
+        if gen_random_bool():
+            self.email = gen_random_email()
+            self.username = self.email
+        if gen_random_bool():
+            self.details = self.details.gen_random_update()
+
+    @classmethod
+    def filter_original_users(cls, users: list) -> list:
+        return [user for user in users if user["email"] not in cls.RESERVED_EMAILS]
 
 
 def main():
