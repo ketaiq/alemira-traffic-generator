@@ -14,7 +14,7 @@ class Detail(Model):
         super().__init__(self.FIELD_NAMES, *args, **kwargs)
 
     @staticmethod
-    def gen_random_object() -> "Detail":
+    def gen_random_object(*args, **kwargs) -> "Detail":
         city = school = grade = ""
         if gen_random_bool():
             city = gen_random_city()

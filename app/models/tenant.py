@@ -13,7 +13,7 @@ class Tenant(Model):
         )
 
     @staticmethod
-    def gen_random_object() -> "Tenant":
+    def gen_random_object(*args, **kwargs) -> "Tenant":
         tenant_dict = {"name": gen_random_name()}
         return Tenant(tenant_dict)
 

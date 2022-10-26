@@ -44,7 +44,7 @@ class User(Model):
             self.tenant = Tenant(self.tenant)
 
     @staticmethod
-    def gen_random_object() -> "User":
+    def gen_random_object(*args, **kwargs) -> "User":
         user_dict = dict()
         user_dict["firstName"] = gen_random_name()
         user_dict["middleName"] = gen_random_middle_name()

@@ -28,7 +28,6 @@ class EndPoint:
         response = requests.post(
             self.IDENTITY_SERVER + "/connect/token",
             data=user,
-            verify=False,
         )
         json_response = response.json()
         return json_response.get("access_token")

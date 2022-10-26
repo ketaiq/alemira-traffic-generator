@@ -37,8 +37,20 @@ class ResourceLibrary(Model):
         )
 
     @staticmethod
-    def gen_random_object() -> "ResourceLibrary":
-        pass
+    def gen_random_object(*args, **kwargs) -> "ResourceLibrary":
+        return ResourceLibrary(
+            name=kwargs["name"],
+            imageUrl="https://sit.alemira.com/static/studio/images/course_cover.jpg",
+            type=kwargs["type"],
+            isBuiltinType=True,
+            url="https://ztool.alms.dev.alemira.com/api/v1/elements",
+            supportReview=True,
+            allowPublishing=True,
+            allowEditing=True,
+            supportResourceLevelSetting=False,
+            supportMobileView=True,
+            supportFullscreenView=True,
+        )
 
     def gen_random_update(self):
         pass

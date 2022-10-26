@@ -4,11 +4,17 @@ from abc import ABC, abstractmethod
 class Model(ABC):
     @abstractmethod
     def __init__(self, keys: tuple = (), *args, **kwargs):
+        # empty constructor
+        if not args and not kwargs:
+            for key in keys:
+                setattr(self, key, None)
+        # dict constructor
         if args and type(args[0]) is dict:
             dictionary = args[0]
             for key, value in dictionary.items():
                 if key in keys:
                     setattr(self, key, value)
+        # key word constructor
         for key, value in kwargs.items():
             if key in keys:
                 setattr(self, key, value)
@@ -18,7 +24,7 @@ class Model(ABC):
 
     @staticmethod
     @abstractmethod
-    def gen_random_object() -> "Model":
+    def gen_random_object(*args, **kwargs) -> "Model":
         pass
 
     @abstractmethod
@@ -26,6 +32,7 @@ class Model(ABC):
         pass
 
     def to_dict(self) -> dict:
+        """Return a dict excluding None."""
         data = dict()
         for field, value in self.__dict__.items():
             if value is not None:

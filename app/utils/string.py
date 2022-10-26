@@ -67,12 +67,33 @@ def gen_random_grade() -> str:
     return random.randrange(0, 101)
 
 
+def gen_random_course() -> tuple[str, str]:
+    return random.choice(
+        [
+            ("Data Design & Modeling", "DDM"),
+            ("Engineering of Domain Specific Languages", "EDSL"),
+            ("High-Performance Computing", "HPC"),
+            ("Programming Styles", "PS"),
+            ("S&DE Atelier: Design 101", "SDEAD"),
+            ("Software Design & Modeling", "SDM"),
+            ("Effective High-Performance Computing & Data Analytics", "EHPCDA"),
+            ("English C1", "EC"),
+            ("Information Modeling & Analysis", "IMA"),
+            ("S&DE Atelier: Visual Analytics", "SDEAVA"),
+            ("Software Analysis", "SOFTANA"),
+            ("Software Architecture", "SOFTARCH"),
+            ("Software Quality & Testing", "SQT"),
+        ]
+    )
+
+
 def main():
-    print(gen_random_email())
-    print(gen_random_name())
-    print(gen_random_city())
-    print(gen_random_school())
-    print(gen_random_grade())
+    # print(gen_random_email())
+    # print(gen_random_name())
+    # print(gen_random_city())
+    # print(gen_random_school())
+    # print(gen_random_grade())
+    print(gen_random_course())
 
 
 if __name__ == "__main__":

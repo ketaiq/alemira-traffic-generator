@@ -1,5 +1,6 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
+from app.models.resource_library import ResourceLibrary
 
 
 class ResourceLibraries(EndPoint):
@@ -25,6 +26,15 @@ class ResourceLibraries(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
+    def create_resource_library(self, lib):
+        r = requests.post(self.url, json=lib.__dict__, headers=self.headers)
+        r.raise_for_status()
+        try:
+            res = r.json()
+            return res
+        except requests.exceptions.JSONDecodeError:
+            logging.error("Response could not be decoded as JSON")
+
 
 def main():
     logging.basicConfig(
@@ -44,6 +54,18 @@ def main():
         stem_course["id"]
     )
     print(len(stem_course_resources), "resources for STEM Course")
+
+    # create resource libraries
+    course = ResourceLibrary.gen_random_object(name="T Course", type=1)
+    resource_libraries_api.create_resource_library(course)
+    # quiz = ResourceLibrary.gen_random_object(name="T Quiz", type=2)
+    # resource_libraries_api.create_resource_library(quiz)
+    # lab = ResourceLibrary.gen_random_object(name="T Lab", type=3)
+    # resource_libraries_api.create_resource_library(lab)
+    # seminar = ResourceLibrary.gen_random_object(name="T Seminar", type=4)
+    # resource_libraries_api.create_resource_library(seminar)
+    # sport = ResourceLibrary.gen_random_object(name="T Sport", type=5)
+    # resource_libraries_api.create_resource_library(sport)
 
 
 if __name__ == "__main__":
