@@ -1,16 +1,65 @@
-import yaml
+import requests, json
+from functools import lru_cache
 
 
 class EndPoint:
-    def __init__(self):
-        config = self._read_config()
-        self.headers = {
-            "accept": "*/*",
-            "Authorization": "Bearer " + config["alemira"]["userapi"]["token"],
-        }
-        self.uri = config["alemira"]["userapi"]["uri"]
+    IDENTITY_SERVER = "https://identity.alms.dev.alemira.com"
+    DEFAULT_USER = {
+        "username": "alice@company.com",
+        "password": "Pass123$",
+        "client_id": "insomnia",
+        "client_secret": "insomnia",
+        "grant_type": "password",
+    }
+    URI = "https://userapi.alms.dev.alemira.com/api/v1/"
 
-    def _read_config(self) -> dict:
-        with open("./app/config.yaml") as f:
-            data = f.read()
-            return yaml.safe_load(data)
+    def __init__(self):
+        self.uri = self.URI
+        self.headers = self.get_headers()
+
+    @lru_cache(maxsize=None)
+    def _get_token(self, user=None):
+        """
+        :param user:
+        :return:
+        """
+        if isinstance(user, str):
+            user = json.loads(user)
+        response = requests.post(
+            self.IDENTITY_SERVER + "/connect/token",
+            data=user,
+            verify=False,
+        )
+        json_response = response.json()
+        return json_response.get("access_token")
+
+    def get_headers(
+        self,
+        user=None,
+    ):
+        """
+        :param with_auth:
+        :param user:
+        :return:
+        """
+        if user is None:
+            user = json.dumps(self.DEFAULT_USER)
+        if isinstance(user, dict):
+            # for lru_cache user always should be hashable
+            # overriding user credentials with insomnia
+            user = json.dumps({**self.DEFAULT_USER, **user})
+
+        token = self._get_token(user)
+        return {
+            "accept": "*/*",
+            "Authorization": "Bearer " + token,
+        }
+
+
+def main():
+    end_point = EndPoint()
+    print(end_point.get_headers())
+
+
+if __name__ == "__main__":
+    main()
