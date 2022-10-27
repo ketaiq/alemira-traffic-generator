@@ -1,5 +1,7 @@
 from app.models.model import Model
 from app.utils.string import gen_random_course
+import random
+from app.models.resource_library import ResourceLibrary
 
 
 class Activity(Model):
@@ -33,10 +35,16 @@ class Activity(Model):
     @staticmethod
     def gen_random_object(*args, **kwargs) -> "Activity":
         course = gen_random_course()
+        library = random.choice(
+            [
+                (ResourceLibrary.COMPOSITIONS_ID, ResourceLibrary.COMPOSITIONS_TYPE),
+                (ResourceLibrary.RICH_TEXT_ID, ResourceLibrary.RICH_TEXT_TYPE),
+            ]
+        )
         return Activity(
-            type=2,  # kwargs["type"]
+            type=library[1],
             ltiVersion=1,
-            resourceLibraryId="fd2d847e-28b7-439c-b9cc-1c3dae135f59",  # kwargs["resourceLibraryId"]
+            resourceLibraryId=library[0],
             name=course[0],
             code=course[1],
             description=course[0] + "description",

@@ -76,7 +76,7 @@ def main():
     # user_to_update = lms_users_api.get_one_user("8e5cb704-2283-487a-86dd-f9957e91d99d")
     # print(lms_users_api.update_one_user(user_to_update))
     user_to_delete = random.choice(User.filter_original_users(users))
-    # print(lms_users_api.delete_one_user(user_to_delete["id"])) 
+    print(lms_users_api.delete_one_user(user_to_delete["id"]))
 
 
 if __name__ == "__main__":

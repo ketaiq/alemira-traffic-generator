@@ -32,7 +32,7 @@ def main():
     activities_api = Activities()
     activities = activities_api.get_activities()
     print(len(activities), " activities")
-    activities_api.create_activity()
+    print(activities_api.create_activity())
     activities = activities_api.get_activities()
     print(len(activities), " activities")
 

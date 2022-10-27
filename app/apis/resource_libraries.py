@@ -27,6 +27,9 @@ class ResourceLibraries(EndPoint):
             logging.error("Response could not be decoded as JSON")
 
     def create_resource_library(self, lib):
+        """
+        No use.
+        """
         r = requests.post(self.url, json=lib.__dict__, headers=self.headers)
         r.raise_for_status()
         try:
@@ -47,25 +50,13 @@ def main():
     resource_libraries_api = ResourceLibraries()
     resource_libraries = resource_libraries_api.get_resource_libraries()
     print(len(resource_libraries), "resource libraries")
-    stem_course = next(
-        (lib for lib in resource_libraries if lib["name"] == "STEM Course"), None
-    )
-    stem_course_resources = resource_libraries_api.get_resource_library_resources(
-        stem_course["id"]
-    )
-    print(len(stem_course_resources), "resources for STEM Course")
-
-    # create resource libraries
-    course = ResourceLibrary.gen_random_object(name="T Course", type=1)
-    resource_libraries_api.create_resource_library(course)
-    # quiz = ResourceLibrary.gen_random_object(name="T Quiz", type=2)
-    # resource_libraries_api.create_resource_library(quiz)
-    # lab = ResourceLibrary.gen_random_object(name="T Lab", type=3)
-    # resource_libraries_api.create_resource_library(lab)
-    # seminar = ResourceLibrary.gen_random_object(name="T Seminar", type=4)
-    # resource_libraries_api.create_resource_library(seminar)
-    # sport = ResourceLibrary.gen_random_object(name="T Sport", type=5)
-    # resource_libraries_api.create_resource_library(sport)
+    for lib in resource_libraries:
+        if lib["name"] == "Rich Text":
+            resources = resource_libraries_api.get_resource_library_resources(lib["id"])
+            print(len(resources), "resources for Rich Text, id:", lib["id"])
+        if lib["name"] == "Compositions":
+            resources = resource_libraries_api.get_resource_library_resources(lib["id"])
+            print(len(resources), "resources for Compositions, id:", lib["id"])
 
 
 if __name__ == "__main__":
