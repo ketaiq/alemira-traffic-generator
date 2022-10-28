@@ -2,10 +2,6 @@ from app.models.model import Model
 
 
 class ResourceLibrary(Model):
-    RICH_TEXT_ID = "e4458efd-5476-4079-a91f-caacf7d95bd1"
-    RICH_TEXT_TYPE = 1
-    COMPOSITIONS_ID = "fd2d847e-28b7-439c-b9cc-1c3dae135f59"
-    COMPOSITIONS_TYPE = 3
     FIELD_NAMES = (
         "id",
         "name",

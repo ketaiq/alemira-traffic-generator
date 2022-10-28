@@ -1,23 +1,27 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
-from app.models.resource_library import ResourceLibrary
+from app.models.resource_library.resource_library import ResourceLibrary
 
 
 class ResourceLibraries(EndPoint):
     def __init__(self):
         super().__init__()
         self.url = self.uri + "resource-libraries/"
+        self.resource_libraries = None
 
     def get_resource_libraries(self) -> list[dict]:
+        """API GET /api/v1/resource-libraries"""
         r = requests.get(self.url, headers=self.headers)
         r.raise_for_status()
         try:
             libs = r.json()
+            self.resource_libraries = libs
             return libs
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
     def get_resource_library_resources(self, lib_id) -> list[dict]:
+        """API GET /api/v1/resource-libraries/{libraryId}/resources"""
         r = requests.get(self.url + lib_id + "/resources/", headers=self.headers)
         r.raise_for_status()
         try:
@@ -27,9 +31,7 @@ class ResourceLibraries(EndPoint):
             logging.error("Response could not be decoded as JSON")
 
     def create_resource_library(self, lib):
-        """
-        No use.
-        """
+        """(Forbidden) API POST /api/v1/resource-libraries"""
         r = requests.post(self.url, json=lib.__dict__, headers=self.headers)
         r.raise_for_status()
         try:
@@ -37,6 +39,20 @@ class ResourceLibraries(EndPoint):
             return res
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
+
+    def get_rich_text_id(self) -> str:
+        if self.resource_libraries is None:
+            self.get_resource_libraries()
+        for lib in self.resource_libraries:
+            if lib["name"] == "Rich Text":
+                return lib["id"]
+
+    def get_compositions_id(self) -> str:
+        if self.resource_libraries is None:
+            self.get_resource_libraries()
+        for lib in self.resource_libraries:
+            if lib["name"] == "Compositions":
+                return lib["id"]
 
 
 def main():
