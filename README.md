@@ -17,7 +17,7 @@ Updating an environment
 conda env update --file environment.yml  --prune
 ```
 
-Start mongodb
+Start mongodb, see Mongo Express at http://localhost:8081
 ```sh
 docker-compose up -d
 ```
