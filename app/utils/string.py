@@ -40,17 +40,13 @@ def gen_random_name() -> str:
     return name
 
 
-def gen_random_bool() -> bool:
-    return random.choice([True, False])
-
-
-def gen_random_middle_name() -> str:
-    has_middleName = gen_random_bool()
-    if has_middleName:
-        middleName = gen_random_name()
-    else:
-        middleName = ""
-    return middleName
+def gen_random_password() -> str:
+    password_len = random.randint(6, 100)
+    password = "".join(
+        random.choice(string.ascii_letters + string.digits + string.punctuation)
+        for _ in range(password_len)
+    )
+    return password
 
 
 def gen_random_city() -> str:
@@ -93,7 +89,8 @@ def main():
     # print(gen_random_city())
     # print(gen_random_school())
     # print(gen_random_grade())
-    print(gen_random_course())
+    # print(gen_random_course())
+    print(gen_random_password())
 
 
 if __name__ == "__main__":

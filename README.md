@@ -16,3 +16,8 @@ Updating an environment
 ```sh
 conda env update --file environment.yml  --prune
 ```
+
+Start mongodb
+```sh
+docker-compose up -d
+```

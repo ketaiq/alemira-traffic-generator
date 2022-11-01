@@ -1,12 +1,13 @@
 from app.utils.string import (
     gen_random_name,
     gen_random_email,
-    gen_random_middle_name,
     gen_random_bool,
+    gen_random_password,
 )
 from app.models.model import Model
 from app.models.detail import Detail
 from app.models.tenant import Tenant
+import random
 
 
 class User(Model):
@@ -18,6 +19,7 @@ class User(Model):
         "lastName",
         "email",
         "username",
+        "password",
         "details",
         "tenant",
     )
@@ -47,14 +49,18 @@ class User(Model):
     def gen_random_object(*args, **kwargs) -> "User":
         user_dict = dict()
         user_dict["firstName"] = gen_random_name()
-        user_dict["middleName"] = gen_random_middle_name()
+        user_dict["middleName"] = (
+            gen_random_name() if random.choice([True, False]) else ""
+        )
         user_dict["lastName"] = gen_random_name()
         user_dict["email"] = gen_random_email()
         user_dict["username"] = user_dict["email"]
+        user_dict["password"] = gen_random_password()
         user_dict["details"] = Detail.gen_random_object()
         return User(user_dict)
 
-    def gen_random_update(self):
+    def gen_random_update(self) -> "User":
+        user_dict = dict()
         changed = False
         if gen_random_bool():
             self.firstName = gen_random_name()

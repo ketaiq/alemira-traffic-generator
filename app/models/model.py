@@ -28,7 +28,7 @@ class Model(ABC):
         pass
 
     @abstractmethod
-    def gen_random_update(self):
+    def gen_random_update(self) -> "Model":
         pass
 
     def to_dict(self) -> dict:
