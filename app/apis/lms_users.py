@@ -8,7 +8,7 @@ class LmsUsers(EndPoint):
         super().__init__()
         self.url = self.uri + "lms-users/"
 
-    def get_users(self) -> list[dict]:
+    def get_users(self, client=None) -> list[dict]:
         r = requests.get(self.url, headers=self.headers)
         r.raise_for_status()
         try:
@@ -17,7 +17,7 @@ class LmsUsers(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def create_one_user(self) -> dict:
+    def create_one_user(self, client=None) -> dict:
         new_user = User.gen_random_object()
         r = requests.post(self.url, json=new_user.to_dict(), headers=self.headers)
         r.raise_for_status()
@@ -27,7 +27,7 @@ class LmsUsers(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def update_one_user(self, user_dict: dict):
+    def update_one_user(self, client=None, user_dict: dict = None):
         user = User(user_dict)
         user.gen_random_update()
         r = requests.put(self.url + user.id, json=user.to_dict(), headers=self.headers)
@@ -38,7 +38,7 @@ class LmsUsers(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def get_one_user(self, id: str) -> dict:
+    def get_one_user(self, client=None, id: str = None) -> dict:
         r = requests.get(self.url + id, headers=self.headers)
         r.raise_for_status()
         try:
@@ -47,7 +47,7 @@ class LmsUsers(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def delete_one_user(self, id: str) -> dict:
+    def delete_one_user(self, client=None, id: str = None) -> dict:
         # not work
         r = requests.delete(self.url + id, headers=self.headers)
         r.raise_for_status()
