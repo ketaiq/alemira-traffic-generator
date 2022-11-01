@@ -10,7 +10,7 @@ def gen_random_email() -> str:
     local_part = _add_dots_in_email(random.randrange(1, 3), local_part)
     domain = "".join(
         random.choice(string.ascii_letters + string.digits)
-        for _ in range(random.randint(6, 20))
+        for _ in range(random.randint(6, 10))
     )
     domain = _add_dots_in_email(random.randrange(1, 3), domain)
     return f"{local_part}@{domain}"

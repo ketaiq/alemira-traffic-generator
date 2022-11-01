@@ -1,12 +1,15 @@
 from app.apis.endpoint import EndPoint
-import requests
+import requests, re
 from app.database.driver import Driver
 from app.models.user import User
 
 
 class AccountResetPasswordAPI(EndPoint):
     def __init__(self, driver: Driver):
-        self.headers = {"accept": "*/*"}
+        self.headers = {
+            "accept": "*/*",
+            "Content-Type": "application/x-www-form-urlencoded",
+        }
         self.driver = driver
 
     def reset_password(
@@ -17,9 +20,11 @@ class AccountResetPasswordAPI(EndPoint):
         r = requests.get(url, headers=self.headers)
         r.raise_for_status()
         print(r.text)
-        code = ""
-        return_url = ""
-        verification_token = ""
+        code = re.search(r"Input.Code.*value=\"(.*)\"", r.text).group(1)
+        return_url = re.search(r"Input.ReturnUrl.*value=\"(.*)\"", r.text).group(1)
+        verification_token = re.search(
+            r"__RequestVerificationToken.*value=\"(.*)\"", r.text
+        ).group(1)
         user.reset_password()
         payload = {
             "Input.Code": code,

@@ -1,4 +1,5 @@
 import logging
+from app.utils.time import sleep_for_seconds
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.mail_messages_api import MailMessagesAPI
 from app.apis.account_reset_password_api import AccountResetPasswordAPI
@@ -24,6 +25,7 @@ class Admin:
     def create_user(self):
         """Create a user with a random profile."""
         new_user = self.lms_users_api.create_user(self.client)
+        sleep_for_seconds()
         skip = 0
         take = 10
         try:
