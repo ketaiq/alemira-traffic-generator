@@ -12,11 +12,8 @@ class Users(EndPoint):
             self.url + id + "/objective-workflow-aggregates/", headers=self.headers
         )
         r.raise_for_status()
-        try:
-            users = r.json()
-            return users
-        except requests.exceptions.JSONDecodeError:
-            logging.error("Response could not be decoded as JSON")
+        users = r.json()
+        return users
 
 
 def main():

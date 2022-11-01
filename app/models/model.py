@@ -21,23 +21,3 @@ class Model(ABC):
         for key in keys:
             if key not in self.__dict__:
                 setattr(self, key, None)
-
-    @staticmethod
-    @abstractmethod
-    def gen_random_object(*args, **kwargs) -> "Model":
-        pass
-
-    @abstractmethod
-    def gen_random_update(self) -> "Model":
-        pass
-
-    def to_dict(self) -> dict:
-        """Return a dict excluding None."""
-        data = dict()
-        for field, value in self.__dict__.items():
-            if value is not None:
-                if isinstance(value, Model):
-                    data[field] = value.to_dict()
-                else:
-                    data[field] = value
-        return data

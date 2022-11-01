@@ -3,7 +3,7 @@ from functools import lru_cache
 
 
 class EndPoint:
-    IDENTITY_SERVER = "https://identity.alms.dev.alemira.com"
+    IDENTITY_SERVER = "https://identity.alms.dev.alemira.com/"
     DEFAULT_USER = {
         "username": "alice@company.com",
         "password": "Pass123$",
@@ -26,7 +26,7 @@ class EndPoint:
         if isinstance(user, str):
             user = json.loads(user)
         response = requests.post(
-            self.IDENTITY_SERVER + "/connect/token",
+            self.IDENTITY_SERVER + "connect/token",
             data=user,
         )
         json_response = response.json()

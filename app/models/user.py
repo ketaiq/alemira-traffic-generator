@@ -29,7 +29,6 @@ class User(Model):
         "lastName",
         "email",
         "username",
-        "password",  # TODO test
         "details",
     )
     FIELD_FOR_UPDATING = (
@@ -73,7 +72,6 @@ class User(Model):
                 "lastName": gen_random_name(),
                 "email": email,
                 "username": username,
-                "password": gen_random_password(),
                 "details": Detail.gen_random_object(),
                 "externalId": "",
             }
@@ -102,16 +100,38 @@ class User(Model):
     def filter_original_users(cls, users: list) -> list:
         return [user for user in users if user["email"] not in cls.RESERVED_EMAILS]
 
+    def reset_password(self):
+        self.password = gen_random_password()
+
     def to_dict_for_creating(self) -> dict:
         user_dict = {}
         for field in self.FIELD_FOR_CREATING:
-            user_dict[field] = getattr(self, field)
+            value = getattr(self, field)
+            if type(value) is Detail:
+                value = value.__dict__
+            user_dict[field] = value
         return user_dict
 
     def to_dict_for_updating(self) -> dict:
         user_dict = {}
         for field in self.FIELD_FOR_UPDATING:
-            user_dict[field] = getattr(self, field)
+            value = getattr(self, field)
+            if type(value) is Detail:
+                value = value.__dict__
+            user_dict[field] = value
+        return user_dict
+
+    def to_dict_for_database(self) -> dict:
+        user_dict = {}
+        for field in self.FIELD_FOR_UPDATING:
+            value = getattr(self, field)
+            if type(value) is Detail:
+                value = value.__dict__
+            if field == "id":
+                user_dict["_id"] = value
+            else:
+                user_dict[field] = value
+
         return user_dict
 
     def __eq__(self, other):
