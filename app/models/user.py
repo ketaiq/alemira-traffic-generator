@@ -6,7 +6,8 @@ from app.utils.string import (
 from app.models.model import Model
 from app.models.detail import Detail
 from app.models.tenant import Tenant
-import random, copy
+import random, copy, logging
+from app.exceptions import UnsupportedModeException
 
 
 class User(Model):
@@ -103,36 +104,34 @@ class User(Model):
     def reset_password(self):
         self.password = gen_random_password()
 
-    def to_dict_for_creating(self) -> dict:
+    def to_dict(self, mode: str):
+        try:
+            if mode == "c":
+                fields = self.FIELD_FOR_CREATING
+            elif mode == "u":
+                fields = self.FIELD_FOR_UPDATING
+            elif mode == "db":
+                fields = self.FIELD_NAMES
+            else:
+                raise UnsupportedModeException(f"Mode {mode} is not supported.")
+        except UnsupportedModeException as e:
+            logging.error(e.message)
         user_dict = {}
-        for field in self.FIELD_FOR_CREATING:
+        for field in fields:
             value = getattr(self, field)
             if type(value) is Detail:
                 value = value.__dict__
             user_dict[field] = value
         return user_dict
+
+    def to_dict_for_creating(self) -> dict:
+        return self.to_dict("c")
 
     def to_dict_for_updating(self) -> dict:
-        user_dict = {}
-        for field in self.FIELD_FOR_UPDATING:
-            value = getattr(self, field)
-            if type(value) is Detail:
-                value = value.__dict__
-            user_dict[field] = value
-        return user_dict
+        return self.to_dict("u")
 
     def to_dict_for_database(self) -> dict:
-        user_dict = {}
-        for field in self.FIELD_FOR_UPDATING:
-            value = getattr(self, field)
-            if type(value) is Detail:
-                value = value.__dict__
-            if field == "id":
-                user_dict["_id"] = value
-            else:
-                user_dict[field] = value
-
-        return user_dict
+        return self.to_dict("db")
 
     def __eq__(self, other):
         for key in self.FIELD_NAMES:
