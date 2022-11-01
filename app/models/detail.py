@@ -4,7 +4,7 @@ from app.utils.string import (
     gen_random_school,
     gen_random_grade,
 )
-import random
+import random, copy
 
 
 class Detail(Model):
@@ -24,28 +24,21 @@ class Detail(Model):
         )
 
     def gen_random_update(self) -> "Detail":
-        return Detail(
-            {
-                "city": gen_random_city()
-                if random.choice([True, False])
-                else self.city,
-                "school": gen_random_school()
-                if random.choice([True, False])
-                else self.school,
-                "grade": gen_random_grade()
-                if random.choice([True, False])
-                else self.grade,
-            }
-        )
+        detail = copy.deepcopy(self)
+        while detail == self:
+            detail.city = (
+                gen_random_city() if random.choice([True, False]) else detail.city
+            )
+            detail.school = (
+                gen_random_school() if random.choice([True, False]) else detail.school
+            )
+            detail.grade = (
+                gen_random_grade() if random.choice([True, False]) else detail.grade
+            )
+        return detail
 
-
-def main():
-    detail = Detail.gen_random_object()
-    print(vars(detail))
-    print(detail.to_dict())
-    detail = Detail(city="123", grade="222", sch="asd")
-    print(vars(detail))
-
-
-if __name__ == "__main__":
-    main()
+    def __eq__(self, other):
+        for key in self.FIELD_NAMES:
+            if getattr(self, key) != getattr(other, key):
+                return False
+        return True

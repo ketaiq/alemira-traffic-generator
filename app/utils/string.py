@@ -41,10 +41,17 @@ def gen_random_name() -> str:
 
 
 def gen_random_password() -> str:
-    password_len = random.randint(6, 100)
     password = "".join(
+        (
+            random.choice(string.ascii_lowercase),
+            random.choice(string.ascii_uppercase),
+            random.choice(string.digits),
+            random.choice(string.punctuation),
+        )
+    )
+    password += "".join(
         random.choice(string.ascii_letters + string.digits + string.punctuation)
-        for _ in range(password_len)
+        for _ in range(random.randint(2, 90))
     )
     return password
 
