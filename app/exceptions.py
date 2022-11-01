@@ -1,4 +1,10 @@
-class NoResetPasswordUrlException(Exception):
+class ResetPasswordUrlNotFoundException(Exception):
+    def __init__(self, message: str):
+        self.message = message
+        super().__init__(message)
+
+
+class MailNotFoundException(Exception):
     def __init__(self, message: str):
         self.message = message
         super().__init__(message)

@@ -3,29 +3,27 @@ import random, string
 
 def gen_random_email() -> str:
     """Generate RFC 5322 compliant email address."""
-    allowed_punctuation = "!#$%&'*+-/=?^_`{|}~"
     local_part = "".join(
-        random.choice(string.ascii_letters + string.digits + allowed_punctuation)
-        for _ in range(random.randint(3, 20))
+        random.choice(string.ascii_letters + string.digits)
+        for _ in range(random.randint(6, 20))
     )
-    local_part = _add_dots_in_email(local_part)
+    local_part = _add_dots_in_email(random.randrange(1, 3), local_part)
     domain = "".join(
-        random.choice(string.ascii_letters + string.digits + "-")
-        for _ in range(random.randint(3, 20))
+        random.choice(string.ascii_letters + string.digits)
+        for _ in range(random.randint(6, 20))
     )
-    domain = _add_dots_in_email(domain)
+    domain = _add_dots_in_email(random.randrange(1, 3), domain)
     return f"{local_part}@{domain}"
 
 
-def _add_dots_in_email(email_part) -> str:
+def _add_dots_in_email(dot_count, email_part) -> str:
     """
     Add at most 3 dots in email randomly.
 
     Dot is not the first or last character and it will not come one after the other.
     """
-    dot_count = random.randrange(0, 4)
     for _ in range(dot_count):
-        pos = random.randrange(1, len(email_part) - 1)
+        pos = random.randrange(1, len(email_part) - 3)
         while email_part[pos] == "." or email_part[pos - 1] == ".":
             pos = random.randrange(1, len(email_part) - 1)
         email_part = email_part[:pos] + "." + email_part[pos:]
@@ -91,13 +89,13 @@ def gen_random_course() -> tuple[str, str]:
 
 
 def main():
-    # print(gen_random_email())
+    print(gen_random_email())
     # print(gen_random_name())
     # print(gen_random_city())
     # print(gen_random_school())
     # print(gen_random_grade())
     # print(gen_random_course())
-    print(gen_random_password())
+    # print(gen_random_password())
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import logging
 from app.models.model import Model
 import re
 from app.models.user import User
-from app.exceptions import NoResetPasswordUrlException
+from app.exceptions import ResetPasswordUrlNotFoundException
 
 
 class MailMessage(Model):
@@ -31,9 +31,13 @@ class MailMessage(Model):
                 match = re.search(r"href='(.*)'>", self.htmlBody)
                 if match:
                     return match.group(1)
-                raise NoResetPasswordUrlException("No URL is matched in htmlBody.")
-            raise NoResetPasswordUrlException(f"Invalid htmlBody: {self.htmlBody}.")
-        except NoResetPasswordUrlException as e:
+                raise ResetPasswordUrlNotFoundException(
+                    "No URL is matched in htmlBody."
+                )
+            raise ResetPasswordUrlNotFoundException(
+                f"Invalid htmlBody: {self.htmlBody}."
+            )
+        except ResetPasswordUrlNotFoundException as e:
             logging.error(e.message)
 
     def is_sent_to_user(self, user: User) -> bool:
