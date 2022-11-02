@@ -8,14 +8,7 @@ from app.models.detail import Detail
 from app.models.tenant import Tenant
 import random, copy, logging
 from app.exceptions import UnsupportedModeException
-from enum import Enum
-
-
-class UserDictMode(Enum):
-    CREATE = 1
-    UPDATE = 2
-    DATABASE = 3
-    LOGIN = 4
+from app.models.dict_mode import DictMode
 
 
 class User(Model):
@@ -113,15 +106,15 @@ class User(Model):
     def reset_password(self):
         self.password = gen_random_password()
 
-    def to_dict(self, mode: UserDictMode):
+    def to_dict(self, mode: DictMode):
         try:
-            if mode is UserDictMode.CREATE:
+            if mode is DictMode.CREATE:
                 fields = self.FIELD_FOR_CREATING
-            elif mode is UserDictMode.UPDATE:
+            elif mode is DictMode.UPDATE:
                 fields = self.FIELD_FOR_UPDATING
-            elif mode is UserDictMode.DATABASE:
+            elif mode is DictMode.DATABASE:
                 fields = self.FIELD_NAMES
-            elif mode is UserDictMode.LOGIN:
+            elif mode is DictMode.LOGIN:
                 fields = self.FIELD_FOR_LOGIN
             else:
                 raise UnsupportedModeException(f"Mode {mode} is not supported.")
@@ -136,16 +129,16 @@ class User(Model):
         return user_dict
 
     def to_dict_for_creating(self) -> dict:
-        return self.to_dict(UserDictMode.CREATE)
+        return self.to_dict(DictMode.CREATE)
 
     def to_dict_for_updating(self) -> dict:
-        return self.to_dict(UserDictMode.UPDATE)
+        return self.to_dict(DictMode.UPDATE)
 
     def to_dict_for_database(self) -> dict:
-        return self.to_dict(UserDictMode.DATABASE)
+        return self.to_dict(DictMode.DATABASE)
 
     def to_dict_for_login(self) -> dict:
-        return self.to_dict(UserDictMode.LOGIN)
+        return self.to_dict(DictMode.LOGIN)
 
     def __eq__(self, other):
         for key in self.FIELD_NAMES:

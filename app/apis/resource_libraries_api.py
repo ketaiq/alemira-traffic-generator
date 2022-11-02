@@ -3,7 +3,7 @@ from app.apis.endpoint import EndPoint
 from app.models.resource_library.resource_library import ResourceLibrary
 
 
-class ResourceLibraries(EndPoint):
+class ResourceLibrariesAPI(EndPoint):
     def __init__(self):
         super().__init__()
         self.url = self.uri + "resource-libraries/"
@@ -63,7 +63,7 @@ def main():
         encoding="utf-8",
         level=logging.DEBUG,
     )
-    resource_libraries_api = ResourceLibraries()
+    resource_libraries_api = ResourceLibrariesAPI()
     resource_libraries = resource_libraries_api.get_resource_libraries()
     print(len(resource_libraries), "resource libraries")
     for lib in resource_libraries:

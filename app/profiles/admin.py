@@ -48,3 +48,9 @@ class Admin:
                     )
         except MailNotFoundException as e:
             logging.error(e.message)
+
+    def enroll_one_student(self):
+        pass
+
+    def enroll_group(self):
+        pass

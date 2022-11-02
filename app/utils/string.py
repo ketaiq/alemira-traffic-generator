@@ -1,4 +1,4 @@
-import random, string
+import random, string, requests
 
 
 def gen_random_email() -> str:
@@ -86,6 +86,14 @@ def gen_random_course() -> tuple[str, str]:
             ("Software Quality & Testing", "SQT"),
         ]
     )
+
+
+def request_timeout_msg() -> str:
+    return "Request took too long!"
+
+
+def request_http_error_msg(response) -> str:
+    return f"HTTP error {response.status_code} {response.reason}!"
 
 
 def main():

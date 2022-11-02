@@ -13,10 +13,14 @@ class EndPoint:
         "grant_type": "password",
     }
     URI = "https://userapi.alms.dev.alemira.com/api/v1/"
+    TIMEOUT_MAX = 180
 
     def __init__(self, user: User = None):
         self.uri = self.URI
-        self.headers = self.get_headers(user.to_dict_for_login())
+        if user is None:
+            self.headers = self.get_headers()
+        else:
+            self.headers = self.get_headers(user.to_dict_for_login())
 
     @lru_cache(maxsize=None)
     def _get_token(self, user=None):
