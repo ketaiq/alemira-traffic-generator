@@ -5,7 +5,7 @@ def gen_random_email() -> str:
     """Generate RFC 5322 compliant email address."""
     local_part = "".join(
         random.choice(string.ascii_letters + string.digits)
-        for _ in range(random.randint(6, 20))
+        for _ in range(random.randint(10, 20))
     )
     local_part = _add_dots_in_email(random.randrange(1, 3), local_part)
     domain = "".join(
@@ -49,7 +49,7 @@ def gen_random_password() -> str:
     )
     password += "".join(
         random.choice(string.ascii_letters + string.digits + string.punctuation)
-        for _ in range(random.randint(2, 90))
+        for _ in range(random.randint(2, 30))
     )
     return password
 
@@ -89,13 +89,13 @@ def gen_random_course() -> tuple[str, str]:
 
 
 def main():
-    print(gen_random_email())
+    # print(gen_random_email())
     # print(gen_random_name())
     # print(gen_random_city())
     # print(gen_random_school())
     # print(gen_random_grade())
     # print(gen_random_course())
-    # print(gen_random_password())
+    print(gen_random_password())
 
 
 if __name__ == "__main__":

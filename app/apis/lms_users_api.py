@@ -1,11 +1,11 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
 from app.models.user import User
-from app.database.driver import Driver
+from app.drivers.database_driver import DatabaseDriver
 
 
 class LmsUsersAPI(EndPoint):
-    def __init__(self, driver: Driver):
+    def __init__(self, driver: DatabaseDriver):
         super().__init__()
         self.url = self.uri + "lms-users/"
         self.driver = driver

@@ -25,7 +25,7 @@ class Admin:
     def create_user(self):
         """Create a user with a random profile."""
         new_user = self.lms_users_api.create_user(self.client)
-        sleep_for_seconds()
+        sleep_for_seconds(20, 30)
         skip = 0
         take = 10
         try:

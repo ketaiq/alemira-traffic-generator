@@ -1,5 +1,5 @@
 import time, random
 
 
-def sleep_for_seconds():
-    time.sleep(random.randrange(10, 30))
+def sleep_for_seconds(lower_bound: int, upper_bound: int):
+    time.sleep(random.randrange(lower_bound, upper_bound))
