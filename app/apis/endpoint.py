@@ -1,5 +1,6 @@
 import requests, json
 from functools import lru_cache
+from app.models.user import User
 
 
 class EndPoint:
@@ -13,9 +14,9 @@ class EndPoint:
     }
     URI = "https://userapi.alms.dev.alemira.com/api/v1/"
 
-    def __init__(self):
+    def __init__(self, user: User = None):
         self.uri = self.URI
-        self.headers = self.get_headers()
+        self.headers = self.get_headers(user.to_dict_for_login())
 
     @lru_cache(maxsize=None)
     def _get_token(self, user=None):
@@ -34,7 +35,7 @@ class EndPoint:
 
     def get_headers(
         self,
-        user=None,
+        user: dict = None,
     ):
         """
         :param with_auth:
