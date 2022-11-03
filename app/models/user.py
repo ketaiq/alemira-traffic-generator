@@ -62,7 +62,7 @@ class User(Model):
         )
         if self.details is not None and type(self.details) is dict:
             self.details = Detail(self.details)
-        if self.tenant is not None:
+        if self.tenant is not None and type(self.tenant) is dict:
             self.tenant = Tenant(self.tenant)
 
     @staticmethod

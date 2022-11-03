@@ -30,12 +30,13 @@ class ActivitiesAPI(EndPoint):
         [1]: https://waf.cs.illinois.edu/discovery/course-catalog.csv
         """
         df = pd.read_csv("data/course-catalog.csv")
-        for index in df.index[:1]:
+        for index in df.index[1:5]:
             course = Activity.gen_course(df.loc[index], rich_text_id)
             r = requests.post(
                 self.url, json=course.to_dict_for_creating(), headers=self.headers
             )
             r.raise_for_status()
+            course.id = r.json()["id"]
             self.driver.insert_one_course(course.to_dict_for_database())
 
 

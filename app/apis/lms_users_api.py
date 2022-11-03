@@ -51,7 +51,7 @@ class LmsUsersAPI(EndPoint):
                     response.failure(request_timeout_msg())
                 else:
                     response.failure(request_http_error_msg(response))
-        self.driver.insert_one_user(new_user.to_dict_for_database())
+        self.driver.insert_one_user(new_user)
         return new_user
 
     def update_user(self, user: User, client=None):
@@ -75,9 +75,9 @@ class LmsUsersAPI(EndPoint):
                     response.failure(request_http_error_msg(response))
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
-        self.driver.update_user(user.to_dict_for_database())
+        self.driver.update_user(user)
 
-    def get_user_by_id(self, id: str, client=None) -> dict:
+    def get_user_by_id(self, id: str, client=None) -> User:
         if client is None:
             r = requests.get(self.url + id, headers=self.headers)
             r.raise_for_status()
@@ -89,7 +89,7 @@ class LmsUsersAPI(EndPoint):
             catch_response=True,
         ) as response:
             if response.ok:
-                return response.json()
+                return User(response.json())
             elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                 response.failure(request_timeout_msg())
             else:
