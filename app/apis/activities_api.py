@@ -24,36 +24,27 @@ class ActivitiesAPI(EndPoint):
         r.raise_for_status()
         return r.json()
 
-    def create_rich_text_courses(self, rich_text_id: str):
+    def create_rich_text_courses(
+        self, rich_text_id: str, course: pd.Series
+    ) -> Activity:
         """
         Create courses from [1].
         [1]: https://waf.cs.illinois.edu/discovery/course-catalog.csv
         """
-        df = pd.read_csv("data/course-catalog.csv")
-        for index in df.index[1:5]:
-            course = Activity.gen_course(df.loc[index], rich_text_id)
-            r = requests.post(
-                self.url, json=course.to_dict_for_creating(), headers=self.headers
-            )
-            r.raise_for_status()
-            course.id = r.json()["id"]
-            self.driver.insert_one_course(course.to_dict_for_database())
+
+        course = Activity.gen_course(course, rich_text_id)
+        r = requests.post(
+            self.url, json=course.to_dict_for_creating(), headers=self.headers
+        )
+        r.raise_for_status()
+        course.id = r.json()["id"]
+        self.driver.insert_one_course(course.to_dict_for_database())
+        return course
 
 
 def main():
     db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     activities_api = ActivitiesAPI(db_driver)
-
-    activities = activities_api.get_activities()
-    print(len(activities), " activities")
-
-    from app.apis.resource_libraries_api import ResourceLibrariesAPI
-
-    resource_libraries_api = ResourceLibrariesAPI()
-    compositions_id = resource_libraries_api.get_compositions_id()
-    rich_text_id = resource_libraries_api.get_rich_text_id()
-    # print(activities_api.create_random_activity(compositions_id, rich_text_id))
-    activities_api.create_rich_text_courses(rich_text_id)
     activities = activities_api.get_activities()
     print(len(activities), " activities")
 
