@@ -11,6 +11,7 @@ from app.exceptions import UnsupportedModeException
 class Activity(Model):
     FIELD_NAMES = (
         "id",
+        "children",
         "type",
         "ltiVersion",
         "resourceLibraryId",
@@ -20,6 +21,8 @@ class Activity(Model):
         "content",
         "editorContent",
         "toolUrl",
+        "toolAuthUrl",
+        "toolResourceId",
         "state",
         "supportReview",
         "supportLtiGrading",
@@ -28,7 +31,6 @@ class Activity(Model):
         "supportFullscreenView",
         "preferredWidth",
         "preferredHeight",
-        "toolResourceId",
         "externalId",
     )
     FIELD_FOR_CREATING = (
@@ -48,6 +50,7 @@ class Activity(Model):
         "supportFullscreenView",
         "toolResourceId",
     )
+    FIELD_FOR_UPDATING = FIELD_NAMES
 
     def __init__(self, *args, **kwargs):
         super().__init__(self.FIELD_NAMES, *args, **kwargs)
@@ -56,6 +59,8 @@ class Activity(Model):
         try:
             if mode is DictMode.CREATE:
                 fields = self.FIELD_FOR_CREATING
+            elif mode is DictMode.UPDATE:
+                fields = self.FIELD_FOR_UPDATING
             elif mode is DictMode.DATABASE:
                 fields = self.FIELD_NAMES
             else:
@@ -72,6 +77,9 @@ class Activity(Model):
 
     def to_dict_for_database(self) -> dict:
         return self.to_dict(DictMode.DATABASE)
+
+    def to_dict_for_updating(self) -> dict:
+        return self.to_dict(DictMode.UPDATE)
 
     @staticmethod
     def gen_random_object(*args, **kwargs) -> "Activity":

@@ -55,7 +55,6 @@ class LmsUsersAPI(EndPoint):
         return new_user
 
     def update_user(self, user: User, client=None):
-        user = user.gen_random_update()
         if client is None:
             r = requests.put(
                 self.url + user.id,

@@ -13,7 +13,7 @@ def create_default_courses():
 
     rich_text_id = resource_libraries_api.get_rich_text_id()
     df = pd.read_csv("data/course-catalog.csv")
-    for index in df.index[0:3]:
+    for index in df.index[0:4]:
         # check if course exists
         course = activities_api.get_activity_by_code_or_none(
             df.loc[index, "Subject"] + str(df.loc[index, "Number"])
@@ -29,7 +29,16 @@ def create_default_courses():
         # check if objective exists
         objective = objectives_api.get_objective_by_code_or_none(course.code)
         if objective is None:
-            objectives_api.create_objective(course)
+            update_id = activities_api.update_activity(course)
+            created_id = objectives_api.create_objective(course)
+            while True:
+                updated_status = activities_api.get_updated_activity(update_id)
+                created_status = objectives_api.get_created_objective(created_id)
+                if (
+                    updated_status["completed"] is not None
+                    and created_status["completed"] is not None
+                ):
+                    break
         elif db_driver.find_one_objective_by_code(objective):
             db_driver.update_objective(objective)
         else:

@@ -54,11 +54,59 @@ class ActivitiesAPI(EndPoint):
                 break
         return None
 
+    def get_updated_activity(self, update_id: str, client=None) -> dict:
+        if client is None:
+            r = requests.get(
+                self.uri + "update-activities/" + update_id, headers=self.headers
+            )
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "update-activities/" + update_id,
+            headers=self.headers,
+            name="get updated activity",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def update_activity(self, activity: Activity, client=None) -> str:
+        if client is None:
+            r = requests.put(
+                self.url + activity.id,
+                json=activity.to_dict_for_updating(),
+                headers=self.headers,
+            )
+            r.raise_for_status()
+            self.driver.update_course(activity)
+            return r.json()["id"]
+        else:
+            with client.put(
+                self.url + activity.id,
+                json=activity.to_dict_for_updating(),
+                headers=self.headers,
+                name="update activity",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    self.driver.update_course(activity)
+                    return response.json()["id"]
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+
     def create_random_activity(self, compositions_id: str, rich_text_id: str):
         new_activity = Activity.gen_random_object(
             compositions_id=compositions_id, rich_text_id=rich_text_id
         )
-        r = requests.post(self.url, json=new_activity.to_dict_for_creating(), headers=self.headers)
+        r = requests.post(
+            self.url, json=new_activity.to_dict_for_creating(), headers=self.headers
+        )
         r.raise_for_status()
         return r.json()
 

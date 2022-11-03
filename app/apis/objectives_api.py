@@ -67,19 +67,21 @@ class ObjectivesAPI(EndPoint):
                 break
         return None
 
-    def get_created_objective_id(self, id: str) -> str:
+    def get_created_objective(self, id: str) -> str:
         r = requests.get(self.uri + "create-objectives/" + id, headers=self.headers)
         r.raise_for_status()
-        return r.json()["entityId"]
+        return r.json()
 
-    def create_objective(self, activity: Activity):
+    def create_objective(self, activity: Activity) -> str:
+        """Create objective and return a created id."""
         objective = Objective.gen_object_from_activity(activity)
         r = requests.post(
             self.url, json=objective.to_dict_for_creating(), headers=self.headers
         )
         r.raise_for_status()
-        objective.id = self.get_created_objective_id(r.json()["id"])
+        objective.id = self.get_created_objective(r.json()["id"])
         self.driver.insert_one_objective(objective)
+        return r.json()["id"]
 
     def update_objective(self, objective: Objective, client=None):
         objective = objective.gen_random_update()
