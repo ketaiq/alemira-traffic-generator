@@ -30,13 +30,55 @@ class ObjectivesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
+    def get_objectives_by_query(self, skip: int, take: int, client=None) -> dict:
+        payload = {"skip": skip, "take": take, "requireTotalCount": True}
+        if client is None:
+            r = requests.get(self.url + "query", headers=self.headers, params=payload)
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.url + "query",
+            headers=self.headers,
+            params=payload,
+            name="get objectives by query",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_objective_by_code_or_none(self, code: str) -> Objective | None:
+        skip = 0
+        take = 10
+        while True:
+            res = self.get_objectives_by_query(skip, take)
+            remaining_count = res["totalCount"] - take - skip
+            objective = next(
+                (objective for objective in res["data"] if objective["code"] == code),
+                None,
+            )
+            skip += take
+            if objective is not None:
+                return Objective(objective)
+            if remaining_count <= 0:
+                break
+        return None
+
+    def get_created_objective_id(self, id: str) -> str:
+        r = requests.get(self.uri + "create-objectives/" + id, headers=self.headers)
+        r.raise_for_status()
+        return r.json()["entityId"]
+
     def create_objective(self, activity: Activity):
         objective = Objective.gen_object_from_activity(activity)
         r = requests.post(
             self.url, json=objective.to_dict_for_creating(), headers=self.headers
         )
         r.raise_for_status()
-        objective.id = r.json()["id"]
+        objective.id = self.get_created_objective_id(r.json()["id"])
         self.driver.insert_one_objective(objective)
 
     def update_objective(self, objective: Objective, client=None):

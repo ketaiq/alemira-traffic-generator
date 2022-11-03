@@ -2,6 +2,7 @@ from urllib.parse import quote_plus
 from pymongo import MongoClient
 from app.models.user import User
 from app.models.objective.objective import Objective
+from app.models.activity.activity import Activity
 
 
 class DatabaseDriver:
@@ -16,8 +17,8 @@ class DatabaseDriver:
     def insert_one_user(self, user: User):
         self.users.insert_one(user.to_dict_for_database())
 
-    def insert_one_course(self, course: dict):
-        self.courses.insert_one(course)
+    def insert_one_course(self, course: Activity):
+        self.courses.insert_one(course.to_dict_for_database())
 
     def insert_one_objective(self, objective: Objective):
         self.objectives.insert_one(objective.to_dict_for_database())
@@ -32,3 +33,20 @@ class DatabaseDriver:
 
     def update_user(self, user: User):
         self.users.update_one({"id": user.id}, {"$set": user.to_dict_for_database()})
+
+    def update_course(self, course: Activity):
+        self.courses.update_one(
+            {"id": course.id}, {"$set": course.to_dict_for_database()}
+        )
+
+    def find_one_objective_by_code(self, objective: Objective) -> bool:
+        return (
+            True
+            if self.objectives.find_one({"code": objective.code}) is not None
+            else False
+        )
+
+    def find_one_course_by_code(self, course: Activity) -> bool:
+        return (
+            True if self.courses.find_one({"code": course.code}) is not None else False
+        )
