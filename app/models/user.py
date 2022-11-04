@@ -123,7 +123,7 @@ class User(Model):
         user_dict = {}
         for field in fields:
             value = getattr(self, field)
-            if type(value) is Detail:
+            if type(value) is Detail or type(value) is Tenant:
                 value = value.__dict__
             user_dict[field] = value
         return user_dict
