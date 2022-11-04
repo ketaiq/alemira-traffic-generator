@@ -19,6 +19,10 @@ class Instructor:
         self.client = client
 
     def enroll_one_student(self):
+        # select a random student from mongodb
+        # check student exists, otherwise select again
+        # select a random course objective
+        # enroll the student in the course
         pass
 
     def enroll_group(self):

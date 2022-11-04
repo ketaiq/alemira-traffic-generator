@@ -21,3 +21,9 @@ class Model(ABC):
         for key in keys:
             if key not in self.__dict__:
                 setattr(self, key, None)
+
+    def __eq__(self, other):
+        for key in self.__dict__:
+            if getattr(self, key) != getattr(other, key):
+                return False
+        return True

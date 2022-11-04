@@ -140,12 +140,6 @@ class User(Model):
     def to_dict_for_login(self) -> dict:
         return self.to_dict(DictMode.LOGIN)
 
-    def __eq__(self, other):
-        for key in self.FIELD_NAMES:
-            if getattr(self, key) != getattr(other, key):
-                return False
-        return True
-
 
 def main():
     user = User.gen_random_object()
