@@ -30,16 +30,15 @@ class ObjectivesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_objectives_by_query(self, skip: int, take: int, client=None) -> dict:
-        payload = {"skip": skip, "take": take, "requireTotalCount": True}
+    def get_objectives_by_query(self, query: dict, client=None) -> dict:
         if client is None:
-            r = requests.get(self.url + "query", headers=self.headers, params=payload)
+            r = requests.get(self.url + "query", headers=self.headers, params=query)
             r.raise_for_status()
             return r.json()
         with client.get(
             self.url + "query",
             headers=self.headers,
-            params=payload,
+            params=query,
             name="get objectives by query",
             catch_response=True,
         ) as response:
@@ -54,7 +53,9 @@ class ObjectivesAPI(EndPoint):
         skip = 0
         take = 10
         while True:
-            res = self.get_objectives_by_query(skip, take)
+            res = self.get_objectives_by_query(
+                {"skip": skip, "take": take, "requireTotalCount": True}
+            )
             remaining_count = res["totalCount"] - take - skip
             objective = next(
                 (objective for objective in res["data"] if objective["code"] == code),
@@ -67,7 +68,7 @@ class ObjectivesAPI(EndPoint):
                 break
         return None
 
-    def get_created_objective(self, id: str) -> str:
+    def get_created_objective_state_by_id(self, id: str) -> str:
         r = requests.get(self.uri + "create-objectives/" + id, headers=self.headers)
         r.raise_for_status()
         return r.json()
@@ -79,7 +80,7 @@ class ObjectivesAPI(EndPoint):
             self.url, json=objective.to_dict_for_creating(), headers=self.headers
         )
         r.raise_for_status()
-        objective.id = self.get_created_objective(r.json()["id"])
+        objective.id = self.get_created_objective_state_by_id(r.json()["id"])
         self.driver.insert_one_objective(objective)
         return r.json()["id"]
 

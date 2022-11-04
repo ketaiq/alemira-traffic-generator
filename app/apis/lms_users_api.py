@@ -29,6 +29,24 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
+    def get_created_user_state_by_id(self, id: str, client=None):
+        if client is None:
+            r = requests.get(self.uri + "create-lms-users/" + id, headers=self.headers)
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "create-lms-users/" + id,
+            headers=self.headers,
+            name="get created user state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def create_user(self, client=None) -> User:
         new_user = User.gen_random_object()
         if client is None:
@@ -46,7 +64,9 @@ class LmsUsersAPI(EndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    new_user.id = response.json()["id"]
+                    new_user.id = self.get_created_user_state_by_id(
+                        response.json()["id"], client
+                    )["entityId"]
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

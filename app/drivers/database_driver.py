@@ -39,14 +39,23 @@ class DatabaseDriver:
             {"id": course.id}, {"$set": course.to_dict_for_database()}
         )
 
-    def find_one_objective_by_code(self, objective: Objective) -> bool:
+    def check_objective_by_code(self, objective: Objective) -> bool:
         return (
             True
             if self.objectives.find_one({"code": objective.code}) is not None
             else False
         )
 
-    def find_one_course_by_code(self, course: Activity) -> bool:
+    def check_course_by_code(self, course: Activity) -> bool:
         return (
             True if self.courses.find_one({"code": course.code}) is not None else False
         )
+
+    def check_user_by_id(self, user: User) -> bool:
+        return True if self.users.find_one({"id": user.id}) is not None else False
+
+    def find_usernames(self) -> list:
+        return self.users.find().distinct("username")
+
+    def find_courses_codes(self) -> list:
+        return self.courses.find().distinct("code")

@@ -54,7 +54,27 @@ class ActivitiesAPI(EndPoint):
                 break
         return None
 
-    def get_updated_activity(self, update_id: str, client=None) -> dict:
+    def get_created_activity_state_by_id(self, created_id: str, client=None):
+        if client is None:
+            r = requests.get(
+                self.uri + "create-lms-users/" + created_id, headers=self.headers
+            )
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "create-activities/" + created_id,
+            headers=self.headers,
+            name="get created activity state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_updated_activity_state_by_id(self, update_id: str, client=None) -> dict:
         if client is None:
             r = requests.get(
                 self.uri + "update-activities/" + update_id, headers=self.headers
@@ -122,7 +142,7 @@ class ActivitiesAPI(EndPoint):
             self.url, json=course.to_dict_for_creating(), headers=self.headers
         )
         r.raise_for_status()
-        course.id = r.json()["id"]
+        course.id = self.get_created_activity_state_by_id(r.json()["id"])["entityId"]
         self.driver.insert_one_course(course)
         return course
 

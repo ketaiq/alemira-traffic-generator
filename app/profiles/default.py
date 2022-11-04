@@ -22,7 +22,7 @@ def create_default_courses():
             course = activities_api.create_rich_text_courses(
                 rich_text_id, df.loc[index]
             )
-        elif db_driver.find_one_course_by_code(course):
+        elif db_driver.check_course_by_code(course):
             db_driver.update_course(course)
         else:
             db_driver.insert_one_course(course)
@@ -32,14 +32,18 @@ def create_default_courses():
             update_id = activities_api.update_activity(course)
             created_id = objectives_api.create_objective(course)
             while True:
-                updated_status = activities_api.get_updated_activity(update_id)
-                created_status = objectives_api.get_created_objective(created_id)
+                updated_status = activities_api.get_updated_activity_state_by_id(
+                    update_id
+                )
+                created_status = objectives_api.get_created_objective_state_by_id(
+                    created_id
+                )
                 if (
                     updated_status["completed"] is not None
                     and created_status["completed"] is not None
                 ):
                     break
-        elif db_driver.find_one_objective_by_code(objective):
+        elif db_driver.check_objective_by_code(objective):
             db_driver.update_objective(objective)
         else:
             db_driver.insert_one_objective(objective)

@@ -16,16 +16,15 @@ class UsersAPI(EndPoint):
         users = r.json()
         return users
 
-    def get_users_by_query(self, skip: int, take: int, client=None) -> dict:
-        payload = {"skip": skip, "take": take, "requireTotalCount": True}
+    def get_users_by_query(self, query: dict, client=None) -> dict:
         if client is None:
-            r = requests.get(self.url + "query", headers=self.headers, params=payload)
+            r = requests.get(self.url + "query", headers=self.headers, params=query)
             r.raise_for_status()
             return r.json()
         with client.get(
             self.url + "query",
             headers=self.headers,
-            params=payload,
+            params=query,
             name="get users by query",
             catch_response=True,
         ) as response:
