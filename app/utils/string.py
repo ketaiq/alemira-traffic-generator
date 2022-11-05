@@ -65,6 +65,7 @@ def gen_random_school() -> str:
 def gen_random_title() -> str:
     return gen_random_capitalized_names(1, 8)
 
+
 def gen_random_capitalized_names(lower_bound: int, upper_bound: int):
     count = random.randrange(lower_bound, upper_bound)
     return " ".join(gen_random_name() for _ in range(count))
@@ -125,7 +126,8 @@ def main():
     # print(gen_random_course())
     # print(gen_random_password())
     # print(gen_random_description())
-    print(gen_random_id(10))
+    # print(gen_random_id(10))
+    print("asd.c".rstrip("."))
 
 
 if __name__ == "__main__":

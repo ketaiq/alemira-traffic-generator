@@ -17,13 +17,14 @@ class ObjectivesAPI(EndPoint):
     ):
         super().__init__(role, user, client)
         self.url = self.uri + "objectives/"
+        self.file_url = self.file_uri + "objectives/"
         self.driver = driver
 
     def get_objective_by_id(self, id: str) -> Objective:
         if self.client is None:
             r = requests.get(self.url + id, headers=self.headers)
             r.raise_for_status()
-            return r.json()
+            return Objective(r.json())
         with self.client.get(
             self.url + id,
             headers=self.headers,
@@ -135,7 +136,6 @@ class ObjectivesAPI(EndPoint):
         return r.json()["id"]
 
     def update_objective(self, objective: Objective):
-        objective = objective.gen_random_update()
         if self.client is None:
             r = requests.put(
                 self.url + objective.id,
@@ -172,5 +172,62 @@ class ObjectivesAPI(EndPoint):
                     response.failure(request_http_error_msg(response))
         self.driver.update_objective(objective)
 
-    def upload_image_to_objective(self):
-        
+    def upload_image_to_objective(self, objective: Objective, image_filename: str):
+        files = {"file": open(f"resources/images/{image_filename}", "rb")}
+        image_url = ""
+        if self.client is None:
+            r = requests.post(
+                self.file_url + objective.id + "/public-files",
+                files=files,
+                headers=self.headers,
+            )
+            r.raise_for_status()
+            image_url = r.json()["url"]
+        else:
+            with self.client.post(
+                self.file_url + objective.id + "/public-files",
+                files=files,
+                headers=self.headers,
+                name="upload image to objective",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    image_url = r.json()["url"]
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+        objective = objective.gen_update_with_an_image(image_filename, image_url)
+        self.update_objective(objective)
+
+    def upload_attachment_to_objective(
+        self, objective: Objective, attachment_filename: str
+    ):
+        files = {"file": open(f"resources/attachments/{attachment_filename}", "rb")}
+        attachment_url = ""
+        if self.client is None:
+            r = requests.post(
+                self.file_url + objective.id + "/protected-files",
+                files=files,
+                headers=self.headers,
+            )
+            r.raise_for_status()
+            attachment_url = r.json()["url"]
+        else:
+            with self.client.post(
+                self.file_url + objective.id + "/protected-files",
+                files=files,
+                headers=self.headers,
+                name="upload attachment to objective",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    attachment_url = r.json()["url"]
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+        objective = objective.gen_update_with_an_attachment(
+            attachment_filename, attachment_url
+        )
+        self.update_objective(objective)

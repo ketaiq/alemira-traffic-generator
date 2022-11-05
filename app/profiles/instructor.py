@@ -2,7 +2,7 @@ from app.apis.users_api import UsersAPI
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.objectives_api import ObjectivesAPI
 from app.apis.personal_enrollments_api import PersonalEnrollmentsAPI
-import random, logging
+import random, logging, os
 from app.models.user import User
 from app.models.objective.objective import Objective
 from app.exceptions import (
@@ -31,9 +31,12 @@ class Instructor:
         self.objectives_api = objectives_api
         self.personal_enrollments_api = personal_enrollments_api
 
-    def enroll_one_student(self, user: User, objective: Objective):
+    def enroll_one_student(self, objective: Objective):
         # enroll the student in the course
-        self.personal_enrollments_api.create_personal_enrollment(objective.id, user.id)
+        user_to_enroll = self.select_one_student()
+        self.personal_enrollments_api.create_personal_enrollment(
+            objective.id, user_to_enroll.id
+        )
 
     def expel_one_student(self, objective: Objective):
         # get all personal enrollments in this course objective
@@ -60,7 +63,18 @@ class Instructor:
             logging.error(e.message)
 
     def edit_one_course_description(self, objective: Objective):
+        objective = objective.gen_random_update()
         self.objectives_api.update_objective(objective)
+
+    def upload_one_image_to_course(self, objective: Objective):
+        image_filename = self.select_one_image()
+        self.objectives_api.upload_image_to_objective(objective, image_filename)
+
+    def upload_one_attachment_to_course(self, objective: Objective):
+        attachment_filename = self.select_one_attachment()
+        self.objectives_api.upload_attachment_to_objective(
+            objective, attachment_filename
+        )
 
     def select_one_student(self) -> User:
         # select a random student from mongodb
@@ -141,6 +155,12 @@ class Instructor:
                     )
         except ObjectiveNotFoundException as e:
             logging.error(e.message)
+
+    def select_one_image(self) -> str:
+        return random.choice(os.listdir("resources/images"))
+
+    def select_one_attachment(self) -> str:
+        return random.choice(os.listdir("resources/attachments"))
 
     def enroll_group(self):
         pass

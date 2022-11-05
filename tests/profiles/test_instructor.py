@@ -1,4 +1,4 @@
-from app.drivers.database_driver import DatabaseDriver
+from app.drivers.database_driver import db_driver
 from app.apis.users_api import UsersAPI
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.objectives_api import ObjectivesAPI
@@ -9,7 +9,6 @@ from app.models.objective.objective import Objective
 
 
 def test_select_one_student():
-    db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     users_api = UsersAPI()
     lms_users_api = LmsUsersAPI(db_driver)
     objectives_api = ObjectivesAPI(db_driver)
@@ -22,7 +21,6 @@ def test_select_one_student():
 
 
 def test_select_one_objective():
-    db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     users_api = UsersAPI()
     lms_users_api = LmsUsersAPI(db_driver)
     objectives_api = ObjectivesAPI(db_driver)
@@ -35,7 +33,6 @@ def test_select_one_objective():
 
 
 def test_enroll_one_student():
-    db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     users_api = UsersAPI()
     lms_users_api = LmsUsersAPI(db_driver)
     objectives_api = ObjectivesAPI(db_driver)
@@ -43,7 +40,6 @@ def test_enroll_one_student():
     instructor = Instructor(
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
-    user_to_enroll = instructor.select_one_student()
     objective_to_enroll = instructor.select_one_objective()
     count_before_enroll = objectives_api.get_objective_personal_enrollments_by_query(
         objective_to_enroll.id,
@@ -53,7 +49,7 @@ def test_enroll_one_student():
             "requireTotalCount": True,
         },
     )["totalCount"]
-    instructor.enroll_one_student(user_to_enroll, objective_to_enroll)
+    instructor.enroll_one_student(objective_to_enroll)
     count_after_enroll = objectives_api.get_objective_personal_enrollments_by_query(
         objective_to_enroll.id,
         {
@@ -66,7 +62,6 @@ def test_enroll_one_student():
 
 
 def test_expel_one_student():
-    db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     users_api = UsersAPI()
     lms_users_api = LmsUsersAPI(db_driver)
     objectives_api = ObjectivesAPI(db_driver)
@@ -99,11 +94,56 @@ def test_expel_one_student():
     )
 
 
+def test_edit_one_course_description():
+    users_api = UsersAPI()
+    lms_users_api = LmsUsersAPI(db_driver)
+    objectives_api = ObjectivesAPI(db_driver)
+    personal_enrollments_api = PersonalEnrollmentsAPI(db_driver)
+    instructor = Instructor(
+        db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
+    )
+    objective_to_edit = instructor.select_one_objective()
+    instructor.edit_one_course_description(objective_to_edit)
+    updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
+    assert objective_to_edit.aboutContent != updated_objective.aboutContent
+
+
+def test_upload_one_image_to_course():
+    users_api = UsersAPI()
+    lms_users_api = LmsUsersAPI(db_driver)
+    objectives_api = ObjectivesAPI(db_driver)
+    personal_enrollments_api = PersonalEnrollmentsAPI(db_driver)
+    instructor = Instructor(
+        db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
+    )
+    objective_to_edit = instructor.select_one_objective()
+    instructor.upload_one_image_to_course(objective_to_edit)
+    updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
+    assert objective_to_edit.aboutContent != updated_objective.aboutContent
+
+
+def test_upload_one_attachment_to_course():
+    users_api = UsersAPI()
+    lms_users_api = LmsUsersAPI(db_driver)
+    objectives_api = ObjectivesAPI(db_driver)
+    personal_enrollments_api = PersonalEnrollmentsAPI(db_driver)
+    instructor = Instructor(
+        db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
+    )
+    objective_to_edit = instructor.select_one_objective()
+    instructor.upload_one_attachment_to_course(objective_to_edit)
+    updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
+    assert objective_to_edit.aboutContent != updated_objective.aboutContent
+
+
 def main():
     # test_select_one_student()
     # test_select_one_objective()
     # test_enroll_one_student()
-    test_expel_one_student()
+    # test_expel_one_student()
+    # test_edit_one_course_description()
+    # test_upload_one_image_to_course()
+    test_upload_one_attachment_to_course()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,181 @@
+{
+    "time": 1667658883931,
+    "blocks": [
+        {
+            "id": "12345667",
+            "type": "paragraph",
+            "data": {
+                "text": "Invites students to examine histories and narratives of U.S. race and empire, drawing upon multiple theoretical and methodological works in Asian American studies and related fields. Same as LLS 200.",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "A_nuB12sh0",
+            "type": "header",
+            "data": {
+                "text": "About the course",
+                "level": 2
+            }
+        },
+        {
+            "id": "0VQVPiOCc6",
+            "type": "paragraph",
+            "data": {
+                "text": "Type your text here...",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "WelSXdAkpe",
+            "type": "header",
+            "data": {
+                "text": "What you will learn",
+                "level": 2
+            }
+        },
+        {
+            "id": "tTf8TZDh-w",
+            "type": "list",
+            "data": {
+                "style": "unordered",
+                "items": [
+                    "Skill 1",
+                    "Skill 2",
+                    "Skill 3"
+                ]
+            }
+        },
+        {
+            "id": "0SfskIAaNN",
+            "type": "header",
+            "data": {
+                "text": "Prerequisites",
+                "level": 2
+            }
+        },
+        {
+            "id": "YPKjmKco_G",
+            "type": "paragraph",
+            "data": {
+                "text": "Type your text here...",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "AUMb5DmBGd",
+            "type": "header",
+            "data": {
+                "text": "Assessment",
+                "level": 2
+            }
+        },
+        {
+            "id": "X27M_57hbC",
+            "type": "paragraph",
+            "data": {
+                "text": "Type your text here...",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "0Du27R9rRe",
+            "type": "header",
+            "data": {
+                "text": "Recommendations for preparation",
+                "level": 2
+            }
+        },
+        {
+            "id": "FZXYm211kQ",
+            "type": "paragraph",
+            "data": {
+                "text": "Type your text here...",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "Hde5RiR1rY",
+            "type": "header",
+            "data": {
+                "text": "Your instructors",
+                "level": 2
+            }
+        },
+        {
+            "id": "OzG-cwuWbE",
+            "type": "paragraph",
+            "data": {
+                "text": "<b>John Smith</b>",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "ZTQdSRJ9XV",
+            "type": "paragraph",
+            "data": {
+                "text": "+ 1 800 800 5555",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "RtrAHUN0ac",
+            "type": "paragraph",
+            "data": {
+                "text": "john.smith@company.com",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "HNk5UTBZDo",
+            "type": "paragraph",
+            "data": {
+                "text": "<b>John Smith</b>",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "Gww3nWikY5",
+            "type": "paragraph",
+            "data": {
+                "text": "+ 1 800 800 5555",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "YjSOXixmc9",
+            "type": "paragraph",
+            "data": {
+                "text": "john.smith@company.com",
+                "alignment": "left"
+            }
+        },
+        {
+            "id": "1HVbYetEpS",
+            "type": "image",
+            "data": {
+                "file": {
+                    "url": "https://storage.googleapis.com/dev-alemira-alms-ztool-public/objective-images/46f09f8d-e59b-4c3d-a7a4-c5e9fafbd2c4/2724814d-9d23-4c2f-8244-fd73a0157586/apple.jpeg",
+                    "name": "apple.jpeg",
+                    "title": "apple.jpeg"
+                },
+                "caption": "",
+                "withBorder": false,
+                "stretched": false,
+                "withBackground": false
+            }
+        },
+        {
+            "id": "xXnwATfLQg",
+            "type": "attaches",
+            "data": {
+                "file": {
+                    "url": "https://alms.dev.alemira.com/fileapi/api/v1/objectives/2724814d-9d23-4c2f-8244-fd73a0157586/protected-files/requests-sidebar.png",
+                    "name": "requests-sidebar.png",
+                    "extension": "png"
+                },
+                "title": "requests-sidebar.png"
+            }
+        }
+    ],
+    "version": "2.23.2"
+}

@@ -34,7 +34,7 @@ class Objective(Model):
         "isInternalImage",
     )
     FIELD_FOR_UPDATING = (
-        "activityId",
+        "id",
         "activity",
         "code",
         "name",
@@ -44,6 +44,7 @@ class Objective(Model):
         "aboutContent",
         "isInternalImage",
         "externalId",
+        "tenant",
     )
 
     def __init__(self, *args, **kwargs):
@@ -104,7 +105,70 @@ class Objective(Model):
             )
             aboutContent = Objective.gen_random_about_content()
             objective.aboutContent = json.dumps(aboutContent)
-            objective.about = Objective.parse_about_content(aboutContent)
+            objective.about = Objective.gen_about_from_about_content(aboutContent)
+        return objective
+
+    def gen_update_with_an_image(
+        self, image_filename: str, image_url: str
+    ) -> "Objective":
+        objective = copy.deepcopy(self)
+        if self.aboutContent:
+            about_content = json.loads(self.aboutContent)
+            about_content["time"] = get_current_timestamp()
+        else:
+            about_content = {
+                "time": get_current_timestamp(),
+                "blocks": [],
+                "version": "2.23.2",
+            }
+        block = {
+            "id": gen_random_id(10),
+            "type": "image",
+            "data": {
+                "file": {
+                    "url": image_url,
+                    "name": image_filename,
+                    "title": image_filename,
+                },
+                "caption": image_filename,
+                "withBorder": False,
+                "stretched": False,
+                "withBackground": False,
+            },
+        }
+        about_content["blocks"].append(block)
+        objective.aboutContent = json.dumps(about_content)
+        objective.about = Objective.gen_about_from_about_content(about_content)
+        return objective
+
+    def gen_update_with_an_attachment(
+        self, attachment_filename: str, attachment_url: str
+    ) -> "Objective":
+        objective = copy.deepcopy(self)
+        if self.aboutContent:
+            about_content = json.loads(self.aboutContent)
+            about_content["time"] = get_current_timestamp()
+        else:
+            about_content = {
+                "time": get_current_timestamp(),
+                "blocks": [],
+                "version": "2.23.2",
+            }
+        block = {
+            "id": gen_random_id(10),
+            "type": "attaches",
+            "data": {
+                "file": {
+                    "url": attachment_url,
+                    "name": attachment_filename,
+                    "extension": attachment_filename.split(".")[1],
+                },
+                "title": attachment_filename,
+            },
+        }
+        about_content["blocks"].append(block)
+        objective.aboutContent = json.dumps(about_content)
+        objective.about = Objective.gen_about_from_about_content(about_content)
         return objective
 
     @staticmethod
@@ -139,30 +203,104 @@ class Objective(Model):
         return about_content
 
     @staticmethod
-    def parse_about_content(about_content: dict) -> str:
+    def gen_about_from_about_content(about_content: dict) -> str:
         """Parse about content to html str."""
         about = ""
         for block in about_content["blocks"]:
             data = block["data"]
             if block["type"] == "paragraph":
-                alignment = data["alignment"]
-                element = ET.Element("p", attrib={"class": f"paragraph {alignment}"})
-                element.text = data["text"]
+                element = Objective._gen_paragraph_element(data)
             elif block["type"] == "header":
-                level = data["level"]
-                element = ET.Element(f"h{level}", attrib={"class": "heading"})
-                element.text = data["text"]
+                element = Objective._gen_header_element(data)
             elif block["type"] == "list":
-                style = data["style"]
-                element = ET.Element(
-                    "ul" if style == "unordered" else "ol", attrib={"class": "list"}
-                )
-                for item in data["items"]:
-                    item_ele = ET.Element("li", attrib={"class": "list-item"})
-                    item_ele.text = item
-                    element.append(item_ele)
-            about += ET.tostring(element, encoding="unicode")
+                element = Objective._gen_list_element(data)
+            elif block["type"] == "image":
+                element = Objective._gen_image_element(data)
+            elif block["type"] == "attaches":
+                element = Objective._gen_attach_element(data)
+            about += element
         return about
+
+    @staticmethod
+    def _gen_paragraph_element(data: dict) -> str:
+        alignment = data["alignment"]
+        element = ET.Element("p", attrib={"class": f"paragraph {alignment}"})
+        element.text = data["text"]
+        return ET.tostring(element, encoding="unicode")
+
+    @staticmethod
+    def _gen_header_element(data: dict) -> str:
+        level = data["level"]
+        element = ET.Element(f"h{level}", attrib={"class": "heading"})
+        element.text = data["text"]
+        return ET.tostring(element, encoding="unicode")
+
+    @staticmethod
+    def _gen_list_element(data: dict) -> str:
+        style = data["style"]
+        element = ET.Element(
+            "ul" if style == "unordered" else "ol", attrib={"class": "list"}
+        )
+        for item in data["items"]:
+            item_ele = ET.Element("li", attrib={"class": "list-item"})
+            item_ele.text = item
+            element.append(item_ele)
+        return ET.tostring(element, encoding="unicode")
+
+    @staticmethod
+    def _gen_image_element(data: dict) -> str:
+        url = data["file"]["url"]
+        element = ET.Element("figure", attrib={"class": "image"})
+        div_element = ET.Element("div", attrib={"class": "cover"})
+        ET.SubElement(
+            div_element,
+            "img",
+            attrib={"src": url, "alt": "", "class": "file"},
+        )
+        element.append(div_element)
+        return ET.tostring(element, encoding="unicode")
+
+    @staticmethod
+    def _gen_attach_element(data: dict) -> str:
+        url = data["file"]["url"]
+        filename = data["file"]["name"]
+        extension = data["file"]["extension"]
+        element = ET.Element("div", attrib={"class": "attach__container"})
+        a_element = ET.SubElement(element, "a", attrib={"href": url, "class": "attach"})
+        svg_element = ET.SubElement(
+            a_element,
+            "svg",
+            attrib={
+                "xmlns": "http://www.w3.org/2000/svg",
+                "width": "16",
+                "height": "16",
+                "fill": "none",
+                "class": "attach__icon",
+            },
+        )
+        g_element = ET.SubElement(svg_element, "g")
+        path_element = ET.Element(
+            "path",
+            attrib={
+                "fill": "#727272",
+                "d": "m13.18539,8.36698l-4.51872,4.51869l0,-12.32335l-1.33333,0l0,12.32335l-4.51867,-4.51869l-0.94266,0.94267l6.128,6.12802l6.12798,-6.12802l-0.9426,-0.94267z",
+            },
+        )
+        g_element.append(path_element)
+        div_element_1 = ET.SubElement(
+            a_element, "div", attrib={"class": "attach__info"}
+        )
+        div_element_2 = ET.SubElement(
+            div_element_1,
+            "div",
+            attrib={"class": "attach__name"},
+        )
+        div_element_2.text = filename
+        div_element_3 = ET.SubElement(
+            div_element_1, "div", attrib={"class": "attach__extension"}
+        )
+        div_element_3.text = extension
+        return ET.tostring(element, encoding="unicode", short_empty_elements=False)
 
 
 def main():

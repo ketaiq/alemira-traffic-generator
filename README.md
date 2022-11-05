@@ -28,4 +28,4 @@ Courses from https://waf.cs.illinois.edu/discovery/course-catalog.csv
 
 Images from https://www.pexels.com/search/fruit/
 
-Attachments from https://pixabay.com/music/ and https://www.sampletemplates.com/business-templates/plan-templates/sample-advertising-plan-pdf-word.html
+Attachments from https://www.bbc.co.uk/learningenglish/punjabi/course/newsreview-2022/unit-1/downloads and https://www.sampletemplates.com/business-templates/plan-templates/sample-advertising-plan-pdf-word.html
