@@ -29,7 +29,7 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_created_user_state_by_id(self, id: str, client=None):
+    def get_created_user_state_by_id(self, id: str, client=None) -> dict:
         if client is None:
             r = requests.get(self.uri + "create-lms-users/" + id, headers=self.headers)
             r.raise_for_status()
@@ -47,6 +47,24 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
+    def get_updated_user_state_by_id(self, id: str, client=None) -> dict:
+        if client is None:
+            r = requests.get(self.uri + "update-lms-users/" + id, headers=self.headers)
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "update-lms-users/" + id,
+            headers=self.headers,
+            name="get updated user state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def create_user(self, client=None) -> User:
         new_user = User.gen_random_object()
         if client is None:
@@ -54,7 +72,13 @@ class LmsUsersAPI(EndPoint):
                 self.url, json=new_user.to_dict_for_creating(), headers=self.headers
             )
             r.raise_for_status()
-            new_user.id = r.json()["id"]
+            created_id = r.json()["id"]
+            # check entity is created successfully
+            while True:
+                created_state = self.get_created_user_state_by_id(created_id)
+                if created_state["completed"]:
+                    new_user.id = created_state["entityId"]
+                    break
         else:
             with client.post(
                 self.url,
@@ -64,9 +88,15 @@ class LmsUsersAPI(EndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    new_user.id = self.get_created_user_state_by_id(
-                        response.json()["id"], client
-                    )["entityId"]
+                    created_id = r.json()["id"]
+                    # check entity is created successfully
+                    while True:
+                        created_state = self.get_created_user_state_by_id(
+                            created_id, client
+                        )
+                        if created_state["completed"]:
+                            new_user.id = created_state["entityId"]
+                            break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -82,6 +112,12 @@ class LmsUsersAPI(EndPoint):
                 headers=self.headers,
             )
             r.raise_for_status()
+            updated_id = r.json()["id"]
+            # check entity is created successfully
+            while True:
+                updated_state = self.get_created_user_state_by_id(updated_id)
+                if updated_state["completed"]:
+                    break
         else:
             with client.put(
                 self.url + user.id,
@@ -90,17 +126,26 @@ class LmsUsersAPI(EndPoint):
                 name="update user",
                 catch_response=True,
             ) as response:
-                if not response.ok:
-                    response.failure(request_http_error_msg(response))
+                if response.ok:
+                    updated_id = r.json()["id"]
+                    # check entity is created successfully
+                    while True:
+                        updated_state = self.get_created_user_state_by_id(
+                            updated_id, client
+                        )
+                        if updated_state["completed"]:
+                            break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
         self.driver.update_user(user)
 
     def get_user_by_id(self, id: str, client=None) -> User:
         if client is None:
             r = requests.get(self.url + id, headers=self.headers)
             r.raise_for_status()
-            return r.json()
+            return User(r.json())
         with client.get(
             self.url + id,
             headers=self.headers,

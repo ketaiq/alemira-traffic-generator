@@ -42,6 +42,8 @@ class PersonalEnrollment(Model):
             *args,
             **kwargs,
         )
+        if self.user is not None and type(self.user) is dict:
+            self.user = User(self.user)
 
     @staticmethod
     def gen_random_object(objectiveId, userId) -> "PersonalEnrollment":
@@ -50,7 +52,7 @@ class PersonalEnrollment(Model):
                 "objectiveId": objectiveId,
                 "userId": userId,
                 "availabilityDate": get_current_formatted_time(),
-                "dueDate": get_future_formatted_time(),
+                "dueDate": get_future_formatted_time(180),
                 "retake": random.choice([True, False]),
             }
         )

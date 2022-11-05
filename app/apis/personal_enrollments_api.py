@@ -11,7 +11,9 @@ class PersonalEnrollmentsAPI(EndPoint):
         self.url = self.uri + "personal-enrollments/"
         self.driver = driver
 
-    def create_personal_enrollment(self, objective_id: str, user_id: str, client=None) -> PersonalEnrollment:
+    def create_personal_enrollment(
+        self, objective_id: str, user_id: str, client=None
+    ) -> PersonalEnrollment:
         personal_enrollment = PersonalEnrollment.gen_random_object(
             objective_id, user_id
         )
@@ -22,7 +24,15 @@ class PersonalEnrollmentsAPI(EndPoint):
                 headers=self.headers,
             )
             r.raise_for_status()
-            personal_enrollment.id = r.json()["id"]
+            created_id = r.json()["id"]
+            # check entity is created successfully
+            while True:
+                created_state = self.get_created_personal_enrollment_state_by_id(
+                    created_id
+                )
+                if created_state["completed"]:
+                    personal_enrollment.id = created_state["entityId"]
+                    break
         else:
             with client.post(
                 self.url,
@@ -32,9 +42,110 @@ class PersonalEnrollmentsAPI(EndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    personal_enrollment.id = response.json()["id"]
+                    created_id = response.json()["id"]
+                    # check entity is created successfully
+                    while True:
+                        created_state = (
+                            self.get_created_personal_enrollment_state_by_id(
+                                created_id, client
+                            )
+                        )
+                        if created_state["completed"]:
+                            personal_enrollment.id = created_state["entityId"]
+                            break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
                     response.failure(request_http_error_msg(response))
         return personal_enrollment
+
+    def get_created_personal_enrollment_state_by_id(self, id: str, client=None) -> dict:
+        if client is None:
+            r = requests.get(
+                self.uri + "create-personal-enrollments/" + id, headers=self.headers
+            )
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "create-personal-enrollments/" + id,
+            headers=self.headers,
+            name="get created personal enrollment state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_personal_enrollment_by_id(self, id: str, client=None) -> PersonalEnrollment:
+        if client is None:
+            r = requests.get(self.url + id, headers=self.headers)
+            r.raise_for_status()
+            return PersonalEnrollment(r.json())
+        with client.get(
+            self.url + id,
+            headers=self.headers,
+            name="get personal enrollment by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return PersonalEnrollment(response.json())
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def delete_personal_enrollment_by_id(self, id: str, client=None):
+        if client is None:
+            r = requests.delete(self.url + id, headers=self.headers)
+            r.raise_for_status()
+            deleted_id = r.json()["id"]
+            # check entity is deleted successfully
+            while True:
+                deleted_state = self.get_deleted_personal_enrollment_state_by_id(
+                    deleted_id
+                )
+                if deleted_state["completed"]:
+                    break
+        else:
+            with client.delete(
+                self.url + id,
+                headers=self.headers,
+                name="delete personal enrollment by id",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    deleted_id = r.json()["id"]
+                    # check entity is deleted successfully
+                    while True:
+                        deleted_state = self.get_deleted_personal_enrollment_state_by_id(
+                            deleted_id, client
+                        )
+                        if deleted_state["completed"]:
+                            break
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+
+    def get_deleted_personal_enrollment_state_by_id(self, id: str, client=None) -> dict:
+        if client is None:
+            r = requests.get(
+                self.uri + "delete-personal-enrollments/" + id, headers=self.headers
+            )
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.uri + "delete-personal-enrollments/" + id,
+            headers=self.headers,
+            name="get deleted personal enrollment state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))

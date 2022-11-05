@@ -5,8 +5,13 @@ from app.apis.personal_enrollments_api import PersonalEnrollmentsAPI
 import random, logging
 from app.models.user import User
 from app.models.objective.objective import Objective
-from app.exceptions import UserNotFoundException, ObjectiveNotFoundException
+from app.exceptions import (
+    UserNotFoundException,
+    ObjectiveNotFoundException,
+    ObjectivePersonalEnrollmentNotFoundException,
+)
 from app.drivers.database_driver import DatabaseDriver
+from app.models.personal_enrollment import PersonalEnrollment
 
 
 class Instructor:
@@ -28,22 +33,46 @@ class Instructor:
         self.personal_enrollments_api = personal_enrollments_api
         self.client = client
 
-    def enroll_one_student(self):
+    def enroll_one_student(self, user: User, objective: Objective):
+        # enroll the student in the course
+        self.personal_enrollments_api.create_personal_enrollment(
+            objective.id, user.id, self.client
+        )
+
+    def expel_one_student(self, objective: Objective):
+        # get all personal enrollments in this course objective
+        skip = 0
+        take = 10
+        try:
+            res = self.objectives_api.get_objective_personal_enrollments_by_query(
+                objective.id,
+                {
+                    "skip": skip,
+                    "take": take,
+                    "requireTotalCount": True,
+                },
+                self.client,
+            )
+            if not res["data"]:
+                raise ObjectivePersonalEnrollmentNotFoundException(
+                    f"No personal enrollment in objective {objective.id}"
+                )
+            personal_enrollment_dict = random.choice(res["data"])
+            self.personal_enrollments_api.delete_personal_enrollment_by_id(
+                personal_enrollment_dict["id"], self.client
+            )
+        except ObjectivePersonalEnrollmentNotFoundException as e:
+            logging.error(e.message)
+
+    def select_one_student(self) -> User:
         # select a random student from mongodb
         # check student exists, otherwise select again
         user = None
         while user is None:
-            user = self.select_one_student()
-        # select a random course objective
-        objective = None
-        while objective is None:
-            objective = self.select_one_objective()
-        # enroll the student in the course
-        personal_enrollment = self.personal_enrollments_api.create_personal_enrollment(
-            objective.id, user.id, self.client
-        )
+            user = self._select_one_student()
+        return user
 
-    def select_one_student(self) -> User:
+    def _select_one_student(self) -> User:
         username = random.choice(self.db_driver.find_usernames())
         skip = 0
         take = 10
@@ -74,6 +103,13 @@ class Instructor:
             logging.error(e.message)
 
     def select_one_objective(self) -> Objective:
+        # select a random course objective
+        objective = None
+        while objective is None:
+            objective = self._select_one_objective()
+        return objective
+
+    def _select_one_objective(self) -> Objective:
         course_code = random.choice(self.db_driver.find_courses_codes())
         skip = 0
         take = 10

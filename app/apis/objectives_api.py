@@ -73,6 +73,31 @@ class ObjectivesAPI(EndPoint):
         r.raise_for_status()
         return r.json()
 
+    def get_objective_personal_enrollments_by_query(
+        self, objective_id: str, query: dict, client=None
+    ) -> dict:
+        if client is None:
+            r = requests.get(
+                self.url + objective_id + "/personal-enrollments/query",
+                headers=self.headers,
+                params=query,
+            )
+            r.raise_for_status()
+            return r.json()
+        with client.get(
+            self.url + objective_id + "/personal-enrollments/query",
+            headers=self.headers,
+            params=query,
+            name="get objective personal enrollments by query",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def create_objective(self, activity: Activity) -> str:
         """Create objective and return a created id."""
         objective = Objective.gen_object_from_activity(activity)
