@@ -4,20 +4,27 @@ import requests
 from app.utils.string import request_timeout_msg, request_http_error_msg
 from app.models.objective.objective import Objective
 from app.models.activity.activity import Activity
+from app.models.user import User
 
 
 class ObjectivesAPI(EndPoint):
-    def __init__(self, driver: DatabaseDriver):
-        super().__init__()
+    def __init__(
+        self,
+        driver: DatabaseDriver,
+        role: str = "admin",
+        user: User = None,
+        client=None,
+    ):
+        super().__init__(role, user, client)
         self.url = self.uri + "objectives/"
         self.driver = driver
 
-    def get_objective_by_id(self, id: str, client=None) -> Objective:
-        if client is None:
+    def get_objective_by_id(self, id: str) -> Objective:
+        if self.client is None:
             r = requests.get(self.url + id, headers=self.headers)
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.url + id,
             headers=self.headers,
             name="get objective by id",
@@ -30,12 +37,12 @@ class ObjectivesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_objectives_by_query(self, query: dict, client=None) -> dict:
-        if client is None:
+    def get_objectives_by_query(self, query: dict) -> dict:
+        if self.client is None:
             r = requests.get(self.url + "query", headers=self.headers, params=query)
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.url + "query",
             headers=self.headers,
             params=query,
@@ -74,9 +81,9 @@ class ObjectivesAPI(EndPoint):
         return r.json()
 
     def get_objective_personal_enrollments_by_query(
-        self, objective_id: str, query: dict, client=None
+        self, objective_id: str, query: dict
     ) -> dict:
-        if client is None:
+        if self.client is None:
             r = requests.get(
                 self.url + objective_id + "/personal-enrollments/query",
                 headers=self.headers,
@@ -84,7 +91,7 @@ class ObjectivesAPI(EndPoint):
             )
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.url + objective_id + "/personal-enrollments/query",
             headers=self.headers,
             params=query,
@@ -109,9 +116,9 @@ class ObjectivesAPI(EndPoint):
         self.driver.insert_one_objective(objective)
         return r.json()["id"]
 
-    def update_objective(self, objective: Objective, client=None):
+    def update_objective(self, objective: Objective):
         objective = objective.gen_random_update()
-        if client is None:
+        if self.client is None:
             r = requests.put(
                 self.url + objective.id,
                 json=objective.to_dict_for_updating(),
@@ -119,7 +126,7 @@ class ObjectivesAPI(EndPoint):
             )
             r.raise_for_status()
         else:
-            with client.put(
+            with self.client.put(
                 self.url + objective.id,
                 json=objective.to_dict_for_updating(),
                 headers=self.headers,

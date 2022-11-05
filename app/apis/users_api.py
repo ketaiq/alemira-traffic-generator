@@ -1,11 +1,17 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
 from app.utils.string import request_timeout_msg, request_http_error_msg
+from app.models.user import User
 
 
 class UsersAPI(EndPoint):
-    def __init__(self):
-        super().__init__()
+    def __init__(
+        self,
+        role: str = "admin",
+        user: User = None,
+        client=None,
+    ):
+        super().__init__(role, user, client)
         self.url = self.uri + "users/"
 
     def get_user_objective_workflow_aggregates(self, id: str):
@@ -16,12 +22,12 @@ class UsersAPI(EndPoint):
         users = r.json()
         return users
 
-    def get_users_by_query(self, query: dict, client=None) -> dict:
-        if client is None:
+    def get_users_by_query(self, query: dict) -> dict:
+        if self.client is None:
             r = requests.get(self.url + "query", headers=self.headers, params=query)
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.url + "query",
             headers=self.headers,
             params=query,

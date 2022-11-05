@@ -59,3 +59,4 @@ class DatabaseDriver:
 
     def find_courses_codes(self) -> list:
         return self.courses.find().distinct("code")
+db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")

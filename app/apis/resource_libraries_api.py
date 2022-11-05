@@ -1,11 +1,17 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
 from app.models.resource_library.resource_library import ResourceLibrary
+from app.models.user import User
 
 
 class ResourceLibrariesAPI(EndPoint):
-    def __init__(self):
-        super().__init__()
+    def __init__(
+        self,
+        role: str = "admin",
+        user: User = None,
+        client=None,
+    ):
+        super().__init__(role, user, client)
         self.url = self.uri + "resource-libraries/"
         self.resource_libraries = None
 

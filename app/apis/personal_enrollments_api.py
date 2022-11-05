@@ -3,21 +3,28 @@ from app.drivers.database_driver import DatabaseDriver
 from app.models.personal_enrollment import PersonalEnrollment
 import requests
 from app.utils.string import request_timeout_msg, request_http_error_msg
+from app.models.user import User
 
 
 class PersonalEnrollmentsAPI(EndPoint):
-    def __init__(self, driver: DatabaseDriver):
-        super().__init__()
+    def __init__(
+        self,
+        driver: DatabaseDriver,
+        role: str = "admin",
+        user: User = None,
+        client=None,
+    ):
+        super().__init__(role, user, client)
         self.url = self.uri + "personal-enrollments/"
         self.driver = driver
 
     def create_personal_enrollment(
-        self, objective_id: str, user_id: str, client=None
+        self, objective_id: str, user_id: str
     ) -> PersonalEnrollment:
         personal_enrollment = PersonalEnrollment.gen_random_object(
             objective_id, user_id
         )
-        if client is None:
+        if self.client is None:
             r = requests.post(
                 self.url,
                 json=personal_enrollment.to_dict_for_creating(),
@@ -34,7 +41,7 @@ class PersonalEnrollmentsAPI(EndPoint):
                     personal_enrollment.id = created_state["entityId"]
                     break
         else:
-            with client.post(
+            with self.client.post(
                 self.url,
                 json=personal_enrollment.to_dict_for_creating(),
                 headers=self.headers,
@@ -47,7 +54,7 @@ class PersonalEnrollmentsAPI(EndPoint):
                     while True:
                         created_state = (
                             self.get_created_personal_enrollment_state_by_id(
-                                created_id, client
+                                created_id, self.client
                             )
                         )
                         if created_state["completed"]:
@@ -59,14 +66,14 @@ class PersonalEnrollmentsAPI(EndPoint):
                     response.failure(request_http_error_msg(response))
         return personal_enrollment
 
-    def get_created_personal_enrollment_state_by_id(self, id: str, client=None) -> dict:
-        if client is None:
+    def get_created_personal_enrollment_state_by_id(self, id: str) -> dict:
+        if self.client is None:
             r = requests.get(
                 self.uri + "create-personal-enrollments/" + id, headers=self.headers
             )
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.uri + "create-personal-enrollments/" + id,
             headers=self.headers,
             name="get created personal enrollment state by id",
@@ -79,12 +86,12 @@ class PersonalEnrollmentsAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_personal_enrollment_by_id(self, id: str, client=None) -> PersonalEnrollment:
-        if client is None:
+    def get_personal_enrollment_by_id(self, id: str) -> PersonalEnrollment:
+        if self.client is None:
             r = requests.get(self.url + id, headers=self.headers)
             r.raise_for_status()
             return PersonalEnrollment(r.json())
-        with client.get(
+        with self.client.get(
             self.url + id,
             headers=self.headers,
             name="get personal enrollment by id",
@@ -97,8 +104,8 @@ class PersonalEnrollmentsAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def delete_personal_enrollment_by_id(self, id: str, client=None):
-        if client is None:
+    def delete_personal_enrollment_by_id(self, id: str):
+        if self.client is None:
             r = requests.delete(self.url + id, headers=self.headers)
             r.raise_for_status()
             deleted_id = r.json()["id"]
@@ -110,7 +117,7 @@ class PersonalEnrollmentsAPI(EndPoint):
                 if deleted_state["completed"]:
                     break
         else:
-            with client.delete(
+            with self.client.delete(
                 self.url + id,
                 headers=self.headers,
                 name="delete personal enrollment by id",
@@ -120,8 +127,10 @@ class PersonalEnrollmentsAPI(EndPoint):
                     deleted_id = r.json()["id"]
                     # check entity is deleted successfully
                     while True:
-                        deleted_state = self.get_deleted_personal_enrollment_state_by_id(
-                            deleted_id, client
+                        deleted_state = (
+                            self.get_deleted_personal_enrollment_state_by_id(
+                                deleted_id, self.client
+                            )
                         )
                         if deleted_state["completed"]:
                             break
@@ -130,14 +139,14 @@ class PersonalEnrollmentsAPI(EndPoint):
                 else:
                     response.failure(request_http_error_msg(response))
 
-    def get_deleted_personal_enrollment_state_by_id(self, id: str, client=None) -> dict:
-        if client is None:
+    def get_deleted_personal_enrollment_state_by_id(self, id: str) -> dict:
+        if self.client is None:
             r = requests.get(
                 self.uri + "delete-personal-enrollments/" + id, headers=self.headers
             )
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.uri + "delete-personal-enrollments/" + id,
             headers=self.headers,
             name="get deleted personal enrollment state by id",

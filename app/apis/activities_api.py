@@ -1,14 +1,21 @@
 import requests, logging
 from app.apis.endpoint import EndPoint
 from app.models.activity.activity import Activity
+from app.models.user import User
 import pandas as pd
 from app.drivers.database_driver import DatabaseDriver
 from app.utils.string import request_timeout_msg, request_http_error_msg
 
 
 class ActivitiesAPI(EndPoint):
-    def __init__(self, driver: DatabaseDriver):
-        super().__init__()
+    def __init__(
+        self,
+        driver: DatabaseDriver,
+        role: str = "admin",
+        user: User = None,
+        client=None,
+    ):
+        super().__init__(role, user, client)
         self.url = self.uri + "activities/"
         self.driver = driver
 
@@ -17,13 +24,13 @@ class ActivitiesAPI(EndPoint):
         r.raise_for_status()
         return r.json()
 
-    def get_activities_by_query(self, skip: int, take: int, client=None) -> dict:
+    def get_activities_by_query(self, skip: int, take: int) -> dict:
         payload = {"skip": skip, "take": take, "requireTotalCount": True}
-        if client is None:
+        if self.client is None:
             r = requests.get(self.url + "query", headers=self.headers, params=payload)
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.url + "query",
             headers=self.headers,
             params=payload,
@@ -54,14 +61,14 @@ class ActivitiesAPI(EndPoint):
                 break
         return None
 
-    def get_created_activity_state_by_id(self, created_id: str, client=None):
-        if client is None:
+    def get_created_activity_state_by_id(self, created_id: str):
+        if self.client is None:
             r = requests.get(
                 self.uri + "create-lms-users/" + created_id, headers=self.headers
             )
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.uri + "create-activities/" + created_id,
             headers=self.headers,
             name="get created activity state by id",
@@ -74,14 +81,14 @@ class ActivitiesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_updated_activity_state_by_id(self, update_id: str, client=None) -> dict:
-        if client is None:
+    def get_updated_activity_state_by_id(self, update_id: str) -> dict:
+        if self.client is None:
             r = requests.get(
                 self.uri + "update-activities/" + update_id, headers=self.headers
             )
             r.raise_for_status()
             return r.json()
-        with client.get(
+        with self.client.get(
             self.uri + "update-activities/" + update_id,
             headers=self.headers,
             name="get updated activity",
@@ -94,8 +101,8 @@ class ActivitiesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, activity: Activity, client=None) -> str:
-        if client is None:
+    def update_activity(self, activity: Activity) -> str:
+        if self.client is None:
             r = requests.put(
                 self.url + activity.id,
                 json=activity.to_dict_for_updating(),
@@ -105,7 +112,7 @@ class ActivitiesAPI(EndPoint):
             self.driver.update_course(activity)
             return r.json()["id"]
         else:
-            with client.put(
+            with self.client.put(
                 self.url + activity.id,
                 json=activity.to_dict_for_updating(),
                 headers=self.headers,
