@@ -20,11 +20,10 @@ class Admin:
         self.lms_users_api = lms_users_api
         self.mail_messages_api = mail_messages_api
         self.account_reset_password_api = account_reset_password_api
-        self.client = client
 
     def create_user(self):
         """Create a user with a random profile."""
-        new_user = self.lms_users_api.create_user(self.client)
+        new_user = self.lms_users_api.create_user()
         sleep_for_seconds(20, 30)
         skip = 0
         take = 10

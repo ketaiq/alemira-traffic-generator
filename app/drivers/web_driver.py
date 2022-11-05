@@ -30,3 +30,5 @@ class WebDriver:
         ).click()
         WebDriverWait(self.driver, 15).until_not(EC.title_is(title))
         self.driver.close()
+
+web_driver = WebDriver()

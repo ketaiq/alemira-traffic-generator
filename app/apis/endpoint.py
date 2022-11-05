@@ -1,4 +1,4 @@
-import requests, json
+import requests, json, logging
 from functools import lru_cache
 from app.models.user import User
 from app.utils.string import request_http_error_msg, request_timeout_msg
@@ -43,6 +43,7 @@ class EndPoint:
             return r.json().get("access_token")
         with self.client.post(
             self.IDENTITY_SERVER + "connect/token",
+            data=user,
             name=f"login {role} user",
             catch_response=True,
         ) as response:

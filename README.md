@@ -22,7 +22,13 @@ Start mongodb, see Mongo Express at http://localhost:8081
 docker-compose up -d
 ```
 
-## 2. Resources
+## 2. Quick Start
+
+```sh
+locust --config=app/locust.conf
+```
+
+## 3. Resources
 
 Courses from https://waf.cs.illinois.edu/discovery/course-catalog.csv
 

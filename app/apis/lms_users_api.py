@@ -97,9 +97,7 @@ class LmsUsersAPI(EndPoint):
                     created_id = r.json()["id"]
                     # check entity is created successfully
                     while True:
-                        created_state = self.get_created_user_state_by_id(
-                            created_id
-                        )
+                        created_state = self.get_created_user_state_by_id(created_id)
                         if created_state["completed"]:
                             new_user.id = created_state["entityId"]
                             break
@@ -136,9 +134,7 @@ class LmsUsersAPI(EndPoint):
                     updated_id = r.json()["id"]
                     # check entity is updated successfully
                     while True:
-                        updated_state = self.get_updated_user_state_by_id(
-                            updated_id
-                        )
+                        updated_state = self.get_updated_user_state_by_id(updated_id)
                         if updated_state["completed"]:
                             break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
