@@ -80,6 +80,24 @@ class ObjectivesAPI(EndPoint):
         r.raise_for_status()
         return r.json()
 
+    def get_updated_objective_state_by_id(self, id: str) -> str:
+        if self.client is None:
+            r = requests.get(self.uri + "update-objectives/" + id, headers=self.headers)
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.uri + "update-objectives/" + id,
+            headers=self.headers,
+            name="get updated objective state by id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def get_objective_personal_enrollments_by_query(
         self, objective_id: str, query: dict
     ) -> dict:
@@ -125,6 +143,12 @@ class ObjectivesAPI(EndPoint):
                 headers=self.headers,
             )
             r.raise_for_status()
+            updated_id = r.json()["id"]
+            # check entity is updated successfully
+            while True:
+                updated_state = self.get_updated_objective_state_by_id(updated_id)
+                if updated_state["completed"]:
+                    break
         else:
             with self.client.put(
                 self.url + objective.id,
@@ -133,8 +157,20 @@ class ObjectivesAPI(EndPoint):
                 name="update objective",
                 catch_response=True,
             ) as response:
-                if not response.ok:
-                    response.failure(request_http_error_msg(response))
+                if response.ok:
+                    updated_id = r.json()["id"]
+                    # check entity is updated successfully
+                    while True:
+                        updated_state = self.get_updated_objective_state_by_id(
+                            updated_id
+                        )
+                        if updated_state["completed"]:
+                            break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
         self.driver.update_objective(objective)
+
+    def upload_image_to_objective(self):
+        

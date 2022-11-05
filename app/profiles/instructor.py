@@ -24,20 +24,16 @@ class Instructor:
         lms_users_api: LmsUsersAPI,
         objectives_api: ObjectivesAPI,
         personal_enrollments_api: PersonalEnrollmentsAPI,
-        client=None,
     ):
         self.db_driver = db_driver
         self.users_api = users_api
         self.lms_users_api = lms_users_api
         self.objectives_api = objectives_api
         self.personal_enrollments_api = personal_enrollments_api
-        self.client = client
 
     def enroll_one_student(self, user: User, objective: Objective):
         # enroll the student in the course
-        self.personal_enrollments_api.create_personal_enrollment(
-            objective.id, user.id, self.client
-        )
+        self.personal_enrollments_api.create_personal_enrollment(objective.id, user.id)
 
     def expel_one_student(self, objective: Objective):
         # get all personal enrollments in this course objective
@@ -51,7 +47,6 @@ class Instructor:
                     "take": take,
                     "requireTotalCount": True,
                 },
-                self.client,
             )
             if not res["data"]:
                 raise ObjectivePersonalEnrollmentNotFoundException(
@@ -59,10 +54,13 @@ class Instructor:
                 )
             personal_enrollment_dict = random.choice(res["data"])
             self.personal_enrollments_api.delete_personal_enrollment_by_id(
-                personal_enrollment_dict["id"], self.client
+                personal_enrollment_dict["id"]
             )
         except ObjectivePersonalEnrollmentNotFoundException as e:
             logging.error(e.message)
+
+    def edit_one_course_description(self, objective: Objective):
+        self.objectives_api.update_objective(objective)
 
     def select_one_student(self) -> User:
         # select a random student from mongodb
@@ -85,7 +83,6 @@ class Instructor:
                         "requireTotalCount": True,
                         "filter": f'["username","contains","{username}"]',
                     },
-                    self.client,
                 )
                 remaining_count = res["totalCount"] - take - skip
                 users = res["data"]
@@ -122,7 +119,6 @@ class Instructor:
                         "requireTotalCount": True,
                         "filter": f'["code","contains","{course_code}"]',
                     },
-                    self.client,
                 )
                 remaining_count = res["totalCount"] - take - skip
                 objectives = res["data"]

@@ -140,10 +140,6 @@ class ActivitiesAPI(EndPoint):
     def create_rich_text_courses(
         self, rich_text_id: str, course_series: pd.Series
     ) -> Activity:
-        """
-        Create courses from [1].
-        [1]: https://waf.cs.illinois.edu/discovery/course-catalog.csv
-        """
         course = Activity.gen_course(course_series, rich_text_id)
         r = requests.post(
             self.url, json=course.to_dict_for_creating(), headers=self.headers

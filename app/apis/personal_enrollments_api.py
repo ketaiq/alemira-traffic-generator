@@ -53,9 +53,7 @@ class PersonalEnrollmentsAPI(EndPoint):
                     # check entity is created successfully
                     while True:
                         created_state = (
-                            self.get_created_personal_enrollment_state_by_id(
-                                created_id, self.client
-                            )
+                            self.get_created_personal_enrollment_state_by_id(created_id)
                         )
                         if created_state["completed"]:
                             personal_enrollment.id = created_state["entityId"]
@@ -128,9 +126,7 @@ class PersonalEnrollmentsAPI(EndPoint):
                     # check entity is deleted successfully
                     while True:
                         deleted_state = (
-                            self.get_deleted_personal_enrollment_state_by_id(
-                                deleted_id, self.client
-                            )
+                            self.get_deleted_personal_enrollment_state_by_id(deleted_id)
                         )
                         if deleted_state["completed"]:
                             break
