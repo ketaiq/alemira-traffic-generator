@@ -27,6 +27,7 @@ class EndPoint:
             self.headers = self.get_headers(role, user.to_dict_for_login())
 
     @lru_cache(maxsize=None)
+    # TODO move to another api
     def _get_token(self, role: str, user=None):
         """
         :param user:

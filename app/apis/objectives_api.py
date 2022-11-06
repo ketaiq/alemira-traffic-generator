@@ -124,6 +124,29 @@ class ObjectivesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
+    def get_objective_workflow_aggregate_by_id(
+        self, objective_id: str
+    ) -> dict:
+        if self.client is None:
+            r = requests.get(
+                self.url + objective_id + "/objective-workflow-aggregate",
+                headers=self.headers,
+            )
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + objective_id + "/objective-workflow-aggregate",
+            headers=self.headers,
+            name="get objective workflow aggregate by objective id",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def create_objective(self, activity: Activity) -> str:
         """Create objective and return a created id."""
         objective = Objective.gen_object_from_activity(activity)

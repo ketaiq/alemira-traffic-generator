@@ -14,13 +14,51 @@ class UsersAPI(EndPoint):
         super().__init__(role, user, client)
         self.url = self.uri + "users/"
 
-    def get_user_objective_workflow_aggregates(self, id: str):
-        r = requests.get(
-            self.url + id + "/objective-workflow-aggregates/", headers=self.headers
-        )
-        r.raise_for_status()
-        users = r.json()
-        return users
+    def get_user_objective_workflow_aggregates(self, user_id: str) -> list:
+        if self.client is None:
+            r = requests.get(
+                self.url + user_id + "/objective-workflow-aggregates/",
+                headers=self.headers,
+            )
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + user_id + "/objective-workflow-aggregates/",
+            headers=self.headers,
+            name="get user objective workflow aggregates",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_user_activity_workflow_aggregates_by_query(
+        self, headers: dict, query: dict
+    ) -> dict:
+        if self.client is None:
+            r = requests.get(
+                self.url + "me/activity-workflow-aggregates/query",
+                headers=headers,
+                params=query,
+            )
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + "me/activity-workflow-aggregates/query",
+            headers=headers,
+            params=query,
+            name="get user activity workflow aggregates by query",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
 
     def get_users_by_query(self, query: dict) -> dict:
         if self.client is None:
