@@ -1,9 +1,9 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 import requests
 from app.utils.string import request_http_error_msg, request_timeout_msg
 
 
-class StartActivityWorkflowsAPI(EndPoint):
+class StartActivityWorkflowsAPI(UserAPIEndPoint):
     def __init__(
         self,
         client=None,

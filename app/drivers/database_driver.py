@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from app.models.user import User
 from app.models.objective.objective import Objective
 from app.models.activity.activity import Activity
+from app.models.role import Role
 
 
 class DatabaseDriver:
@@ -59,4 +60,15 @@ class DatabaseDriver:
 
     def find_courses_codes(self) -> list:
         return self.courses.find().distinct("code")
+
+    def find_all_admin_users(self) -> list:
+        return list(self.users.find({"_role": Role.ADMIN.value}))
+
+    def find_all_instructor_users(self) -> list:
+        return list(self.users.find({"_role": Role.INSTRUCTOR.value}))
+
+    def find_all_student_users(self) -> list:
+        return list(self.users.find({"_role": Role.STUDENT.value}))
+
+
 db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")

@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from app.models.user import User
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from app.utils.time import sleep_for_seconds
 
 
 class WebDriver:
@@ -30,5 +29,3 @@ class WebDriver:
         ).click()
         WebDriverWait(self.driver, 15).until_not(EC.title_is(title))
         self.driver.close()
-
-web_driver = WebDriver()

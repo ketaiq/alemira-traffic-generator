@@ -1,10 +1,10 @@
 import requests, logging
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.utils.string import request_timeout_msg, request_http_error_msg
 from app.models.user import User
 
 
-class UsersAPI(EndPoint):
+class UsersAPI(UserAPIEndPoint):
     def __init__(
         self,
         client=None,

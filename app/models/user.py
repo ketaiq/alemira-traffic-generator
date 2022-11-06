@@ -23,6 +23,7 @@ class User(Model):
         "password",
         "details",
         "tenant",
+        "_role"
     )
     FIELD_FOR_CREATING = (
         "externalId",

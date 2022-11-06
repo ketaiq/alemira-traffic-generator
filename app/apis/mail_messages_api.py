@@ -1,10 +1,9 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 import requests, logging
 from app.utils.string import request_timeout_msg, request_http_error_msg
-from app.models.user import User
 
 
-class MailMessagesAPI(EndPoint):
+class MailMessagesAPI(UserAPIEndPoint):
     def __init__(
         self,
         client=None,

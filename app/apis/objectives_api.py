@@ -1,4 +1,4 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.drivers.database_driver import DatabaseDriver
 import requests
 from app.utils.string import request_timeout_msg, request_http_error_msg
@@ -7,7 +7,7 @@ from app.models.activity.activity import Activity
 from app.models.user import User
 
 
-class ObjectivesAPI(EndPoint):
+class ObjectivesAPI(UserAPIEndPoint):
     def __init__(
         self,
         driver: DatabaseDriver,

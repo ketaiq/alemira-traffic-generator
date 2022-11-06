@@ -1,9 +1,9 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 import requests, uuid
 from app.utils.string import request_http_error_msg, request_timeout_msg
 
 
-class StartObjectiveWorkflowsAPI(EndPoint):
+class StartObjectiveWorkflowsAPI(UserAPIEndPoint):
     def __init__(
         self,
         client=None,

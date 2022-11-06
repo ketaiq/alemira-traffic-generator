@@ -1,11 +1,12 @@
-import requests, json, logging
 from functools import lru_cache
+import requests, json, logging
 from app.models.user import User
+from app.models.role import Role
 from app.utils.string import request_http_error_msg, request_timeout_msg
 
 
-class EndPoint:
-    IDENTITY_SERVER = "https://identity.alms.dev.alemira.com/"
+class IdentityAPIEndPoint:
+    URI = "https://identity.alms.dev.alemira.com/"
     DEFAULT_USER = {
         "username": "alice@company.com",
         "password": "Pass123$",
@@ -13,37 +14,24 @@ class EndPoint:
         "client_secret": "insomnia",
         "grant_type": "password",
     }
-    URI = "https://userapi.alms.dev.alemira.com/api/v1/"
-    FILE_URI = "https://alms.dev.alemira.com/fileapi/api/v1/"
     TIMEOUT_MAX = 180
 
-    def __init__(self, client):
+    def __init__(self, client=None):
         self.uri = self.URI
-        self.file_uri = self.FILE_URI
         self.client = client
-        # if user is None:
-        #     self.headers = self.get_headers(role)
-        # else:
-        #     self.headers = self.get_headers(role, user.to_dict_for_login())
 
     @lru_cache(maxsize=None)
-    # TODO move to another api
-    def _get_token(self, role: str, user=None):
-        """
-        :param user:
-        :return:
-        """
-        if isinstance(user, str):
-            user = json.loads(user)
+    def _get_token(self, role: str, user: str) -> str:
+        user = json.loads(user)
         if self.client is None:
             r = requests.post(
-                self.IDENTITY_SERVER + "connect/token",
+                IdentityAPIEndPoint.URI + "connect/token",
                 data=user,
             )
             r.raise_for_status()
             return r.json().get("access_token")
         with self.client.post(
-            self.IDENTITY_SERVER + "connect/token",
+            IdentityAPIEndPoint.URI + "connect/token",
             data=user,
             name=f"login {role} user",
             catch_response=True,
@@ -57,32 +45,18 @@ class EndPoint:
 
     def get_headers(
         self,
-        role: str,
-        user: dict = None,
-    ):
-        """
-        :param with_auth:
-        :param user:
-        :return:
-        """
+        role: Role,
+        user: User = None,
+    ) -> dict:
         if user is None:
             user = json.dumps(self.DEFAULT_USER)
-        if isinstance(user, dict):
+        else:
+            user = user.to_dict_for_login()
             # for lru_cache user always should be hashable
             # overriding user credentials with insomnia
             user = json.dumps({**self.DEFAULT_USER, **user})
-
-        token = self._get_token(role, user)
+        token = self._get_token(role.value, user)
         return {
             "accept": "*/*",
             "Authorization": "Bearer " + token,
         }
-
-
-def main():
-    end_point = EndPoint()
-    print(end_point.get_headers())
-
-
-if __name__ == "__main__":
-    main()

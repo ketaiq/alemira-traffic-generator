@@ -1,10 +1,10 @@
 import requests, logging
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.models.resource_library.resource_library import ResourceLibrary
 from app.models.user import User
 
 
-class ResourceLibrariesAPI(EndPoint):
+class ResourceLibrariesAPI(UserAPIEndPoint):
     def __init__(
         self,
         client=None,

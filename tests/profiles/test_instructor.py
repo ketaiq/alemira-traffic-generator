@@ -45,7 +45,7 @@ def test_enroll_one_student():
         objective_to_enroll.id,
         {
             "skip": 0,
-            "take": 0,
+            "take": 1,
             "requireTotalCount": True,
         },
     )["totalCount"]
@@ -54,7 +54,7 @@ def test_enroll_one_student():
         objective_to_enroll.id,
         {
             "skip": 0,
-            "take": 0,
+            "take": 1,
             "requireTotalCount": True,
         },
     )["totalCount"]
@@ -74,7 +74,7 @@ def test_expel_one_student():
         objective_to_expel.id,
         {
             "skip": 0,
-            "take": 0,
+            "take": 1,
             "requireTotalCount": True,
         },
     )["totalCount"]
@@ -83,7 +83,7 @@ def test_expel_one_student():
         objective_to_expel.id,
         {
             "skip": 0,
-            "take": 0,
+            "take": 1,
             "requireTotalCount": True,
         },
     )["totalCount"]

@@ -1,17 +1,15 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.models.user import User
 import requests
 from app.utils.string import request_http_error_msg, request_timeout_msg
 
 
-class ObjectiveWorkflowAggregatesAPI(EndPoint):
+class ObjectiveWorkflowAggregatesAPI(UserAPIEndPoint):
     def __init__(
         self,
-        role: str = "admin",
-        user: User = None,
         client=None,
     ):
-        super().__init__(role, user, client)
+        super().__init__(client)
         self.url = self.uri + "objective-workflow-aggregates/"
 
     def get_objective_workflow_aggregate_by_id(self, headers: dict, id: str) -> dict:

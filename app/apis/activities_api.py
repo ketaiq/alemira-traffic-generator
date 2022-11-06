@@ -1,5 +1,5 @@
 import requests, logging
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.models.activity.activity import Activity
 from app.models.user import User
 import pandas as pd
@@ -7,7 +7,7 @@ from app.drivers.database_driver import DatabaseDriver
 from app.utils.string import request_timeout_msg, request_http_error_msg
 
 
-class ActivitiesAPI(EndPoint):
+class ActivitiesAPI(UserAPIEndPoint):
     def __init__(
         self,
         driver: DatabaseDriver,

@@ -85,6 +85,7 @@ class Instructor:
         return user
 
     def _select_one_student(self) -> User:
+        # TODO find users with student role in mongodb first
         username = random.choice(self.db_driver.find_usernames())
         skip = 0
         take = 10
@@ -161,6 +162,9 @@ class Instructor:
 
     def select_one_attachment(self) -> str:
         return random.choice(os.listdir("resources/attachments"))
+
+    def select_one_instructor(self) -> User:
+        return random.choice(self.db_driver.find_all_instructor_users())
 
     def enroll_group(self):
         pass

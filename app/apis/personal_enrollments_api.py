@@ -1,4 +1,4 @@
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.drivers.database_driver import DatabaseDriver
 from app.models.personal_enrollment import PersonalEnrollment
 import requests
@@ -6,7 +6,7 @@ from app.utils.string import request_timeout_msg, request_http_error_msg
 from app.models.user import User
 
 
-class PersonalEnrollmentsAPI(EndPoint):
+class PersonalEnrollmentsAPI(UserAPIEndPoint):
     def __init__(
         self,
         driver: DatabaseDriver,

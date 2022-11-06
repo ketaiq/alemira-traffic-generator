@@ -1,19 +1,18 @@
 import requests, logging
-from app.apis.endpoint import EndPoint
+from app.apis.user_api_endpoint import UserAPIEndPoint
 from app.models.user import User
 from app.drivers.database_driver import DatabaseDriver
 from app.utils.string import request_timeout_msg, request_http_error_msg
+from app.models.role import Role
 
 
-class LmsUsersAPI(EndPoint):
+class LmsUsersAPI(UserAPIEndPoint):
     def __init__(
         self,
         driver: DatabaseDriver,
-        role: str = "admin",
-        user: User = None,
         client=None,
     ):
-        super().__init__(role, user, client)
+        super().__init__(client)
         self.url = self.uri + "lms-users/"
         self.driver = driver
 
@@ -71,7 +70,7 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def create_user(self, headers: dict) -> User:
+    def create_user(self, headers: dict, role: Role) -> User:
         new_user = User.gen_random_object()
         if self.client is None:
             r = requests.post(
@@ -90,7 +89,7 @@ class LmsUsersAPI(EndPoint):
                 self.url,
                 json=new_user.to_dict_for_creating(),
                 headers=headers,
-                name="create user",
+                name=f"create {role.value} user",
                 catch_response=True,
             ) as response:
                 if response.ok:
@@ -107,6 +106,7 @@ class LmsUsersAPI(EndPoint):
                     response.failure(request_timeout_msg())
                 else:
                     response.failure(request_http_error_msg(response))
+        new_user._role = role.value
         self.driver.insert_one_user(new_user)
         return new_user
 
@@ -160,6 +160,25 @@ class LmsUsersAPI(EndPoint):
         ) as response:
             if response.ok:
                 return User(response.json())
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_users_by_query(self, headers: dict, query: str) -> dict:
+        if self.client is None:
+            r = requests.get(self.url + "query", headers=headers, params=query)
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + "query",
+            headers=headers,
+            params=query,
+            name="get users by query",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
             elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                 response.failure(request_timeout_msg())
             else:

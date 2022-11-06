@@ -54,7 +54,7 @@ class Student:
                 self.activity_records_api.get_activity_records_by_query(
                     {
                         "requireTotalCount": True,
-                        "filter": f'[["activity.id","=",{objective.activity.id}],"and",["userId","=",{user.id}]]',
+                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
                     }
                 )
                 # when press start button
@@ -70,7 +70,7 @@ class Student:
                     headers,
                     {
                         "requireTotalCount": True,
-                        "filter": f'[["activity.id","=",{objective.activity.id}],"and",["userId","=",{user.id}]]',
+                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
                     },
                 )
                 self.start_activity_workflows_api.start_activity_workflow(
@@ -83,7 +83,7 @@ class Student:
                     headers,
                     {
                         "requireTotalCount": True,
-                        "filter": f'[["activity.id","=",{objective.activity.id}],"and",["userId","=",{user.id}]]',
+                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
                     },
                 )
                 self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
@@ -97,7 +97,7 @@ class Student:
                     headers,
                     {
                         "requireTotalCount": True,
-                        "filter": f'[["activity.id","=",{objective.activity.id}],"and",["userId","=",{user.id}]]',
+                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
                     },
                 )
                 # when press continue button
