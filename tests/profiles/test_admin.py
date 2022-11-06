@@ -99,7 +99,7 @@ def main():
     # test_create_user()
     # test_select_one_admin()
     # test_create_admin_user()
-    test_create_instructor_user()
+    # test_create_instructor_user()
     test_create_student_user()
 
 

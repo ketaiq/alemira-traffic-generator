@@ -177,4 +177,4 @@ class Instructor:
         )
 
     def _select_one_instructor(self) -> User:
-        return random.choice(self.db_driver.find_instructor_users())
+        return User(random.choice(self.db_driver.find_instructor_users()))

@@ -42,8 +42,12 @@ class Student:
         me = self.lms_users_api.get_user_me(headers)
         self._take_course(headers, me)
 
-    def _take_course(self, headers: dict, user: User):
-        course = self.select_one_course(headers)
+    def _take_course(self, headers: dict, user: User) -> str | None:
+        """
+        Perform a student's actions of taking a course.
+        :return: Course objective workflow aggregate id.
+        """
+        course = self.select_one_course(headers, user.id)
         if course is not None:
             self.objectives_api.get_objective_workflow_aggregate_by_id(
                 headers, course["objective"]["id"]
@@ -62,13 +66,13 @@ class Student:
                     headers,
                     {
                         "requireTotalCount": True,
-                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
+                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["user.id","=","{user.id}"]]',
                     },
                 )
                 # when press start button
                 objective_workflow_id = (
                     self.start_objective_workflows_api.start_objective_workflow(
-                        headers, headers, course["id"]
+                        headers, course["id"]
                     )
                 )
                 self.objective_workflow_aggregates_api.get_objective_records_by_id(
@@ -76,20 +80,18 @@ class Student:
                 )
                 self.users_api.get_user_activity_workflow_aggregates_by_query(
                     headers,
-                    headers,
                     {
                         "requireTotalCount": True,
                         "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
                     },
                 )
                 self.start_activity_workflows_api.start_activity_workflow(
-                    headers, headers, objective_workflow_id
+                    headers, objective_workflow_id
                 )
                 self.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
                     headers, course["id"]
                 )
                 self.users_api.get_user_activity_workflow_aggregates_by_query(
-                    headers,
                     headers,
                     {
                         "requireTotalCount": True,
@@ -97,14 +99,13 @@ class Student:
                     },
                 )
                 self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
-                    headers, headers, course["id"], objective.activity.id
+                    headers, course["id"], objective.activity.id
                 )
                 objective = self.objectives_api.get_objective_by_id(
                     headers, course["objective"]["id"]
                 )
             else:
                 self.users_api.get_user_activity_workflow_aggregates_by_query(
-                    headers,
                     headers,
                     {
                         "requireTotalCount": True,
@@ -113,11 +114,14 @@ class Student:
                 )
                 # when press continue button
                 self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
-                    headers, headers, course["id"], objective.activity.id
+                    headers, course["id"], objective.activity.id
                 )
+            return course["id"]
 
-    def select_one_course(self, headers: dict) -> dict | None:
-        courses = self.users_api.get_user_objective_workflow_aggregates(headers)
+    def select_one_course(self, headers: dict, user_id: str) -> dict | None:
+        courses = self.users_api.get_user_objective_workflow_aggregates(
+            headers, user_id
+        )
         if len(courses) > 0:
             return random.choice(courses)
         else:
@@ -133,4 +137,4 @@ class Student:
         )
 
     def _select_one_student(self) -> User:
-        return random.choice(self.db_driver.find_student_users())
+        return User(random.choice(self.db_driver.find_student_users()))
