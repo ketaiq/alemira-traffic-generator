@@ -14,14 +14,14 @@ class ObjectiveWorkflowAggregatesAPI(EndPoint):
         super().__init__(role, user, client)
         self.url = self.uri + "objective-workflow-aggregates/"
 
-    def get_objective_workflow_aggregate_by_id(self, id: str) -> dict:
+    def get_objective_workflow_aggregate_by_id(self, headers: dict, id: str) -> dict:
         if self.client is None:
-            r = requests.get(self.url + id, headers=self.headers)
+            r = requests.get(self.url + id, headers=headers)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.url + id,
-            headers=self.headers,
+            headers=headers,
             name="get objective workflow aggregate by id",
             catch_response=True,
         ) as response:
@@ -32,15 +32,15 @@ class ObjectiveWorkflowAggregatesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_objective_records_by_id(self, id: str) -> list:
+    def get_objective_records_by_id(self, headers: dict, id: str) -> list:
         url = self.url + id + "/objective-records"
         if self.client is None:
-            r = requests.get(url, headers=self.headers)
+            r = requests.get(url, headers=headers)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             url,
-            headers=self.headers,
+            headers=headers,
             name="get objective records by objective workflow aggregate id",
             catch_response=True,
         ) as response:

@@ -17,14 +17,14 @@ class EndPoint:
     FILE_URI = "https://alms.dev.alemira.com/fileapi/api/v1/"
     TIMEOUT_MAX = 180
 
-    def __init__(self, role: str, user: User, client):
+    def __init__(self, client):
         self.uri = self.URI
         self.file_uri = self.FILE_URI
         self.client = client
-        if user is None:
-            self.headers = self.get_headers(role)
-        else:
-            self.headers = self.get_headers(role, user.to_dict_for_login())
+        # if user is None:
+        #     self.headers = self.get_headers(role)
+        # else:
+        #     self.headers = self.get_headers(role, user.to_dict_for_login())
 
     @lru_cache(maxsize=None)
     # TODO move to another api

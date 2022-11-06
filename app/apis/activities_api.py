@@ -11,29 +11,26 @@ class ActivitiesAPI(EndPoint):
     def __init__(
         self,
         driver: DatabaseDriver,
-        role: str = "admin",
-        user: User = None,
         client=None,
     ):
-        super().__init__(role, user, client)
+        super().__init__(client)
         self.url = self.uri + "activities/"
         self.driver = driver
 
-    def get_activities(self) -> list[dict]:
-        r = requests.get(self.url, headers=self.headers)
+    def get_activities(self, headers: dict) -> list[dict]:
+        r = requests.get(self.url, headers=headers)
         r.raise_for_status()
         return r.json()
 
-    def get_activities_by_query(self, skip: int, take: int) -> dict:
-        payload = {"skip": skip, "take": take, "requireTotalCount": True}
+    def get_activities_by_query(self, headers: dict, query: dict) -> dict:
         if self.client is None:
-            r = requests.get(self.url + "query", headers=self.headers, params=payload)
+            r = requests.get(self.url + "query", headers=headers, params=query)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.url + "query",
-            headers=self.headers,
-            params=payload,
+            headers=headers,
+            params=query,
             name="get activities by query",
             catch_response=True,
         ) as response:
@@ -44,11 +41,14 @@ class ActivitiesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_activity_by_code_or_none(self, code: str) -> Activity | None:
+    def get_activity_by_code_or_none(self, headers: dict, code: str) -> Activity | None:
+        # TODO use = compare directly in query
         skip = 0
         take = 10
         while True:
-            res = self.get_activities_by_query(skip, take)
+            res = self.get_activities_by_query(
+                headers, {"skip": skip, "take": take, "requireTotalCount": True}
+            )
             remaining_count = res["totalCount"] - take - skip
             activity = next(
                 (activity for activity in res["data"] if activity["code"] == code),
@@ -61,16 +61,16 @@ class ActivitiesAPI(EndPoint):
                 break
         return None
 
-    def get_created_activity_state_by_id(self, created_id: str):
+    def get_created_activity_state_by_id(self, headers: dict, created_id: str):
         if self.client is None:
             r = requests.get(
-                self.uri + "create-lms-users/" + created_id, headers=self.headers
+                self.uri + "create-lms-users/" + created_id, headers=headers
             )
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.uri + "create-activities/" + created_id,
-            headers=self.headers,
+            headers=headers,
             name="get created activity state by id",
             catch_response=True,
         ) as response:
@@ -81,16 +81,16 @@ class ActivitiesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_updated_activity_state_by_id(self, update_id: str) -> dict:
+    def get_updated_activity_state_by_id(self, headers: dict, update_id: str) -> dict:
         if self.client is None:
             r = requests.get(
-                self.uri + "update-activities/" + update_id, headers=self.headers
+                self.uri + "update-activities/" + update_id, headers=headers
             )
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.uri + "update-activities/" + update_id,
-            headers=self.headers,
+            headers=headers,
             name="get updated activity",
             catch_response=True,
         ) as response:
@@ -101,12 +101,12 @@ class ActivitiesAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, activity: Activity) -> str:
+    def update_activity(self, headers: dict, activity: Activity) -> str:
         if self.client is None:
             r = requests.put(
                 self.url + activity.id,
                 json=activity.to_dict_for_updating(),
-                headers=self.headers,
+                headers=headers,
             )
             r.raise_for_status()
             self.driver.update_course(activity)
@@ -115,7 +115,7 @@ class ActivitiesAPI(EndPoint):
             with self.client.put(
                 self.url + activity.id,
                 json=activity.to_dict_for_updating(),
-                headers=self.headers,
+                headers=headers,
                 name="update activity",
                 catch_response=True,
             ) as response:
@@ -127,35 +127,26 @@ class ActivitiesAPI(EndPoint):
                 else:
                     response.failure(request_http_error_msg(response))
 
-    def create_random_activity(self, compositions_id: str, rich_text_id: str):
+    def create_random_activity(
+        self, headers: dict, compositions_id: str, rich_text_id: str
+    ):
         new_activity = Activity.gen_random_object(
             compositions_id=compositions_id, rich_text_id=rich_text_id
         )
         r = requests.post(
-            self.url, json=new_activity.to_dict_for_creating(), headers=self.headers
+            self.url, json=new_activity.to_dict_for_creating(), headers=headers
         )
         r.raise_for_status()
         return r.json()
 
     def create_rich_text_courses(
-        self, rich_text_id: str, course_series: pd.Series
+        self, headers: dict, rich_text_id: str, course_series: pd.Series
     ) -> Activity:
         course = Activity.gen_course(course_series, rich_text_id)
-        r = requests.post(
-            self.url, json=course.to_dict_for_creating(), headers=self.headers
-        )
+        r = requests.post(self.url, json=course.to_dict_for_creating(), headers=headers)
         r.raise_for_status()
-        course.id = self.get_created_activity_state_by_id(r.json()["id"])["entityId"]
+        course.id = self.get_created_activity_state_by_id(headers, r.json()["id"])[
+            "entityId"
+        ]
         self.driver.insert_one_course(course)
         return course
-
-
-def main():
-    db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
-    activities_api = ActivitiesAPI(db_driver)
-    activities = activities_api.get_activities()
-    print(len(activities), " activities")
-
-
-if __name__ == "__main__":
-    main()

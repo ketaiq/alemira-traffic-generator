@@ -17,14 +17,14 @@ class LmsUsersAPI(EndPoint):
         self.url = self.uri + "lms-users/"
         self.driver = driver
 
-    def get_users(self) -> list[dict]:
+    def get_users(self, headers: dict) -> list[dict]:
         if self.client is None:
-            r = requests.get(self.url, headers=self.headers)
+            r = requests.get(self.url, headers=headers)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.url,
-            headers=self.headers,
+            headers=headers,
             name="get users",
             catch_response=True,
         ) as response:
@@ -35,14 +35,14 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_created_user_state_by_id(self, id: str) -> dict:
+    def get_created_user_state_by_id(self, headers: dict, id: str) -> dict:
         if self.client is None:
-            r = requests.get(self.uri + "create-lms-users/" + id, headers=self.headers)
+            r = requests.get(self.uri + "create-lms-users/" + id, headers=headers)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.uri + "create-lms-users/" + id,
-            headers=self.headers,
+            headers=headers,
             name="get created user state by id",
             catch_response=True,
         ) as response:
@@ -53,14 +53,14 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_updated_user_state_by_id(self, id: str) -> dict:
+    def get_updated_user_state_by_id(self, headers: dict, id: str) -> dict:
         if self.client is None:
-            r = requests.get(self.uri + "update-lms-users/" + id, headers=self.headers)
+            r = requests.get(self.uri + "update-lms-users/" + id, headers=headers)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.uri + "update-lms-users/" + id,
-            headers=self.headers,
+            headers=headers,
             name="get updated user state by id",
             catch_response=True,
         ) as response:
@@ -71,17 +71,17 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def create_user(self) -> User:
+    def create_user(self, headers: dict) -> User:
         new_user = User.gen_random_object()
         if self.client is None:
             r = requests.post(
-                self.url, json=new_user.to_dict_for_creating(), headers=self.headers
+                self.url, json=new_user.to_dict_for_creating(), headers=headers
             )
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
             while True:
-                created_state = self.get_created_user_state_by_id(created_id)
+                created_state = self.get_created_user_state_by_id(headers, created_id)
                 if created_state["completed"]:
                     new_user.id = created_state["entityId"]
                     break
@@ -89,7 +89,7 @@ class LmsUsersAPI(EndPoint):
             with self.client.post(
                 self.url,
                 json=new_user.to_dict_for_creating(),
-                headers=self.headers,
+                headers=headers,
                 name="create user",
                 catch_response=True,
             ) as response:
@@ -97,7 +97,9 @@ class LmsUsersAPI(EndPoint):
                     created_id = r.json()["id"]
                     # check entity is created successfully
                     while True:
-                        created_state = self.get_created_user_state_by_id(created_id)
+                        created_state = self.get_created_user_state_by_id(
+                            headers, created_id
+                        )
                         if created_state["completed"]:
                             new_user.id = created_state["entityId"]
                             break
@@ -108,25 +110,25 @@ class LmsUsersAPI(EndPoint):
         self.driver.insert_one_user(new_user)
         return new_user
 
-    def update_user(self, user: User):
+    def update_user(self, headers: dict, user: User):
         if self.client is None:
             r = requests.put(
                 self.url + user.id,
                 json=user.to_dict_for_updating(),
-                headers=self.headers,
+                headers=headers,
             )
             r.raise_for_status()
             updated_id = r.json()["id"]
             # check entity is updated successfully
             while True:
-                updated_state = self.get_updated_user_state_by_id(updated_id)
+                updated_state = self.get_updated_user_state_by_id(headers, updated_id)
                 if updated_state["completed"]:
                     break
         else:
             with self.client.put(
                 self.url + user.id,
                 json=user.to_dict_for_updating(),
-                headers=self.headers,
+                headers=headers,
                 name="update user",
                 catch_response=True,
             ) as response:
@@ -134,7 +136,9 @@ class LmsUsersAPI(EndPoint):
                     updated_id = r.json()["id"]
                     # check entity is updated successfully
                     while True:
-                        updated_state = self.get_updated_user_state_by_id(updated_id)
+                        updated_state = self.get_updated_user_state_by_id(
+                            headers, updated_id
+                        )
                         if updated_state["completed"]:
                             break
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
@@ -143,14 +147,14 @@ class LmsUsersAPI(EndPoint):
                     response.failure(request_http_error_msg(response))
         self.driver.update_user(user)
 
-    def get_user_by_id(self, id: str) -> User:
+    def get_user_by_id(self, headers: dict, id: str) -> User:
         if self.client is None:
-            r = requests.get(self.url + id, headers=self.headers)
+            r = requests.get(self.url + id, headers=headers)
             r.raise_for_status()
             return User(r.json())
         with self.client.get(
             self.url + id,
-            headers=self.headers,
+            headers=headers,
             name="get user by id",
             catch_response=True,
         ) as response:
@@ -161,9 +165,9 @@ class LmsUsersAPI(EndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def delete_user(self, id: str) -> dict:
+    def delete_user(self, headers: dict, id: str) -> dict:
         # not work
-        r = requests.delete(self.url + id, headers=self.headers)
+        r = requests.delete(self.url + id, headers=headers)
         r.raise_for_status()
         return r.json()
 

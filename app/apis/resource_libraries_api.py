@@ -7,28 +7,24 @@ from app.models.user import User
 class ResourceLibrariesAPI(EndPoint):
     def __init__(
         self,
-        role: str = "admin",
-        user: User = None,
         client=None,
     ):
-        super().__init__(role, user, client)
+        super().__init__(client)
         self.url = self.uri + "resource-libraries/"
-        self.resource_libraries = None
 
-    def get_resource_libraries(self) -> list[dict]:
+    def get_resource_libraries(self, headers: dict) -> list[dict]:
         """API GET /api/v1/resource-libraries"""
-        r = requests.get(self.url, headers=self.headers)
+        r = requests.get(self.url, headers=headers)
         r.raise_for_status()
         try:
             libs = r.json()
-            self.resource_libraries = libs
             return libs
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def get_resource_library_resources(self, lib_id) -> list[dict]:
+    def get_resource_library_resources(self, headers: dict, lib_id) -> list[dict]:
         """API GET /api/v1/resource-libraries/{libraryId}/resources"""
-        r = requests.get(self.url + lib_id + "/resources/", headers=self.headers)
+        r = requests.get(self.url + lib_id + "/resources/", headers=headers)
         r.raise_for_status()
         try:
             resources = r.json()
@@ -36,9 +32,9 @@ class ResourceLibrariesAPI(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def create_resource_library(self, lib):
+    def create_resource_library(self, headers: dict, lib):
         """(Forbidden) API POST /api/v1/resource-libraries"""
-        r = requests.post(self.url, json=lib.__dict__, headers=self.headers)
+        r = requests.post(self.url, json=lib.__dict__, headers=headers)
         r.raise_for_status()
         try:
             res = r.json()
@@ -46,16 +42,16 @@ class ResourceLibrariesAPI(EndPoint):
         except requests.exceptions.JSONDecodeError:
             logging.error("Response could not be decoded as JSON")
 
-    def get_rich_text_id(self) -> str:
+    def get_rich_text_id(self, headers: dict) -> str:
         if self.resource_libraries is None:
-            self.get_resource_libraries()
+            self.get_resource_libraries(headers)
         for lib in self.resource_libraries:
             if lib["name"] == "Rich Text":
                 return lib["id"]
 
-    def get_compositions_id(self) -> str:
+    def get_compositions_id(self, headers: dict) -> str:
         if self.resource_libraries is None:
-            self.get_resource_libraries()
+            self.get_resource_libraries(headers)
         for lib in self.resource_libraries:
             if lib["name"] == "Compositions":
                 return lib["id"]

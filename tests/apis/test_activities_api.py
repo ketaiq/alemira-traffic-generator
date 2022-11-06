@@ -3,9 +3,12 @@ from app.apis.activities_api import ActivitiesAPI
 
 
 def test_get_activities_by_query():
+    # TODO use headers
     db_driver = DatabaseDriver("localhost:27017", "root", "rootpass")
     activities_api = ActivitiesAPI(db_driver)
-    res = activities_api.get_activities_by_query(0, 10)
+    headers = {}
+    query = {"skip": 0, "take": 10, "requireTotalCount": True}
+    res = activities_api.get_activities_by_query(headers, query)
     assert len(res["data"]) == 10
     assert res["totalCount"] > 0
 

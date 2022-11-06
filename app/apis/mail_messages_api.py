@@ -7,23 +7,20 @@ from app.models.user import User
 class MailMessagesAPI(EndPoint):
     def __init__(
         self,
-        role: str = "admin",
-        user: User = None,
         client=None,
     ):
-        super().__init__(role, user, client)
+        super().__init__(client)
         self.url = self.uri + "mail-messages/"
 
-    def get_mail_messages_by_query(self, skip: int, take: int) -> dict:
-        payload = {"skip": skip, "take": take, "requireTotalCount": True}
+    def get_mail_messages_by_query(self, headers: dict, query: dict) -> dict:
         if self.client is None:
-            r = requests.get(self.url + "query", headers=self.headers, params=payload)
+            r = requests.get(self.url + "query", headers=headers, params=query)
             r.raise_for_status()
             return r.json()
         with self.client.get(
             self.url + "query",
-            headers=self.headers,
-            params=payload,
+            headers=headers,
+            params=query,
             name="get mail messages by query",
             catch_response=True,
         ) as response:

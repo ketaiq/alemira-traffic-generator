@@ -37,7 +37,9 @@ class Admin:
         take = 10
         try:
             while True:
-                res = self.mail_messages_api.get_mail_messages_by_query(skip, take)
+                res = self.mail_messages_api.get_mail_messages_by_query(
+                    {"skip": skip, "take": take, "requireTotalCount": True}
+                )
                 remaining_count = res["totalCount"] - take - skip
                 mail_messages = [MailMessage(msg) for msg in res["data"]]
                 mail = next(
