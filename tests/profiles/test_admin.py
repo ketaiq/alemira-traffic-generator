@@ -90,7 +90,7 @@ def test_select_one_admin():
         roles_api,
         user_roles_api,
     )
-    user = admin.select_one_admin()
+    user = admin._select_one_admin()
     assert type(user) is User
     assert user._role == Role.ADMIN.value
 

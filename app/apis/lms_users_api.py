@@ -16,6 +16,24 @@ class LmsUsersAPI(UserAPIEndPoint):
         self.url = self.uri + "lms-users/"
         self.driver = driver
 
+    def get_user_me(self, headers: dict) -> User:
+        if self.client is None:
+            r = requests.get(self.url + "me", headers=headers)
+            r.raise_for_status()
+            return User(r.json())
+        with self.client.get(
+            self.url + "me",
+            headers=headers,
+            name="get user me",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return User(response.json())
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
     def get_users(self, headers: dict) -> list[dict]:
         if self.client is None:
             r = requests.get(self.url, headers=headers)

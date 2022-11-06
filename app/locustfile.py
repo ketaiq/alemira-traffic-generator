@@ -1,6 +1,7 @@
 from locust import HttpUser, task, between
 from app.profiles.admin import Admin
 from app.profiles.instructor import Instructor
+from app.profiles.student import Student
 from app.drivers.database_driver import db_driver
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.mail_messages_api import MailMessagesAPI
@@ -11,6 +12,10 @@ from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.apis.users_api import UsersAPI
 from app.apis.objectives_api import ObjectivesAPI
 from app.apis.personal_enrollments_api import PersonalEnrollmentsAPI
+from app.apis.objective_workflow_aggregates_api import ObjectiveWorkflowAggregatesAPI
+from app.apis.activity_records_api import ActivityRecordsAPI
+from app.apis.start_objective_workflows_api import StartObjectiveWorkflowsAPI
+from app.apis.start_activity_workflows_api import StartActivityWorkflowsAPI
 
 
 class AdminUser(HttpUser):
@@ -106,9 +111,30 @@ class StudentUser(HttpUser):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
-        # self.student = Student(
-        #     lms_users_api, mail_messages_api, account_reset_password_api
-        # )
+        identity_api_endpoint = IdentityAPIEndPoint(client=self.client)
+        users_api = UsersAPI(client=self.client)
+        lms_users_api = LmsUsersAPI(db_driver, client=self.client)
+        objectives_api = ObjectivesAPI(db_driver, client=self.client)
+        objective_workflow_aggregates_api = ObjectiveWorkflowAggregatesAPI(
+            client=self.client
+        )
+        activity_records_api = ActivityRecordsAPI(client=self.client)
+        start_objective_workflows_api = StartObjectiveWorkflowsAPI(client=self.client)
+        start_activity_workflows_api = StartActivityWorkflowsAPI(client=self.client)
+        self.student = Student(
+            db_driver,
+            identity_api_endpoint,
+            users_api,
+            lms_users_api,
+            objectives_api,
+            objective_workflow_aggregates_api,
+            activity_records_api,
+            start_objective_workflows_api,
+            start_activity_workflows_api,
+        )
         # use specific url for each request
         self.client.base_url = ""
+
+    @task(100)
+    def take_course(self):
+        self.student.take_course()

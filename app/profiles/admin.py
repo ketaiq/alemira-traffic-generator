@@ -35,12 +35,12 @@ class Admin:
         self.roles_api = roles_api
         self.user_roles_api = user_roles_api
 
-    def select_one_admin(self) -> User:
+    def _select_one_admin(self) -> User:
         return User(random.choice(self.db_driver.find_admin_users()))
 
     def _get_admin_headers(self) -> dict:
         return self.identity_api_endpoint.get_headers(
-            Role.ADMIN, self.select_one_admin()
+            Role.ADMIN, self._select_one_admin()
         )
 
     def get_num_of_users(self) -> int:
