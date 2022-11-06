@@ -55,19 +55,19 @@ class DatabaseDriver:
     def check_user_by_id(self, user: User) -> bool:
         return True if self.users.find_one({"id": user.id}) is not None else False
 
-    def find_usernames(self) -> list:
-        return self.users.find().distinct("username")
+    def find_student_usernames(self) -> list:
+        return self.users.find({"_role": Role.STUDENT.value}).distinct("username")
 
     def find_courses_codes(self) -> list:
         return self.courses.find().distinct("code")
 
-    def find_all_admin_users(self) -> list:
+    def find_admin_users(self) -> list:
         return list(self.users.find({"_role": Role.ADMIN.value}))
 
-    def find_all_instructor_users(self) -> list:
+    def find_instructor_users(self) -> list:
         return list(self.users.find({"_role": Role.INSTRUCTOR.value}))
 
-    def find_all_student_users(self) -> list:
+    def find_student_users(self) -> list:
         return list(self.users.find({"_role": Role.STUDENT.value}))
 
 

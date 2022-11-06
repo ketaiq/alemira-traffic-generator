@@ -36,7 +36,7 @@ class Admin:
         self.user_roles_api = user_roles_api
 
     def select_one_admin(self) -> User:
-        return User(random.choice(self.db_driver.find_all_admin_users()))
+        return User(random.choice(self.db_driver.find_admin_users()))
 
     def _get_admin_headers(self) -> dict:
         return self.identity_api_endpoint.get_headers(

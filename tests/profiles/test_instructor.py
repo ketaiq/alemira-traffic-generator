@@ -49,7 +49,7 @@ def test_enroll_one_student():
             "requireTotalCount": True,
         },
     )["totalCount"]
-    instructor.enroll_one_student(objective_to_enroll)
+    instructor._enroll_one_student(objective_to_enroll)
     count_after_enroll = objectives_api.get_objective_personal_enrollments_by_query(
         objective_to_enroll.id,
         {
@@ -78,7 +78,7 @@ def test_expel_one_student():
             "requireTotalCount": True,
         },
     )["totalCount"]
-    instructor.expel_one_student(objective_to_expel)
+    instructor._expel_one_student(objective_to_expel)
     count_after_expel = objectives_api.get_objective_personal_enrollments_by_query(
         objective_to_expel.id,
         {
@@ -103,7 +103,7 @@ def test_edit_one_course_description():
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
     objective_to_edit = instructor.select_one_objective()
-    instructor.edit_one_course_description(objective_to_edit)
+    instructor._edit_one_course_description(objective_to_edit)
     updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
     assert objective_to_edit.aboutContent != updated_objective.aboutContent
 
@@ -117,7 +117,7 @@ def test_upload_one_image_to_course():
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
     objective_to_edit = instructor.select_one_objective()
-    instructor.upload_one_image_to_course(objective_to_edit)
+    instructor._upload_one_image_to_course(objective_to_edit)
     updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
     assert objective_to_edit.aboutContent != updated_objective.aboutContent
 
@@ -131,7 +131,7 @@ def test_upload_one_attachment_to_course():
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
     objective_to_edit = instructor.select_one_objective()
-    instructor.upload_one_attachment_to_course(objective_to_edit)
+    instructor._upload_one_attachment_to_course(objective_to_edit)
     updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
     assert objective_to_edit.aboutContent != updated_objective.aboutContent
 
