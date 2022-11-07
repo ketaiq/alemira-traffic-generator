@@ -17,6 +17,7 @@ from app.apis.activity_records_api import ActivityRecordsAPI
 from app.apis.start_objective_workflows_api import StartObjectiveWorkflowsAPI
 from app.apis.start_activity_workflows_api import StartActivityWorkflowsAPI
 import pandas as pd
+import logging
 
 # deprecated
 # class AdminUser(HttpUser):
@@ -86,22 +87,27 @@ class InstructorUser(HttpUser):
 
     @task(task_weights[0])
     def enroll_one_student(self):
+        logging.info("enroll one student")
         self.instructor.enroll_one_student()
 
     @task(task_weights[1])
     def expel_one_student(self):
+        logging.info("expel one student")
         self.instructor.expel_one_student()
 
     @task(task_weights[2])
     def edit_one_course_description(self):
+        logging.info("edit one course description")
         self.instructor.edit_one_course_description()
 
     @task(task_weights[3])
     def upload_one_image_to_course(self):
+        logging.info("upload one image to course")
         self.instructor.upload_one_image_to_course()
 
     @task(task_weights[4])
     def upload_one_attachment_to_course(self):
+        logging.info("upload one attachment to course")
         self.instructor.upload_one_attachment_to_course()
 
 
@@ -143,10 +149,12 @@ class StudentUser(HttpUser):
 
     @task(task_weights[0])
     def visit_my_courses(self):
+        logging.info("visit my courses")
         self.student.visit_my_courses()
 
     @task(task_weights[1])
     def take_course(self):
+        logging.info("take course")
         self.student.take_course()
 
 
@@ -173,6 +181,7 @@ class StagesShape(LoadTestShape):
         for stage in self.stages:
             if run_time < stage["duration"]:
                 if run_time < self.ENROLL_DDL:
+                    logging.info("before enroll deadline")
                     InstructorUser.weight = InstructorUser.WEIGHT_BEFORE_ENROLL
                     InstructorUser.task_weights = (
                         InstructorUser.TASK_WEIGHTS_BEFORE_ENROLL
@@ -180,12 +189,13 @@ class StagesShape(LoadTestShape):
                     StudentUser.weight = StudentUser.WEIGHT_BEFORE_ENROLL
                     StudentUser.task_weights = StudentUser.TASK_WEIGHTS_BEFORE_ENROLL
                 else:
+                    logging.info("after enroll deadline")
                     InstructorUser.weight = InstructorUser.WEIGHT_AFTER_ENROLL
                     InstructorUser.task_weights = (
                         InstructorUser.TASK_WEIGHTS_AFTER_ENROLL
                     )
                     StudentUser.weight = StudentUser.WEIGHT_AFTER_ENROLL
                     StudentUser.task_weights = StudentUser.TASK_WEIGHTS_AFTER_ENROLL
-                tick_data = (stage["users"], stage["spawn_rate"])
+                tick_data = (stage["num_of_users"], stage["spawn_rate"])
                 return tick_data
         return None

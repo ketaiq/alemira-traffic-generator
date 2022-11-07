@@ -24,8 +24,14 @@ docker-compose up -d
 
 ## 2. Quick Start
 
+Start experiment
 ```sh
 locust --config=app/locust.conf
+```
+
+Clean up
+```sh
+sh cleanup.sh
 ```
 
 ## 3. Resources
