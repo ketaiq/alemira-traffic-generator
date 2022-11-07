@@ -11,6 +11,7 @@ class ResourceLibrariesAPI(UserAPIEndPoint):
     ):
         super().__init__(client)
         self.url = self.uri + "resource-libraries/"
+        self.resource_libraries = []
 
     def get_resource_libraries(self, headers: dict) -> list[dict]:
         """API GET /api/v1/resource-libraries"""
@@ -44,14 +45,14 @@ class ResourceLibrariesAPI(UserAPIEndPoint):
 
     def get_rich_text_id(self, headers: dict) -> str:
         if self.resource_libraries is None:
-            self.get_resource_libraries(headers)
+            self.resource_libraries = self.get_resource_libraries(headers)
         for lib in self.resource_libraries:
             if lib["name"] == "Rich Text":
                 return lib["id"]
 
     def get_compositions_id(self, headers: dict) -> str:
         if self.resource_libraries is None:
-            self.get_resource_libraries(headers)
+            self.resource_libraries = self.get_resource_libraries(headers)
         for lib in self.resource_libraries:
             if lib["name"] == "Compositions":
                 return lib["id"]

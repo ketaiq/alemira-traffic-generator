@@ -64,7 +64,7 @@ class ActivitiesAPI(UserAPIEndPoint):
     def get_created_activity_state_by_id(self, headers: dict, created_id: str):
         if self.client is None:
             r = requests.get(
-                self.uri + "create-lms-users/" + created_id, headers=headers
+                self.uri + "create-activities/" + created_id, headers=headers
             )
             r.raise_for_status()
             return r.json()

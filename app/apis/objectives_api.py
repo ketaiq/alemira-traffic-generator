@@ -183,7 +183,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    updated_id = r.json()["id"]
+                    updated_id = response.json()["id"]
                     # check entity is updated successfully
                     while True:
                         updated_state = self.get_updated_objective_state_by_id(
@@ -219,7 +219,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    image_url = r.json()["url"]
+                    image_url = response.json()["url"]
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -249,7 +249,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    attachment_url = r.json()["url"]
+                    attachment_url = response.json()["url"]
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
