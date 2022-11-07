@@ -12,6 +12,7 @@ from app.exceptions import RoleNotFoundException
 from app.models.role import Role
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.drivers.database_driver import DatabaseDriver
+from app.apis.datagrid_settings_api import DatagridSettingsAPI
 
 
 class Admin:
@@ -21,11 +22,12 @@ class Admin:
         self,
         db_driver: DatabaseDriver,
         identity_api_endpoint: IdentityAPIEndPoint,
-        lms_users_api: LmsUsersAPI,
-        mail_messages_api: MailMessagesAPI,
-        account_reset_password_api: AccountResetPasswordAPI,
-        roles_api: RolesAPI,
-        user_roles_api: UserRolesAPI,
+        lms_users_api: LmsUsersAPI = None,
+        mail_messages_api: MailMessagesAPI = None,
+        account_reset_password_api: AccountResetPasswordAPI = None,
+        roles_api: RolesAPI = None,
+        user_roles_api: UserRolesAPI = None,
+        datagrid_settings_api: DatagridSettingsAPI = None,
     ):
         self.db_driver = db_driver
         self.identity_api_endpoint = identity_api_endpoint
@@ -34,20 +36,28 @@ class Admin:
         self.account_reset_password_api = account_reset_password_api
         self.roles_api = roles_api
         self.user_roles_api = user_roles_api
-
-    def _select_one_admin(self) -> User:
-        return User(random.choice(self.db_driver.find_admin_users()))
-
-    def _get_admin_headers(self) -> dict:
-        return self.identity_api_endpoint.get_headers(
-            Role.ADMIN, self._select_one_admin()
-        )
+        self.datagrid_settings_api = datagrid_settings_api
 
     def get_num_of_users(self) -> int:
         headers = self._get_admin_headers()
         return self.lms_users_api.get_users_by_query(
             headers, {"skip": 0, "take": 1, "requireTotalCount": True}
         )["totalCount"]
+
+    def get_datagrid_tenants(self) -> dict:
+        headers = self._get_admin_headers()
+        return self.datagrid_settings_api.get_datagrid_tenants(headers)
+
+    # TODO add all get actions that doable from admin page
+
+    def create_admin_user(self):
+        self.create_user(Role.ADMIN)
+
+    def create_instructor_user(self):
+        self.create_user(Role.INSTRUCTOR)
+
+    def create_student_user(self):
+        self.create_user(Role.STUDENT)
 
     def _create_user(self, headers: dict, role: Role) -> User:
         """Create a user with a random profile."""
@@ -96,11 +106,10 @@ class Admin:
         except RoleNotFoundException as e:
             logging.error(e.message)
 
-    def create_admin_user(self):
-        self.create_user(Role.ADMIN)
+    def _select_one_admin(self) -> User:
+        return User(random.choice(self.db_driver.find_admin_users()))
 
-    def create_instructor_user(self):
-        self.create_user(Role.INSTRUCTOR)
-
-    def create_student_user(self):
-        self.create_user(Role.STUDENT)
+    def _get_admin_headers(self) -> dict:
+        return self.identity_api_endpoint.get_headers(
+            Role.ADMIN, self._select_one_admin()
+        )

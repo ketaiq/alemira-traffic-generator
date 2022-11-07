@@ -42,6 +42,10 @@ class Student:
         me = self.lms_users_api.get_user_me(headers)
         self._take_course(headers, me)
 
+    def download_course_resource(self):
+        # TODO
+        pass
+
     def _take_course(self, headers: dict, user: User) -> str | None:
         """
         Perform a student's actions of taking a course.
