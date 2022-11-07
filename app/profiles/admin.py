@@ -48,8 +48,6 @@ class Admin:
         headers = self._get_admin_headers()
         return self.datagrid_settings_api.get_datagrid_tenants(headers)
 
-    # TODO add all get actions that doable from admin page
-
     def create_admin_user(self):
         self.create_user(Role.ADMIN)
 

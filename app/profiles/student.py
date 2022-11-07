@@ -10,6 +10,7 @@ from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 import random
 from app.models.user import User
 from app.models.role import Role
+from app.models.objective.objective import Objective
 
 
 class Student:
@@ -37,13 +38,17 @@ class Student:
         self.start_objective_workflows_api = start_objective_workflows_api
         self.start_activity_workflows_api = start_activity_workflows_api
 
+    def visit_my_courses(self):
+        headers = self._get_student_headers()
+        me = self.lms_users_api.get_user_me(headers)
+        self.users_api.get_user_objective_workflow_aggregates(headers, me.id)
+
     def take_course(self):
         headers = self._get_student_headers()
         me = self.lms_users_api.get_user_me(headers)
         self._take_course(headers, me)
 
-    def download_course_resource(self):
-        # TODO
+    def finish_course(self):
         pass
 
     def _take_course(self, headers: dict, user: User) -> str | None:
@@ -66,61 +71,23 @@ class Student:
                 headers, course["id"]
             )
             if course["lastObjectiveWorkflow"] is None:
-                self.activity_records_api.get_activity_records_by_query(
-                    headers,
-                    {
-                        "requireTotalCount": True,
-                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["user.id","=","{user.id}"]]',
-                    },
-                )
-                # when press start button
-                objective_workflow_id = (
-                    self.start_objective_workflows_api.start_objective_workflow(
-                        headers, course["id"]
-                    )
-                )
-                self.objective_workflow_aggregates_api.get_objective_records_by_id(
-                    headers, course["id"]
-                )
-                self.users_api.get_user_activity_workflow_aggregates_by_query(
-                    headers,
-                    {
-                        "requireTotalCount": True,
-                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
-                    },
-                )
-                self.start_activity_workflows_api.start_activity_workflow(
-                    headers, objective_workflow_id
-                )
-                self.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
-                    headers, course["id"]
-                )
-                self.users_api.get_user_activity_workflow_aggregates_by_query(
-                    headers,
-                    {
-                        "requireTotalCount": True,
-                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
-                    },
-                )
-                self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
-                    headers, course["id"], objective.activity.id
-                )
-                objective = self.objectives_api.get_objective_by_id(
-                    headers, course["objective"]["id"]
-                )
+                # Start a course if the chosen course hasn't been started
+                self._start_course(headers, course, objective, user)
             else:
-                self.users_api.get_user_activity_workflow_aggregates_by_query(
-                    headers,
-                    {
-                        "requireTotalCount": True,
-                        "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
-                    },
-                )
-                # when press continue button
-                self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
-                    headers, course["id"], objective.activity.id
-                )
+                # Visit a course if the chosen course has been started
+                self._visit_course(headers, course, objective, user)
+            # Download an attachment from a course (70% probability if exists)
+            objective = self.objectives_api.get_objective_by_id(
+                headers, course["objective"]["id"]
+            )
+            if objective.has_attachment() and random.choices(
+                [True, False], (70, 30), k=1
+            ):
+                self._download_attachment(headers, objective.get_attachment_url())
             return course["id"]
+
+    def _download_attachment(self, headers: dict, url: str):
+        self.objectives_api.download_attachment_from_objective(headers, url)
 
     def select_one_course(self, headers: dict, user_id: str) -> dict | None:
         courses = self.users_api.get_user_objective_workflow_aggregates(
@@ -142,3 +109,61 @@ class Student:
 
     def _select_one_student(self) -> User:
         return User(random.choice(self.db_driver.find_student_users()))
+
+    def _start_course(
+        self, headers: dict, course: dict, objective: Objective, user: User
+    ):
+        self.activity_records_api.get_activity_records_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["user.id","=","{user.id}"]]',
+            },
+        )
+        # when press start button
+        objective_workflow_id = (
+            self.start_objective_workflows_api.start_objective_workflow(
+                headers, course["id"]
+            )
+        )
+        self.objective_workflow_aggregates_api.get_objective_records_by_id(
+            headers, course["id"]
+        )
+        self.users_api.get_user_activity_workflow_aggregates_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
+            },
+        )
+        self.start_activity_workflows_api.start_activity_workflow(
+            headers, objective_workflow_id
+        )
+        self.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
+            headers, course["id"]
+        )
+        self.users_api.get_user_activity_workflow_aggregates_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
+            },
+        )
+        self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
+            headers, course["id"], objective.activity.id
+        )
+
+    def _visit_course(
+        self, headers: dict, course: dict, objective: Objective, user: User
+    ):
+        self.users_api.get_user_activity_workflow_aggregates_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
+            },
+        )
+        # when press continue button
+        self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
+            headers, course["id"], objective.activity.id
+        )

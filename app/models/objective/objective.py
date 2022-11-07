@@ -302,6 +302,28 @@ class Objective(Model):
         div_element_3.text = extension
         return ET.tostring(element, encoding="unicode", short_empty_elements=False)
 
+    def has_attachment(self) -> bool:
+        if self.aboutContent:
+            about_content = json.loads(self.aboutContent)
+            attach = next(
+                (
+                    block
+                    for block in about_content["blocks"]
+                    if block["type"] == "attaches"
+                ),
+                None,
+            )
+            if attach and type(attach["data"]["file"]["url"]) is str:
+                return True
+        return False
+
+    def get_attachment_url(self) -> str:
+        about_content = json.loads(self.aboutContent)
+        attach = next(
+            (block for block in about_content["blocks"] if block["type"] == "attaches"),
+        )
+        return attach["data"]["file"]["url"]
+
 
 def main():
     print(Objective.gen_random_object().__dict__)

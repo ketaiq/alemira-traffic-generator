@@ -44,14 +44,6 @@ class AdminUser(HttpUser):
         # use specific url for each request
         self.client.base_url = ""
 
-    @task(task_weights[0])
-    def get_num_of_users(self):
-        self.admin.get_num_of_users()
-
-    @task(task_weights[1])
-    def get_datagrid_tenants(self):
-        self.admin.get_datagrid_tenants()
-
     @task(task_weights[2])
     def create_admin_user(self):
         self.admin.create_admin_user()
@@ -112,7 +104,7 @@ class InstructorUser(HttpUser):
 class StudentUser(HttpUser):
     weight = 40
     wait_time = between(6, 10)
-    task_weights = [1]
+    task_weights = [10, 1]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -141,6 +133,10 @@ class StudentUser(HttpUser):
         self.client.base_url = ""
 
     @task(task_weights[0])
+    def visit_my_courses(self):
+        self.student.visit_my_courses()
+
+    @task(task_weights[1])
     def take_course(self):
         self.student.take_course()
 
@@ -161,3 +157,10 @@ class StagesShape(LoadTestShape):
                 }
             )
             duration += time_intervals
+
+    def tick(self):
+        run_time = self.get_run_time()
+        for stage in self.stages:
+            if run_time < stage["duration"]:
+                tick_data = (stage["users"], stage["spawn_rate"])
+                return tick_data
