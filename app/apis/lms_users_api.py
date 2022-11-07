@@ -111,7 +111,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    created_id = r.json()["id"]
+                    created_id = response.json()["id"]
                     # check entity is created successfully
                     while True:
                         created_state = self.get_created_user_state_by_id(
@@ -151,7 +151,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    updated_id = r.json()["id"]
+                    updated_id = response.json()["id"]
                     # check entity is updated successfully
                     while True:
                         updated_state = self.get_updated_user_state_by_id(

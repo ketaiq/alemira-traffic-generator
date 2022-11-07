@@ -126,7 +126,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    deleted_id = r.json()["id"]
+                    deleted_id = response.json()["id"]
                     # check entity is deleted successfully
                     while True:
                         deleted_state = (

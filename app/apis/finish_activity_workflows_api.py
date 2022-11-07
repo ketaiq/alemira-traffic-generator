@@ -58,7 +58,7 @@ class FinishActivityWorkflow(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    created_id = r.json()["id"]
+                    created_id = response.json()["id"]
                     # check entity is created successfully
                     while True:
                         created_state = (

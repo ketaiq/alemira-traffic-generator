@@ -54,7 +54,7 @@ class StartActivityWorkflowsAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    created_id = r.json()["id"]
+                    created_id = response.json()["id"]
                     # check entity is created successfully
                     while True:
                         created_state = self.get_started_activity_workflow_state_by_id(
