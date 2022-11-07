@@ -181,7 +181,6 @@ class StagesShape(LoadTestShape):
         for stage in self.stages:
             if run_time < stage["duration"]:
                 if run_time < self.ENROLL_DDL:
-                    logging.info("before enroll deadline")
                     InstructorUser.weight = InstructorUser.WEIGHT_BEFORE_ENROLL
                     InstructorUser.task_weights = (
                         InstructorUser.TASK_WEIGHTS_BEFORE_ENROLL
@@ -189,7 +188,6 @@ class StagesShape(LoadTestShape):
                     StudentUser.weight = StudentUser.WEIGHT_BEFORE_ENROLL
                     StudentUser.task_weights = StudentUser.TASK_WEIGHTS_BEFORE_ENROLL
                 else:
-                    logging.info("after enroll deadline")
                     InstructorUser.weight = InstructorUser.WEIGHT_AFTER_ENROLL
                     InstructorUser.task_weights = (
                         InstructorUser.TASK_WEIGHTS_AFTER_ENROLL

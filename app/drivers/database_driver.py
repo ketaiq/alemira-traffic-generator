@@ -33,7 +33,9 @@ class DatabaseDriver:
         self.users.update_one({"id": user.id}, {"$set": {"password": user.password}})
 
     def update_user(self, user: User):
-        self.users.update_one({"id": user.id}, {"$set": user.to_dict_for_database()})
+        user_dict = user.to_dict_for_database()
+        user_dict.pop("_role", None)
+        self.users.update_one({"id": user.id}, {"$set": user_dict})
 
     def update_course(self, course: Activity):
         self.courses.update_one(
