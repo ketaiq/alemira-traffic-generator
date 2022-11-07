@@ -42,7 +42,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
             with self.client.post(
                 self.url,
                 json=personal_enrollment.to_dict_for_creating(),
-                headers=self.headers,
+                headers=headers,
                 name="create personal enrollment",
                 catch_response=True,
             ) as response:

@@ -225,7 +225,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 else:
                     response.failure(request_http_error_msg(response))
         objective = objective.gen_update_with_an_image(image_filename, image_url)
-        self.update_objective(objective)
+        self.update_objective(headers, objective)
 
     def upload_attachment_to_objective(
         self, headers: dict, objective: Objective, attachment_filename: str
@@ -257,7 +257,7 @@ class ObjectivesAPI(UserAPIEndPoint):
         objective = objective.gen_update_with_an_attachment(
             attachment_filename, attachment_url
         )
-        self.update_objective(objective)
+        self.update_objective(headers, objective)
 
     def download_attachment_from_objective(self, headers: dict, url: str):
         if self.client is None:

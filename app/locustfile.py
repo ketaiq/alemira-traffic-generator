@@ -73,7 +73,7 @@ class InstructorUser(HttpUser):
         users_api = UsersAPI(client=self.client)
         lms_users_api = LmsUsersAPI(db_driver, client=self.client)
         objectives_api = ObjectivesAPI(db_driver, client=self.client)
-        personal_enrollments_api = PersonalEnrollmentsAPI(db_driver)
+        personal_enrollments_api = PersonalEnrollmentsAPI(db_driver, client=self.client)
         self.instructor = Instructor(
             db_driver,
             identity_api_endpoint,
