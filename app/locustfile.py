@@ -163,6 +163,7 @@ class StagesShape(LoadTestShape):
     ENROLL_DDL = PERIOD_DURATION * 10
 
     def __init__(self, time_intervals: int = PERIOD_DURATION):
+        self.enroll_ddl_remind = False
         df = pd.read_csv("./app/workload.csv")
         self.stages = []
         duration = time_intervals
@@ -188,6 +189,8 @@ class StagesShape(LoadTestShape):
                     StudentUser.weight = StudentUser.WEIGHT_BEFORE_ENROLL
                     StudentUser.task_weights = StudentUser.TASK_WEIGHTS_BEFORE_ENROLL
                 else:
+                    if not self.enroll_ddl_remind:
+                        logging.info("enrollment reaches deadline")
                     InstructorUser.weight = InstructorUser.WEIGHT_AFTER_ENROLL
                     InstructorUser.task_weights = (
                         InstructorUser.TASK_WEIGHTS_AFTER_ENROLL
