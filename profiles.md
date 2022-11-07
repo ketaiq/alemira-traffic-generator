@@ -19,4 +19,6 @@
 - Take a course
 	- Start a course if the chosen course hasn't been started
 	- Visit a course if the chosen course has been started
-		- Download an attachment from a course (70% probability if exists)
+		- Download an attachment from a course (40% probability if exists)
+- Finish a course (WIP)
+- Review a course (WIP)

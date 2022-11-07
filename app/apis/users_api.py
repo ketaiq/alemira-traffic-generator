@@ -78,3 +78,39 @@ class UsersAPI(UserAPIEndPoint):
                 response.failure(request_timeout_msg())
             else:
                 response.failure(request_http_error_msg(response))
+
+    def get_user_permissions(self, headers: dict) -> list:
+        if self.client is None:
+            r = requests.get(self.url + "me/permissions", headers=headers)
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + "me/permissions",
+            headers=headers,
+            name="get user permissions",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))
+
+    def get_user_roles(self, headers: dict) -> list:
+        if self.client is None:
+            r = requests.get(self.url + "me/roles", headers=headers)
+            r.raise_for_status()
+            return r.json()
+        with self.client.get(
+            self.url + "me/roles",
+            headers=headers,
+            name="get user roles",
+            catch_response=True,
+        ) as response:
+            if response.ok:
+                return response.json()
+            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                response.failure(request_timeout_msg())
+            else:
+                response.failure(request_http_error_msg(response))

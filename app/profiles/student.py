@@ -41,6 +41,8 @@ class Student:
     def visit_my_courses(self):
         headers = self._get_student_headers()
         me = self.lms_users_api.get_user_me(headers)
+        self.users_api.get_user_permissions(headers)
+        self.users_api.get_user_roles(headers)
         self.users_api.get_user_objective_workflow_aggregates(headers, me.id)
 
     def take_course(self):
@@ -49,6 +51,9 @@ class Student:
         self._take_course(headers, me)
 
     def finish_course(self):
+        pass
+
+    def review_course(self):
         pass
 
     def _take_course(self, headers: dict, user: User) -> str | None:
@@ -81,7 +86,7 @@ class Student:
                 headers, course["objective"]["id"]
             )
             if objective.has_attachment() and random.choices(
-                [True, False], (70, 30), k=1
+                [True, False], (40, 60), k=1
             ):
                 self._download_attachment(headers, objective.get_attachment_url())
             return course["id"]

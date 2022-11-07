@@ -18,49 +18,53 @@ from app.apis.start_objective_workflows_api import StartObjectiveWorkflowsAPI
 from app.apis.start_activity_workflows_api import StartActivityWorkflowsAPI
 import pandas as pd
 
+# deprecated
+# class AdminUser(HttpUser):
+#     weight = 1
+#     wait_time = between(6, 10)
+#     task_weights = [1, 5, 40]
 
-class AdminUser(HttpUser):
-    weight = 1
-    wait_time = between(6, 10)
-    task_weights = [100, 100, 1, 5, 40]
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         identity_api_endpoint = IdentityAPIEndPoint(client=self.client)
+#         lms_users_api = LmsUsersAPI(db_driver, client=self.client)
+#         mail_messages_api = MailMessagesAPI(client=self.client)
+#         account_reset_password_api = AccountResetPasswordAPI(db_driver, self.client)
+#         roles_api = RolesAPI(client=self.client)
+#         user_roles_api = UserRolesAPI(client=self.client)
+#         self.admin = Admin(
+#             db_driver,
+#             identity_api_endpoint,
+#             lms_users_api,
+#             mail_messages_api,
+#             account_reset_password_api,
+#             roles_api,
+#             user_roles_api,
+#         )
+#         # use specific url for each request
+#         self.client.base_url = ""
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        identity_api_endpoint = IdentityAPIEndPoint(client=self.client)
-        lms_users_api = LmsUsersAPI(db_driver, client=self.client)
-        mail_messages_api = MailMessagesAPI(client=self.client)
-        account_reset_password_api = AccountResetPasswordAPI(db_driver, self.client)
-        roles_api = RolesAPI(client=self.client)
-        user_roles_api = UserRolesAPI(client=self.client)
-        self.admin = Admin(
-            db_driver,
-            identity_api_endpoint,
-            lms_users_api,
-            mail_messages_api,
-            account_reset_password_api,
-            roles_api,
-            user_roles_api,
-        )
-        # use specific url for each request
-        self.client.base_url = ""
+#     @task(task_weights[2])
+#     def create_admin_user(self):
+#         self.admin.create_admin_user()
 
-    @task(task_weights[2])
-    def create_admin_user(self):
-        self.admin.create_admin_user()
+#     @task(task_weights[3])
+#     def create_instructor_user(self):
+#         self.admin.create_instructor_user()
 
-    @task(task_weights[3])
-    def create_instructor_user(self):
-        self.admin.create_instructor_user()
-
-    @task(task_weights[4])
-    def create_student_user(self):
-        self.admin.create_student_user()
+#     @task(task_weights[4])
+#     def create_student_user(self):
+#         self.admin.create_student_user()
 
 
 class InstructorUser(HttpUser):
-    weight = 5
+    WEIGHT_BEFORE_ENROLL = 10
+    WEIGHT_AFTER_ENROLL = 1
+    TASK_WEIGHTS_BEFORE_ENROLL = [100, 5, 20, 10, 10]
+    TASK_WEIGHTS_AFTER_ENROLL = [1, 1, 100, 30, 30]
+    weight = 1
     wait_time = between(6, 10)
-    task_weights = [10, 1, 20, 5, 5]
+    task_weights = [1, 1, 1, 1, 1]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -102,9 +106,14 @@ class InstructorUser(HttpUser):
 
 
 class StudentUser(HttpUser):
-    weight = 40
+    WEIGHT_BEFORE_ENROLL = 1
+    WEIGHT_AFTER_ENROLL = 10
+    TASK_WEIGHTS_BEFORE_ENROLL = [100, 1]
+    TASK_WEIGHTS_AFTER_ENROLL = [1, 2]
+    weight = 1
     wait_time = between(6, 10)
-    task_weights = [10, 1]
+    # according to visited times of icorsi pages /course and /my
+    task_weights = [1, 1]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -142,7 +151,8 @@ class StudentUser(HttpUser):
 
 
 class StagesShape(LoadTestShape):
-    PERIOD_DURATION = 120
+    PERIOD_DURATION = 60
+    ENROLL_DDL = PERIOD_DURATION * 10
 
     def __init__(self, time_intervals: int = PERIOD_DURATION):
         df = pd.read_csv("./app/workload.csv")
@@ -162,5 +172,20 @@ class StagesShape(LoadTestShape):
         run_time = self.get_run_time()
         for stage in self.stages:
             if run_time < stage["duration"]:
+                if run_time < self.ENROLL_DDL:
+                    InstructorUser.weight = InstructorUser.WEIGHT_BEFORE_ENROLL
+                    InstructorUser.task_weights = (
+                        InstructorUser.TASK_WEIGHTS_BEFORE_ENROLL
+                    )
+                    StudentUser.weight = StudentUser.WEIGHT_BEFORE_ENROLL
+                    StudentUser.task_weights = StudentUser.TASK_WEIGHTS_BEFORE_ENROLL
+                else:
+                    InstructorUser.weight = InstructorUser.WEIGHT_AFTER_ENROLL
+                    InstructorUser.task_weights = (
+                        InstructorUser.TASK_WEIGHTS_AFTER_ENROLL
+                    )
+                    StudentUser.weight = StudentUser.WEIGHT_AFTER_ENROLL
+                    StudentUser.task_weights = StudentUser.TASK_WEIGHTS_AFTER_ENROLL
                 tick_data = (stage["users"], stage["spawn_rate"])
                 return tick_data
+        return None
