@@ -81,6 +81,7 @@ class Instructor:
     def _enroll_one_student(self, headers: dict, objective: Objective):
         # enroll the student in the course
         user_to_enroll = self.select_one_student(headers)
+        logging.info(f"enroll student {user_to_enroll.username}")
         self.personal_enrollments_api.create_personal_enrollment(
             headers, objective.id, user_to_enroll.id
         )
@@ -99,11 +100,13 @@ class Instructor:
                     "requireTotalCount": True,
                 },
             )
-            if not res["data"]:
+            if not res or res["totalCount"] == 0:
                 raise ObjectivePersonalEnrollmentNotFoundException(
                     f"No personal enrollment in objective {objective.id}"
                 )
             personal_enrollment_dict = random.choice(res["data"])
+            username = personal_enrollment_dict["user"]["username"]
+            logging.info(f"expel student {username}")
             self.personal_enrollments_api.delete_personal_enrollment_by_id(
                 headers, personal_enrollment_dict["id"]
             )
@@ -120,6 +123,7 @@ class Instructor:
 
     def _select_one_student(self, headers: dict) -> User:
         username = random.choice(self.db_driver.find_student_usernames())
+        logging.info(f"select student {username}")
         res = self.users_api.get_users_by_query(
             headers,
             {
@@ -128,7 +132,7 @@ class Instructor:
             },
         )
         try:
-            if res["totalCount"] > 0:
+            if res and res["totalCount"] > 0:
                 user = User(res["data"][0])
                 self.db_driver.update_user(user)
                 return user
@@ -146,6 +150,7 @@ class Instructor:
 
     def _select_one_objective(self, headers: dict) -> Objective:
         course_code = random.choice(self.db_driver.find_courses_codes())
+        logging.info(f"select course {course_code}")
         res = self.objectives_api.get_objectives_by_query(
             headers,
             {
@@ -154,7 +159,7 @@ class Instructor:
             },
         )
         try:
-            if res["totalCount"] > 0:
+            if res and res["totalCount"] > 0:
                 objective = Objective(res["data"][0])
                 self.db_driver.update_objective(objective)
                 return objective
@@ -177,4 +182,6 @@ class Instructor:
         )
 
     def _select_one_instructor(self) -> User:
-        return User(random.choice(self.db_driver.find_instructor_users()))
+        user = User(random.choice(self.db_driver.find_instructor_users()))
+        logging.info(f"select instructor {user.username}")
+        return user

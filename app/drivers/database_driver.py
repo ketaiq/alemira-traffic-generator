@@ -25,9 +25,9 @@ class DatabaseDriver:
         self.objectives.insert_one(objective.to_dict_for_database())
 
     def update_objective(self, objective: Objective):
-        self.objectives.update_one(
-            {"id": objective.id}, {"$set": objective.to_dict_for_database()}
-        )
+        objective_dict = objective.to_dict_for_database()
+        objective_dict.pop("id", None)
+        self.objectives.update_one({"id": objective.id}, {"$set": objective_dict})
 
     def update_password(self, user: User):
         self.users.update_one({"id": user.id}, {"$set": {"password": user.password}})
