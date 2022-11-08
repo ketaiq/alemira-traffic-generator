@@ -262,20 +262,19 @@ class ObjectivesAPI(UserAPIEndPoint):
         )
         self.update_objective(headers, objective)
 
-    def download_attachment_from_objective(self, headers: dict, url: str):
+    def download_attachment_from_objective(self, url: str):
         if self.client is None:
             r = requests.get(
                 url,
-                headers=headers,
             )
             r.raise_for_status()
-        with self.client.get(
-            url,
-            headers=headers,
-            name="download attachment from objective",
-            catch_response=True,
-        ) as response:
-            if not response.ok:
-                response.failure(request_http_error_msg(response))
-            elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
-                response.failure(request_timeout_msg())
+        else:
+            with self.client.get(
+                url,
+                name="download attachment from objective",
+                catch_response=True,
+            ) as response:
+                if not response.ok:
+                    response.failure(request_http_error_msg(response))
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())

@@ -65,6 +65,9 @@ class DatabaseDriver:
     def find_courses_codes(self) -> list:
         return self.courses.find().distinct("code")
 
+    def find_course_ids(self) -> list:
+        return self.objectives.find().distinct("id")
+
     def find_admin_users(self) -> list:
         return list(self.users.find({"_role": Role.ADMIN.value}))
 

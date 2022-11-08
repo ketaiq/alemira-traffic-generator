@@ -46,10 +46,10 @@ class Student:
         self.users_api.get_user_roles(headers)
         self.users_api.get_user_objective_workflow_aggregates(headers, me.id)
 
-    def take_course(self):
+    def visit_a_specific_course(self):
         headers = self._get_student_headers()
         me = self.lms_users_api.get_user_me(headers)
-        self._take_course(headers, me)
+        self._visit_a_specific_course(headers, me)
 
     def finish_course(self):
         pass
@@ -57,7 +57,7 @@ class Student:
     def review_course(self):
         pass
 
-    def _take_course(self, headers: dict, user: User) -> str | None:
+    def _visit_a_specific_course(self, headers: dict, user: User) -> str | None:
         """
         Perform a student's actions of taking a course.
         :return: Course objective workflow aggregate id.
@@ -93,14 +93,12 @@ class Student:
             if objective.has_attachment() and random.choices(
                 [True, False], (40, 60), k=1
             ):
-                self._download_attachment(headers, objective.get_attachment_url())
+                self.objectives_api.download_attachment_from_objective(objective.get_attachment_url())
                 logging.info(
                     f"student {user.username} download attachment from course {course_code}"
                 )
             return course["id"]
-
-    def _download_attachment(self, headers: dict, url: str):
-        self.objectives_api.download_attachment_from_objective(headers, url)
+        
 
     def select_one_course(self, headers: dict, user_id: str) -> dict | None:
         courses = self.users_api.get_user_objective_workflow_aggregates(

@@ -32,7 +32,7 @@ def test_take_course():
     )
     headers = student._get_student_headers()
     me = student.lms_users_api.get_user_me(headers)
-    id = student._take_course(headers, me)
+    id = student._visit_a_specific_course(headers, me)
     if id:
         res = student.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
             headers, id

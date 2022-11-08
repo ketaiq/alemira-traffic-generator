@@ -107,7 +107,7 @@ class StudentUser(HttpUser):
     @task(task_weights[1])
     def take_course(self):
         logging.info("[TASK] take course")
-        self.student.take_course()
+        self.student.visit_a_specific_course()
 
 
 class ShapeAfterEnroll(LoadTestShape):

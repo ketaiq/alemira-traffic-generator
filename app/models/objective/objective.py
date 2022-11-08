@@ -313,8 +313,10 @@ class Objective(Model):
                 ),
                 None,
             )
-            if attach and type(attach["data"]["file"]["url"]) is str:
-                return True
+            if attach:
+                url = attach["data"]["file"]["url"]
+                if type(url) is str and url:
+                    return True
         return False
 
     def get_attachment_url(self) -> str:
