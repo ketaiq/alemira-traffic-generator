@@ -76,14 +76,14 @@ def create_default_users():
         roles_api,
         user_roles_api,
     )
-    for _ in range(20):
+    for _ in range(5):
         admin.create_student_user()
-    for _ in range(2):
-        admin.create_instructor_user()
+    # for _ in range(2):
+    #     admin.create_instructor_user()
 
 
 def main():
-    create_default_courses()
+    # create_default_courses()
     create_default_users()
 
 

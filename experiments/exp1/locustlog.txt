@@ -1,0 +1,672 @@
+[2022-11-08 09:36:57,007] ketais-macbook-pro.home/INFO/locust.main: Starting web interface at http://0.0.0.0:8089 (accepting connections from all network interfaces)
+[2022-11-08 09:36:57,019] ketais-macbook-pro.home/INFO/locust.main: Starting Locust 2.12.2
+[2022-11-08 09:37:05,913] ketais-macbook-pro.home/INFO/locust.runners: Shape test starting. User count and spawn rate are ignored for this type of load test
+[2022-11-08 09:37:05,914] ketais-macbook-pro.home/INFO/locust.runners: Shape worker starting
+[2022-11-08 09:37:05,914] ketais-macbook-pro.home/INFO/locust.runners: Shape test updating to 1 users at 1.00 spawn rate
+[2022-11-08 09:37:05,914] ketais-macbook-pro.home/INFO/locust.runners: Ramping to 1 users at a rate of 1.00 per second
+[2022-11-08 09:37:05,915] ketais-macbook-pro.home/INFO/locust.runners: All users spawned: {"InstructorUser": 0, "StudentUser": 1} (1 total users)
+[2022-11-08 09:37:05,915] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:05,936] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:37:06,083] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:37:13,952] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:13,955] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:37:15,214] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:37:24,386] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:24,389] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:37:24,448] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:37:30,702] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:30,704] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:37:30,929] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:37:37,808] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:37,811] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:37:38,028] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:37:44,418] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:44,421] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:37:44,434] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:37:54,123] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:37:54,126] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:37:54,140] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:38:00,595] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:00,598] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:38:00,655] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:38:06,061] ketais-macbook-pro.home/INFO/root: enrollment reaches deadline
+[2022-11-08 09:38:06,061] ketais-macbook-pro.home/INFO/locust.runners: Shape test updating to 2 users at 1.00 spawn rate
+[2022-11-08 09:38:06,061] ketais-macbook-pro.home/INFO/locust.runners: Ramping to 2 users at a rate of 1.00 per second
+[2022-11-08 09:38:06,061] ketais-macbook-pro.home/INFO/locust.runners: All users spawned: {"InstructorUser": 1, "StudentUser": 1} (2 total users)
+[2022-11-08 09:38:06,061] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:06,064] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:38:06,064] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:38:06,142] ketais-macbook-pro.home/INFO/root: select course AAS297
+[2022-11-08 09:38:06,222] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:38:06,256] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:38:10,444] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:10,447] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:38:10,460] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:38:15,400] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:15,403] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:38:15,403] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:38:15,406] ketais-macbook-pro.home/INFO/root: select course AAS297
+[2022-11-08 09:38:15,436] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:38:15,458] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:38:18,834] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:18,838] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:38:18,906] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:38:23,763] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:23,766] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:38:23,766] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:38:23,814] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:38:23,859] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:38:23,876] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:38:25,788] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:25,791] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:38:25,805] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:38:31,112] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:31,114] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:38:31,114] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:38:31,162] ketais-macbook-pro.home/INFO/root: select course AAS310
+[2022-11-08 09:38:31,197] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:38:31,233] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:38:32,506] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:32,509] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:38:32,522] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:38:41,010] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:41,013] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:38:41,027] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:38:41,255] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:41,258] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:38:41,258] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:38:41,260] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:38:41,296] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:38:41,318] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:38:48,016] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:48,019] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:38:48,033] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:38:51,263] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:51,266] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:38:51,266] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:38:51,268] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:38:51,313] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:38:52,293] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:38:54,357] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:38:54,360] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:38:54,388] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:38:59,164] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:38:59,168] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:38:59,168] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:38:59,171] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:38:59,216] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:38:59,234] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:01,156] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:01,159] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:39:01,173] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:39:06,992] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:39:06,995] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:39:06,995] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:39:06,997] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:39:07,027] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:07,047] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:07,225] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:07,954] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:39:07,968] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:39:15,378] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:39:15,381] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:39:15,381] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:39:15,383] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:39:15,527] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:39:15,544] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:39:17,641] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:17,644] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:39:17,657] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:39:24,594] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:24,597] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:39:24,613] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:39:24,750] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:39:24,753] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:39:24,753] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:39:24,754] ketais-macbook-pro.home/INFO/root: select course AAS343
+[2022-11-08 09:39:30,962] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:30,966] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:39:30,983] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:39:32,865] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:39:32,868] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:39:32,868] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:39:32,870] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:39:40,421] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:40,424] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:39:40,438] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:39:44,425] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:39:44,428] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:39:44,428] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:39:44,430] ketais-macbook-pro.home/INFO/root: select course AAS300
+[2022-11-08 09:39:44,465] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:39:44,483] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:39:49,460] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:49,464] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:39:49,479] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:39:52,352] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:39:52,355] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:39:52,355] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:39:52,358] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:39:52,392] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:52,409] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:58,860] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:39:58,863] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:39:58,878] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:39:58,973] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:39:58,976] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:39:58,976] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:39:59,053] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:39:59,087] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:39:59,105] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:40:06,329] ketais-macbook-pro.home/INFO/locust.runners: Shape test updating to 3 users at 1.00 spawn rate
+[2022-11-08 09:40:06,329] ketais-macbook-pro.home/INFO/locust.runners: Ramping to 3 users at a rate of 1.00 per second
+[2022-11-08 09:40:06,330] ketais-macbook-pro.home/INFO/locust.runners: All users spawned: {"InstructorUser": 1, "StudentUser": 2} (3 total users)
+[2022-11-08 09:40:06,330] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:06,333] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:40:06,453] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:40:08,490] ketais-macbook-pro.home/INFO/root: [TASK] upload one image to course
+[2022-11-08 09:40:08,493] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:40:08,493] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:40:08,495] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:40:08,519] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:08,522] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:40:08,536] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:40:13,702] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:13,705] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:40:13,797] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:40:16,286] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:40:16,290] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:40:16,290] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:40:16,292] ketais-macbook-pro.home/INFO/root: select course AAS297
+[2022-11-08 09:40:16,330] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:40:16,354] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:40:16,915] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:16,918] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:40:16,931] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:40:23,634] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:40:23,638] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:40:23,638] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:40:23,640] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:40:23,680] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:40:23,697] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:40:23,747] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:23,750] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:40:23,765] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:40:24,157] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:24,160] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:40:24,208] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:40:30,497] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:30,500] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:40:30,558] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:40:33,159] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:33,163] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:40:33,178] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:40:33,271] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:40:33,274] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:40:33,274] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:40:33,278] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:40:33,311] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:40:33,327] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:40:38,954] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:38,958] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:40:38,971] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:40:41,046] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:40:41,049] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:40:41,049] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:40:41,052] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:40:41,081] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:40:41,098] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:40:41,210] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:41,213] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:40:41,227] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:40:45,018] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:45,022] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:40:45,038] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:40:48,263] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:48,293] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:40:48,309] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:40:48,403] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:40:48,406] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:40:48,406] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:40:48,408] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:40:51,310] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:51,313] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:40:51,328] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:40:57,041] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:57,044] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:40:57,060] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:40:59,293] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:40:59,298] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:40:59,298] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:40:59,300] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:40:59,324] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:40:59,328] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:40:59,339] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:40:59,341] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:40:59,354] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:41:03,223] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:03,227] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:41:03,242] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:41:05,493] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:05,496] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:41:05,512] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:41:09,062] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:41:09,138] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:41:09,139] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:41:09,141] ketais-macbook-pro.home/INFO/root: select course AAS300
+[2022-11-08 09:41:09,168] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:41:09,183] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:41:11,675] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:11,678] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:41:11,694] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:41:16,492] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:16,502] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:41:16,519] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:41:18,157] ketais-macbook-pro.home/INFO/root: [TASK] upload one image to course
+[2022-11-08 09:41:18,160] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:41:18,160] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:41:18,162] ketais-macbook-pro.home/INFO/root: select course AAS246
+[2022-11-08 09:41:20,998] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:21,002] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:41:21,017] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:41:25,945] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:25,948] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:41:26,007] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:41:27,146] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:27,151] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:41:27,167] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:41:28,529] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:41:28,533] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:41:28,533] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:41:28,536] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:41:28,571] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:41:28,587] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:41:32,235] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:32,238] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:41:32,292] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:41:34,063] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:34,067] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:41:34,082] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:41:37,690] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:41:37,693] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:41:37,693] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:41:37,695] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:41:37,730] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:41:37,746] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:41:40,261] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:40,264] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:41:40,278] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:41:42,010] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:42,013] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:41:42,029] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:41:46,233] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:41:46,236] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:41:46,236] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:41:46,239] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:41:46,272] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:41:46,290] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:41:48,878] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:48,881] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:41:48,896] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:41:49,782] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:49,785] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:41:49,800] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:41:56,126] ketais-macbook-pro.home/INFO/root: [TASK] upload one image to course
+[2022-11-08 09:41:56,129] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:41:56,129] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:41:56,131] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:41:57,087] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:57,090] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:41:57,105] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:41:57,707] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:41:57,710] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:41:57,723] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:42:05,304] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:05,307] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:42:05,324] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:42:06,649] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:06,652] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:42:06,686] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:42:06,689] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:42:06,689] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:42:06,691] ketais-macbook-pro.home/INFO/root: select course AAS300
+[2022-11-08 09:42:07,384] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:42:07,398] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:42:08,172] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:42:11,808] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:11,813] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:42:11,829] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:42:16,725] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:16,730] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:42:16,749] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:42:17,243] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:42:17,246] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:42:17,246] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:42:17,248] ketais-macbook-pro.home/INFO/root: select course AAS343
+[2022-11-08 09:42:17,275] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:42:17,292] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:42:21,833] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:21,840] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:42:21,854] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:42:22,827] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:22,829] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:42:22,844] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:42:23,543] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:42:23,548] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:42:23,548] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:42:23,552] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:42:29,126] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:29,130] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:42:29,146] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:42:29,701] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:42:29,704] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:42:29,704] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:42:29,706] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:42:31,346] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:31,349] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:42:31,364] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:42:36,320] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:42:36,325] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:42:36,325] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:42:36,328] ketais-macbook-pro.home/INFO/root: select course AAS246
+[2022-11-08 09:42:38,479] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:38,482] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:42:38,496] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:42:39,994] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:39,998] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:42:40,013] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:42:45,898] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:42:45,902] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:42:45,903] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:42:45,906] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:42:46,169] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:46,176] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:42:46,191] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:42:48,878] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:48,881] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:42:48,899] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:42:53,080] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:53,084] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:42:53,098] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:42:55,216] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:42:55,219] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:42:55,219] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:42:55,221] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:42:55,250] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:42:55,266] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:42:56,643] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:42:56,646] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:42:56,660] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:01,388] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:01,391] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:01,405] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:03,968] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:43:03,971] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:43:03,971] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:43:03,973] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:43:04,824] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:04,839] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:05,081] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:05,084] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:05,099] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:07,737] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:07,740] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:43:07,754] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:43:11,564] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:43:11,567] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:43:11,567] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:43:11,569] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:43:11,601] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:11,617] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:12,195] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:12,198] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:12,213] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:13,975] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:13,978] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:43:13,993] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:18,679] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:43:18,681] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:43:18,682] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:43:18,684] ketais-macbook-pro.home/INFO/root: select course AAS297
+[2022-11-08 09:43:18,711] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:18,727] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:21,493] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:21,496] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:43:21,512] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:23,174] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:23,178] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:23,247] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:26,827] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:43:26,829] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:43:26,829] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:43:26,832] ketais-macbook-pro.home/INFO/root: select course AAS246
+[2022-11-08 09:43:26,895] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:26,913] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:43:27,885] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:27,887] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:27,910] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:32,276] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:32,279] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:32,294] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:34,254] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:43:34,257] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:43:34,257] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:43:34,260] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:43:34,292] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:43:34,308] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:43:35,504] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:35,507] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:43:35,522] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:41,978] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:43:41,981] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:43:41,981] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:43:41,983] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:43:42,324] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:42,327] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:43:42,342] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:43:44,454] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:44,457] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:43:44,499] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:48,688] ketais-macbook-pro.home/INFO/root: [TASK] upload one image to course
+[2022-11-08 09:43:48,691] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:43:48,691] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:43:48,693] ketais-macbook-pro.home/INFO/root: select course AAS310
+[2022-11-08 09:43:50,795] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:50,798] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:43:50,812] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:43:52,536] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:52,539] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:43:52,553] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:43:56,779] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:43:56,782] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:43:56,782] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:43:56,784] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:43:59,368] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:59,371] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:43:59,387] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:43:59,413] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:43:59,415] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:43:59,426] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:44:03,473] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:44:03,476] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:44:03,476] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:44:03,479] ketais-macbook-pro.home/INFO/root: select course AAS343
+[2022-11-08 09:44:06,410] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:06,413] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:44:06,427] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:44:07,190] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:07,193] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:44:07,207] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:44:11,657] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:44:11,660] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:44:11,660] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:44:11,662] ketais-macbook-pro.home/INFO/root: select course AAS300
+[2022-11-08 09:44:11,692] ketais-macbook-pro.home/INFO/root: select student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:44:11,709] ketais-macbook-pro.home/INFO/root: enroll student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG
+[2022-11-08 09:44:13,262] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:13,265] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:13,279] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:13,752] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:13,755] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:13,771] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:19,574] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:44:19,576] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:44:19,576] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:44:19,578] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:44:19,618] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:44:19,636] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:44:22,043] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:22,046] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:44:22,061] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:44:22,657] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:22,660] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:44:22,675] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:44:26,455] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:44:26,462] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:44:26,463] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:44:26,465] ketais-macbook-pro.home/INFO/root: select course AAS200
+[2022-11-08 09:44:30,030] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:30,033] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:44:30,049] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:44:31,702] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:31,704] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:31,718] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:34,263] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:44:34,267] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:44:34,267] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:44:34,269] ketais-macbook-pro.home/INFO/root: select course AAS281
+[2022-11-08 09:44:37,209] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:37,212] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:44:37,227] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:44:38,954] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:38,957] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:38,972] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:43,663] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:43,666] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:43,682] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:44,877] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:44:44,880] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:44:44,880] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:44:44,882] ketais-macbook-pro.home/INFO/root: select course AAS310
+[2022-11-08 09:44:44,911] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:44:44,927] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:44:46,147] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:46,150] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:44:46,163] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:44:49,772] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:49,774] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:44:49,790] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:44:54,184] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:54,187] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:44:54,201] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:44:54,859] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:44:54,862] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:44:54,862] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:44:54,864] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:44:54,899] ketais-macbook-pro.home/INFO/root: select student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:44:54,919] ketais-macbook-pro.home/INFO/root: enroll student hY7Djq.PO.6aV6mnB@Ju.s.gybV
+[2022-11-08 09:44:57,795] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:44:57,799] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:44:57,814] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:45:01,049] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:01,052] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:45:01,052] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:45:01,054] ketais-macbook-pro.home/INFO/root: select course AAS201
+[2022-11-08 09:45:01,096] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:01,119] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:02,185] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:02,188] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:45:02,203] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:45:03,906] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:03,909] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:45:03,925] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:45:09,062] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:09,065] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:45:09,081] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:45:09,682] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:09,685] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:45:09,685] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:45:09,688] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:45:09,725] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:09,743] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:13,461] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:13,466] ketais-macbook-pro.home/INFO/root: Learner 6vGxd.oZv7alQN1.kPlVG@o.zvKUG login
+[2022-11-08 09:45:13,485] ketais-macbook-pro.home/INFO/root: student 6vGxd.oZv7alQN1.kPlVG@o.zvKUG visits my courses
+[2022-11-08 09:45:15,845] ketais-macbook-pro.home/INFO/root: [TASK] edit one course description
+[2022-11-08 09:45:15,848] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:45:15,849] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:45:15,851] ketais-macbook-pro.home/INFO/root: select course AAS310
+[2022-11-08 09:45:18,113] ketais-macbook-pro.home/INFO/root: [TASK] take course
+[2022-11-08 09:45:18,116] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:45:18,150] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV takes course AAS201
+[2022-11-08 09:45:19,627] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV start course AAS201
+[2022-11-08 09:45:22,145] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:22,148] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:45:22,162] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:45:23,351] ketais-macbook-pro.home/INFO/root: [TASK] upload one attachment to course
+[2022-11-08 09:45:23,356] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:45:23,356] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:45:23,359] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:45:25,881] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:25,884] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:45:25,897] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:45:28,356] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:28,359] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:45:28,375] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:45:33,466] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:33,469] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:45:33,469] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:45:33,472] ketais-macbook-pro.home/INFO/root: select course AAS100
+[2022-11-08 09:45:33,513] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:45:33,532] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:45:35,909] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:35,914] ketais-macbook-pro.home/INFO/root: Learner OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 login
+[2022-11-08 09:45:35,928] ketais-macbook-pro.home/INFO/root: student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5 visits my courses
+[2022-11-08 09:45:37,600] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:37,602] ketais-macbook-pro.home/INFO/root: Learner DKUjEqXKFif.RDkqo@I.LUcMk login
+[2022-11-08 09:45:37,617] ketais-macbook-pro.home/INFO/root: student DKUjEqXKFif.RDkqo@I.LUcMk visits my courses
+[2022-11-08 09:45:41,803] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:41,806] ketais-macbook-pro.home/INFO/root: select instructor n6yr.GemsBTs4lYm6@N.3.yAEUW
+[2022-11-08 09:45:41,806] ketais-macbook-pro.home/INFO/root: Instructor n6yr.GemsBTs4lYm6@N.3.yAEUW login
+[2022-11-08 09:45:41,808] ketais-macbook-pro.home/INFO/root: select course AAS297
+[2022-11-08 09:45:41,836] ketais-macbook-pro.home/INFO/root: select student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:45:41,852] ketais-macbook-pro.home/INFO/root: enroll student o9.1.FnWfGIqb@h.kN.jTbj
+[2022-11-08 09:45:45,187] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:45,190] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:45:45,206] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:45:47,418] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:47,420] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:45:47,436] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:45:48,261] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:48,263] ketais-macbook-pro.home/INFO/root: select instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm
+[2022-11-08 09:45:48,264] ketais-macbook-pro.home/INFO/root: Instructor thap.LIy.SMd32ueZHj0I7@G.f.8EFamjXm login
+[2022-11-08 09:45:48,266] ketais-macbook-pro.home/INFO/root: select course AAS343
+[2022-11-08 09:45:48,291] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:48,307] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:45:53,924] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:53,927] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:45:53,942] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:45:54,773] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:45:54,776] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:45:54,791] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:45:57,426] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:45:57,429] ketais-macbook-pro.home/INFO/root: select instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl
+[2022-11-08 09:45:57,429] ketais-macbook-pro.home/INFO/root: Instructor nL.0w.Rcr7uVwnK@IN.LsHeFNkl login
+[2022-11-08 09:45:57,431] ketais-macbook-pro.home/INFO/root: select course AAS275
+[2022-11-08 09:45:57,470] ketais-macbook-pro.home/INFO/root: select student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:45:57,488] ketais-macbook-pro.home/INFO/root: enroll student OHnXfJazTcHNX.8.wprpc@19.yr.NKgxM5
+[2022-11-08 09:46:01,164] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:46:01,167] ketais-macbook-pro.home/INFO/root: Learner hY7Djq.PO.6aV6mnB@Ju.s.gybV login
+[2022-11-08 09:46:01,250] ketais-macbook-pro.home/INFO/root: student hY7Djq.PO.6aV6mnB@Ju.s.gybV visits my courses
+[2022-11-08 09:46:02,537] ketais-macbook-pro.home/INFO/root: [TASK] visit my courses
+[2022-11-08 09:46:02,540] ketais-macbook-pro.home/INFO/root: Learner o9.1.FnWfGIqb@h.kN.jTbj login
+[2022-11-08 09:46:02,554] ketais-macbook-pro.home/INFO/root: student o9.1.FnWfGIqb@h.kN.jTbj visits my courses
+[2022-11-08 09:46:06,141] ketais-macbook-pro.home/INFO/root: [TASK] enroll one student
+[2022-11-08 09:46:06,144] ketais-macbook-pro.home/INFO/root: select instructor v6LR.PoXTfnMb@I.FWMJBNuW4
+[2022-11-08 09:46:06,144] ketais-macbook-pro.home/INFO/root: Instructor v6LR.PoXTfnMb@I.FWMJBNuW4 login
+[2022-11-08 09:46:06,146] ketais-macbook-pro.home/INFO/root: select course AAS246
+[2022-11-08 09:46:06,175] ketais-macbook-pro.home/INFO/root: select student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:46:06,190] ketais-macbook-pro.home/INFO/root: enroll student DKUjEqXKFif.RDkqo@I.LUcMk
+[2022-11-08 09:46:06,310] ketais-macbook-pro.home/INFO/locust.runners: Shape test stopping
+[2022-11-08 10:01:15,557] ketais-macbook-pro.home/INFO/locust.main: writing html report to file: alemira_report.html
+[2022-11-08 10:01:15,558] ketais-macbook-pro.home/INFO/locust.main: Shutting down (exit code 0)

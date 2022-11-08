@@ -1,0 +1,3 @@
+Method,Name,Error,Occurrences
+GET,download attachment from objective,CatchResponseError('HTTP error 401 Unauthorized!'),15
+POST,upload attachment to objective,CatchResponseError('HTTP error 400 Bad Request!'),2

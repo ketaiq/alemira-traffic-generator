@@ -48,6 +48,7 @@ class IdentityAPIEndPoint:
         role: Role,
         user: User = None,
     ) -> dict:
+        logging.info(f"{role.value} {user.username} login")
         if user is None:
             user = json.dumps(self.DEFAULT_USER)
         else:

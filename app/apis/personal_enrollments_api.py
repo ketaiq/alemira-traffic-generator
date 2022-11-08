@@ -4,6 +4,7 @@ from app.models.personal_enrollment import PersonalEnrollment
 import requests
 from app.utils.string import request_timeout_msg, request_http_error_msg
 from app.models.user import User
+from app.utils.time import sleep_for_seconds
 
 
 class PersonalEnrollmentsAPI(UserAPIEndPoint):
@@ -38,6 +39,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 if created_state["completed"]:
                     personal_enrollment.id = created_state["entityId"]
                     break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.post(
                 self.url,
@@ -58,6 +60,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                         if created_state["completed"]:
                             personal_enrollment.id = created_state["entityId"]
                             break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -118,6 +121,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 )
                 if deleted_state["completed"]:
                     break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.delete(
                 self.url + id,
@@ -136,6 +140,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                         )
                         if deleted_state["completed"]:
                             break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

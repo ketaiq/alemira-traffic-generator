@@ -3,6 +3,8 @@ from app.models.user import User
 from app.utils.string import request_timeout_msg, request_http_error_msg
 import requests, logging
 
+from app.utils.time import sleep_for_seconds
+
 
 class UserRolesAPI(UserAPIEndPoint):
     def __init__(
@@ -48,6 +50,7 @@ class UserRolesAPI(UserAPIEndPoint):
                 )
                 if created_state["completed"]:
                     break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.post(
                 self.url,
@@ -65,6 +68,7 @@ class UserRolesAPI(UserAPIEndPoint):
                         )
                         if created_state["completed"]:
                             break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

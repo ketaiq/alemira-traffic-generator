@@ -1,6 +1,7 @@
 from app.apis.user_api_endpoint import UserAPIEndPoint
 import requests
 from app.utils.string import request_http_error_msg, request_timeout_msg
+from app.utils.time import sleep_for_seconds
 
 
 class StartActivityWorkflowsAPI(UserAPIEndPoint):
@@ -45,6 +46,7 @@ class StartActivityWorkflowsAPI(UserAPIEndPoint):
                 )
                 if created_state["completed"]:
                     break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.post(
                 self.url,
@@ -62,6 +64,7 @@ class StartActivityWorkflowsAPI(UserAPIEndPoint):
                         )
                         if created_state["completed"]:
                             break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

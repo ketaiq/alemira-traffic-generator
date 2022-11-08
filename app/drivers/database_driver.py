@@ -34,13 +34,15 @@ class DatabaseDriver:
 
     def update_user(self, user: User):
         user_dict = user.to_dict_for_database()
+        user_dict.pop("id", None)
         user_dict.pop("_role", None)
+        user_dict.pop("password", None)
         self.users.update_one({"id": user.id}, {"$set": user_dict})
 
     def update_course(self, course: Activity):
-        self.courses.update_one(
-            {"id": course.id}, {"$set": course.to_dict_for_database()}
-        )
+        activity_dict = course.to_dict_for_database()
+        activity_dict.pop("id", None)
+        self.courses.update_one({"id": course.id}, {"$set": activity_dict})
 
     def check_objective_by_code(self, objective: Objective) -> bool:
         return (

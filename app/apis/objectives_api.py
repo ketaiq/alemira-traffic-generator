@@ -5,6 +5,7 @@ from app.utils.string import request_timeout_msg, request_http_error_msg
 from app.models.objective.objective import Objective
 from app.models.activity.activity import Activity
 from app.models.user import User
+from app.utils.time import sleep_for_seconds
 
 
 class ObjectivesAPI(UserAPIEndPoint):
@@ -174,6 +175,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 )
                 if updated_state["completed"]:
                     break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.put(
                 self.url + objective.id,
@@ -191,6 +193,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                         )
                         if updated_state["completed"]:
                             break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

@@ -7,7 +7,7 @@ from app.apis.activity_records_api import ActivityRecordsAPI
 from app.apis.start_objective_workflows_api import StartObjectiveWorkflowsAPI
 from app.apis.start_activity_workflows_api import StartActivityWorkflowsAPI
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
-import random
+import random, logging
 from app.models.user import User
 from app.models.role import Role
 from app.models.objective.objective import Objective
@@ -41,6 +41,7 @@ class Student:
     def visit_my_courses(self):
         headers = self._get_student_headers()
         me = self.lms_users_api.get_user_me(headers)
+        logging.info(f"student {me.username} visits my courses")
         self.users_api.get_user_permissions(headers)
         self.users_api.get_user_roles(headers)
         self.users_api.get_user_objective_workflow_aggregates(headers, me.id)
@@ -62,6 +63,8 @@ class Student:
         :return: Course objective workflow aggregate id.
         """
         course = self.select_one_course(headers, user.id)
+        course_code = course["objective"]["code"]
+        logging.info(f"student {user.username} takes course {course_code}")
         if course is not None:
             self.objectives_api.get_objective_workflow_aggregate_by_id(
                 headers, course["objective"]["id"]
@@ -78,9 +81,11 @@ class Student:
             if course["lastObjectiveWorkflow"] is None:
                 # Start a course if the chosen course hasn't been started
                 self._start_course(headers, course, objective, user)
+                logging.info(f"student {user.username} start course {course_code}")
             else:
                 # Visit a course if the chosen course has been started
                 self._visit_course(headers, course, objective, user)
+                logging.info(f"student {user.username} visit course {course_code}")
             # Download an attachment from a course (70% probability if exists)
             objective = self.objectives_api.get_objective_by_id(
                 headers, course["objective"]["id"]
@@ -89,6 +94,9 @@ class Student:
                 [True, False], (40, 60), k=1
             ):
                 self._download_attachment(headers, objective.get_attachment_url())
+                logging.info(
+                    f"student {user.username} download attachment from course {course_code}"
+                )
             return course["id"]
 
     def _download_attachment(self, headers: dict, url: str):
