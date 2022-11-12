@@ -1,20 +1,14 @@
-from app.drivers.database_driver import db_driver
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
-from app.profiles.admin import Admin
 from app.apis.objectives_api import ObjectivesAPI
-import random
 from app.models.objective.objective import Objective
+from app.models.role import Role
 
 
 def test_get_objectives_by_query():
     identity_api_endpoint = IdentityAPIEndPoint()
-    admin = Admin(
-        db_driver,
-        identity_api_endpoint,
-    )
-    objectives_api = ObjectivesAPI(db_driver)
-    headers = admin._get_admin_headers()
-    course_code = random.choice(db_driver.find_courses_codes())
+    objectives_api = ObjectivesAPI(None)
+    headers = identity_api_endpoint.get_headers(Role.ADMIN)
+    course_code = "03.09-2"
     objective_dict = objectives_api.get_objectives_by_query(
         headers,
         {
@@ -27,14 +21,9 @@ def test_get_objectives_by_query():
 
 def test_download_attachment_from_objective():
     identity_api_endpoint = IdentityAPIEndPoint()
-    admin = Admin(
-        db_driver,
-        identity_api_endpoint,
-    )
-    objectives_api = ObjectivesAPI(db_driver)
-    headers = admin._get_admin_headers()
-    objective_id = random.choice(db_driver.find_course_ids())
-    assert type(objective_id) is str
+    headers = identity_api_endpoint.get_headers(Role.ADMIN)
+    objectives_api = ObjectivesAPI(None)
+    objective_id = "d83fbac3-bcf0-4a0f-ad1a-6d6c4dbde6ed"
     objective = objectives_api.get_objective_by_id(headers, objective_id)
     assert type(objective) is Objective
     if objective.has_attachment():

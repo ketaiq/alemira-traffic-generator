@@ -1,11 +1,10 @@
-from app.drivers.database_driver import db_driver
 from app.apis.activities_api import ActivitiesAPI
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.models.role import Role
 
 
 def test_get_activities():
-    activities_api = ActivitiesAPI(db_driver)
+    activities_api = ActivitiesAPI(None)
     identity_api_endpoint = IdentityAPIEndPoint()
     headers = identity_api_endpoint.get_headers(Role.ADMIN)
     activities = activities_api.get_activities(headers)
@@ -13,7 +12,7 @@ def test_get_activities():
 
 
 def test_get_activities_by_query():
-    activities_api = ActivitiesAPI(db_driver)
+    activities_api = ActivitiesAPI(None)
     identity_api_endpoint = IdentityAPIEndPoint()
     headers = identity_api_endpoint.get_headers(Role.ADMIN)
     query = {"skip": 0, "take": 10, "requireTotalCount": True}
