@@ -2,6 +2,8 @@ from app.drivers.database_driver import db_driver
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.profiles.admin import Admin
 from app.apis.objectives_api import ObjectivesAPI
+import random
+from app.models.objective.objective import Objective
 
 
 def test_get_objectives_by_query():
@@ -12,15 +14,15 @@ def test_get_objectives_by_query():
     )
     objectives_api = ObjectivesAPI(db_driver)
     headers = admin._get_admin_headers()
-    for course_code in db_driver.find_courses_codes():
-        objective_dict = objectives_api.get_objectives_by_query(
-            headers,
-            {
-                "requireTotalCount": True,
-                "filter": f'["code","=","{course_code}"]',
-            },
-        )
-        assert objective_dict is not None
+    course_code = random.choice(db_driver.find_courses_codes())
+    objective_dict = objectives_api.get_objectives_by_query(
+        headers,
+        {
+            "requireTotalCount": True,
+            "filter": f'["code","=","{course_code}"]',
+        },
+    )
+    assert type(objective_dict) is dict
 
 
 def test_download_attachment_from_objective():
@@ -31,16 +33,19 @@ def test_download_attachment_from_objective():
     )
     objectives_api = ObjectivesAPI(db_driver)
     headers = admin._get_admin_headers()
-    for objective_id in db_driver.find_course_ids():
-        objective = objectives_api.get_objective_by_id(headers, objective_id)
-        if objective.has_attachment():
-            objectives_api.download_attachment_from_objective(
-                objective.get_attachment_url()
-            )
+    objective_id = random.choice(db_driver.find_course_ids())
+    assert type(objective_id) is str
+    objective = objectives_api.get_objective_by_id(headers, objective_id)
+    assert type(objective) is Objective
+    if objective.has_attachment():
+        res = objectives_api.download_attachment_from_objective(
+            objective.get_attachment_url()
+        )
+        assert type(res) is str
 
 
 def main():
-    # test_get_objectives_by_query()
+    test_get_objectives_by_query()
     test_download_attachment_from_objective()
 
 
