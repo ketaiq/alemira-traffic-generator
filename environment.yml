@@ -4,8 +4,14 @@ channels:
   - defaults
 dependencies:
   - black
-  - python
+  - python=3.10
   - requests
   - locust
   - pyyaml
-prefix: /Users/ketai/miniconda3/envs/alemira
+  - pandas
+  - numpy
+  - scikit-learn
+  - pymongo
+  - pytest-cov
+  - selenium
+  - webdriver-manager
