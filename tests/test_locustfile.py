@@ -3,7 +3,7 @@ import pandas as pd
 
 def test_StagesShape_init():
     time_intervals = 120
-    df = pd.read_csv("./app/workload.csv")
+    df = pd.read_csv("./app/workload/workload_before_enroll.csv")
     stages = []
     duration = time_intervals
     for index in df.index:

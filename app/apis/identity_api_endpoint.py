@@ -48,7 +48,6 @@ class IdentityAPIEndPoint:
         role: Role,
         user: User = None,
     ) -> dict:
-        logging.info(f"{role.value} {user.username} login")
         if user is None:
             user = json.dumps(self.DEFAULT_USER)
         else:
@@ -57,6 +56,8 @@ class IdentityAPIEndPoint:
             # overriding user credentials with insomnia
             user = json.dumps({**self.DEFAULT_USER, **user})
         token = self._get_token(role.value, user)
+        username = json.loads(user)["username"]
+        logging.info(f"{role.value} {username} login")
         return {
             "accept": "*/*",
             "Authorization": "Bearer " + token,
