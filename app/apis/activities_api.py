@@ -109,7 +109,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                 headers=headers,
             )
             r.raise_for_status()
-            self.driver.update_course(activity)
+            self.driver.update_activity(activity)
             return r.json()["id"]
         else:
             with self.client.put(
@@ -120,7 +120,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    self.driver.update_course(activity)
+                    self.driver.update_activity(activity)
                     return response.json()["id"]
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
@@ -148,5 +148,5 @@ class ActivitiesAPI(UserAPIEndPoint):
         course.id = self.get_created_activity_state_by_id(headers, r.json()["id"])[
             "entityId"
         ]
-        self.driver.insert_one_course(course)
+        self.driver.insert_one_activity(course)
         return course

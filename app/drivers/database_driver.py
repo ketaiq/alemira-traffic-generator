@@ -12,14 +12,14 @@ class DatabaseDriver:
         self.client = MongoClient(uri)
         self.db = self.client["alemira"]
         self.users = self.db["users"]
-        self.courses = self.db["courses"]
+        self.activities = self.db["activities"]
         self.objectives = self.db["objectives"]
 
     def insert_one_user(self, user: User):
         self.users.insert_one(user.to_dict_for_database())
 
-    def insert_one_course(self, course: Activity):
-        self.courses.insert_one(course.to_dict_for_database())
+    def insert_one_activity(self, activity: Activity):
+        self.activities.insert_one(activity.to_dict_for_database())
 
     def insert_one_objective(self, objective: Objective):
         self.objectives.insert_one(objective.to_dict_for_database())
@@ -39,10 +39,10 @@ class DatabaseDriver:
         user_dict.pop("password", None)
         self.users.update_one({"id": user.id}, {"$set": user_dict})
 
-    def update_course(self, course: Activity):
-        activity_dict = course.to_dict_for_database()
+    def update_activity(self, activity: Activity):
+        activity_dict = activity.to_dict_for_database()
         activity_dict.pop("id", None)
-        self.courses.update_one({"id": course.id}, {"$set": activity_dict})
+        self.activities.update_one({"id": activity.id}, {"$set": activity_dict})
 
     def check_objective_by_code(self, objective: Objective) -> bool:
         return (
@@ -51,9 +51,11 @@ class DatabaseDriver:
             else False
         )
 
-    def check_course_by_code(self, course: Activity) -> bool:
+    def check_activity_by_code(self, activity: Activity) -> bool:
         return (
-            True if self.courses.find_one({"code": course.code}) is not None else False
+            True
+            if self.activities.find_one({"code": activity.code}) is not None
+            else False
         )
 
     def check_user_by_id(self, user: User) -> bool:
@@ -62,10 +64,10 @@ class DatabaseDriver:
     def find_student_usernames(self) -> list:
         return self.users.find({"_role": Role.STUDENT.value}).distinct("username")
 
-    def find_courses_codes(self) -> list:
-        return self.courses.find().distinct("code")
+    def find_activity_codes(self) -> list:
+        return self.activities.find().distinct("code")
 
-    def find_course_ids(self) -> list:
+    def find_objective_ids(self) -> list:
         return self.objectives.find().distinct("id")
 
     def find_admin_users(self) -> list:
