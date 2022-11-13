@@ -21,6 +21,10 @@ def preprocess_course_files():
             "Avg. seconds on page",
         ]
     ]
+    df = df.reset_index(drop=True)
+    df["Code"] = df.index
+    df["Code"] = df["Code"].astype("string")
+    df["Code"] = "USI" + df["Code"]
     df.to_csv("data/course-catalog.csv", index=False)
 
 

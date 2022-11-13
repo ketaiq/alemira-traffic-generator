@@ -149,7 +149,7 @@ class Instructor:
         return objective
 
     def _select_one_objective(self, headers: dict) -> Objective:
-        course_code = random.choice(self.db_driver.find_courses_codes())
+        course_code = random.choice(self.db_driver.find_activity_codes())
         logging.info(f"select course {course_code}")
         res = self.objectives_api.get_objectives_by_query(
             headers,

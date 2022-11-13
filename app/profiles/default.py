@@ -24,19 +24,19 @@ def create_default_courses():
     headers = admin._get_admin_headers()
     rich_text_id = resource_libraries_api.get_rich_text_id(headers)
     df = pd.read_csv("data/course-catalog.csv")
-    for index in df.index[0:10]:
+    for index in df.index[0:5]:
         # check if course exists
         course = activities_api.get_activity_by_code_or_none(
-            headers, df.loc[index, "Subject"] + str(df.loc[index, "Number"])
+            headers, df.loc[index, "Code"]
         )
         if course is None:
             course = activities_api.create_rich_text_courses(
                 headers, rich_text_id, df.loc[index]
             )
-        elif db_driver.check_course_by_code(course):
-            db_driver.update_course(course)
+        elif db_driver.check_activity_by_code(course):
+            db_driver.update_activity(course)
         else:
-            db_driver.insert_one_course(course)
+            db_driver.insert_one_activity(course)
         # check if objective exists
         objective = objectives_api.get_objective_by_code_or_none(headers, course.code)
         if objective is None:
@@ -83,8 +83,8 @@ def create_default_users():
 
 
 def main():
-    # create_default_courses()
-    create_default_users()
+    create_default_courses()
+    # create_default_users()
 
 
 if __name__ == "__main__":

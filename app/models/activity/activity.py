@@ -1,5 +1,5 @@
 from app.models.model import Model
-from app.utils.string import gen_random_course
+from app.utils.string import gen_random_course, gen_random_description
 import random, logging
 from app.models.activity.activity_type import ActivityType
 from app.models.activity.activity_state import ActivityState
@@ -131,9 +131,9 @@ class Activity(Model):
         return Activity(
             type=ActivityType.RICH_TEXT_ACT.value,
             resourceLibraryId=rich_text_id,
-            name=course["Name"],
-            code=course["Subject"] + str(course["Number"]),
-            description=course["Description"],
+            name=course["Label"],
+            code=course["Code"],
+            description=gen_random_description(),
             content="",
             editorContent="",
             toolUrl="",
