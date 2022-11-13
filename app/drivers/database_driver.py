@@ -67,6 +67,9 @@ class DatabaseDriver:
     def find_activity_codes(self) -> list:
         return self.activities.find().distinct("code")
 
+    def find_objective_codes(self) -> list:
+        return self.objectives.find().distinct("code")
+
     def find_objective_ids(self) -> list:
         return self.objectives.find().distinct("id")
 

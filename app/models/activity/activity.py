@@ -1,11 +1,13 @@
 from app.models.model import Model
-from app.utils.string import gen_random_course, gen_random_description
-import random, logging
+from app.utils.string import gen_random_course, gen_random_description, gen_random_id
+import random, logging, copy, json
 from app.models.activity.activity_type import ActivityType
 from app.models.activity.activity_state import ActivityState
 import pandas as pd
 from app.models.dict_mode import DictMode
 from app.exceptions import UnsupportedModeException
+from app.models.objective.objective import Objective
+from app.utils.time import get_current_timestamp
 
 
 class Activity(Model):
@@ -145,3 +147,103 @@ class Activity(Model):
             supportFullscreenView=True,
             toolResourceId="",
         )
+
+    def gen_random_update(self) -> "Activity":
+        activity = copy.deepcopy(self)
+        while activity == self:
+            activity.description = (
+                gen_random_description()
+                if random.choice([True, False])
+                else activity.description
+            )
+            editorContent = Objective.gen_random_about_content()
+            activity.editorContent = json.dumps(editorContent)
+            activity.content = Objective.gen_about_from_about_content(editorContent)
+        return activity
+
+    def gen_update_with_an_image(
+        self, image_filename: str, image_url: str
+    ) -> "Activity":
+        activity = copy.deepcopy(self)
+        if self.editorContent:
+            editorContent = json.loads(self.editorContent)
+            editorContent["time"] = get_current_timestamp()
+        else:
+            editorContent = {
+                "time": get_current_timestamp(),
+                "blocks": [],
+                "version": "2.23.2",
+            }
+        block = {
+            "id": gen_random_id(10),
+            "type": "image",
+            "data": {
+                "file": {
+                    "url": image_url,
+                    "name": image_filename,
+                    "title": image_filename,
+                },
+                "caption": image_filename,
+                "withBorder": False,
+                "stretched": False,
+                "withBackground": False,
+            },
+        }
+        editorContent["blocks"].append(block)
+        activity.editorContent = json.dumps(editorContent)
+        activity.content = Objective.gen_about_from_about_content(editorContent)
+        return activity
+
+    def gen_update_with_an_attachment(
+        self, attachment_filename: str, attachment_url: str
+    ) -> "Activity":
+        activity = copy.deepcopy(self)
+        if self.editorContent:
+            editorContent = json.loads(self.editorContent)
+            editorContent["time"] = get_current_timestamp()
+        else:
+            editorContent = {
+                "time": get_current_timestamp(),
+                "blocks": [],
+                "version": "2.23.2",
+            }
+        block = {
+            "id": gen_random_id(10),
+            "type": "attaches",
+            "data": {
+                "file": {
+                    "url": attachment_url,
+                    "name": attachment_filename,
+                    "extension": attachment_filename.split(".")[1],
+                },
+                "title": attachment_filename,
+            },
+        }
+        editorContent["blocks"].append(block)
+        activity.editorContent = json.dumps(editorContent)
+        activity.content = Objective.gen_about_from_about_content(editorContent)
+        return activity
+
+    def has_attachment(self) -> bool:
+        if self.editorContent:
+            editorContent = json.loads(self.editorContent)
+            attach = next(
+                (
+                    block
+                    for block in editorContent["blocks"]
+                    if block["type"] == "attaches"
+                ),
+                None,
+            )
+            if attach:
+                url = attach["data"]["file"]["url"]
+                if type(url) is str and url:
+                    return True
+        return False
+
+    def get_attachment_url(self) -> str:
+        editorContent = json.loads(self.editorContent)
+        attach = next(
+            (block for block in editorContent["blocks"] if block["type"] == "attaches"),
+        )
+        return attach["data"]["file"]["url"]

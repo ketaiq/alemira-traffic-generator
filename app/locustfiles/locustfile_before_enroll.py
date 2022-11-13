@@ -59,12 +59,12 @@ class InstructorUser(HttpUser):
     @task(task_weights[3])
     def upload_one_image_to_course(self):
         logging.info("[TASK] upload one image to course")
-        self.instructor.upload_one_image_to_course()
+        self.instructor.upload_one_image_to_course_description()
 
     @task(task_weights[4])
     def upload_one_attachment_to_course(self):
         logging.info("[TASK] upload one attachment to course")
-        self.instructor.upload_one_attachment_to_course()
+        self.instructor.upload_one_attachment_to_course_description()
 
 
 class StudentUser(HttpUser):
