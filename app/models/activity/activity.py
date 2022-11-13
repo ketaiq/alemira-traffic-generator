@@ -6,7 +6,7 @@ from app.models.activity.activity_state import ActivityState
 import pandas as pd
 from app.models.dict_mode import DictMode
 from app.exceptions import UnsupportedModeException
-from app.models.objective.objective import Objective
+from app.utils.html_content import gen_random_content_dict, gen_html_from_content_dict
 from app.utils.time import get_current_timestamp
 
 
@@ -156,9 +156,9 @@ class Activity(Model):
                 if random.choice([True, False])
                 else activity.description
             )
-            editorContent = Objective.gen_random_about_content()
+            editorContent = gen_random_content_dict()
             activity.editorContent = json.dumps(editorContent)
-            activity.content = Objective.gen_about_from_about_content(editorContent)
+            activity.content = gen_html_from_content_dict(editorContent)
         return activity
 
     def gen_update_with_an_image(
@@ -191,7 +191,7 @@ class Activity(Model):
         }
         editorContent["blocks"].append(block)
         activity.editorContent = json.dumps(editorContent)
-        activity.content = Objective.gen_about_from_about_content(editorContent)
+        activity.content = gen_html_from_content_dict(editorContent)
         return activity
 
     def gen_update_with_an_attachment(
@@ -221,7 +221,7 @@ class Activity(Model):
         }
         editorContent["blocks"].append(block)
         activity.editorContent = json.dumps(editorContent)
-        activity.content = Objective.gen_about_from_about_content(editorContent)
+        activity.content = gen_html_from_content_dict(editorContent)
         return activity
 
     def has_attachment(self) -> bool:
