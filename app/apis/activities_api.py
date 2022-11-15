@@ -5,6 +5,7 @@ from app.models.user import User
 import pandas as pd
 from app.drivers.database_driver import DatabaseDriver
 from app.utils.string import request_timeout_msg, request_http_error_msg
+from app.utils.time import sleep_for_seconds
 
 
 class ActivitiesAPI(UserAPIEndPoint):
@@ -102,7 +103,7 @@ class ActivitiesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, headers: dict, activity: Activity) -> str:
+    def update_activity(self, headers: dict, activity: Activity):
         if self.client is None:
             r = requests.put(
                 self.url + activity.id,
@@ -112,7 +113,15 @@ class ActivitiesAPI(UserAPIEndPoint):
             r.raise_for_status()
             if self.driver:
                 self.driver.update_activity(activity)
-            return r.json()["id"]
+            updated_id = r.json()["id"]
+            # check entity is updated successfully
+            while True:
+                updated_state = self.get_updated_activity_state_by_id(
+                    headers, updated_id
+                )
+                if updated_state["completed"]:
+                    break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.put(
                 self.url + activity.id,
@@ -124,7 +133,14 @@ class ActivitiesAPI(UserAPIEndPoint):
                 if response.ok:
                     if self.driver:
                         self.driver.update_activity(activity)
-                    return response.json()["id"]
+                    # check entity is updated successfully
+                    while True:
+                        updated_state = self.get_updated_activity_state_by_id(
+                            headers, updated_id
+                        )
+                        if updated_state["completed"]:
+                            break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

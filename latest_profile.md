@@ -7,11 +7,15 @@
 
 ### Instructor
 - Login
-- Edit a course description
-- Upload an image to a course
-- Upload an attachment to a course
 - Enroll a student to a course
 - Expel a student from a course
+- Edit a course description
+- Upload an image to a course description
+- Upload an attachment to a course description
+- Edit a course content
+- Upload an image to a course content
+- Upload an attachment to a course content
+
 
 ### Student
 - Login 1
@@ -19,6 +23,7 @@
 - Enroll to a course 0.15
 - Visit a cource page 5
 - Download an attachment from a course
+
 - Visit assignment page <-- functionality availability is not knows
 - Progress on the course <-- functionality is unclear
 - Finish a course <-- functionality is unclear
