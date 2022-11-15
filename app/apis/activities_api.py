@@ -110,7 +110,8 @@ class ActivitiesAPI(UserAPIEndPoint):
                 headers=headers,
             )
             r.raise_for_status()
-            self.driver.update_activity(activity)
+            if self.driver:
+                self.driver.update_activity(activity)
             return r.json()["id"]
         else:
             with self.client.put(
@@ -121,7 +122,8 @@ class ActivitiesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    self.driver.update_activity(activity)
+                    if self.driver:
+                        self.driver.update_activity(activity)
                     return response.json()["id"]
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
