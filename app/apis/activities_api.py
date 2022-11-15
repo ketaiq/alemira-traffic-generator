@@ -115,7 +115,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                 self.driver.update_activity(activity)
             updated_id = r.json()["id"]
             # check entity is updated successfully
-            while True:
+            for _ in range(10):
                 updated_state = self.get_updated_activity_state_by_id(
                     headers, updated_id
                 )
@@ -134,7 +134,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                     if self.driver:
                         self.driver.update_activity(activity)
                     # check entity is updated successfully
-                    while True:
+                    for _ in range(10):
                         updated_state = self.get_updated_activity_state_by_id(
                             headers, updated_id
                         )
