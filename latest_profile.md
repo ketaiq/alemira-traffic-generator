@@ -32,3 +32,4 @@
 - Visit News page 0.04 <-- functionality availability is not knows
 - Visit Forum page 0.04 <-- functionality availability is not knows
 - Post a message in Forum 0.01 <-- functionality availability is not knows
+
