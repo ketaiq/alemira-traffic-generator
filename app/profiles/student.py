@@ -72,7 +72,6 @@ class Student:
     def _visit_one_course(self, headers: dict, user: User):
         """
         Perform a student's actions of taking a course.
-        :return: Course objective workflow aggregate id.
         """
         course = self._select_one_course(headers, user.id)
         if course is None:
@@ -91,21 +90,27 @@ class Student:
         self.objective_workflow_aggregates_api.get_objective_records_by_id(
             headers, course["id"]
         )
-        if course["lastObjectiveWorkflow"]:
-            # Visit a course if the chosen course has been started
-            self._visit_course(headers, course, objective, user)
-            logging.info(f"student {user.username} visits course {course_code}.")
-        # Download an attachment from a course (70% probability if exists)
-        objective = self.objectives_api.get_objective_by_id(
-            headers, course["objective"]["id"]
+        # Visit a course if the chosen course has been started
+        self.users_api.get_user_activity_workflow_aggregates_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
+            },
         )
-        if objective.has_attachment() and random.choices([True, False], (40, 60), k=1):
+        # when press continue button
+        self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
+            headers, course["id"], objective.activity.id
+        )
+        # Download an attachment from a course (70% probability if exists)
+        if objective.has_attachment() and random.choices([True, False], (70, 30), k=1):
             self.objectives_api.download_attachment_from_objective(
                 objective.get_attachment_url()
             )
             logging.info(
                 f"student {user.username} downloads attachment from course {course_code}."
             )
+        logging.info(f"student {user.username} visits course {course_code}.")
 
     def _select_one_course(self, headers: dict, user_id: str) -> dict | None:
         courses = self.users_api.get_user_objective_workflow_aggregates(
@@ -226,21 +231,6 @@ class Student:
         )
         logging.info(f"student {user.username} starts course {objective.code}.")
 
-    def _visit_course(
-        self, headers: dict, course: dict, objective: Objective, user: User
-    ):
-        self.users_api.get_user_activity_workflow_aggregates_by_query(
-            headers,
-            {
-                "requireTotalCount": True,
-                "filter": f'[["activity.id","=","{objective.activity.id}"],"and",["userId","=","{user.id}"]]',
-            },
-        )
-        # when press continue button
-        self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
-            headers, course["id"], objective.activity.id
-        )
-
     def _finish_one_course(self, headers: dict, user: User):
         # select a course that can be finished
         course = self._select_one_course_to_finish(headers, user.id)
@@ -297,7 +287,7 @@ class Student:
         self.activity_records_api.get_activity_records_by_query(
             headers,
             {
-                f'[["activity.id","=","{activity_id}"],"and",["user.id","=","{user.id}"]]'
+                "filter": f'[["activity.id","=","{activity_id}"],"and",["user.id","=","{user.id}"]]'
             },
         )
         self.users_api.get_user_activity_workflow_aggregates_by_query(

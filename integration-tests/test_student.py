@@ -69,10 +69,63 @@ def test_finish_one_course():
     student.finish_one_course()
 
 
+def test_start_one_course():
+    # initialize the student object
+    identity_api_endpoint = IdentityAPIEndPoint()
+    users_api = UsersAPI()
+    lms_users_api = LmsUsersAPI(db_driver)
+    objectives_api = ObjectivesAPI(db_driver)
+    objective_workflow_aggregates_api = ObjectiveWorkflowAggregatesAPI()
+    activity_records_api = ActivityRecordsAPI()
+    start_objective_workflows_api = StartObjectiveWorkflowsAPI()
+    start_activity_workflows_api = StartActivityWorkflowsAPI()
+    finish_activity_workflows_api = FinishActivityWorkflow()
+    student = Student(
+        db_driver,
+        identity_api_endpoint,
+        users_api,
+        lms_users_api,
+        objectives_api,
+        objective_workflow_aggregates_api,
+        activity_records_api,
+        start_objective_workflows_api,
+        start_activity_workflows_api,
+        finish_activity_workflows_api,
+    )
+    student.start_one_course()
+
+
+def test_review_one_course():
+    # initialize the student object
+    identity_api_endpoint = IdentityAPIEndPoint()
+    users_api = UsersAPI()
+    lms_users_api = LmsUsersAPI(db_driver)
+    objectives_api = ObjectivesAPI(db_driver)
+    objective_workflow_aggregates_api = ObjectiveWorkflowAggregatesAPI()
+    activity_records_api = ActivityRecordsAPI()
+    start_objective_workflows_api = StartObjectiveWorkflowsAPI()
+    start_activity_workflows_api = StartActivityWorkflowsAPI()
+    finish_activity_workflows_api = FinishActivityWorkflow()
+    student = Student(
+        db_driver,
+        identity_api_endpoint,
+        users_api,
+        lms_users_api,
+        objectives_api,
+        objective_workflow_aggregates_api,
+        activity_records_api,
+        start_objective_workflows_api,
+        start_activity_workflows_api,
+        finish_activity_workflows_api,
+    )
+    student.review_one_course()
+
+
 def main():
     # test_take_course()
-    test_finish_one_course()
-
+    # test_finish_one_course()
+    # test_start_one_course()
+    test_review_one_course()
 
 if __name__ == "__main__":
     main()
