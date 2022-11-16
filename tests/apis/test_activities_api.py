@@ -39,9 +39,19 @@ def test_update_activity():
     activities_api.update_activity(headers, activity_to_update)
 
 
+def test_get_activity_by_code_or_none():
+    activities_api = ActivitiesAPI(None)
+    identity_api_endpoint = IdentityAPIEndPoint()
+    headers = identity_api_endpoint.get_headers(Role.ADMIN)
+    activity = activities_api.get_activity_by_code_or_none(headers, "AAS246")
+    assert type(activity) is Activity
+    assert activity.code == "AAS246"
+
+
 def main():
     # test_get_activities_by_query()
-    test_update_activity()
+    # test_update_activity()
+    test_get_activity_by_code_or_none()
 
 
 if __name__ == "__main__":
