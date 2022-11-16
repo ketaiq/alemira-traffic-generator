@@ -26,7 +26,7 @@ docker-compose up -d
 
 Start experiment
 ```sh
-locust --config=app/locust.conf
+sh start.sh
 ```
 
 Clean up

@@ -127,7 +127,10 @@ def main():
     # print(gen_random_password())
     # print(gen_random_description())
     # print(gen_random_id(10))
-    print("asd.c".rstrip("."))
+    # print("asd.c".rstrip("."))
+    print("edit_one_course_content".upper())
+    print("upload_one_image_to_course_content".upper())
+    print("upload_one_attachment_to_course_content".upper())
 
 
 if __name__ == "__main__":
