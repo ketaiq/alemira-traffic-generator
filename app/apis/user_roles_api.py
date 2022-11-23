@@ -44,7 +44,7 @@ class UserRolesAPI(UserAPIEndPoint):
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
-            while True:
+            for _ in range(10):
                 created_state = self.get_created_user_role_state_by_id(
                     headers, created_id
                 )
@@ -62,7 +62,7 @@ class UserRolesAPI(UserAPIEndPoint):
                 if response.ok:
                     created_id = response.json()["id"]
                     # check entity is created successfully
-                    while True:
+                    for _ in range(10):
                         created_state = self.get_created_user_role_state_by_id(
                             headers, created_id
                         )

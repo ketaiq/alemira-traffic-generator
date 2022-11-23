@@ -3,4 +3,3 @@ __pycache__
 .vscode
 .scannerwork
 .pytest_cache
-coverage

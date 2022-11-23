@@ -36,7 +36,7 @@ sh cleanup.sh
 
 ## 3. Resources
 
-Courses from https://waf.cs.illinois.edu/discovery/course-catalog.csv
+Courses from iCorsi3 history
 
 Images from https://www.pexels.com/search/fruit/
 

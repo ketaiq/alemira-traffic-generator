@@ -32,7 +32,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
-            while True:
+            for _ in range(10):
                 created_state = self.get_created_personal_enrollment_state_by_id(
                     headers, created_id
                 )
@@ -51,7 +51,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 if response.ok:
                     created_id = response.json()["id"]
                     # check entity is created successfully
-                    while True:
+                    for _ in range(10):
                         created_state = (
                             self.get_created_personal_enrollment_state_by_id(
                                 headers, created_id
@@ -115,7 +115,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
             r.raise_for_status()
             deleted_id = r.json()["id"]
             # check entity is deleted successfully
-            while True:
+            for _ in range(10):
                 deleted_state = self.get_deleted_personal_enrollment_state_by_id(
                     headers, deleted_id
                 )
@@ -132,7 +132,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 if response.ok:
                     deleted_id = response.json()["id"]
                     # check entity is deleted successfully
-                    while True:
+                    for _ in range(10):
                         deleted_state = (
                             self.get_deleted_personal_enrollment_state_by_id(
                                 headers, deleted_id

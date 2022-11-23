@@ -117,7 +117,7 @@ def test_upload_one_image_to_course():
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
     objective_to_edit = instructor.select_one_objective()
-    instructor._upload_one_image_to_course(objective_to_edit)
+    instructor._upload_one_image_to_course_description(objective_to_edit)
     updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
     assert objective_to_edit.aboutContent != updated_objective.aboutContent
 
@@ -131,7 +131,7 @@ def test_upload_one_attachment_to_course():
         db_driver, users_api, lms_users_api, objectives_api, personal_enrollments_api
     )
     objective_to_edit = instructor.select_one_objective()
-    instructor._upload_one_attachment_to_course(objective_to_edit)
+    instructor._upload_one_attachment_to_course_description(objective_to_edit)
     updated_objective = objectives_api.get_objective_by_id(objective_to_edit.id)
     assert objective_to_edit.aboutContent != updated_objective.aboutContent
 

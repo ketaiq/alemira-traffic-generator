@@ -5,6 +5,7 @@ from app.models.user import User
 import pandas as pd
 from app.drivers.database_driver import DatabaseDriver
 from app.utils.string import request_timeout_msg, request_http_error_msg
+from app.utils.time import sleep_for_seconds
 
 
 class ActivitiesAPI(UserAPIEndPoint):
@@ -15,6 +16,7 @@ class ActivitiesAPI(UserAPIEndPoint):
     ):
         super().__init__(client)
         self.url = self.uri + "activities/"
+        self.file_url = self.file_uri + "rich-text-resource-libraries/"
         self.driver = driver
 
     def get_activities(self, headers: dict) -> list[dict]:
@@ -101,7 +103,7 @@ class ActivitiesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, headers: dict, activity: Activity) -> str:
+    def update_activity(self, headers: dict, activity: Activity):
         if self.client is None:
             r = requests.put(
                 self.url + activity.id,
@@ -109,8 +111,17 @@ class ActivitiesAPI(UserAPIEndPoint):
                 headers=headers,
             )
             r.raise_for_status()
-            self.driver.update_activity(activity)
-            return r.json()["id"]
+            if self.driver:
+                self.driver.update_activity(activity)
+            updated_id = r.json()["id"]
+            # check entity is updated successfully
+            for _ in range(10):
+                updated_state = self.get_updated_activity_state_by_id(
+                    headers, updated_id
+                )
+                if updated_state["completed"]:
+                    break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.put(
                 self.url + activity.id,
@@ -120,8 +131,17 @@ class ActivitiesAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    self.driver.update_activity(activity)
-                    return response.json()["id"]
+                    if self.driver:
+                        self.driver.update_activity(activity)
+                    updated_id = response.json()["id"]
+                    # check entity is updated successfully
+                    for _ in range(10):
+                        updated_state = self.get_updated_activity_state_by_id(
+                            headers, updated_id
+                        )
+                        if updated_state["completed"]:
+                            break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -150,3 +170,65 @@ class ActivitiesAPI(UserAPIEndPoint):
         ]
         self.driver.insert_one_activity(course)
         return course
+
+    def upload_image_to_activity(
+        self, headers: dict, activity: Activity, image_filename: str
+    ):
+        files = {"file": open(f"resources/images/{image_filename}", "rb")}
+        image_url = ""
+        if self.client is None:
+            r = requests.post(
+                self.file_url + activity.id + "/public-files",
+                files=files,
+                headers=headers,
+            )
+            r.raise_for_status()
+            image_url = r.json()["url"]
+        else:
+            with self.client.post(
+                self.file_url + activity.id + "/public-files",
+                files=files,
+                headers=headers,
+                name="upload image to activity",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    image_url = response.json()["url"]
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+        activity = activity.gen_update_with_an_image(image_filename, image_url)
+        self.update_activity(headers, activity)
+
+    def upload_attachment_to_activity(
+        self, headers: dict, activity: Activity, attachment_filename: str
+    ):
+        files = {"file": open(f"resources/attachments/{attachment_filename}", "rb")}
+        attachment_url = ""
+        if self.client is None:
+            r = requests.post(
+                self.file_url + activity.id + "/protected-files",
+                files=files,
+                headers=headers,
+            )
+            r.raise_for_status()
+            attachment_url = r.json()["url"]
+        else:
+            with self.client.post(
+                self.file_url + activity.id + "/protected-files",
+                files=files,
+                headers=headers,
+                name="upload attachment to activity",
+                catch_response=True,
+            ) as response:
+                if response.ok:
+                    attachment_url = response.json()["url"]
+                elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
+                    response.failure(request_timeout_msg())
+                else:
+                    response.failure(request_http_error_msg(response))
+        activity = activity.gen_update_with_an_attachment(
+            attachment_filename, attachment_url
+        )
+        self.update_activity(headers, activity)

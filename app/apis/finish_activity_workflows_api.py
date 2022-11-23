@@ -44,7 +44,7 @@ class FinishActivityWorkflow(UserAPIEndPoint):
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
-            while True:
+            for _ in range(10):
                 created_state = self.get_created_finish_activity_workflow_state_by_id(
                     headers, created_id
                 )
@@ -62,7 +62,7 @@ class FinishActivityWorkflow(UserAPIEndPoint):
                 if response.ok:
                     created_id = response.json()["id"]
                     # check entity is created successfully
-                    while True:
+                    for _ in range(10):
                         created_state = (
                             self.get_created_finish_activity_workflow_state_by_id(
                                 headers, created_id

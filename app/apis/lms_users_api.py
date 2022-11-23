@@ -98,7 +98,7 @@ class LmsUsersAPI(UserAPIEndPoint):
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
-            while True:
+            for _ in range(10):
                 created_state = self.get_created_user_state_by_id(headers, created_id)
                 if created_state["completed"]:
                     new_user.id = created_state["entityId"]
@@ -115,7 +115,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 if response.ok:
                     created_id = response.json()["id"]
                     # check entity is created successfully
-                    while True:
+                    for _ in range(10):
                         created_state = self.get_created_user_state_by_id(
                             headers, created_id
                         )
@@ -141,7 +141,7 @@ class LmsUsersAPI(UserAPIEndPoint):
             r.raise_for_status()
             updated_id = r.json()["id"]
             # check entity is updated successfully
-            while True:
+            for _ in range(10):
                 updated_state = self.get_updated_user_state_by_id(headers, updated_id)
                 if updated_state["completed"]:
                     break
@@ -157,7 +157,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 if response.ok:
                     updated_id = response.json()["id"]
                     # check entity is updated successfully
-                    while True:
+                    for _ in range(10):
                         updated_state = self.get_updated_user_state_by_id(
                             headers, updated_id
                         )

@@ -169,7 +169,7 @@ class ObjectivesAPI(UserAPIEndPoint):
             r.raise_for_status()
             updated_id = r.json()["id"]
             # check entity is updated successfully
-            while True:
+            for _ in range(10):
                 updated_state = self.get_updated_objective_state_by_id(
                     headers, updated_id
                 )
@@ -187,7 +187,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 if response.ok:
                     updated_id = response.json()["id"]
                     # check entity is updated successfully
-                    while True:
+                    for _ in range(10):
                         updated_state = self.get_updated_objective_state_by_id(
                             headers, updated_id
                         )
