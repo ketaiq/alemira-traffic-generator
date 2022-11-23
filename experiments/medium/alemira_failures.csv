@@ -1,0 +1,3 @@
+Method,Name,Error,Occurrences
+POST,upload image to activity,CatchResponseError('HTTP error 400 Bad Request!'),10
+POST,upload attachment to activity,CatchResponseError('HTTP error 400 Bad Request!'),13

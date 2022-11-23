@@ -48,10 +48,29 @@ def test_get_activity_by_code_or_none():
     assert activity.code == "AAS246"
 
 
+def test_upload_image_to_activity():
+    activities_api = ActivitiesAPI(None)
+    identity_api_endpoint = IdentityAPIEndPoint()
+    headers = identity_api_endpoint.get_headers(Role.ADMIN)
+    activity = activities_api.get_activity_by_code_or_none(headers, "AAS246")
+    image_filename = "pexels-foodie-factor-557659.jpg"
+    activities_api.upload_image_to_activity(headers, activity, image_filename)
+
+
+def test_upload_attachment_to_activity():
+    activities_api = ActivitiesAPI(None)
+    identity_api_endpoint = IdentityAPIEndPoint()
+    headers = identity_api_endpoint.get_headers(Role.ADMIN)
+    activity = activities_api.get_activity_by_code_or_none(headers, "AAS246")
+    filename = "220111_news_review_djokovic_austrailia.pdf"
+    activities_api.upload_attachment_to_activity(headers, activity, filename)
+
+
 def main():
     # test_get_activities_by_query()
     # test_update_activity()
-    test_get_activity_by_code_or_none()
+    # test_get_activity_by_code_or_none()
+    test_upload_attachment_to_activity()
 
 
 if __name__ == "__main__":

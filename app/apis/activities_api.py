@@ -174,7 +174,7 @@ class ActivitiesAPI(UserAPIEndPoint):
     def upload_image_to_activity(
         self, headers: dict, activity: Activity, image_filename: str
     ):
-        files = {"file": open(f"resources/images/{image_filename}", "rb")}
+        files = {"formFile": open(f"resources/images/{image_filename}", "rb")}
         image_url = ""
         if self.client is None:
             r = requests.post(
@@ -204,7 +204,7 @@ class ActivitiesAPI(UserAPIEndPoint):
     def upload_attachment_to_activity(
         self, headers: dict, activity: Activity, attachment_filename: str
     ):
-        files = {"file": open(f"resources/attachments/{attachment_filename}", "rb")}
+        files = {"formFile": open(f"resources/attachments/{attachment_filename}", "rb")}
         attachment_url = ""
         if self.client is None:
             r = requests.post(
