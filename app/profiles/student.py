@@ -59,6 +59,11 @@ class Student:
         me = self.lms_users_api.get_user_me(headers)
         self._start_one_course(headers, me)
 
+    def download_one_attachment_from_one_course(self):
+        headers = self._get_student_headers()
+        me = self.lms_users_api.get_user_me(headers)
+        self._download_one_attachment_from_one_course(headers, me)
+
     def finish_one_course(self):
         headers = self._get_student_headers()
         me = self.lms_users_api.get_user_me(headers)
@@ -102,15 +107,26 @@ class Student:
         self.objective_workflow_aggregates_api.get_activity_with_aggregates_by_id(
             headers, course["id"], objective.activity.id
         )
-        # Download an attachment from a course (70% probability if exists)
-        if objective.has_attachment() and random.choices([True, False], (70, 30), k=1):
-            self.objectives_api.download_attachment_from_objective(
-                objective.get_attachment_url()
-            )
-            logging.info(
-                f"student {user.username} downloads attachment from course {course_code}."
-            )
         logging.info(f"student {user.username} visits course {course_code}.")
+
+    def _download_one_attachment_from_one_course(self, headers: dict, user: User):
+        courses = self.users_api.get_user_objective_workflow_aggregates(
+            headers, user.id
+        )
+        for course in courses:
+            course_code = course["objective"]["code"]
+            objective = self.objectives_api.get_objective_by_id(
+                headers, course["objective"]["id"]
+            )
+            # Download an attachment from a course
+            if objective.has_attachment():
+                self.objectives_api.download_attachment_from_objective(
+                    objective.get_attachment_url()
+                )
+                logging.info(
+                    f"student {user.username} downloads attachment from course {course_code}."
+                )
+                break
 
     def _select_one_course(self, headers: dict, user_id: str) -> dict | None:
         courses = self.users_api.get_user_objective_workflow_aggregates(

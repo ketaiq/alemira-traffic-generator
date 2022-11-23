@@ -26,9 +26,7 @@ docker-compose up -d
 
 Start experiment
 ```sh
-locust --config=app/locust.conf -f=app/locustfiles/locustfile_first_stage.py --csv=alemira_first_stage --html=alemira_first_stage_report.html --logfile=alemira_first_stage.log
-
-locust --config=app/locust.conf -f=app/locustfiles/locustfile_second_stage.py --csv=alemira_second_stage --html=alemira_second_stage_report.html --logfile=alemira_second_stage.log
+locust --config=app/locust.conf
 ```
 
 Clean up
@@ -38,7 +36,7 @@ sh cleanup.sh
 
 ## 3. Resources
 
-Courses from https://waf.cs.illinois.edu/discovery/course-catalog.csv
+Courses from iCorsi3 history
 
 Images from https://www.pexels.com/search/fruit/
 
