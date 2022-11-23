@@ -29,11 +29,6 @@ Start experiment
 locust --config=app/locust.conf
 ```
 
-Clean up
-```sh
-sh cleanup.sh
-```
-
 ## 3. Resources
 
 Courses from iCorsi3 history
