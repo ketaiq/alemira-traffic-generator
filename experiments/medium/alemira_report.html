@@ -120,7 +120,7 @@ table.stats tr.total td {
 
         <div class="info">
             
-            <p>During: <span class="l10n datetime">2022-11-23 14:28:47</span> - <span class="l10n datetime">2022-11-23 14:33:49</span></p>
+            <p>During: <span class="l10n datetime">2022-11-23 15:03:56</span> - <span class="l10n datetime">2022-11-23 15:08:56</span></p>
             <p>Target Host: <span>https://userapi.alms.dev.alemira.com/api/v1/</span></p>
             <p>Script: <span>locustfile.py</span></p>
         </div>
@@ -147,11 +147,24 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>create personal enrollment</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>36</td>
+                            <td>36</td>
+                            <td>37</td>
+                            <td>170</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>DELETE</td>
+                            <td>delete personal enrollment by id</td>
                             <td>1</td>
                             <td>0</td>
-                            <td>99</td>
-                            <td>99</td>
-                            <td>99</td>
+                            <td>986</td>
+                            <td>986</td>
+                            <td>986</td>
                             <td>170</td>
                             <td>0.0</td>
                             <td>0.0</td>
@@ -160,11 +173,11 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>download attachment from objective</td>
-                            <td>31</td>
+                            <td>24</td>
                             <td>0</td>
-                            <td>340</td>
-                            <td>134</td>
-                            <td>1202</td>
+                            <td>323</td>
+                            <td>137</td>
+                            <td>706</td>
                             <td>6697</td>
                             <td>0.1</td>
                             <td>0.0</td>
@@ -173,39 +186,26 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get activities by query</td>
-                            <td>67</td>
+                            <td>62</td>
                             <td>0</td>
-                            <td>82</td>
-                            <td>41</td>
-                            <td>665</td>
-                            <td>34821</td>
+                            <td>93</td>
+                            <td>31</td>
+                            <td>606</td>
+                            <td>34070</td>
                             <td>0.2</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
-                            <td>get activity records by query</td>
-                            <td>12</td>
-                            <td>0</td>
-                            <td>46</td>
-                            <td>41</td>
-                            <td>53</td>
-                            <td>57</td>
-                            <td>0.0</td>
-                            <td>0.0</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
                             <td>get activity with aggregates by objective workflow aggregate id</td>
-                            <td>410</td>
+                            <td>382</td>
                             <td>0</td>
-                            <td>46</td>
-                            <td>31</td>
-                            <td>642</td>
-                            <td>16578</td>
-                            <td>1.4</td>
+                            <td>50</td>
+                            <td>30</td>
+                            <td>855</td>
+                            <td>11165</td>
+                            <td>1.3</td>
                             <td>0.0</td>
                         </tr>
                     
@@ -214,10 +214,23 @@ table.stats tr.total td {
                             <td>get created personal enrollment state by id</td>
                             <td>2</td>
                             <td>0</td>
-                            <td>47</td>
+                            <td>29</td>
+                            <td>29</td>
+                            <td>29</td>
+                            <td>433</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>GET</td>
+                            <td>get deleted personal enrollment state by id</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>40</td>
                             <td>31</td>
-                            <td>64</td>
-                            <td>293</td>
+                            <td>49</td>
+                            <td>220</td>
                             <td>0.0</td>
                             <td>0.0</td>
                         </tr>
@@ -225,51 +238,64 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get objective by id</td>
-                            <td>565</td>
+                            <td>547</td>
                             <td>0</td>
-                            <td>60</td>
-                            <td>28</td>
-                            <td>220</td>
-                            <td>47097</td>
-                            <td>1.9</td>
+                            <td>78</td>
+                            <td>29</td>
+                            <td>1714</td>
+                            <td>45234</td>
+                            <td>1.8</td>
+                            <td>0.0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>GET</td>
+                            <td>get objective personal enrollments by query</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>34</td>
+                            <td>34</td>
+                            <td>34</td>
+                            <td>1389</td>
+                            <td>0.0</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objective records by objective workflow aggregate id</td>
-                            <td>410</td>
+                            <td>382</td>
                             <td>0</td>
-                            <td>43</td>
-                            <td>33</td>
-                            <td>552</td>
-                            <td>55</td>
-                            <td>1.4</td>
+                            <td>54</td>
+                            <td>32</td>
+                            <td>1019</td>
+                            <td>66</td>
+                            <td>1.3</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objective workflow aggregate by id</td>
-                            <td>410</td>
+                            <td>382</td>
                             <td>0</td>
-                            <td>43</td>
+                            <td>53</td>
                             <td>29</td>
-                            <td>1028</td>
-                            <td>1886</td>
-                            <td>1.4</td>
+                            <td>992</td>
+                            <td>1694</td>
+                            <td>1.3</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objective workflow aggregate by objective id</td>
-                            <td>399</td>
+                            <td>382</td>
                             <td>0</td>
-                            <td>41</td>
+                            <td>48</td>
                             <td>28</td>
-                            <td>949</td>
-                            <td>1882</td>
+                            <td>954</td>
+                            <td>1694</td>
                             <td>1.3</td>
                             <td>0.0</td>
                         </tr>
@@ -277,51 +303,25 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get objectives by query</td>
-                            <td>18</td>
+                            <td>22</td>
                             <td>0</td>
-                            <td>96</td>
-                            <td>57</td>
-                            <td>166</td>
-                            <td>65424</td>
+                            <td>111</td>
+                            <td>77</td>
+                            <td>231</td>
+                            <td>80828</td>
                             <td>0.1</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
-                            <td>get started activity workflow state by id</td>
-                            <td>13</td>
-                            <td>0</td>
-                            <td>44</td>
-                            <td>30</td>
-                            <td>98</td>
-                            <td>276</td>
-                            <td>0.0</td>
-                            <td>0.0</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
-                            <td>get started objective workflow state by id</td>
-                            <td>12</td>
-                            <td>0</td>
-                            <td>40</td>
-                            <td>28</td>
-                            <td>120</td>
-                            <td>287</td>
-                            <td>0.0</td>
-                            <td>0.0</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
                             <td>get updated activity</td>
-                            <td>72</td>
+                            <td>65</td>
                             <td>0</td>
-                            <td>38</td>
+                            <td>47</td>
                             <td>28</td>
-                            <td>332</td>
-                            <td>270</td>
+                            <td>434</td>
+                            <td>272</td>
                             <td>0.2</td>
                             <td>0.0</td>
                         </tr>
@@ -329,12 +329,12 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get updated objective state by id</td>
-                            <td>20</td>
+                            <td>21</td>
                             <td>0</td>
-                            <td>34</td>
-                            <td>27</td>
-                            <td>45</td>
-                            <td>259</td>
+                            <td>46</td>
+                            <td>28</td>
+                            <td>251</td>
+                            <td>266</td>
                             <td>0.1</td>
                             <td>0.0</td>
                         </tr>
@@ -342,25 +342,25 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get user activity workflow aggregates by query</td>
-                            <td>422</td>
+                            <td>382</td>
                             <td>0</td>
-                            <td>53</td>
+                            <td>58</td>
                             <td>34</td>
-                            <td>618</td>
-                            <td>15417</td>
-                            <td>1.4</td>
+                            <td>899</td>
+                            <td>11292</td>
+                            <td>1.3</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get user me</td>
-                            <td>787</td>
+                            <td>776</td>
                             <td>0</td>
-                            <td>51</td>
-                            <td>27</td>
-                            <td>1028</td>
-                            <td>393</td>
+                            <td>63</td>
+                            <td>26</td>
+                            <td>903</td>
+                            <td>391</td>
                             <td>2.6</td>
                             <td>0.0</td>
                         </tr>
@@ -368,12 +368,12 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get user objective workflow aggregates</td>
-                            <td>787</td>
+                            <td>776</td>
                             <td>0</td>
-                            <td>64</td>
-                            <td>31</td>
-                            <td>954</td>
-                            <td>19022</td>
+                            <td>72</td>
+                            <td>30</td>
+                            <td>1032</td>
+                            <td>17958</td>
                             <td>2.6</td>
                             <td>0.0</td>
                         </tr>
@@ -381,11 +381,11 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get user permissions</td>
-                            <td>266</td>
+                            <td>277</td>
                             <td>0</td>
-                            <td>36</td>
-                            <td>26</td>
-                            <td>910</td>
+                            <td>41</td>
+                            <td>25</td>
+                            <td>663</td>
                             <td>3731</td>
                             <td>0.9</td>
                             <td>0.0</td>
@@ -394,11 +394,11 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get user roles</td>
-                            <td>266</td>
+                            <td>277</td>
                             <td>0</td>
-                            <td>36</td>
+                            <td>41</td>
                             <td>28</td>
-                            <td>608</td>
+                            <td>1089</td>
                             <td>113</td>
                             <td>0.9</td>
                             <td>0.0</td>
@@ -407,12 +407,12 @@ table.stats tr.total td {
                         <tr>
                             <td>GET</td>
                             <td>get users by query</td>
-                            <td>1</td>
+                            <td>2</td>
                             <td>0</td>
-                            <td>39</td>
-                            <td>39</td>
-                            <td>39</td>
-                            <td>337</td>
+                            <td>503</td>
+                            <td>38</td>
+                            <td>969</td>
+                            <td>345</td>
                             <td>0.0</td>
                             <td>0.0</td>
                         </tr>
@@ -422,9 +422,9 @@ table.stats tr.total td {
                             <td>login Instructor user</td>
                             <td>4</td>
                             <td>0</td>
-                            <td>81</td>
+                            <td>90</td>
                             <td>59</td>
-                            <td>125</td>
+                            <td>124</td>
                             <td>1083</td>
                             <td>0.0</td>
                             <td>0.0</td>
@@ -435,36 +435,10 @@ table.stats tr.total td {
                             <td>login Learner user</td>
                             <td>5</td>
                             <td>0</td>
-                            <td>119</td>
-                            <td>59</td>
-                            <td>143</td>
+                            <td>148</td>
+                            <td>63</td>
+                            <td>295</td>
                             <td>1083</td>
-                            <td>0.0</td>
-                            <td>0.0</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>POST</td>
-                            <td>start activity workflow</td>
-                            <td>12</td>
-                            <td>0</td>
-                            <td>44</td>
-                            <td>34</td>
-                            <td>73</td>
-                            <td>167</td>
-                            <td>0.0</td>
-                            <td>0.0</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>POST</td>
-                            <td>start objective workflow</td>
-                            <td>12</td>
-                            <td>0</td>
-                            <td>48</td>
-                            <td>35</td>
-                            <td>106</td>
-                            <td>168</td>
                             <td>0.0</td>
                             <td>0.0</td>
                         </tr>
@@ -472,11 +446,11 @@ table.stats tr.total td {
                         <tr>
                             <td>PUT</td>
                             <td>update activity</td>
-                            <td>67</td>
+                            <td>62</td>
                             <td>0</td>
-                            <td>71</td>
-                            <td>40</td>
-                            <td>1137</td>
+                            <td>60</td>
+                            <td>38</td>
+                            <td>324</td>
                             <td>160</td>
                             <td>0.2</td>
                             <td>0.0</td>
@@ -485,11 +459,11 @@ table.stats tr.total td {
                         <tr>
                             <td>PUT</td>
                             <td>update objective</td>
-                            <td>17</td>
+                            <td>19</td>
                             <td>0</td>
-                            <td>62</td>
-                            <td>40</td>
-                            <td>181</td>
+                            <td>68</td>
+                            <td>41</td>
+                            <td>191</td>
                             <td>160</td>
                             <td>0.1</td>
                             <td>0.0</td>
@@ -498,12 +472,12 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>upload attachment to activity</td>
-                            <td>13</td>
-                            <td>13</td>
-                            <td>71</td>
-                            <td>31</td>
-                            <td>215</td>
-                            <td>249</td>
+                            <td>9</td>
+                            <td>0</td>
+                            <td>420</td>
+                            <td>277</td>
+                            <td>558</td>
+                            <td>173</td>
                             <td>0.0</td>
                             <td>0.0</td>
                         </tr>
@@ -511,11 +485,11 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>upload attachment to objective</td>
-                            <td>3</td>
+                            <td>2</td>
                             <td>0</td>
-                            <td>351</td>
-                            <td>302</td>
-                            <td>400</td>
+                            <td>1164</td>
+                            <td>360</td>
+                            <td>1969</td>
                             <td>155</td>
                             <td>0.0</td>
                             <td>0.0</td>
@@ -524,12 +498,12 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>upload image to activity</td>
-                            <td>10</td>
-                            <td>10</td>
-                            <td>93</td>
-                            <td>41</td>
-                            <td>240</td>
-                            <td>249</td>
+                            <td>11</td>
+                            <td>0</td>
+                            <td>544</td>
+                            <td>370</td>
+                            <td>724</td>
+                            <td>193</td>
                             <td>0.0</td>
                             <td>0.0</td>
                         </tr>
@@ -537,11 +511,11 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>upload image to objective</td>
-                            <td>6</td>
+                            <td>7</td>
                             <td>0</td>
-                            <td>1021</td>
-                            <td>600</td>
-                            <td>2134</td>
+                            <td>701</td>
+                            <td>535</td>
+                            <td>1296</td>
                             <td>188</td>
                             <td>0.0</td>
                             <td>0.0</td>
@@ -550,14 +524,14 @@ table.stats tr.total td {
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>5120</td>
-                            <td>23</td>
-                            <td>54</td>
-                            <td>26</td>
-                            <td>2134</td>
-                            <td>12021</td>
-                            <td>17.0</td>
-                            <td>0.1</td>
+                            <td>4886</td>
+                            <td>0</td>
+                            <td>65</td>
+                            <td>25</td>
+                            <td>1969</td>
+                            <td>11062</td>
+                            <td>16.3</td>
+                            <td>0.0</td>
                         </tr>
                     
                 </tbody>
@@ -586,53 +560,53 @@ table.stats tr.total td {
                         <tr>
                             <td>POST</td>
                             <td>create personal enrollment</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
-                            <td>100</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                            <td>37</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>DELETE</td>
+                            <td>delete personal enrollment by id</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
+                            <td>990</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>download attachment from objective</td>
+                            <td>290</td>
                             <td>300</td>
                             <td>310</td>
-                            <td>320</td>
-                            <td>360</td>
-                            <td>480</td>
-                            <td>520</td>
-                            <td>1200</td>
-                            <td>1200</td>
+                            <td>420</td>
+                            <td>560</td>
+                            <td>620</td>
+                            <td>710</td>
+                            <td>710</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get activities by query</td>
-                            <td>65</td>
+                            <td>76</td>
                             <td>79</td>
                             <td>82</td>
-                            <td>93</td>
                             <td>110</td>
-                            <td>120</td>
-                            <td>670</td>
-                            <td>670</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
-                            <td>get activity records by query</td>
-                            <td>46</td>
-                            <td>48</td>
-                            <td>48</td>
-                            <td>49</td>
-                            <td>50</td>
-                            <td>53</td>
-                            <td>53</td>
-                            <td>53</td>
+                            <td>160</td>
+                            <td>210</td>
+                            <td>610</td>
+                            <td>610</td>
                         </tr>
                     
                         <tr>
@@ -640,51 +614,77 @@ table.stats tr.total td {
                             <td>get activity with aggregates by objective workflow aggregate id</td>
                             <td>36</td>
                             <td>37</td>
-                            <td>40</td>
-                            <td>50</td>
-                            <td>61</td>
-                            <td>81</td>
-                            <td>140</td>
-                            <td>640</td>
+                            <td>39</td>
+                            <td>54</td>
+                            <td>69</td>
+                            <td>99</td>
+                            <td>290</td>
+                            <td>860</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get created personal enrollment state by id</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
-                            <td>65</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>30</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>GET</td>
+                            <td>get deleted personal enrollment state by id</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objective by id</td>
-                            <td>56</td>
+                            <td>55</td>
                             <td>58</td>
-                            <td>65</td>
-                            <td>78</td>
-                            <td>87</td>
-                            <td>110</td>
-                            <td>150</td>
-                            <td>220</td>
+                            <td>73</td>
+                            <td>81</td>
+                            <td>100</td>
+                            <td>230</td>
+                            <td>440</td>
+                            <td>1700</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>GET</td>
+                            <td>get objective personal enrollments by query</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
+                            <td>35</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objective records by objective workflow aggregate id</td>
-                            <td>39</td>
-                            <td>39</td>
+                            <td>38</td>
                             <td>40</td>
-                            <td>43</td>
-                            <td>49</td>
-                            <td>58</td>
+                            <td>42</td>
+                            <td>47</td>
+                            <td>67</td>
                             <td>110</td>
-                            <td>550</td>
+                            <td>320</td>
+                            <td>1000</td>
                         </tr>
                     
                         <tr>
@@ -693,11 +693,11 @@ table.stats tr.total td {
                             <td>33</td>
                             <td>34</td>
                             <td>35</td>
-                            <td>37</td>
-                            <td>47</td>
-                            <td>70</td>
-                            <td>120</td>
-                            <td>1000</td>
+                            <td>41</td>
+                            <td>66</td>
+                            <td>130</td>
+                            <td>390</td>
+                            <td>990</td>
                         </tr>
                     
                         <tr>
@@ -706,89 +706,63 @@ table.stats tr.total td {
                             <td>33</td>
                             <td>34</td>
                             <td>34</td>
-                            <td>36</td>
-                            <td>44</td>
-                            <td>66</td>
-                            <td>300</td>
+                            <td>38</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>440</td>
                             <td>950</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get objectives by query</td>
-                            <td>93</td>
-                            <td>94</td>
-                            <td>97</td>
+                            <td>100</td>
+                            <td>110</td>
+                            <td>110</td>
                             <td>120</td>
-                            <td>150</td>
-                            <td>170</td>
-                            <td>170</td>
-                            <td>170</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
-                            <td>get started activity workflow state by id</td>
-                            <td>32</td>
-                            <td>32</td>
-                            <td>34</td>
-                            <td>68</td>
-                            <td>98</td>
-                            <td>99</td>
-                            <td>99</td>
-                            <td>99</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>GET</td>
-                            <td>get started objective workflow state by id</td>
-                            <td>33</td>
-                            <td>33</td>
-                            <td>34</td>
-                            <td>34</td>
-                            <td>45</td>
-                            <td>120</td>
-                            <td>120</td>
-                            <td>120</td>
+                            <td>180</td>
+                            <td>210</td>
+                            <td>230</td>
+                            <td>230</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get updated activity</td>
+                            <td>30</td>
                             <td>31</td>
                             <td>32</td>
-                            <td>33</td>
-                            <td>34</td>
-                            <td>39</td>
-                            <td>53</td>
-                            <td>330</td>
-                            <td>330</td>
+                            <td>35</td>
+                            <td>52</td>
+                            <td>64</td>
+                            <td>430</td>
+                            <td>430</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get updated objective state by id</td>
-                            <td>32</td>
+                            <td>31</td>
                             <td>33</td>
-                            <td>38</td>
-                            <td>41</td>
-                            <td>42</td>
-                            <td>45</td>
-                            <td>45</td>
-                            <td>45</td>
+                            <td>37</td>
+                            <td>49</td>
+                            <td>59</td>
+                            <td>59</td>
+                            <td>250</td>
+                            <td>250</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get user activity workflow aggregates by query</td>
                             <td>41</td>
-                            <td>43</td>
-                            <td>49</td>
+                            <td>42</td>
+                            <td>47</td>
                             <td>62</td>
-                            <td>84</td>
-                            <td>100</td>
-                            <td>160</td>
-                            <td>620</td>
+                            <td>83</td>
+                            <td>120</td>
+                            <td>380</td>
+                            <td>900</td>
                         </tr>
                     
                         <tr>
@@ -796,12 +770,12 @@ table.stats tr.total td {
                             <td>get user me</td>
                             <td>32</td>
                             <td>33</td>
-                            <td>34</td>
-                            <td>39</td>
-                            <td>63</td>
-                            <td>100</td>
-                            <td>630</td>
-                            <td>1000</td>
+                            <td>37</td>
+                            <td>53</td>
+                            <td>110</td>
+                            <td>240</td>
+                            <td>660</td>
+                            <td>900</td>
                         </tr>
                     
                         <tr>
@@ -809,25 +783,25 @@ table.stats tr.total td {
                             <td>get user objective workflow aggregates</td>
                             <td>57</td>
                             <td>58</td>
-                            <td>60</td>
-                            <td>63</td>
-                            <td>74</td>
-                            <td>88</td>
-                            <td>160</td>
-                            <td>950</td>
+                            <td>61</td>
+                            <td>69</td>
+                            <td>87</td>
+                            <td>120</td>
+                            <td>410</td>
+                            <td>1000</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get user permissions</td>
-                            <td>30</td>
+                            <td>29</td>
                             <td>30</td>
                             <td>31</td>
-                            <td>33</td>
-                            <td>40</td>
-                            <td>51</td>
-                            <td>110</td>
-                            <td>910</td>
+                            <td>36</td>
+                            <td>44</td>
+                            <td>64</td>
+                            <td>540</td>
+                            <td>660</td>
                         </tr>
                     
                         <tr>
@@ -835,205 +809,148 @@ table.stats tr.total td {
                             <td>get user roles</td>
                             <td>32</td>
                             <td>32</td>
-                            <td>33</td>
-                            <td>35</td>
-                            <td>43</td>
-                            <td>52</td>
-                            <td>100</td>
-                            <td>610</td>
+                            <td>34</td>
+                            <td>38</td>
+                            <td>48</td>
+                            <td>66</td>
+                            <td>140</td>
+                            <td>1100</td>
                         </tr>
                     
                         <tr>
                             <td>GET</td>
                             <td>get users by query</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
-                            <td>40</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
+                            <td>970</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>login Instructor user</td>
-                            <td>79</td>
-                            <td>79</td>
-                            <td>79</td>
-                            <td>130</td>
-                            <td>130</td>
-                            <td>130</td>
-                            <td>130</td>
-                            <td>130</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
+                            <td>120</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>login Learner user</td>
                             <td>130</td>
-                            <td>140</td>
-                            <td>140</td>
-                            <td>140</td>
-                            <td>140</td>
-                            <td>140</td>
-                            <td>140</td>
-                            <td>140</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>POST</td>
-                            <td>start activity workflow</td>
-                            <td>42</td>
-                            <td>42</td>
-                            <td>42</td>
-                            <td>50</td>
-                            <td>64</td>
-                            <td>73</td>
-                            <td>73</td>
-                            <td>73</td>
-                        </tr>
-                    
-                        <tr>
-                            <td>POST</td>
-                            <td>start objective workflow</td>
-                            <td>40</td>
-                            <td>42</td>
-                            <td>46</td>
-                            <td>56</td>
-                            <td>65</td>
-                            <td>110</td>
-                            <td>110</td>
-                            <td>110</td>
+                            <td>130</td>
+                            <td>130</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
                         </tr>
                     
                         <tr>
                             <td>PUT</td>
                             <td>update activity</td>
                             <td>46</td>
-                            <td>47</td>
-                            <td>57</td>
-                            <td>64</td>
-                            <td>70</td>
+                            <td>49</td>
+                            <td>55</td>
+                            <td>66</td>
+                            <td>86</td>
                             <td>130</td>
-                            <td>1100</td>
-                            <td>1100</td>
+                            <td>320</td>
+                            <td>320</td>
                         </tr>
                     
                         <tr>
                             <td>PUT</td>
                             <td>update objective</td>
-                            <td>45</td>
-                            <td>47</td>
-                            <td>50</td>
-                            <td>84</td>
-                            <td>120</td>
-                            <td>180</td>
-                            <td>180</td>
-                            <td>180</td>
+                            <td>51</td>
+                            <td>64</td>
+                            <td>73</td>
+                            <td>93</td>
+                            <td>110</td>
+                            <td>190</td>
+                            <td>190</td>
+                            <td>190</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>upload attachment to activity</td>
-                            <td>39</td>
-                            <td>41</td>
-                            <td>66</td>
-                            <td>130</td>
-                            <td>160</td>
-                            <td>220</td>
-                            <td>220</td>
-                            <td>220</td>
+                            <td>430</td>
+                            <td>460</td>
+                            <td>480</td>
+                            <td>510</td>
+                            <td>560</td>
+                            <td>560</td>
+                            <td>560</td>
+                            <td>560</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>upload attachment to objective</td>
-                            <td>350</td>
-                            <td>350</td>
-                            <td>400</td>
-                            <td>400</td>
-                            <td>400</td>
-                            <td>400</td>
-                            <td>400</td>
-                            <td>400</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
+                            <td>2000</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>upload image to activity</td>
-                            <td>81</td>
-                            <td>92</td>
-                            <td>99</td>
-                            <td>190</td>
-                            <td>240</td>
-                            <td>240</td>
-                            <td>240</td>
-                            <td>240</td>
+                            <td>550</td>
+                            <td>600</td>
+                            <td>660</td>
+                            <td>670</td>
+                            <td>700</td>
+                            <td>720</td>
+                            <td>720</td>
+                            <td>720</td>
                         </tr>
                     
                         <tr>
                             <td>POST</td>
                             <td>upload image to objective</td>
-                            <td>840</td>
-                            <td>840</td>
+                            <td>610</td>
+                            <td>660</td>
+                            <td>660</td>
+                            <td>690</td>
                             <td>1300</td>
                             <td>1300</td>
-                            <td>2100</td>
-                            <td>2100</td>
-                            <td>2100</td>
-                            <td>2100</td>
+                            <td>1300</td>
+                            <td>1300</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>38</td>
-                            <td>44</td>
-                            <td>54</td>
-                            <td>58</td>
-                            <td>77</td>
-                            <td>99</td>
-                            <td>330</td>
-                            <td>2100</td>
+                            <td>39</td>
+                            <td>49</td>
+                            <td>55</td>
+                            <td>62</td>
+                            <td>91</td>
+                            <td>160</td>
+                            <td>550</td>
+                            <td>2000</td>
                         </tr>
                     
                 </tbody>
             </table>
         </div>
 
-        
-            <div class="failures">
-                <h2>Failures Statistics</h2>
-                <table class="stats">
-                    <thead>
-                        <tr>
-                            <th class="sortable">Method</th>
-                            <th class="sortable">Name</th>
-                            <th class="sortable">Error</th>
-                            <th class="sortable">Occurrences</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr>
-                                <td>POST</td>
-                                <td>upload image to activity</td>
-                                <td>HTTP error 400 Bad Request!</td>
-                                <td>10</td>
-                            </tr>
-                        
-                            <tr>
-                                <td>POST</td>
-                                <td>upload attachment to activity</td>
-                                <td>HTTP error 400 Bad Request!</td>
-                                <td>13</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
         
 
         
@@ -1318,12 +1235,12 @@ function fillTasksFromRequest() {
     <script>
         
 var stats_history = {
-    "time": ["14:28:51", "14:28:56", "14:29:01", "14:29:06", "14:29:11", "14:29:16", "14:29:21", "14:29:26", "14:29:31", "14:29:36", "14:29:41", "14:29:46", "14:29:51", "14:29:56", "14:30:01", "14:30:06", "14:30:11", "14:30:16", "14:30:21", "14:30:26", "14:30:31", "14:30:36", "14:30:41", "14:30:46", "14:30:51", "14:30:56", "14:31:01", "14:31:06", "14:31:11", "14:31:16", "14:31:21", "14:31:26", "14:31:31", "14:31:36", "14:31:41", "14:31:46", "14:31:51", "14:31:56", "14:32:01", "14:32:06", "14:32:11", "14:32:16", "14:32:21", "14:32:26", "14:32:31", "14:32:36", "14:32:41", "14:32:46", "14:32:51", "14:32:56", "14:33:01", "14:33:06", "14:33:11", "14:33:16", "14:33:21", "14:33:26", "14:33:31", "14:33:36", "14:33:41", "14:33:46"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
-    "user_count": [{"value": 4}, {"value": 9}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 14}, {"value": 19}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 23}, {"value": 28}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}],
-    "current_rps": [{"users": 4, "value": 5.0}, {"users": 9, "value": 4.333333333333333}, {"users": 10, "value": 4.9}, {"users": 10, "value": 5.4}, {"users": 10, "value": 5.9}, {"users": 10, "value": 5.8}, {"users": 10, "value": 4.9}, {"users": 10, "value": 4.5}, {"users": 10, "value": 4.0}, {"users": 10, "value": 6.2}, {"users": 10, "value": 5.6}, {"users": 10, "value": 4.1}, {"users": 14, "value": 7.3}, {"users": 19, "value": 10.3}, {"users": 20, "value": 16.4}, {"users": 20, "value": 16.9}, {"users": 20, "value": 12.7}, {"users": 20, "value": 15.1}, {"users": 20, "value": 14.6}, {"users": 20, "value": 15.0}, {"users": 20, "value": 18.8}, {"users": 20, "value": 15.2}, {"users": 20, "value": 17.3}, {"users": 20, "value": 16.4}, {"users": 23, "value": 15.1}, {"users": 28, "value": 18.5}, {"users": 30, "value": 21.2}, {"users": 30, "value": 19.4}, {"users": 30, "value": 26.6}, {"users": 30, "value": 23.8}, {"users": 30, "value": 23.3}, {"users": 30, "value": 24.5}, {"users": 30, "value": 20.5}, {"users": 30, "value": 19.0}, {"users": 30, "value": 21.1}, {"users": 30, "value": 19.2}, {"users": 30, "value": 20.4}, {"users": 30, "value": 22.5}, {"users": 30, "value": 19.8}, {"users": 30, "value": 21.0}, {"users": 30, "value": 21.6}, {"users": 30, "value": 21.4}, {"users": 30, "value": 21.5}, {"users": 30, "value": 17.9}, {"users": 30, "value": 20.8}, {"users": 30, "value": 23.5}, {"users": 30, "value": 21.7}, {"users": 30, "value": 21.9}, {"users": 30, "value": 22.1}, {"users": 30, "value": 22.0}, {"users": 30, "value": 19.1}, {"users": 30, "value": 21.2}, {"users": 30, "value": 22.5}, {"users": 30, "value": 20.9}, {"users": 30, "value": 21.7}, {"users": 30, "value": 18.2}, {"users": 30, "value": 23.8}, {"users": 30, "value": 23.7}, {"users": 30, "value": 20.0}, {"users": 30, "value": 21.7}],
-    "current_fail_per_sec": [{"users": 4, "value": 0}, {"users": 9, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 14, "value": 0}, {"users": 19, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0.1}, {"users": 20, "value": 0.1}, {"users": 20, "value": 0.2}, {"users": 20, "value": 0.1}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 23, "value": 0}, {"users": 28, "value": 0.1}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0}, {"users": 30, "value": 0.1}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.2}, {"users": 30, "value": 0.3}],
-    "response_time_percentile_50": [{"users": 4, "value": 59}, {"users": 9, "value": 55}, {"users": 10, "value": 42}, {"users": 10, "value": 42}, {"users": 10, "value": 40}, {"users": 10, "value": 34}, {"users": 10, "value": 33}, {"users": 10, "value": 34}, {"users": 10, "value": 39}, {"users": 10, "value": 39}, {"users": 10, "value": 32}, {"users": 10, "value": 32}, {"users": 14, "value": 35}, {"users": 19, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 40}, {"users": 20, "value": 45}, {"users": 20, "value": 40}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 20, "value": 38}, {"users": 23, "value": 37}, {"users": 28, "value": 39}, {"users": 30, "value": 39}, {"users": 30, "value": 37}, {"users": 30, "value": 36}, {"users": 30, "value": 38}, {"users": 30, "value": 41}, {"users": 30, "value": 39}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 39}, {"users": 30, "value": 38}, {"users": 30, "value": 38}, {"users": 30, "value": 38}, {"users": 30, "value": 39}, {"users": 30, "value": 40}, {"users": 30, "value": 39}, {"users": 30, "value": 40}, {"users": 30, "value": 39}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 39}, {"users": 30, "value": 45}, {"users": 30, "value": 42}, {"users": 30, "value": 39}, {"users": 30, "value": 40}, {"users": 30, "value": 41}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 37}],
-    "response_time_percentile_95": [{"users": 4, "value": 610.0}, {"users": 9, "value": 180.0}, {"users": 10, "value": 160.0}, {"users": 10, "value": 160.0}, {"users": 10, "value": 100.0}, {"users": 10, "value": 91}, {"users": 10, "value": 88}, {"users": 10, "value": 630.0}, {"users": 10, "value": 150.0}, {"users": 10, "value": 83}, {"users": 10, "value": 100.0}, {"users": 10, "value": 100.0}, {"users": 14, "value": 110.0}, {"users": 19, "value": 110.0}, {"users": 20, "value": 120.0}, {"users": 20, "value": 100.0}, {"users": 20, "value": 100.0}, {"users": 20, "value": 100.0}, {"users": 20, "value": 96}, {"users": 20, "value": 85}, {"users": 20, "value": 76}, {"users": 20, "value": 93}, {"users": 20, "value": 88}, {"users": 20, "value": 82}, {"users": 23, "value": 79}, {"users": 28, "value": 110.0}, {"users": 30, "value": 120.0}, {"users": 30, "value": 100.0}, {"users": 30, "value": 79}, {"users": 30, "value": 98}, {"users": 30, "value": 110.0}, {"users": 30, "value": 94}, {"users": 30, "value": 95}, {"users": 30, "value": 84}, {"users": 30, "value": 95}, {"users": 30, "value": 95}, {"users": 30, "value": 87}, {"users": 30, "value": 83}, {"users": 30, "value": 85}, {"users": 30, "value": 95}, {"users": 30, "value": 97}, {"users": 30, "value": 110.0}, {"users": 30, "value": 140.0}, {"users": 30, "value": 100.0}, {"users": 30, "value": 75}, {"users": 30, "value": 78}, {"users": 30, "value": 160.0}, {"users": 30, "value": 110.0}, {"users": 30, "value": 80}, {"users": 30, "value": 79}, {"users": 30, "value": 380.0}, {"users": 30, "value": 340.0}, {"users": 30, "value": 87}, {"users": 30, "value": 320.0}, {"users": 30, "value": 140.0}, {"users": 30, "value": 86}, {"users": 30, "value": 77}, {"users": 30, "value": 79}, {"users": 30, "value": 78}, {"users": 30, "value": 81}],
+    "time": ["15:03:59", "15:04:04", "15:04:09", "15:04:14", "15:04:19", "15:04:24", "15:04:29", "15:04:34", "15:04:39", "15:04:44", "15:04:49", "15:04:54", "15:04:59", "15:05:04", "15:05:09", "15:05:14", "15:05:19", "15:05:24", "15:05:29", "15:05:34", "15:05:39", "15:05:44", "15:05:49", "15:05:54", "15:05:59", "15:06:04", "15:06:09", "15:06:14", "15:06:19", "15:06:24", "15:06:29", "15:06:34", "15:06:39", "15:06:44", "15:06:49", "15:06:54", "15:06:59", "15:07:04", "15:07:09", "15:07:14", "15:07:19", "15:07:24", "15:07:29", "15:07:34", "15:07:39", "15:07:44", "15:07:49", "15:07:54", "15:07:59", "15:08:04", "15:08:09", "15:08:14", "15:08:19", "15:08:24", "15:08:29", "15:08:34", "15:08:39", "15:08:44", "15:08:49", "15:08:54"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
+    "user_count": [{"value": 3}, {"value": 8}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 10}, {"value": 13}, {"value": 18}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 20}, {"value": 23}, {"value": 28}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}, {"value": 30}],
+    "current_rps": [{"users": 3, "value": 1.0}, {"users": 8, "value": 4.166666666666667}, {"users": 10, "value": 5.1}, {"users": 10, "value": 4.9}, {"users": 10, "value": 5.4}, {"users": 10, "value": 5.5}, {"users": 10, "value": 4.9}, {"users": 10, "value": 5.4}, {"users": 10, "value": 4.5}, {"users": 10, "value": 4.4}, {"users": 10, "value": 4.9}, {"users": 10, "value": 4.4}, {"users": 13, "value": 4.5}, {"users": 18, "value": 7.8}, {"users": 20, "value": 10.4}, {"users": 20, "value": 14.8}, {"users": 20, "value": 12.4}, {"users": 20, "value": 14.3}, {"users": 20, "value": 13.4}, {"users": 20, "value": 12.5}, {"users": 20, "value": 15.6}, {"users": 20, "value": 12.2}, {"users": 20, "value": 12.7}, {"users": 20, "value": 14.3}, {"users": 23, "value": 11.0}, {"users": 28, "value": 15.5}, {"users": 30, "value": 21.1}, {"users": 30, "value": 20.4}, {"users": 30, "value": 19.7}, {"users": 30, "value": 20.7}, {"users": 30, "value": 21.7}, {"users": 30, "value": 22.7}, {"users": 30, "value": 21.8}, {"users": 30, "value": 19.8}, {"users": 30, "value": 19.7}, {"users": 30, "value": 19.7}, {"users": 30, "value": 22.3}, {"users": 30, "value": 23.3}, {"users": 30, "value": 21.6}, {"users": 30, "value": 21.5}, {"users": 30, "value": 23.0}, {"users": 30, "value": 22.4}, {"users": 30, "value": 24.2}, {"users": 30, "value": 24.7}, {"users": 30, "value": 19.6}, {"users": 30, "value": 21.5}, {"users": 30, "value": 20.1}, {"users": 30, "value": 21.9}, {"users": 30, "value": 20.6}, {"users": 30, "value": 19.4}, {"users": 30, "value": 20.9}, {"users": 30, "value": 19.9}, {"users": 30, "value": 21.4}, {"users": 30, "value": 21.7}, {"users": 30, "value": 21.3}, {"users": 30, "value": 19.2}, {"users": 30, "value": 22.1}, {"users": 30, "value": 21.3}, {"users": 30, "value": 23.3}, {"users": 30, "value": 24.4}],
+    "current_fail_per_sec": [{"users": 3, "value": 0}, {"users": 8, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 10, "value": 0}, {"users": 13, "value": 0}, {"users": 18, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 20, "value": 0}, {"users": 23, "value": 0}, {"users": 28, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}, {"users": 30, "value": 0}],
+    "response_time_percentile_50": [{"users": 3, "value": 59}, {"users": 8, "value": 55}, {"users": 10, "value": 42}, {"users": 10, "value": 34}, {"users": 10, "value": 33}, {"users": 10, "value": 33}, {"users": 10, "value": 32}, {"users": 10, "value": 33}, {"users": 10, "value": 33}, {"users": 10, "value": 33}, {"users": 10, "value": 33}, {"users": 10, "value": 34}, {"users": 13, "value": 41}, {"users": 18, "value": 40}, {"users": 20, "value": 41}, {"users": 20, "value": 39}, {"users": 20, "value": 37}, {"users": 20, "value": 37}, {"users": 20, "value": 37}, {"users": 20, "value": 38}, {"users": 20, "value": 43}, {"users": 20, "value": 46}, {"users": 20, "value": 39}, {"users": 20, "value": 36}, {"users": 23, "value": 52}, {"users": 28, "value": 67}, {"users": 30, "value": 54}, {"users": 30, "value": 42}, {"users": 30, "value": 40}, {"users": 30, "value": 37}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 50}, {"users": 30, "value": 55}, {"users": 30, "value": 54}, {"users": 30, "value": 39}, {"users": 30, "value": 36}, {"users": 30, "value": 42}, {"users": 30, "value": 59}, {"users": 30, "value": 46}, {"users": 30, "value": 50}, {"users": 30, "value": 40}, {"users": 30, "value": 37}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 38}, {"users": 30, "value": 38}, {"users": 30, "value": 37}, {"users": 30, "value": 41}, {"users": 30, "value": 41}, {"users": 30, "value": 37}, {"users": 30, "value": 36}, {"users": 30, "value": 36}, {"users": 30, "value": 36}, {"users": 30, "value": 37}, {"users": 30, "value": 39}, {"users": 30, "value": 38}, {"users": 30, "value": 40}, {"users": 30, "value": 39}],
+    "response_time_percentile_95": [{"users": 3, "value": 660.0}, {"users": 8, "value": 620.0}, {"users": 10, "value": 620.0}, {"users": 10, "value": 120.0}, {"users": 10, "value": 66}, {"users": 10, "value": 60}, {"users": 10, "value": 60}, {"users": 10, "value": 91}, {"users": 10, "value": 120.0}, {"users": 10, "value": 650.0}, {"users": 10, "value": 99}, {"users": 10, "value": 100.0}, {"users": 13, "value": 100.0}, {"users": 18, "value": 120.0}, {"users": 20, "value": 120.0}, {"users": 20, "value": 100.0}, {"users": 20, "value": 86}, {"users": 20, "value": 65}, {"users": 20, "value": 79}, {"users": 20, "value": 110.0}, {"users": 20, "value": 510.0}, {"users": 20, "value": 510.0}, {"users": 20, "value": 120.0}, {"users": 20, "value": 100.0}, {"users": 23, "value": 340.0}, {"users": 28, "value": 480.0}, {"users": 30, "value": 390.0}, {"users": 30, "value": 160.0}, {"users": 30, "value": 110.0}, {"users": 30, "value": 80}, {"users": 30, "value": 79}, {"users": 30, "value": 290.0}, {"users": 30, "value": 330.0}, {"users": 30, "value": 290.0}, {"users": 30, "value": 270.0}, {"users": 30, "value": 240.0}, {"users": 30, "value": 79}, {"users": 30, "value": 360.0}, {"users": 30, "value": 540.0}, {"users": 30, "value": 290.0}, {"users": 30, "value": 150.0}, {"users": 30, "value": 140.0}, {"users": 30, "value": 79}, {"users": 30, "value": 77}, {"users": 30, "value": 83}, {"users": 30, "value": 89}, {"users": 30, "value": 130.0}, {"users": 30, "value": 100.0}, {"users": 30, "value": 80}, {"users": 30, "value": 96}, {"users": 30, "value": 85}, {"users": 30, "value": 85}, {"users": 30, "value": 83}, {"users": 30, "value": 76}, {"users": 30, "value": 94}, {"users": 30, "value": 100.0}, {"users": 30, "value": 86}, {"users": 30, "value": 85}, {"users": 30, "value": 96}, {"users": 30, "value": 94}],
     "markers": [],
 };
         var rpsChart = new LocustLineChart($(".charts-container"), "Total Requests per Second", ["RPS", "Failures/s"], "reqs/s", ['#00ca5a', '#ff6d6d']);

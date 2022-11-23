@@ -17,8 +17,8 @@ def test_StagesShape_init():
         duration += time_intervals
     assert stages[0] == {
         "duration": time_intervals,
-        "num_of_users": 1,
-        "spawn_rate": 1,
+        "num_of_users": df.loc[0, "Users"],
+        "spawn_rate": df.loc[0, "SpawnRate"],
     }
 
 
