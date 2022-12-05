@@ -8,7 +8,7 @@ import app.locusttasks.student_tasks as student_tasks
 class InstructorUser(HttpUser):
     WEIGHT_FIRST_STAGE = {
         "enroll_one_student": 100,
-        "expel_one_student": 10,
+        "expel_one_student": 4,
         "edit_one_course_description": 50,
         "upload_one_image_to_course_description": 20,
         "upload_one_attachment_to_course_description": 20,

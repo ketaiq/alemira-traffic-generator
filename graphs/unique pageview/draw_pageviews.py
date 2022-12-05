@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def get_dataframe(source: str) -> pd.DataFrame:
+def get_unique_pageview_dataframe(source: str) -> pd.DataFrame:
     df = pd.read_csv(source, encoding="utf_16_le")
     df = df[~df["Label"].str.startswith("/")]
     df = pd.concat([df[:5], df[df["Label"] == "admin"]])
@@ -23,11 +23,21 @@ def draw_pageviews():
         "2020": 12453901,
         "2021": 12886034,
     }
-    df_2017 = get_dataframe("graphs/Export _ Page URLs _ 2017.csv")
-    df_2018 = get_dataframe("graphs/Export _ Page URLs _ 2018.csv")
-    df_2019 = get_dataframe("graphs/Export _ Page URLs _ 2019.csv")
-    df_2020 = get_dataframe("graphs/Export _ Page URLs _ 2020.csv")
-    df_2021 = get_dataframe("graphs/Export _ Page URLs _ 2021.csv")
+    df_2017 = get_unique_pageview_dataframe(
+        "graphs/unique pageview/Export _ Page URLs _ 2017.csv"
+    )
+    df_2018 = get_unique_pageview_dataframe(
+        "graphs/unique pageview/Export _ Page URLs _ 2018.csv"
+    )
+    df_2019 = get_unique_pageview_dataframe(
+        "graphs/unique pageview/Export _ Page URLs _ 2019.csv"
+    )
+    df_2020 = get_unique_pageview_dataframe(
+        "graphs/unique pageview/Export _ Page URLs _ 2020.csv"
+    )
+    df_2021 = get_unique_pageview_dataframe(
+        "graphs/unique pageview/Export _ Page URLs _ 2021.csv"
+    )
     df = df_2017 + df_2018 + df_2019 + df_2020 + df_2021
     df = df.sort_values(by="Unique Pageviews", ascending=False)
     df["Unique Percentage"] = df["Unique Pageviews"].apply(
@@ -55,7 +65,7 @@ def draw_pageviews():
     # Percentage of unique pageviews of iCorsi3 from 2017 to 2021
     ax.yaxis.set_major_formatter(tick.StrMethodFormatter("{x:.2f}"))
     plt.xticks()
-    plt.savefig("graphs/unique_pageviews.pdf")
+    plt.savefig("graphs/unique pageview/unique_pageviews.pdf")
 
 
 def main():
