@@ -108,6 +108,4 @@ class Admin:
         return User(random.choice(self.db_driver.find_admin_users()))
 
     def _get_admin_headers(self) -> dict:
-        return self.identity_api_endpoint.get_headers(
-            Role.ADMIN, self._select_one_admin()
-        )
+        return self.identity_api_endpoint.get_headers(Role.ADMIN)

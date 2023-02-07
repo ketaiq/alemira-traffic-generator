@@ -14,6 +14,18 @@ class DatabaseDriver:
         self.users = self.db["users"]
         self.activities = self.db["activities"]
         self.objectives = self.db["objectives"]
+        self.init_admin_user()
+
+    def init_admin_user(self):
+        user = User(
+            firstName="Alice",
+            lastName="Smith",
+            email="alice@company.com",
+            username="alice@company.com",
+            _role=Role.ADMIN.value,
+        )
+        if self.users.find_one({"email": user.email}) is None:
+            self.users.insert_one(user.to_dict_for_database())
 
     def insert_one_user(self, user: User):
         self.users.insert_one(user.to_dict_for_database())

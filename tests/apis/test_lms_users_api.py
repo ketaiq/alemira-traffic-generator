@@ -46,3 +46,17 @@ def test_get_users_by_query():
     )
     assert len(res["data"]) == res["totalCount"]
     assert "alice" in res["data"][0]["email"]
+
+    res = lms_users_api.get_users_by_query(
+        headers,
+        {
+            "skip": 0,
+            "take": 10,
+            "requireTotalCount": True,
+            "filter": '["email","contains","qiuketai"]',
+        },
+    )
+    assert len(res["data"]) == 0
+
+if __name__ == "__main__":
+    test_get_users_by_query()

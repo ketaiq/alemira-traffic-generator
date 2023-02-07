@@ -90,7 +90,21 @@ class LmsUsersAPI(UserAPIEndPoint):
                 response.failure(request_http_error_msg(response))
 
     def create_user(self, headers: dict, role: Role) -> User:
-        new_user = User.gen_random_object()
+        while True:
+            new_user = User.gen_random_object()
+            user_emails = self.get_users_by_query(
+                headers,
+                {
+                    "skip": 0,
+                    "take": 10,
+                    "requireTotalCount": True,
+                    "filter": f'["email","contains","{new_user.email}"]',
+                },
+            )
+            # check user email does not exist
+            if len(user_emails["data"]) == 0:
+                break
+
         if self.client is None:
             r = requests.post(
                 self.url, json=new_user.to_dict_for_creating(), headers=headers

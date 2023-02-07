@@ -103,7 +103,7 @@ class ActivitiesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, headers: dict, activity: Activity):
+    def update_activity(self, headers: dict, activity: Activity) -> str:
         if self.client is None:
             r = requests.put(
                 self.url + activity.id,
@@ -122,6 +122,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                 if updated_state["completed"]:
                     break
                 sleep_for_seconds(1, 3)
+            return updated_id
         else:
             with self.client.put(
                 self.url + activity.id,
@@ -142,6 +143,7 @@ class ActivitiesAPI(UserAPIEndPoint):
                         if updated_state["completed"]:
                             break
                         sleep_for_seconds(1, 3)
+                    return updated_id
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
