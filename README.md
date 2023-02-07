@@ -2,24 +2,20 @@
 
 ## 1. Environment
 
-Exporting an environment file across platforms
-```sh
-conda env export --from-history > environment.yml
-```
-
 Creating an environment
 ```sh
 conda env create -f environment.yml
 ```
 
-Updating an environment
-```sh
-conda env update --file environment.yml  --prune
-```
-
 Start mongodb, see Mongo Express at http://localhost:8081
 ```sh
 docker-compose up -d
+```
+
+Useful commands
+```sh
+conda env export --from-history > environment.yml
+conda env update --file environment.yml  --prune
 ```
 
 ## 2. Quick Start

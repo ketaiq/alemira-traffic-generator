@@ -6,7 +6,7 @@ from app.utils.string import request_http_error_msg, request_timeout_msg
 
 
 class IdentityAPIEndPoint:
-    URI = "https://identity.alms.dev.alemira.com/"
+    URI = "https://identity.alms.crab.alemira.com/"
     DEFAULT_USER = {
         "username": "alice@company.com",
         "password": "Pass123$",
