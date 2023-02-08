@@ -46,8 +46,8 @@ are considered as the second stage. We use corresponding weights for different d
 
 1. Set `InstructorUser.weight` as `weights.DAY_OTHER_INSTRUCTOR_WEIGHTS`
 2. Set `StudentUser.weight` as `weights.DAY_OTHER_STUDENT_WEIGHTS`
-3. Set `InstructorUser.tasks` as `generate_instructor_tasks(Stage.SECOND)`
-4. Set `StudentUser.tasks` as `generate_student_tasks(Stage.SECOND)`
+3. Set `InstructorUser.tasks` as `generate_instructor_tasks(Stage.SECOND.value)`
+4. Set `StudentUser.tasks` as `generate_student_tasks(Stage.SECOND.value)`
 
 ## 3. Resources
 

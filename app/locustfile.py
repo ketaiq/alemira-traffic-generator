@@ -24,7 +24,7 @@ def generate_student_tasks(stage: str) -> list:
 class InstructorUser(HttpUser):
     weight = weights.DAY_1_INSTRUCTOR_WEIGHTS
     wait_time = between(6, 10)
-    tasks = generate_instructor_tasks(Stage.FIRST)
+    tasks = generate_instructor_tasks(Stage.FIRST.value)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,7 +35,7 @@ class InstructorUser(HttpUser):
 class StudentUser(HttpUser):
     weight = weights.DAY_1_STUDENT_WEIGHTS
     wait_time = between(6, 10)
-    tasks = generate_student_tasks(Stage.FIRST)
+    tasks = generate_student_tasks(Stage.FIRST.value)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
