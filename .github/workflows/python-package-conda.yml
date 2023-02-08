@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         conda env create -f environment.yml
-        conda activate alemira
+        $CONDA/bin/activate alemira
     - name: Lint with flake8
       run: |
         conda install flake8
