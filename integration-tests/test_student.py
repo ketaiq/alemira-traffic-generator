@@ -8,6 +8,8 @@ from app.apis.start_activity_workflows_api import StartActivityWorkflowsAPI
 from app.apis.finish_activity_workflows_api import FinishActivityWorkflow
 from app.apis.lms_users_api import LmsUsersAPI
 from app.drivers.database_driver import db_driver
+from app.models.role import Role
+from app.models.user import User
 from app.profiles.student import Student
 
 
@@ -92,7 +94,11 @@ def test_start_one_course():
         start_activity_workflows_api,
         finish_activity_workflows_api,
     )
-    student.start_one_course()
+    headers = student.identity_api_endpoint.get_headers(
+        Role.STUDENT,
+    )
+    me = student.lms_users_api.get_user_me(headers)
+    student._start_one_course(headers, me)
 
 
 def test_review_one_course():
@@ -124,8 +130,9 @@ def test_review_one_course():
 def main():
     # test_take_course()
     # test_finish_one_course()
-    # test_start_one_course()
-    test_review_one_course()
+    test_start_one_course()
+    # test_review_one_course()
+
 
 if __name__ == "__main__":
     main()

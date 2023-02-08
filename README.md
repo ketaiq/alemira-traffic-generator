@@ -25,6 +25,8 @@ Start experiment
 locust --config=app/locust.conf
 ```
 
+Run `init_data.py` to initialize users and courses.
+
 ## 3. Resources
 
 Courses from iCorsi3 history
