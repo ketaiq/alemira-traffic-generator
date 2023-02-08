@@ -1,0 +1,1701 @@
+[2023-02-08 14:28:09,757] shixuetiandeMacBook-Air.local/INFO/locust.main: Starting web interface at http://0.0.0.0:8089 (accepting connections from all network interfaces)
+[2023-02-08 14:28:09,784] shixuetiandeMacBook-Air.local/INFO/locust.main: Starting Locust 2.14.2
+[2023-02-08 14:28:20,837] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test starting. User count and spawn rate are ignored for this type of load test
+[2023-02-08 14:28:20,838] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape worker starting
+[2023-02-08 14:28:20,840] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test updating to 20 users at 1.00 spawn rate
+[2023-02-08 14:28:20,841] shixuetiandeMacBook-Air.local/INFO/locust.runners: Ramping to 20 users at a rate of 1.00 per second
+[2023-02-08 14:28:20,843] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:21,843] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:22,843] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:28:23,844] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:24,844] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:28:24,848] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:28:25,699] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:28:25,845] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:28:25,943] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:28:25,951] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI2.
+[2023-02-08 14:28:26,300] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:28:26,572] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:28:26,846] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:26,854] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:28:26,963] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:28:27,631] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:28:27,847] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:28:27,858] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:28:27,974] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:28:28,847] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:28:28,855] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:28:28,989] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:28:29,263] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-jane-doan-1132047.jpg to content of course USI2.
+[2023-02-08 14:28:29,847] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:30,302] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:28:30,893] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:28:30,899] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:28:31,893] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:28:32,052] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:28:32,942] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:28:32,948] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:28:33,980] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:28:33,981] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:28:33,986] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:28:34,129] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits my courses.
+[2023-02-08 14:28:34,986] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:28:34,992] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:28:34,993] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:28:34,996] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI2.
+[2023-02-08 14:28:35,992] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:28:35,998] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:28:37,000] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:28:37,073] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-161559.jpg to content of course USI2.
+[2023-02-08 14:29:00,375] shixuetiandeMacBook-Air.local/INFO/locust.main: writing html report to file: alemira_report.html
+[2023-02-08 14:29:00,381] shixuetiandeMacBook-Air.local/INFO/locust.main: Shutting down (exit code 0)
+[2023-02-08 14:29:05,323] shixuetiandeMacBook-Air.local/INFO/locust.main: Starting web interface at http://0.0.0.0:8089 (accepting connections from all network interfaces)
+[2023-02-08 14:29:05,345] shixuetiandeMacBook-Air.local/INFO/locust.main: Starting Locust 2.14.2
+[2023-02-08 14:29:08,240] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test starting. User count and spawn rate are ignored for this type of load test
+[2023-02-08 14:29:08,243] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape worker starting
+[2023-02-08 14:29:08,243] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test updating to 20 users at 1.00 spawn rate
+[2023-02-08 14:29:08,244] shixuetiandeMacBook-Air.local/INFO/locust.runners: Ramping to 20 users at a rate of 1.00 per second
+[2023-02-08 14:29:08,246] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:09,249] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:09,268] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:29:10,241] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:29:10,250] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:10,256] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:29:11,255] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:29:11,829] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:29:12,263] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:29:12,271] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:29:13,264] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:13,998] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:29:14,287] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:29:15,291] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:15,338] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:29:16,296] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:16,805] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:29:16,806] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:17,298] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:17,306] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:29:17,327] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:29:17,334] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:29:17,902] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:29:18,177] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits my courses.
+[2023-02-08 14:29:18,319] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:18,325] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:29:19,071] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:29:19,353] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:19,936] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:29:20,353] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:29:20,360] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:21,119] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:21,358] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:21,364] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:22,290] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI2.
+[2023-02-08 14:29:22,359] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:29:22,362] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:29:22,363] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:29:22,366] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:29:23,360] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:23,366] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:29:24,366] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:25,368] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:25,509] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:29:26,369] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:26,375] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:29:27,020] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:29:27,390] shixuetiandeMacBook-Air.local/INFO/locust.runners: All users spawned: {"InstructorUser": 2, "StudentUser": 18} (20 total users)
+[2023-02-08 14:29:27,395] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:27,399] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:29:31,634] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:29:31,645] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:29:32,064] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI3.
+[2023-02-08 14:29:32,159] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:32,165] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:29:32,859] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI3.
+[2023-02-08 14:29:33,191] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:29:33,200] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:29:33,554] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:29:33,560] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:29:33,902] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:33,908] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:29:35,055] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:29:35,061] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:29:35,062] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:29:35,066] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:29:35,734] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220111_news_review_djokovic_austrailia.pdf to content of course USI1.
+[2023-02-08 14:29:37,159] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:37,165] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:29:37,491] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:29:38,123] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:38,129] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:29:38,549] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:29:39,693] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:39,697] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:29:40,615] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk starts course USI0.
+[2023-02-08 14:29:40,979] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:40,986] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:29:42,264] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:42,271] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:29:42,934] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 starts course USI0.
+[2023-02-08 14:29:43,308] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI4.
+[2023-02-08 14:29:46,354] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP starts course USI0.
+[2023-02-08 14:29:46,380] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI2.
+[2023-02-08 14:29:46,619] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:46,625] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:46,643] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:29:46,648] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:29:46,648] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:29:46,656] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:29:47,463] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI1.
+[2023-02-08 14:29:47,964] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220405_news_review_driverless_cars.pdf to content of course USI4.
+[2023-02-08 14:29:47,998] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI0.
+[2023-02-08 14:29:48,936] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:29:49,121] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:29:49,128] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:29:49,270] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI1.
+[2023-02-08 14:29:49,468] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:29:49,478] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:29:49,479] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:29:49,483] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:29:49,587] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI4.
+[2023-02-08 14:29:50,626] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:50,633] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:29:51,524] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:29:51,730] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:51,735] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:52,311] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI2.
+[2023-02-08 14:29:52,460] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:52,466] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:29:53,044] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:53,049] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:29:53,059] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:29:53,358] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:53,365] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:53,483] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:53,489] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:53,681] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:29:53,688] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:29:53,774] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:29:53,880] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:53,886] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:53,988] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:29:56,261] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:56,273] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:29:56,670] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:56,675] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:56,730] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:56,736] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:29:56,936] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:29:56,943] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:29:57,634] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:29:57,639] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:29:57,640] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:29:57,646] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:30:01,505] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:01,511] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:30:02,475] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:30:06,425] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:30:09,793] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:09,799] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:30:14,889] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI3.
+[2023-02-08 14:30:15,630] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:15,636] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:30:24,698] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:30:24,704] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:30:28,556] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:30:32,063] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI2.
+[2023-02-08 14:30:34,069] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 40, in visit_my_courses
+    student.visit_my_courses()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 48, in visit_my_courses
+    self.users_api.get_user_permissions(headers)
+  File "/Users/silvia/Projects/alemira-test/app/apis/users_api.py", line 93, in get_user_permissions
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:30:34,389] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:30:34,877] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:30:36,680] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:36,684] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:30:37,392] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:30:37,600] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:30:38,522] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI0.
+[2023-02-08 14:30:39,194] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP starts course USI4.
+[2023-02-08 14:30:39,672] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh starts course USI4.
+[2023-02-08 14:30:40,541] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:30:41,026] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:41,033] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:30:41,085] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI4.
+[2023-02-08 14:30:41,358] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI1.
+[2023-02-08 14:30:41,733] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:30:41,738] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:30:41,739] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:30:41,744] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:30:42,874] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:42,881] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:30:43,928] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:43,933] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:30:43,935] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:43,942] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:30:44,063] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI2.
+[2023-02-08 14:30:44,153] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:44,160] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:30:44,223] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:30:44,274] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:44,280] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:30:46,499] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:30:46,510] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:30:47,443] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:30:47,603] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:47,612] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:30:47,985] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:47,993] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:30:48,161] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:30:48,167] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:30:48,426] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:30:48,437] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:30:48,668] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:30:49,096] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:49,101] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:30:49,267] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:30:49,303] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:49,307] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:30:49,571] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits my courses.
+[2023-02-08 14:30:50,208] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI4.
+[2023-02-08 14:30:52,671] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:52,678] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:30:53,024] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:53,029] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:30:54,403] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI3.
+[2023-02-08 14:30:54,645] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:30:54,653] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:30:54,653] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:30:54,656] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:30:54,861] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI3.
+[2023-02-08 14:30:55,101] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:55,107] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:30:55,427] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:30:55,600] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:55,606] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:30:56,471] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI2.
+[2023-02-08 14:30:56,832] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220315_news_review_future_fuel.pdf to content of course USI3.
+[2023-02-08 14:30:56,879] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:30:58,372] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:30:58,372] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:30:58,406] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI3.
+[2023-02-08 14:30:58,432] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:30:58,476] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:30:58,615] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-foodie-factor-557659.jpg to content of course USI4.
+[2023-02-08 14:30:58,668] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:30:58,975] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:30:59,381] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:30:59,391] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:30:59,694] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:31:01,165] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:01,169] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:01,645] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:01,656] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:02,658] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:02,664] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:03,544] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI0.
+[2023-02-08 14:31:03,936] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:31:04,111] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI4.
+[2023-02-08 14:31:04,142] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:04,145] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:05,143] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:05,148] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:05,919] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:05,924] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:06,425] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:06,431] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:07,984] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:07,987] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:08,149] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:08,153] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:08,701] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test updating to 30 users at 1.00 spawn rate
+[2023-02-08 14:31:08,703] shixuetiandeMacBook-Air.local/INFO/locust.runners: Ramping to 30 users at a rate of 1.00 per second
+[2023-02-08 14:31:08,704] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:31:08,710] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:09,194] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:31:09,711] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:09,744] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:09,842] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:09,846] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:09,940] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:31:10,005] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:10,005] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:10,009] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:31:10,748] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:10,749] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI2.
+[2023-02-08 14:31:10,749] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:31:10,756] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:10,989] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI1.
+[2023-02-08 14:31:11,254] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:31:11,321] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:11,323] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:11,411] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI0.
+[2023-02-08 14:31:11,418] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:31:11,418] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:31:11,424] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:11,429] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:31:11,435] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:11,439] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:11,442] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:11,454] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk starts course USI4.
+[2023-02-08 14:31:11,756] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:11,815] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:12,082] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits my courses.
+[2023-02-08 14:31:13,299] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:31:13,325] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:13,325] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:13,334] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:31:13,978] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:13,984] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:15,044] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:15,158] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:15,172] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:15,535] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:15,538] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:31:15,679] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-161573.jpg to content of course USI4.
+[2023-02-08 14:31:16,254] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:16,260] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:16,272] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:17,228] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:17,268] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:17,273] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:17,832] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:17,905] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:18,039] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI0.
+[2023-02-08 14:31:18,247] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:18,255] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:18,277] shixuetiandeMacBook-Air.local/INFO/locust.runners: All users spawned: {"InstructorUser": 3, "StudentUser": 27} (30 total users)
+[2023-02-08 14:31:18,278] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:18,288] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:18,324] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:18,335] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:18,528] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:18,536] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:18,547] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:31:18,988] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI3.
+[2023-02-08 14:31:19,354] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:19,362] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:19,950] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:31:20,469] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI3.
+[2023-02-08 14:31:20,547] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI3.
+[2023-02-08 14:31:20,859] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:20,866] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:21,612] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:21,625] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:31:21,990] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:21,995] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:22,163] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI0.
+[2023-02-08 14:31:22,488] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:22,493] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:23,714] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:23,715] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP starts course USI0.
+[2023-02-08 14:31:23,721] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:23,831] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:31:23,837] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:23,837] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:23,843] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:31:24,161] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI4.
+[2023-02-08 14:31:24,362] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:24,368] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:24,446] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:24,452] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:24,602] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI1.
+[2023-02-08 14:31:25,231] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI2.
+[2023-02-08 14:31:25,789] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:31:25,792] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI1.
+[2023-02-08 14:31:25,941] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-foodie-factor-557659.jpg to content of course USI4.
+[2023-02-08 14:31:26,825] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:31:26,836] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:27,488] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:31:27,494] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:31:27,494] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:31:27,495] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:27,500] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:31:27,832] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:27,847] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:27,888] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:27,896] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:28,057] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI1.
+[2023-02-08 14:31:28,519] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:31:28,525] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:28,526] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:28,531] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:31:28,691] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ starts course USI2.
+[2023-02-08 14:31:28,727] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI1.
+[2023-02-08 14:31:28,957] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:28,961] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:29,132] shixuetiandeMacBook-Air.local/INFO/root: upload attachment Sample Marketing Plan Outline.pdf to content of course USI0.
+[2023-02-08 14:31:29,148] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:29,157] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:29,338] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:29,349] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:29,524] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits my courses.
+[2023-02-08 14:31:29,818] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:31:29,907] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:29,912] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:30,158] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:30,166] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:30,463] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP starts course USI0.
+[2023-02-08 14:31:30,554] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI0.
+[2023-02-08 14:31:30,639] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220503_news_review_plastic_blood.pdf to content of course USI1.
+[2023-02-08 14:31:30,735] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI3.
+[2023-02-08 14:31:30,919] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI4.
+[2023-02-08 14:31:31,107] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:31,111] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:31,116] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:31,121] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:31,372] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:31:31,403] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:31:31,408] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:31:32,136] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:31:32,371] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:32,438] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:33,146] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:33,152] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:33,316] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:33,325] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:33,813] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:31:34,200] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:34,430] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:34,781] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:34,789] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:35,329] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI2.
+[2023-02-08 14:31:35,905] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI3.
+[2023-02-08 14:31:36,255] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:31:36,261] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:37,185] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI2.
+[2023-02-08 14:31:37,222] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:37,232] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:37,318] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:37,328] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:37,369] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:37,371] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:37,658] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:31:37,663] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits my courses.
+[2023-02-08 14:31:37,745] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:31:37,833] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:37,838] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:38,131] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI0.
+[2023-02-08 14:31:38,200] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:38,203] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:38,484] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:38,485] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:31:38,494] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:31:38,494] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:31:38,495] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:38,505] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:31:39,479] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:39,545] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:40,144] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:40,150] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:40,332] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:31:40,337] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:31:40,337] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:31:40,343] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:31:40,431] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:40,437] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:31:40,936] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:31:40,985] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI0.
+[2023-02-08 14:31:40,988] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-jane-doan-1132047.jpg to content of course USI3.
+[2023-02-08 14:31:41,059] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:31:41,133] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:31:41,140] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:41,140] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:41,157] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:31:42,037] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:42,043] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:31:42,285] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:42,294] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:42,504] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220322_news_review_barrier_reef.pdf to content of course USI1.
+[2023-02-08 14:31:42,530] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI3.
+[2023-02-08 14:31:42,561] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI3.
+[2023-02-08 14:31:42,767] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:31:42,925] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:31:43,456] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:43,461] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:43,520] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI2.
+[2023-02-08 14:31:43,623] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:43,629] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:43,895] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:43,906] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:43,971] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:43,978] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:44,060] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:31:44,066] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:44,409] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI3.
+[2023-02-08 14:31:44,671] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI1.
+[2023-02-08 14:31:44,869] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI1.
+[2023-02-08 14:31:44,883] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:44,887] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:44,942] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 starts course USI3.
+[2023-02-08 14:31:45,323] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:45,329] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:45,895] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:31:46,216] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:46,223] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:47,449] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI4.
+[2023-02-08 14:31:48,173] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:48,178] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:48,669] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI4.
+[2023-02-08 14:31:49,879] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:49,886] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:49,943] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:49,950] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:50,038] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:50,046] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:50,358] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:31:50,568] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI0.
+[2023-02-08 14:31:50,674] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:50,684] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:50,695] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI4.
+[2023-02-08 14:31:51,114] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:31:51,121] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:51,121] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:51,124] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:31:51,280] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:51,291] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:51,512] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:51,520] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:51,575] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:31:51,580] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:31:51,581] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:31:51,585] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:31:51,805] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:51,812] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:52,322] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:52,326] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:52,409] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:52,415] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:52,461] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-161573.jpg to content of course USI3.
+[2023-02-08 14:31:52,647] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:31:52,843] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:52,852] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:31:53,304] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:53,326] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:53,331] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI0.
+[2023-02-08 14:31:53,496] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:31:53,500] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:31:53,534] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh starts course USI4.
+[2023-02-08 14:31:53,618] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:31:54,309] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI4.
+[2023-02-08 14:31:54,988] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:31:54,994] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:31:54,994] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:31:55,000] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:31:55,308] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI0.
+[2023-02-08 14:31:55,501] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:55,507] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:31:55,624] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:55,631] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:31:55,821] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:31:55,910] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:31:55,915] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI1.
+[2023-02-08 14:31:55,924] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:31:56,924] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI2.
+[2023-02-08 14:31:57,192] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:57,210] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:31:58,494] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:58,505] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:31:58,546] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:31:58,550] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:31:58,924] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:31:58,944] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:31:59,256] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:31:59,302] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI4.
+[2023-02-08 14:31:59,920] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF starts course USI3.
+[2023-02-08 14:32:00,054] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:00,064] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:00,467] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI0.
+[2023-02-08 14:32:00,681] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:00,702] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:00,735] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI2.
+[2023-02-08 14:32:00,970] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:00,980] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:00,997] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:32:01,236] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI3.
+[2023-02-08 14:32:01,318] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:32:02,040] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI3.
+[2023-02-08 14:32:02,355] shixuetiandeMacBook-Air.local/INFO/root: upload attachment Advertising Plan Outline.pdf to content of course USI3.
+[2023-02-08 14:32:02,587] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI3.
+[2023-02-08 14:32:02,808] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:02,814] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:02,856] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:02,865] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:03,496] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:32:03,501] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:03,502] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:03,506] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:32:03,575] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:03,578] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI1.
+[2023-02-08 14:32:03,581] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:03,785] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:32:03,800] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:03,805] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:03,837] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:03,846] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:04,139] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:32:04,691] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI3.
+[2023-02-08 14:32:05,016] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:05,022] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:05,190] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-51312.jpg to content of course USI4.
+[2023-02-08 14:32:05,354] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP starts course USI0.
+[2023-02-08 14:32:05,363] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:05,370] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:05,579] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:05,587] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:05,675] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:32:05,879] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:32:06,429] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:06,436] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:06,559] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:32:06,563] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:32:06,563] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:32:06,568] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:32:06,954] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:06,961] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:07,272] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:32:07,281] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:07,286] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:07,610] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-51312.jpg to content of course USI1.
+[2023-02-08 14:32:07,837] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:07,846] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:08,056] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:08,063] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:08,309] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:08,315] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:08,346] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:32:08,535] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test updating to 35 users at 1.00 spawn rate
+[2023-02-08 14:32:08,535] shixuetiandeMacBook-Air.local/INFO/locust.runners: Ramping to 35 users at a rate of 1.00 per second
+[2023-02-08 14:32:08,536] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:08,540] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:08,635] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:32:09,153] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:09,159] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:09,332] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:09,351] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:32:09,357] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI0.
+[2023-02-08 14:32:09,358] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:09,552] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:09,557] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:09,852] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:09,857] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:10,069] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits my courses.
+[2023-02-08 14:32:10,564] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:10,570] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:10,604] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:10,610] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:10,683] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:10,695] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:11,143] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:32:11,153] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:32:11,153] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:32:11,158] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:32:11,277] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:11,280] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:11,282] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:32:11,483] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:32:11,577] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:11,581] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:11,969] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:11,973] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:12,592] shixuetiandeMacBook-Air.local/INFO/locust.runners: All users spawned: {"InstructorUser": 4, "StudentUser": 31} (35 total users)
+[2023-02-08 14:32:12,594] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:32:12,599] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:12,599] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:12,602] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:32:12,889] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI3.
+[2023-02-08 14:32:13,132] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:13,136] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:13,181] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:13,187] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:13,450] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI4.
+[2023-02-08 14:32:13,466] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:32:13,932] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:13,937] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:14,954] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:32:15,214] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:15,220] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:15,364] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:32:15,458] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:15,466] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:15,499] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:15,504] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:15,623] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:32:16,191] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:32:16,197] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:32:16,197] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:32:16,202] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:32:17,039] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:17,044] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:17,846] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:32:17,953] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI0.
+[2023-02-08 14:32:18,047] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:32:18,727] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:18,733] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:18,736] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI4.
+[2023-02-08 14:32:18,779] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:18,788] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:19,174] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:32:19,180] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:19,180] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:19,186] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI2.
+[2023-02-08 14:32:19,338] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:32:19,690] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:19,694] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:19,746] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:32:19,807] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:19,911] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 starts course USI0.
+[2023-02-08 14:32:19,939] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI0.
+[2023-02-08 14:32:20,217] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:32:20,223] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:20,366] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh starts course USI4.
+[2023-02-08 14:32:20,407] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:20,412] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:20,663] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI0.
+[2023-02-08 14:32:20,707] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:32:21,049] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:21,055] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:21,119] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ starts course USI3.
+[2023-02-08 14:32:21,124] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:32:21,463] shixuetiandeMacBook-Air.local/INFO/root: upload attachment Advertising Plan Outline.pdf to content of course USI2.
+[2023-02-08 14:32:21,523] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:21,528] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:21,967] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:32:22,569] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:22,574] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:22,860] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:32:23,148] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP starts course USI0.
+[2023-02-08 14:32:23,368] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:23,375] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:24,528] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI4.
+[2023-02-08 14:32:24,577] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:32:24,582] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI3.
+[2023-02-08 14:32:24,751] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:24,754] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI3.
+[2023-02-08 14:32:24,769] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:25,099] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:32:25,954] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI2.
+[2023-02-08 14:32:25,995] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:32:26,001] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:26,822] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI4.
+[2023-02-08 14:32:27,007] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:27,007] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:27,018] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:27,019] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:27,093] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:32:27,099] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:32:27,099] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:32:27,104] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:32:27,279] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:27,286] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:27,359] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:32:27,833] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:27,843] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:28,077] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI4.
+[2023-02-08 14:32:28,078] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:28,094] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:28,110] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:28,124] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:28,159] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits my courses.
+[2023-02-08 14:32:28,325] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:28,331] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:28,393] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:32:28,399] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:28,400] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:28,405] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:32:28,744] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:32:29,114] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:29,127] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:29,410] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:29,454] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:29,493] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:32:30,308] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:30,331] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:30,556] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:30,565] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:30,628] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 starts course USI1.
+[2023-02-08 14:32:30,797] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI0.
+[2023-02-08 14:32:31,016] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:31,023] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:31,275] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course description
+[2023-02-08 14:32:31,279] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:32:31,279] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:32:31,282] shixuetiandeMacBook-Air.local/INFO/root: select objective with code USI4.
+[2023-02-08 14:32:31,442] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:31,447] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:31,895] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:31,933] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:32,057] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI3.
+[2023-02-08 14:32:32,224] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:32,236] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:32,244] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course description
+[2023-02-08 14:32:32,248] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:32,249] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:32,252] shixuetiandeMacBook-Air.local/INFO/root: select objective with code USI2.
+[2023-02-08 14:32:32,561] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:32,572] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:32,816] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI4.
+[2023-02-08 14:32:33,255] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:33,260] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:33,350] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:33,355] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:33,406] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-foodie-factor-557659.jpg to description of course USI4.
+[2023-02-08 14:32:36,472] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:36,478] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:32:36,582] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:36,590] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:36,883] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:32:36,996] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:32:37,000] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:37,027] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:32:37,082] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:37,087] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:37,283] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG starts course USI2.
+[2023-02-08 14:32:38,302] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits my courses.
+[2023-02-08 14:32:38,447] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:32:38,452] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:32:38,452] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:32:38,461] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:32:38,639] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:38,646] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:32:38,818] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:38,824] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:39,150] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:39,155] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:32:39,668] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:39,674] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:40,024] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:32:40,260] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:40,266] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:32:40,565] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:32:40,584] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:32:40,588] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:32:40,607] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:40,614] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:32:43,468] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:43,475] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:32:43,939] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:32:47,411] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 46, in visit_one_course
+    student.visit_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 55, in visit_one_course
+    self._visit_one_course(headers, me)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 92, in _visit_one_course
+    self.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
+  File "/Users/silvia/Projects/alemira-test/app/apis/objective_workflow_aggregates_api.py", line 26, in get_objective_workflow_aggregate_by_id
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:32:47,672] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 46, in visit_one_course
+    student.visit_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 55, in visit_one_course
+    self._visit_one_course(headers, me)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 81, in _visit_one_course
+    course = self._select_one_course(headers, user.id)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 132, in _select_one_course
+    courses = self.users_api.get_user_objective_workflow_aggregates(
+  File "/Users/silvia/Projects/alemira-test/app/apis/users_api.py", line 31, in get_user_objective_workflow_aggregates
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:32:50,099] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:50,103] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:32:53,829] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:32:53,833] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:32:54,633] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI1.
+[2023-02-08 14:32:56,891] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:32:56,898] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:32:58,913] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce starts course USI0.
+[2023-02-08 14:33:00,656] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:33:01,366] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI4.
+[2023-02-08 14:33:01,646] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:01,652] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:02,480] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:02,486] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:05,658] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:05,663] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:05,945] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:33:06,663] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 52, in start_one_course
+    student.start_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 60, in start_one_course
+    self._start_one_course(headers, me)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 208, in _start_one_course
+    objective = self.objectives_api.get_objective_by_id(headers, objective_id)
+  File "/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py", line 33, in get_objective_by_id
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:33:07,314] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:33:08,322] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test updating to 40 users at 1.00 spawn rate
+[2023-02-08 14:33:08,322] shixuetiandeMacBook-Air.local/INFO/locust.runners: Ramping to 40 users at a rate of 1.00 per second
+[2023-02-08 14:33:08,322] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:08,327] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:09,331] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:09,336] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:33:10,340] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:10,344] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:11,172] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:11,172] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:11,178] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:11,180] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:33:11,286] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:33:11,348] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:11,351] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:12,357] shixuetiandeMacBook-Air.local/INFO/locust.runners: All users spawned: {"InstructorUser": 4, "StudentUser": 36} (40 total users)
+[2023-02-08 14:33:12,358] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:12,361] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:12,814] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:12,817] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits my courses.
+[2023-02-08 14:33:12,822] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:13,471] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220503_news_review_plastic_blood.pdf to description of course USI2.
+[2023-02-08 14:33:14,804] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:14,810] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:15,095] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:33:17,250] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:33:18,072] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:18,080] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:18,458] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:33:18,575] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 58, in download_one_attachment_from_one_course
+    student.download_one_attachment_from_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 65, in download_one_attachment_from_one_course
+    self._download_one_attachment_from_one_course(headers, me)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 118, in _download_one_attachment_from_one_course
+    objective = self.objectives_api.get_objective_by_id(
+  File "/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py", line 33, in get_objective_by_id
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:33:18,697] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI0.
+[2023-02-08 14:33:20,759] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:20,766] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:21,105] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:33:21,417] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI3.
+[2023-02-08 14:33:21,776] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 46, in visit_one_course
+    student.visit_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 55, in visit_one_course
+    self._visit_one_course(headers, me)
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 86, in _visit_one_course
+    self.objectives_api.get_objective_workflow_aggregate_by_id(
+  File "/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py", line 144, in get_objective_workflow_aggregate_by_id
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:33:22,626] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:22,842] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:22,849] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:23,096] shixuetiandeMacBook-Air.local/INFO/root: upload attachment A SUCCESSFUL ADVERTISING CAMPAIGN.pdf to content of course USI3.
+[2023-02-08 14:33:23,339] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:33:23,489] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:23,496] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:23,982] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI2.
+[2023-02-08 14:33:24,469] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:24,823] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:24,829] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:33:24,881] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:33:24,889] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:33:24,889] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:33:24,895] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI2.
+[2023-02-08 14:33:25,378] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:25,445] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:33:25,446] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:25,806] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:25,812] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:25,937] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:33:26,487] shixuetiandeMacBook-Air.local/ERROR/locust.user.task: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 347, in run
+    self.execute_next_task()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 372, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py", line 493, in execute_task
+    task(self.user)
+  File "/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py", line 46, in visit_one_course
+    student.visit_one_course()
+  File "/Users/silvia/Projects/alemira-test/app/profiles/student.py", line 54, in visit_one_course
+    me = self.lms_users_api.get_user_me(headers)
+  File "/Users/silvia/Projects/alemira-test/app/apis/lms_users_api.py", line 31, in get_user_me
+    if response.ok:
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py", line 765, in ok
+    self.raise_for_status()
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 23, in raise_for_status
+    raise self.error
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py", line 180, in _send_request_safe_mode
+    return super().request(method, url, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+[2023-02-08 14:33:26,502] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI0.
+[2023-02-08 14:33:26,807] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:27,057] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:27,065] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:27,308] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:27,314] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:27,660] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:33:27,972] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI4.
+[2023-02-08 14:33:29,250] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:29,256] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:33:29,982] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:33:30,017] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:30,022] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:30,352] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:33:30,367] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI0.
+[2023-02-08 14:33:30,655] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:30,659] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI2.
+[2023-02-08 14:33:30,716] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:30,725] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:32,593] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:33:32,679] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI3.
+[2023-02-08 14:33:32,751] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:32,759] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:32,900] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI3.
+[2023-02-08 14:33:33,615] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:33,621] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:33,662] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:33,679] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:34,208] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:34,213] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:34,451] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI0.
+[2023-02-08 14:33:34,455] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:34,790] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:34,795] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:33:35,076] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:35,084] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:35,275] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI1.
+[2023-02-08 14:33:35,309] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:35,317] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:35,575] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course content
+[2023-02-08 14:33:35,581] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:33:35,581] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:33:35,586] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:33:35,892] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI0.
+[2023-02-08 14:33:35,984] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:35,990] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:36,100] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:36,105] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:36,529] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:36,530] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:33:36,536] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:33:36,642] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP starts course USI2.
+[2023-02-08 14:33:36,872] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits my courses.
+[2023-02-08 14:33:38,953] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:38,959] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:39,309] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits my courses.
+[2023-02-08 14:33:39,334] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:39,342] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:39,421] shixuetiandeMacBook-Air.local/INFO/root: upload attachment 220111_news_review_djokovic_austrailia.pdf to content of course USI0.
+[2023-02-08 14:33:39,497] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:39,503] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:33:39,748] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI0.
+[2023-02-08 14:33:40,083] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI1.
+[2023-02-08 14:33:40,469] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:40,475] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:40,578] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:40,668] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:33:40,692] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:33:40,694] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:33:40,694] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:33:40,698] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI4.
+[2023-02-08 14:33:41,152] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:41,159] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:33:41,224] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI3.
+[2023-02-08 14:33:41,226] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:41,506] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:41,718] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:41,782] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:33:41,928] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:41,935] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:41,995] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI0.
+[2023-02-08 14:33:42,657] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI1.
+[2023-02-08 14:33:43,915] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:43,977] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:43,981] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:43,985] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:44,547] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI3.
+[2023-02-08 14:33:44,857] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:45,136] shixuetiandeMacBook-Air.local/INFO/root: upload attachment A SUCCESSFUL ADVERTISING CAMPAIGN.pdf to content of course USI3.
+[2023-02-08 14:33:45,424] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 starts course USI0.
+[2023-02-08 14:33:45,432] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-46174.jpg to content of course USI4.
+[2023-02-08 14:33:45,451] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:33:45,458] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:33:45,458] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:33:45,463] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:33:45,554] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:45,559] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:33:46,604] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:46,676] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:46,681] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:47,099] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:47,105] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:47,357] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI3.
+[2023-02-08 14:33:47,883] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI2.
+[2023-02-08 14:33:47,907] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:48,230] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:48,237] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:33:48,592] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:48,597] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:48,633] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:48,838] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI4.
+[2023-02-08 14:33:48,929] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:48,935] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:33:48,939] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:33:48,963] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:48,972] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:33:49,107] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:49,238] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:49,842] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI3.
+[2023-02-08 14:33:49,865] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:33:49,870] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:33:50,002] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:50,034] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:50,069] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:50,075] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:33:50,337] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:50,340] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI0.
+[2023-02-08 14:33:50,917] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:50,922] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI0.
+[2023-02-08 14:33:51,041] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI1.
+[2023-02-08 14:33:51,268] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course description
+[2023-02-08 14:33:51,274] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:33:51,274] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:33:51,279] shixuetiandeMacBook-Air.local/INFO/root: select objective with code USI4.
+[2023-02-08 14:33:51,500] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:51,661] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:51,667] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:33:52,513] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI0.
+[2023-02-08 14:33:52,622] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits my courses.
+[2023-02-08 14:33:52,623] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:52,625] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:52,627] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI2.
+[2023-02-08 14:33:52,632] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:53,269] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:33:53,271] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI2.
+[2023-02-08 14:33:53,449] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:53,454] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:53,726] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:33:54,535] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:54,541] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:54,849] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:54,853] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:33:54,983] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI0.
+[2023-02-08 14:33:55,221] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits my courses.
+[2023-02-08 14:33:55,325] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:55,488] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:56,087] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:33:56,197] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:56,198] shixuetiandeMacBook-Air.local/INFO/root: upload image pexels-pixabay-46174.jpg to description of course USI4.
+[2023-02-08 14:33:56,238] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:33:56,243] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:33:56,243] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:33:56,247] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI3.
+[2023-02-08 14:33:56,249] shixuetiandeMacBook-Air.local/INFO/root: [TASK] edit one course content
+[2023-02-08 14:33:56,253] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:33:56,253] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:33:56,256] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI1.
+[2023-02-08 14:33:56,550] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:56,929] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:56,937] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:33:57,140] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:33:57,227] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:57,231] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:33:57,300] shixuetiandeMacBook-Air.local/INFO/root: student AyQfQMkp8.rNUIkw1@IP.h.Akg3 visits course USI2.
+[2023-02-08 14:33:57,406] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:33:57,412] shixuetiandeMacBook-Air.local/INFO/root: Learner RkOvG.jURGb4.VIs5@E3.BL.Nzqk login
+[2023-02-08 14:33:57,761] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP starts course USI0.
+[2023-02-08 14:33:57,977] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ starts course USI1.
+[2023-02-08 14:33:58,037] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one attachment to course description
+[2023-02-08 14:33:58,143] shixuetiandeMacBook-Air.local/INFO/root: select instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR.
+[2023-02-08 14:33:58,143] shixuetiandeMacBook-Air.local/INFO/root: Instructor PRd.9qFISMkUd2jIv.3gWD@5.1ImT.gRmR login
+[2023-02-08 14:33:58,143] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:33:58,151] shixuetiandeMacBook-Air.local/INFO/root: select objective with code USI0.
+[2023-02-08 14:33:58,153] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:33:58,641] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits my courses.
+[2023-02-08 14:33:58,963] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits course USI0.
+[2023-02-08 14:33:58,983] shixuetiandeMacBook-Air.local/INFO/root: student RkOvG.jURGb4.VIs5@E3.BL.Nzqk visits course USI0.
+[2023-02-08 14:34:00,043] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits course USI4.
+[2023-02-08 14:34:00,134] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:00,138] shixuetiandeMacBook-Air.local/INFO/root: Learner TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi login
+[2023-02-08 14:34:00,591] shixuetiandeMacBook-Air.local/INFO/root: student Nj.uwQ.1eDEqTqn@3PU.i.EliF visits course USI3.
+[2023-02-08 14:34:00,795] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI0.
+[2023-02-08 14:34:01,216] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:34:01,223] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:34:01,582] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:34:01,584] shixuetiandeMacBook-Air.local/INFO/root: student 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh visits my courses.
+[2023-02-08 14:34:01,590] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:34:01,728] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi starts course USI0.
+[2023-02-08 14:34:01,858] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:01,863] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:34:02,127] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits my courses.
+[2023-02-08 14:34:02,805] shixuetiandeMacBook-Air.local/INFO/root: upload attachment Outline for Advertising Pitch.pdf to description of course USI0.
+[2023-02-08 14:34:02,819] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:02,826] shixuetiandeMacBook-Air.local/INFO/root: Learner zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP login
+[2023-02-08 14:34:03,643] shixuetiandeMacBook-Air.local/INFO/root: student Jud.7JbfLXTPGMi9@m.6.Mh8nG visits course USI0.
+[2023-02-08 14:34:03,768] shixuetiandeMacBook-Air.local/INFO/root: [TASK] download one attachment from one course
+[2023-02-08 14:34:03,775] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:34:04,187] shixuetiandeMacBook-Air.local/INFO/root: student zTYH.KYzUX.LAmC57TCxc@T.HDI.avwP visits course USI4.
+[2023-02-08 14:34:04,256] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:04,260] shixuetiandeMacBook-Air.local/INFO/root: Learner Nj.uwQ.1eDEqTqn@3PU.i.EliF login
+[2023-02-08 14:34:04,428] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:34:04,432] shixuetiandeMacBook-Air.local/INFO/root: Learner 0hMw.0Jhdww6Z.8GKvmI@tJLsc.gQgh login
+[2023-02-08 14:34:04,946] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:04,952] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:34:05,132] shixuetiandeMacBook-Air.local/INFO/root: [TASK] start one course
+[2023-02-08 14:34:05,137] shixuetiandeMacBook-Air.local/INFO/root: Learner AyQfQMkp8.rNUIkw1@IP.h.Akg3 login
+[2023-02-08 14:34:05,214] shixuetiandeMacBook-Air.local/INFO/root: student iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ visits course USI2.
+[2023-02-08 14:34:05,696] shixuetiandeMacBook-Air.local/INFO/root: student TsAy.quKA9O91Y.NjdX5x@N2Q.zdC.MkIi visits course USI3.
+[2023-02-08 14:34:06,690] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:34:07,098] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:07,104] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:34:07,210] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce starts course USI4.
+[2023-02-08 14:34:07,389] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:07,395] shixuetiandeMacBook-Air.local/INFO/root: Learner Jud.7JbfLXTPGMi9@m.6.Mh8nG login
+[2023-02-08 14:34:07,562] shixuetiandeMacBook-Air.local/INFO/root: student L6.s7RHgF1O9jOR@N.3YMm.h1IVP visits course USI1.
+[2023-02-08 14:34:07,778] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:34:07,787] shixuetiandeMacBook-Air.local/INFO/root: Learner 7.SzSghRpNCl2Gxf@q.biaY.Ce login
+[2023-02-08 14:34:08,125] shixuetiandeMacBook-Air.local/INFO/root: student 7.SzSghRpNCl2Gxf@q.biaY.Ce visits my courses.
+[2023-02-08 14:34:08,171] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit my courses
+[2023-02-08 14:34:08,177] shixuetiandeMacBook-Air.local/INFO/root: Learner iM.rNEcc40K.6mGEElng@51Hx.v.xWeZ login
+[2023-02-08 14:34:08,198] shixuetiandeMacBook-Air.local/INFO/root: [TASK] visit one course
+[2023-02-08 14:34:08,204] shixuetiandeMacBook-Air.local/INFO/root: Learner L6.s7RHgF1O9jOR@N.3YMm.h1IVP login
+[2023-02-08 14:34:08,358] shixuetiandeMacBook-Air.local/INFO/root: [TASK] upload one image to course content
+[2023-02-08 14:34:08,363] shixuetiandeMacBook-Air.local/INFO/root: select instructor 4fvfdP.IiEL2@26.K.wfZ2rl.
+[2023-02-08 14:34:08,363] shixuetiandeMacBook-Air.local/INFO/root: Instructor 4fvfdP.IiEL2@26.K.wfZ2rl login
+[2023-02-08 14:34:08,368] shixuetiandeMacBook-Air.local/INFO/root: select activity with code USI0.
+[2023-02-08 14:34:08,406] shixuetiandeMacBook-Air.local/INFO/locust.runners: Shape test stopping
+[2023-02-08 14:34:08,444] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:34:08,446] shixuetiandeMacBook-Air.local/WARNING/urllib3.connectionpool: Connection pool is full, discarding connection: userapi.alms.crab.alemira.com. Connection pool size: 10
+[2023-02-08 14:36:46,663] shixuetiandeMacBook-Air.local/INFO/locust.main: writing html report to file: alemira_report.html
+[2023-02-08 14:36:46,667] shixuetiandeMacBook-Air.local/INFO/locust.main: Shutting down (exit code 1)

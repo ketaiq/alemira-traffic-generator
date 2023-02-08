@@ -10,21 +10,26 @@ import inspect
 def generate_instructor_tasks(stage: str) -> list:
     tasks = []
     for name, func in inspect.getmembers(instructor_tasks, inspect.isfunction):
-        tasks += [func] * weights.INSTRUCTOR_TASK_WEIGHTS[stage][name]
+        if name != "update_client":
+            tasks += [func] * weights.INSTRUCTOR_TASK_WEIGHTS[stage][name]
     return tasks
 
 
 def generate_student_tasks(stage: str) -> list:
     tasks = []
     for name, func in inspect.getmembers(student_tasks, inspect.isfunction):
-        tasks += [func] * weights.STUDENT_TASK_WEIGHTS[stage][name]
+        if name != "update_client":
+            tasks += [func] * weights.STUDENT_TASK_WEIGHTS[stage][name]
     return tasks
 
 
 class InstructorUser(HttpUser):
-    weight = weights.DAY_1_INSTRUCTOR_WEIGHTS
+    # weight = weights.DAY_1_INSTRUCTOR_WEIGHTS
+    # weight = weights.DAY_2_INSTRUCTOR_WEIGHTS
+    weight = weights.DAY_OTHER_INSTRUCTOR_WEIGHTS
     wait_time = between(6, 10)
-    tasks = generate_instructor_tasks(Stage.FIRST.value)
+    # tasks = generate_instructor_tasks(Stage.FIRST.value)
+    tasks = generate_instructor_tasks(Stage.SECOND.value)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -33,9 +38,12 @@ class InstructorUser(HttpUser):
 
 
 class StudentUser(HttpUser):
-    weight = weights.DAY_1_STUDENT_WEIGHTS
+    # weight = weights.DAY_1_STUDENT_WEIGHTS
+    # weight = weights.DAY_2_STUDENT_WEIGHTS
+    weight = weights.DAY_OTHER_STUDENT_WEIGHTS
     wait_time = between(6, 10)
-    tasks = generate_student_tasks(Stage.FIRST.value)
+    # tasks = generate_student_tasks(Stage.FIRST.value)
+    tasks = generate_student_tasks(Stage.SECOND.value)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

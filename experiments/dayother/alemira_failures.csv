@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences
+POST,upload attachment to objective,CatchResponseError('HTTP error 500 Internal Server Error!'),2
+POST,upload image to activity,CatchResponseError('HTTP error 500 Internal Server Error!'),8
+POST,upload image to objective,CatchResponseError('HTTP error 500 Internal Server Error!'),2
+POST,upload attachment to activity,CatchResponseError('HTTP error 500 Internal Server Error!'),11

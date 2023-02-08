@@ -54,7 +54,7 @@ class StartObjectiveWorkflowsAPI(UserAPIEndPoint):
     def start_objective_workflow(
         self, headers: dict, objective_workflow_aggregate_id: str
     ) -> str:
-        old_started_objective_workflows = self.get_started_objective_workflows(headers)
+        headers["Prefer"] = "respond-async"
         objective_workflow_id = None
         payload = {
             "id": str(uuid.uuid4()),
@@ -63,28 +63,16 @@ class StartObjectiveWorkflowsAPI(UserAPIEndPoint):
         if self.client is None:
             r = requests.post(self.url, json=payload, headers=headers)
             r.raise_for_status()
-            new_started_objective_workflows = self.get_started_objective_workflows(
-                headers
-            )
-            if len(old_started_objective_workflows) + 1 == len(
-                new_started_objective_workflows
-            ):
-                objective_workflow_id = r.json()["lastObjectiveWorkflow"]["id"]
-            else:
-                logging.error(
-                    f"Failed to start objective workflow for objective workflow aggregate id {objective_workflow_aggregate_id}!"
+            created_id = r.json()["id"]
+            # check entity is created successfully
+            for _ in range(10):
+                created_state = self.get_started_objective_workflow_state_by_id(
+                    headers, created_id
                 )
-            # DEPRECATED CODE
-            # created_id = r.json()["id"]
-            # # check entity is created successfully
-            # for _ in range(10):
-            #     created_state = self.get_started_objective_workflow_state_by_id(
-            #         headers, created_id
-            #     )
-            #     if created_state["completed"]:
-            #         objective_workflow_id = created_state["entityId"]
-            #         break
-            #     sleep_for_seconds(1, 3)
+                if created_state["completed"]:
+                    objective_workflow_id = created_state["entityId"]
+                    break
+                sleep_for_seconds(1, 3)
         else:
             with self.client.post(
                 self.url,
@@ -94,28 +82,16 @@ class StartObjectiveWorkflowsAPI(UserAPIEndPoint):
                 catch_response=True,
             ) as response:
                 if response.ok:
-                    new_started_objective_workflows = (
-                        self.get_started_objective_workflows(headers)
-                    )
-                    if len(old_started_objective_workflows) + 1 == len(
-                        new_started_objective_workflows
-                    ):
-                        objective_workflow_id = response.json()["lastObjectiveWorkflow"]["id"]
-                    else:
-                        logging.error(
-                            f"Failed to start objective workflow for objective workflow aggregate id {objective_workflow_aggregate_id}!"
+                    created_id = response.json()["id"]
+                    # check entity is created successfully
+                    for _ in range(10):
+                        created_state = self.get_started_objective_workflow_state_by_id(
+                            headers, created_id
                         )
-                    # DEPRECATED CODE
-                    # created_id = response.json()["id"]
-                    # # check entity is created successfully
-                    # for _ in range(10):
-                    #     created_state = self.get_started_objective_workflow_state_by_id(
-                    #         headers, created_id
-                    #     )
-                    #     if created_state["completed"]:
-                    #         objective_workflow_id = created_state["entityId"]
-                    #         break
-                    #     sleep_for_seconds(1, 3)
+                        if created_state["completed"]:
+                            objective_workflow_id = created_state["entityId"]
+                            break
+                        sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

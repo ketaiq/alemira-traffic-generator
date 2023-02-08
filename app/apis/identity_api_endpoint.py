@@ -33,7 +33,7 @@ class IdentityAPIEndPoint:
         with self.client.post(
             IdentityAPIEndPoint.URI + "connect/token",
             data=user,
-            name=f"login {role} user",
+            name=f"login {role} user".lower(),
             catch_response=True,
         ) as response:
             if response.ok:
