@@ -100,7 +100,7 @@ class StartObjectiveWorkflowsAPI(UserAPIEndPoint):
                     if len(old_started_objective_workflows) + 1 == len(
                         new_started_objective_workflows
                     ):
-                        objective_workflow_id = r.json()["lastObjectiveWorkflow"]["id"]
+                        objective_workflow_id = response.json()["lastObjectiveWorkflow"]["id"]
                     else:
                         logging.error(
                             f"Failed to start objective workflow for objective workflow aggregate id {objective_workflow_aggregate_id}!"
