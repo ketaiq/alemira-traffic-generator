@@ -1,0 +1,9 @@
+requests
+locust
+pyyaml
+pandas
+numpy
+scikit-learn
+pytest-cov
+selenium
+webdriver-manager
