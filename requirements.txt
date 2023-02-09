@@ -1,6 +1,7 @@
 requests
 locust
 pyyaml
+pymongo
 pandas
 numpy
 scikit-learn
