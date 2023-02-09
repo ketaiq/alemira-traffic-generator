@@ -1,10 +1,2 @@
-requests
-locust
-pyyaml
-pymongo
 pandas
-numpy
-scikit-learn
 pytest-cov
-selenium
-webdriver-manager
