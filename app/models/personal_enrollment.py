@@ -2,7 +2,7 @@ from app.models.model import Model
 from app.utils.time import get_current_formatted_time, get_future_formatted_time
 import random, logging
 from app.models.dict_mode import DictMode
-from app.exceptions import UnsupportedModeException
+from app.exceptions.unsupported import UnsupportedModeException
 from app.models.user import User
 
 

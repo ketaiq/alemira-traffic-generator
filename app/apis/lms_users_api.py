@@ -98,7 +98,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                     "skip": 0,
                     "take": 10,
                     "requireTotalCount": True,
-                    "filter": f'["email","contains","{new_user.email}"]',
+                    "filter": f'["email","=","{new_user.email}"]',
                 },
             )
             # check user email does not exist
@@ -202,7 +202,7 @@ class LmsUsersAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_users_by_query(self, headers: dict, query: str) -> dict:
+    def get_users_by_query(self, headers: dict, query: dict) -> dict:
         if self.client is None:
             r = requests.get(self.url + "query", headers=headers, params=query)
             r.raise_for_status()

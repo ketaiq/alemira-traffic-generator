@@ -7,7 +7,7 @@ import random, logging, os
 from app.models.user import User
 from app.models.objective.objective import Objective
 from app.models.activity.activity import Activity
-from app.exceptions import (
+from app.exceptions.required_object_not_found import (
     UserNotFoundException,
     ObjectiveNotFoundException,
     ObjectivePersonalEnrollmentNotFoundException,

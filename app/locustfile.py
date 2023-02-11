@@ -1,35 +1,17 @@
-from locust import LoadTestShape, HttpUser, between, task
+from locust import LoadTestShape, HttpUser, between
 import pandas as pd
-import app.locusttasks.instructor_tasks as instructor_tasks
-import app.locusttasks.student_tasks as student_tasks
-import app.locusttasks.weights as weights
-from app.locusttasks.stages import Stage
-import inspect
+from app.locusttasks.weights import get_weights, generate_tasks
+from app.locusttasks.users import User
+from app.locusttasks.days import Day
 
-
-def generate_instructor_tasks(stage: str) -> list:
-    tasks = []
-    for name, func in inspect.getmembers(instructor_tasks, inspect.isfunction):
-        if name != "update_client":
-            tasks += [func] * weights.INSTRUCTOR_TASK_WEIGHTS[stage][name]
-    return tasks
-
-
-def generate_student_tasks(stage: str) -> list:
-    tasks = []
-    for name, func in inspect.getmembers(student_tasks, inspect.isfunction):
-        if name != "update_client":
-            tasks += [func] * weights.STUDENT_TASK_WEIGHTS[stage][name]
-    return tasks
+# modify experiment configuration for different scenarios
+EXPT_CONFIG = {"day": Day.DAY_1}
 
 
 class InstructorUser(HttpUser):
-    # weight = weights.DAY_1_INSTRUCTOR_WEIGHTS
-    # weight = weights.DAY_2_INSTRUCTOR_WEIGHTS
-    weight = weights.DAY_OTHER_INSTRUCTOR_WEIGHTS
+    weight = get_weights(EXPT_CONFIG["day"], User.INSTRUCTOR)
     wait_time = between(6, 10)
-    # tasks = generate_instructor_tasks(Stage.FIRST.value)
-    tasks = generate_instructor_tasks(Stage.SECOND.value)
+    tasks = generate_tasks(EXPT_CONFIG["day"], User.INSTRUCTOR)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -38,12 +20,9 @@ class InstructorUser(HttpUser):
 
 
 class StudentUser(HttpUser):
-    # weight = weights.DAY_1_STUDENT_WEIGHTS
-    # weight = weights.DAY_2_STUDENT_WEIGHTS
-    weight = weights.DAY_OTHER_STUDENT_WEIGHTS
+    weight = get_weights(EXPT_CONFIG["day"], User.STUDENT)
     wait_time = between(6, 10)
-    # tasks = generate_student_tasks(Stage.FIRST.value)
-    tasks = generate_student_tasks(Stage.SECOND.value)
+    tasks = generate_tasks(EXPT_CONFIG["day"], User.STUDENT)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

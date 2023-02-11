@@ -2,7 +2,7 @@ import logging
 from app.models.model import Model
 import re
 from app.models.user import User
-from app.exceptions import ResetPasswordUrlNotFoundException
+from app.exceptions.required_object_not_found import ResetPasswordUrlNotFoundException
 
 
 class MailMessage(Model):

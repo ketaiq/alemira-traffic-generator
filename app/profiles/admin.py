@@ -3,12 +3,12 @@ from app.utils.time import sleep_for_seconds
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.mail_messages_api import MailMessagesAPI
 from app.apis.account_reset_password_api import AccountResetPasswordAPI
-from app.exceptions import MailNotFoundException
+from app.exceptions.required_object_not_found import MailNotFoundException
+from app.exceptions.required_object_not_found import RoleNotFoundException
 from app.models.mail_message import MailMessage
 from app.apis.roles_api import RolesAPI
 from app.models.user import User
 from app.apis.user_roles_api import UserRolesAPI
-from app.exceptions import RoleNotFoundException
 from app.models.role import Role
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.drivers.database_driver import DatabaseDriver

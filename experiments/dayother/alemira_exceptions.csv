@@ -5,121 +5,13 @@ Count,Message,Traceback,Nodes
     self.execute_task(self._task_queue.pop(0))
   File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
     task(self.user)
-  File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 40, in visit_my_courses
-    student.visit_my_courses()
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 48, in visit_my_courses
-    self.users_api.get_user_permissions(headers)
-  File ""/Users/silvia/Projects/alemira-test/app/apis/users_api.py"", line 93, in get_user_permissions
-    if response.ok:
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
-    self.raise_for_status()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 23, in raise_for_status
-    raise self.error
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 180, in _send_request_safe_mode
-    return super().request(method, url, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 701, in send
-    r = adapter.send(request, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py"", line 547, in send
-    raise ConnectionError(err, request=request)
-",local
-1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))","  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
-    self.execute_next_task()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 372, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
-    task(self.user)
-  File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 46, in visit_one_course
-    student.visit_one_course()
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 55, in visit_one_course
-    self._visit_one_course(headers, me)
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 92, in _visit_one_course
-    self.objective_workflow_aggregates_api.get_objective_workflow_aggregate_by_id(
-  File ""/Users/silvia/Projects/alemira-test/app/apis/objective_workflow_aggregates_api.py"", line 26, in get_objective_workflow_aggregate_by_id
-    if response.ok:
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
-    self.raise_for_status()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 23, in raise_for_status
-    raise self.error
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 180, in _send_request_safe_mode
-    return super().request(method, url, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 701, in send
-    r = adapter.send(request, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py"", line 547, in send
-    raise ConnectionError(err, request=request)
-",local
-1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))","  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
-    self.execute_next_task()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 372, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
-    task(self.user)
-  File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 46, in visit_one_course
-    student.visit_one_course()
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 55, in visit_one_course
-    self._visit_one_course(headers, me)
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 81, in _visit_one_course
-    course = self._select_one_course(headers, user.id)
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 132, in _select_one_course
-    courses = self.users_api.get_user_objective_workflow_aggregates(
-  File ""/Users/silvia/Projects/alemira-test/app/apis/users_api.py"", line 31, in get_user_objective_workflow_aggregates
-    if response.ok:
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
-    self.raise_for_status()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 23, in raise_for_status
-    raise self.error
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 180, in _send_request_safe_mode
-    return super().request(method, url, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 701, in send
-    r = adapter.send(request, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py"", line 547, in send
-    raise ConnectionError(err, request=request)
-",local
-1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))","  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
-    self.execute_next_task()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 372, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
-    task(self.user)
-  File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 52, in start_one_course
-    student.start_one_course()
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 60, in start_one_course
-    self._start_one_course(headers, me)
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 208, in _start_one_course
-    objective = self.objectives_api.get_objective_by_id(headers, objective_id)
-  File ""/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py"", line 33, in get_objective_by_id
-    if response.ok:
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
-    self.raise_for_status()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 23, in raise_for_status
-    raise self.error
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 180, in _send_request_safe_mode
-    return super().request(method, url, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 701, in send
-    r = adapter.send(request, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py"", line 547, in send
-    raise ConnectionError(err, request=request)
-",local
-1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))","  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
-    self.execute_next_task()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 372, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
-    task(self.user)
   File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 58, in download_one_attachment_from_one_course
     student.download_one_attachment_from_one_course()
   File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 65, in download_one_attachment_from_one_course
     self._download_one_attachment_from_one_course(headers, me)
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 118, in _download_one_attachment_from_one_course
-    objective = self.objectives_api.get_objective_by_id(
-  File ""/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py"", line 33, in get_objective_by_id
+  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 113, in _download_one_attachment_from_one_course
+    courses = self.users_api.get_user_objective_workflow_aggregates(
+  File ""/Users/silvia/Projects/alemira-test/app/apis/users_api.py"", line 31, in get_user_objective_workflow_aggregates
     if response.ok:
   File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
     self.raise_for_status()
@@ -147,31 +39,6 @@ Count,Message,Traceback,Nodes
   File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 86, in _visit_one_course
     self.objectives_api.get_objective_workflow_aggregate_by_id(
   File ""/Users/silvia/Projects/alemira-test/app/apis/objectives_api.py"", line 144, in get_objective_workflow_aggregate_by_id
-    if response.ok:
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
-    self.raise_for_status()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 23, in raise_for_status
-    raise self.error
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/clients.py"", line 180, in _send_request_safe_mode
-    return super().request(method, url, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 587, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/sessions.py"", line 701, in send
-    r = adapter.send(request, **kwargs)
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/adapters.py"", line 547, in send
-    raise ConnectionError(err, request=request)
-",local
-1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))","  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 347, in run
-    self.execute_next_task()
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 372, in execute_next_task
-    self.execute_task(self._task_queue.pop(0))
-  File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/locust/user/task.py"", line 493, in execute_task
-    task(self.user)
-  File ""/Users/silvia/Projects/alemira-test/app/locusttasks/student_tasks.py"", line 46, in visit_one_course
-    student.visit_one_course()
-  File ""/Users/silvia/Projects/alemira-test/app/profiles/student.py"", line 54, in visit_one_course
-    me = self.lms_users_api.get_user_me(headers)
-  File ""/Users/silvia/Projects/alemira-test/app/apis/lms_users_api.py"", line 31, in get_user_me
     if response.ok:
   File ""/Users/silvia/miniconda3/envs/alemira/lib/python3.10/site-packages/requests/models.py"", line 765, in ok
     self.raise_for_status()

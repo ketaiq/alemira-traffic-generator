@@ -2,7 +2,7 @@ from app.models.model import Model
 from app.models.activity.activity import Activity
 from app.models.tenant import Tenant
 from app.models.dict_mode import DictMode
-from app.exceptions import UnsupportedModeException
+from app.exceptions.unsupported import UnsupportedModeException
 import logging, copy, random, json
 from app.utils.string import gen_random_description, gen_random_id
 from app.utils.time import get_current_timestamp

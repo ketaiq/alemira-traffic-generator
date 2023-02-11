@@ -5,7 +5,7 @@ from app.models.activity.activity_type import ActivityType
 from app.models.activity.activity_state import ActivityState
 import pandas as pd
 from app.models.dict_mode import DictMode
-from app.exceptions import UnsupportedModeException
+from app.exceptions.unsupported import UnsupportedModeException
 from app.utils.html_content import gen_random_content_dict, gen_html_from_content_dict
 from app.utils.time import get_current_timestamp
 

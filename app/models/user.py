@@ -7,7 +7,7 @@ from app.models.model import Model
 from app.models.detail import Detail
 from app.models.tenant import Tenant
 import random, copy, logging
-from app.exceptions import UnsupportedModeException
+from app.exceptions.unsupported import UnsupportedModeException
 from app.models.dict_mode import DictMode
 
 
@@ -23,7 +23,7 @@ class User(Model):
         "password",
         "details",
         "tenant",
-        "_role"
+        "_role",
     )
     FIELD_FOR_CREATING = (
         "externalId",
