@@ -46,6 +46,7 @@ class Objective(Model):
         "externalId",
         "tenant",
     )
+    RESERVED_OBJECTIVES = ["TEXT-001", "TEXT-002", "TEXT-003", "TEXT-004"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(self.FIELD_NAMES, *args, **kwargs)
@@ -194,6 +195,14 @@ class Objective(Model):
             (block for block in about_content["blocks"] if block["type"] == "attaches"),
         )
         return attach["data"]["file"]["url"]
+
+    @classmethod
+    def filter_original_objectives(cls, objectives: list) -> list:
+        return [
+            objective
+            for objective in objectives
+            if objective["code"] not in cls.RESERVED_OBJECTIVES
+        ]
 
 
 def main():

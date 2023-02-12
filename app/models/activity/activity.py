@@ -53,6 +53,7 @@ class Activity(Model):
         "toolResourceId",
     )
     FIELD_FOR_UPDATING = FIELD_NAMES
+    RESERVED_ACTIVITIES = ["TEXT-001", "TEXT-002", "TEXT-003", "TEXT-004"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(self.FIELD_NAMES, *args, **kwargs)
@@ -247,3 +248,7 @@ class Activity(Model):
             (block for block in editorContent["blocks"] if block["type"] == "attaches"),
         )
         return attach["data"]["file"]["url"]
+
+    @classmethod
+    def filter_original_activities(cls, activities: list) -> list:
+        return [activity for activity in activities if activity["code"] not in cls.RESERVED_ACTIVITIES]

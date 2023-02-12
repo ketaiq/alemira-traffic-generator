@@ -13,6 +13,10 @@ from app.models.role import Role
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.drivers.database_driver import DatabaseDriver
 from app.apis.datagrid_settings_api import DatagridSettingsAPI
+from app.apis.objectives_api import ObjectivesAPI
+from app.apis.activities_api import ActivitiesAPI
+from app.models.activity.activity import Activity
+from app.models.objective.objective import Objective
 
 
 class Admin:
@@ -28,6 +32,8 @@ class Admin:
         roles_api: RolesAPI = None,
         user_roles_api: UserRolesAPI = None,
         datagrid_settings_api: DatagridSettingsAPI = None,
+        activities_api: ActivitiesAPI = None,
+        objectives_api: ObjectivesAPI = None,
     ):
         self.db_driver = db_driver
         self.identity_api_endpoint = identity_api_endpoint
@@ -37,6 +43,8 @@ class Admin:
         self.roles_api = roles_api
         self.user_roles_api = user_roles_api
         self.datagrid_settings_api = datagrid_settings_api
+        self.activities_api = activities_api
+        self.objectives_api = objectives_api
 
     def get_num_of_users(self) -> int:
         headers = self._get_admin_headers()
@@ -103,6 +111,66 @@ class Admin:
                 raise RoleNotFoundException(f"Role {role.value} doesn't exist.")
         except RoleNotFoundException as e:
             logging.error(e.message)
+
+    def sync_local_users(self):
+        """Synchronize users in local mongodb with remote alemira database."""
+        headers = self._get_admin_headers()
+        skip = 0
+        take = 10
+        while True:
+            res = self.lms_users_api.get_users_by_query(
+                headers, {"skip": skip, "take": take, "requireTotalCount": True}
+            )
+            remaining_count = res["totalCount"] - take - skip
+            users = res["data"]
+            users = User.filter_original_users(users)
+            for user in users:
+                user = User(user)
+                if not self.db_driver.check_user_by_id(user):
+                    self.db_driver.insert_one_user(user)
+            skip += take
+            if remaining_count <= 0:
+                break
+
+    def sync_local_activities(self):
+        """Synchronize activities in local mongodb with remote alemira database."""
+        headers = self._get_admin_headers()
+        skip = 0
+        take = 10
+        while True:
+            res = self.activities_api.get_activities_by_query(
+                headers, {"skip": skip, "take": take, "requireTotalCount": True}
+            )
+            remaining_count = res["totalCount"] - take - skip
+            activities = res["data"]
+            activities = Activity.filter_original_activities(activities)
+            for activity in activities:
+                activity = Activity(activity)
+                if not self.db_driver.check_activity_by_code(activity):
+                    self.db_driver.insert_one_activity(activity)
+            skip += take
+            if remaining_count <= 0:
+                break
+
+    def sync_local_objectives(self):
+        """Synchronize objectives in local mongodb with remote alemira database."""
+        headers = self._get_admin_headers()
+        skip = 0
+        take = 10
+        while True:
+            res = self.objectives_api.get_objectives_by_query(
+                headers, {"skip": skip, "take": take, "requireTotalCount": True}
+            )
+            remaining_count = res["totalCount"] - take - skip
+            objectives = res["data"]
+            objectives = Objective.filter_original_objectives(objectives)
+            for objective in objectives:
+                objective = Objective(objective)
+                if not self.db_driver.check_objective_by_code(objective):
+                    self.db_driver.insert_one_objective(objective)
+            skip += take
+            if remaining_count <= 0:
+                break
 
     def _select_one_admin(self) -> User:
         return User(random.choice(self.db_driver.find_admin_users()))

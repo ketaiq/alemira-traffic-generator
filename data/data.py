@@ -1,3 +1,4 @@
+from app.apis.datagrid_settings_api import DatagridSettingsAPI
 from app.drivers.database_driver import db_driver
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.apis.activities_api import ActivitiesAPI
@@ -10,6 +11,36 @@ from app.apis.roles_api import RolesAPI
 from app.apis.user_roles_api import UserRolesAPI
 import pandas as pd
 from app.profiles.admin import Admin
+
+
+def sync_local_data():
+    """
+    Synchronize data of users and courses in local mongodb with remote alemira database.
+    """
+    identity_api_endpoint = IdentityAPIEndPoint()
+    lms_users_api = LmsUsersAPI(db_driver)
+    mail_messages_api = MailMessagesAPI()
+    account_reset_password_api = AccountResetPasswordAPI(db_driver)
+    roles_api = RolesAPI()
+    user_roles_api = UserRolesAPI()
+    datagrid_settings_api = DatagridSettingsAPI()
+    objectives_api = ObjectivesAPI(db_driver)
+    activities_api = ActivitiesAPI(db_driver)
+    admin = Admin(
+        db_driver,
+        identity_api_endpoint,
+        lms_users_api,
+        mail_messages_api,
+        account_reset_password_api,
+        roles_api,
+        user_roles_api,
+        datagrid_settings_api,
+        activities_api,
+        objectives_api,
+    )
+    admin.sync_local_users()
+    admin.sync_local_activities()
+    admin.sync_local_objectives()
 
 
 def create_default_courses():
@@ -83,6 +114,7 @@ def create_default_users():
 
 
 def main():
+    sync_local_data()
     create_default_courses()
     create_default_users()
 
