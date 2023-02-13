@@ -9,7 +9,7 @@ conda env create -f environment.yml
 
 Start mongodb, see Mongo Express at http://localhost:8081
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 Useful commands
