@@ -127,16 +127,25 @@ class ObjectivesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def create_objective(self, headers: dict, activity: Activity) -> str:
+    def create_objective(self, headers: dict, activity: Activity) -> Objective:
         """Create objective and return a created id."""
         objective = Objective.gen_object_from_activity(activity)
         r = requests.post(
             self.url, json=objective.to_dict_for_creating(), headers=headers
         )
         r.raise_for_status()
-        objective.id = self.get_created_objective_state_by_id(headers, r.json()["id"])
+        created_state_id = r.json()["id"]
+        # check entity is created successfully
+        for _ in range(10):
+            created_state = self.get_created_objective_state_by_id(
+                headers, created_state_id
+            )
+            if created_state["completed"]:
+                break
+            sleep_for_seconds(1, 3)
+        objective.id = created_state["entityId"]
         self.driver.insert_one_objective(objective)
-        return r.json()["id"]
+        return objective
 
     def update_objective(self, headers: dict, objective: Objective):
         if self.client is None:

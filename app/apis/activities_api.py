@@ -83,7 +83,7 @@ class ActivitiesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def update_activity(self, headers: dict, activity: Activity) -> str:
+    def update_activity(self, headers: dict, activity: Activity):
         if self.client is None:
             r = requests.put(
                 self.url + activity.id,
@@ -102,7 +102,6 @@ class ActivitiesAPI(UserAPIEndPoint):
                 if updated_state["completed"]:
                     break
                 sleep_for_seconds(1, 3)
-            return updated_id
         else:
             with self.client.put(
                 self.url + activity.id,
@@ -123,7 +122,6 @@ class ActivitiesAPI(UserAPIEndPoint):
                         if updated_state["completed"]:
                             break
                         sleep_for_seconds(1, 3)
-                    return updated_id
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -147,9 +145,16 @@ class ActivitiesAPI(UserAPIEndPoint):
         course = Activity.gen_course(course_series, rich_text_id)
         r = requests.post(self.url, json=course.to_dict_for_creating(), headers=headers)
         r.raise_for_status()
-        course.id = self.get_created_activity_state_by_id(headers, r.json()["id"])[
-            "entityId"
-        ]
+        created_state_id = r.json()["id"]
+        # check entity is created successfully
+        for _ in range(10):
+            created_state = self.get_created_activity_state_by_id(
+                headers, created_state_id
+            )
+            if created_state["completed"]:
+                break
+            sleep_for_seconds(1, 3)
+        course.id = created_state["entityId"]
         self.driver.insert_one_activity(course)
         return course
 

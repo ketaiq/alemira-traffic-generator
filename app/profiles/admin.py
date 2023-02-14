@@ -196,17 +196,15 @@ class Admin:
             },
         )
         if len(res["data"]) == 0:
-            activity = None
-        else:
-            activity = Activity(res["data"][0])
-        if activity is None:
             activity = self.activities_api.create_rich_text_courses(
                 headers, rich_text_id, course_series
             )
-        elif self.db_driver.check_activity_by_code(activity):
-            self.db_driver.update_activity(activity)
         else:
-            self.db_driver.insert_one_activity(activity)
+            activity = Activity(res["data"][0])
+            if self.db_driver.check_activity_by_code(activity):
+                self.db_driver.update_activity(activity)
+            else:
+                self.db_driver.insert_one_activity(activity)
         return activity
 
     def create_objective_if_not_exists(self, activity: Activity):
@@ -220,25 +218,11 @@ class Admin:
             },
         )
         if len(res["data"]) == 0:
-            objective = None
+            self.activities_api.update_activity(headers, activity)
+            self.objectives_api.create_objective(headers, activity)
         else:
             objective = Objective(res["data"][0])
-        if objective is None:
-            update_id = self.activities_api.update_activity(headers, activity)
-            created_id = self.objectives_api.create_objective(headers, activity)
-            while True:
-                updated_status = self.activities_api.get_updated_activity_state_by_id(
-                    headers, update_id
-                )
-                created_status = self.objectives_api.get_created_objective_state_by_id(
-                    headers, created_id
-                )
-                if (
-                    updated_status["completed"] is not None
-                    and created_status["completed"] is not None
-                ):
-                    break
-        elif self.db_driver.check_objective_by_code(objective):
-            self.db_driver.update_objective(objective)
-        else:
-            self.db_driver.insert_one_objective(objective)
+            if self.db_driver.check_objective_by_code(objective):
+                self.db_driver.update_objective(objective)
+            else:
+                self.db_driver.insert_one_objective(objective)

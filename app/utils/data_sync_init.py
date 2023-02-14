@@ -57,7 +57,7 @@ def create_default_courses():
         resource_libraries_api=resource_libraries_api,
     )
     df = pd.read_csv("data/course-catalog.csv")
-    for index in df.index:
+    for index in df.index[132:133]:
         activity = admin.create_activity_if_not_exists(
             df.loc[index, "Code"], df.loc[index]
         )
@@ -87,7 +87,7 @@ def create_default_users():
 
 
 def main():
-    sync_local_data()
+    # sync_local_data()
     create_default_courses()
     # create_default_users()
 
