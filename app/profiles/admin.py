@@ -73,26 +73,20 @@ class Admin:
         """Create a user with a random profile."""
         new_user = self.lms_users_api.create_user(headers, role)
         sleep_for_seconds(20, 30)
-        skip = 0
-        take = 10
         try:
-            while True:
-                res = self.mail_messages_api.get_mail_messages_by_query(
-                    headers, {"skip": skip, "take": take, "requireTotalCount": True}
-                )
-                remaining_count = res["totalCount"] - take - skip
-                mail_messages = [MailMessage(msg) for msg in res["data"]]
-                mail = next(
-                    (mail for mail in mail_messages if mail.is_sent_to_user(new_user)),
-                    None,
-                )
-                skip += take
-                if mail is not None:
-                    url = mail.get_reset_password_url()
-                    self.account_reset_password_api.reset_password(url, new_user)
-                    break
-                if remaining_count <= 0:
-                    raise MailNotFoundException(
+            res = self.mail_messages_api.get_mail_messages_by_query(
+                headers,
+                {
+                    "requireTotalCount": True,
+                    "filter": f'["toAddress","=","{new_user.email}"]',
+                },
+            )
+            if len(res) > 0:
+                mail = MailMessage(res["data"][0])
+                url = mail.get_reset_password_url()
+                self.account_reset_password_api.reset_password(url, new_user)
+            else:
+                raise MailNotFoundException(
                         f"No mail is sent to user {new_user.username}."
                     )
             return new_user

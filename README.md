@@ -26,6 +26,12 @@ locust --config=app/locust.conf
 ```
 
 Run `init_data.py` to initialize users and courses.
+If you want to run it on Linux, you may need run following commands first:
+```
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install google-chrome-stable
+```
 
 ## 3. Configuration
 
