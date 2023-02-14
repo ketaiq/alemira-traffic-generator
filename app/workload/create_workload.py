@@ -5,14 +5,10 @@ import pandas as pd
 def create_workload(df: pd.DataFrame):
     workload = []
     values = df["Unique visitors"].to_list()
-    num = 60
+    num = 12
     for value in values:
-        if value < num:
-            users = [0] * num
-            sum = value
-        else:
-            users = [1] * num
-            sum = value - num
+        users = [1] * num
+        sum = value - num
         while sum > 0:
             i = random.randrange(0, num)
             users[i] += 1
