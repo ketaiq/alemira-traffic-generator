@@ -56,27 +56,6 @@ class ObjectivesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_objective_by_code_or_none(
-        self, headers: dict, code: str
-    ) -> Objective | None:
-        skip = 0
-        take = 10
-        while True:
-            res = self.get_objectives_by_query(
-                headers, {"skip": skip, "take": take, "requireTotalCount": True}
-            )
-            remaining_count = res["totalCount"] - take - skip
-            objective = next(
-                (objective for objective in res["data"] if objective["code"] == code),
-                None,
-            )
-            skip += take
-            if objective is not None:
-                return Objective(objective)
-            if remaining_count <= 0:
-                break
-        return None
-
     def get_created_objective_state_by_id(self, headers: dict, id: str) -> str:
         r = requests.get(self.uri + "create-objectives/" + id, headers=headers)
         r.raise_for_status()

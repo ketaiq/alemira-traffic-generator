@@ -1,4 +1,5 @@
 import logging, random
+import pandas as pd
 from app.utils.time import sleep_for_seconds
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.mail_messages_api import MailMessagesAPI
@@ -17,6 +18,7 @@ from app.apis.objectives_api import ObjectivesAPI
 from app.apis.activities_api import ActivitiesAPI
 from app.models.activity.activity import Activity
 from app.models.objective.objective import Objective
+from app.apis.resource_libraries_api import ResourceLibrariesAPI
 
 
 class Admin:
@@ -34,6 +36,7 @@ class Admin:
         datagrid_settings_api: DatagridSettingsAPI = None,
         activities_api: ActivitiesAPI = None,
         objectives_api: ObjectivesAPI = None,
+        resource_libraries_api: ResourceLibrariesAPI = None,
     ):
         self.db_driver = db_driver
         self.identity_api_endpoint = identity_api_endpoint
@@ -45,6 +48,7 @@ class Admin:
         self.datagrid_settings_api = datagrid_settings_api
         self.activities_api = activities_api
         self.objectives_api = objectives_api
+        self.resource_libraries_api = resource_libraries_api
 
     def get_num_of_users(self) -> int:
         headers = self._get_admin_headers()
@@ -177,3 +181,64 @@ class Admin:
 
     def _get_admin_headers(self) -> dict:
         return self.identity_api_endpoint.get_headers(Role.ADMIN)
+
+    def create_activity_if_not_exists(
+        self, code: str, course_series: pd.Series
+    ) -> Activity:
+        headers = self._get_admin_headers()
+        rich_text_id = self.resource_libraries_api.get_rich_text_id(headers)
+        # check if activity exists
+        res = self.activities_api.get_activities_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'["code","=","{code}"]',
+            },
+        )
+        if len(res["data"]) == 0:
+            activity = None
+        else:
+            activity = Activity(res["data"][0])
+        if activity is None:
+            activity = self.activities_api.create_rich_text_courses(
+                headers, rich_text_id, course_series
+            )
+        elif self.db_driver.check_activity_by_code(activity):
+            self.db_driver.update_activity(activity)
+        else:
+            self.db_driver.insert_one_activity(activity)
+        return activity
+
+    def create_objective_if_not_exists(self, activity: Activity):
+        headers = self._get_admin_headers()
+        # check if objective exists
+        res = self.objectives_api.get_objectives_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'["code","=","{activity.code}"]',
+            },
+        )
+        if len(res["data"]) == 0:
+            objective = None
+        else:
+            objective = Objective(res["data"][0])
+        if objective is None:
+            update_id = self.activities_api.update_activity(headers, activity)
+            created_id = self.objectives_api.create_objective(headers, activity)
+            while True:
+                updated_status = self.activities_api.get_updated_activity_state_by_id(
+                    headers, update_id
+                )
+                created_status = self.objectives_api.get_created_objective_state_by_id(
+                    headers, created_id
+                )
+                if (
+                    updated_status["completed"] is not None
+                    and created_status["completed"] is not None
+                ):
+                    break
+        elif self.db_driver.check_objective_by_code(objective):
+            self.db_driver.update_objective(objective)
+        else:
+            self.db_driver.insert_one_objective(objective)
