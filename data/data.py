@@ -55,7 +55,7 @@ def create_default_courses():
     headers = admin._get_admin_headers()
     rich_text_id = resource_libraries_api.get_rich_text_id(headers)
     df = pd.read_csv("data/course-catalog.csv")
-    for index in df.index[0:5]:
+    for index in df.index:
         # check if course exists
         course = activities_api.get_activity_by_code_or_none(
             headers, df.loc[index, "Code"]
@@ -107,9 +107,9 @@ def create_default_users():
         roles_api,
         user_roles_api,
     )
-    for _ in range(10):
+    for _ in range(100):
         admin.create_student_user()
-    for _ in range(2):
+    for _ in range(20):
         admin.create_instructor_user()
 
 
