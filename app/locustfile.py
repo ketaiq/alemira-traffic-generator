@@ -32,7 +32,7 @@ class StudentUser(HttpUser):
 
 class StagesShape(LoadTestShape):
     PERIOD_DURATION = 60
-    WORKLOAD_FILE = "app/workload/workload.csv"
+    WORKLOAD_FILE = "app/workload/workload_Monday.csv"
 
     def __init__(self, time_intervals: int = PERIOD_DURATION):
         df = pd.read_csv(self.WORKLOAD_FILE)
