@@ -102,7 +102,12 @@ class User(Model):
 
     @classmethod
     def filter_original_users(cls, users: list) -> list:
-        return [user for user in users if user["email"] not in cls.RESERVED_EMAILS]
+        return [
+            user
+            for user in users
+            if user["email"] not in cls.RESERVED_EMAILS
+            and "abitu.net" not in user["email"]
+        ]
 
     def reset_password(self):
         self.password = gen_random_password()

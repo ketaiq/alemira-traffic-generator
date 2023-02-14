@@ -10,6 +10,7 @@ from app.apis.account_reset_password_api import AccountResetPasswordAPI
 from app.apis.roles_api import RolesAPI
 from app.apis.user_roles_api import UserRolesAPI
 import pandas as pd
+from app.models.activity.activity import Activity
 from app.profiles.admin import Admin
 
 
@@ -57,9 +58,17 @@ def create_default_courses():
     df = pd.read_csv("data/course-catalog.csv")
     for index in df.index:
         # check if course exists
-        course = activities_api.get_activity_by_code_or_none(
-            headers, df.loc[index, "Code"]
+        res = activities_api.get_activities_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'["code","=","{df.loc[index, "Code"]}"]',
+            },
         )
+        if len(res["data"]) == 0:
+            course = None
+        else:
+            course = Activity(res["data"][0])
         if course is None:
             course = activities_api.create_rich_text_courses(
                 headers, rich_text_id, df.loc[index]

@@ -43,26 +43,6 @@ class ActivitiesAPI(UserAPIEndPoint):
             else:
                 response.failure(request_http_error_msg(response))
 
-    def get_activity_by_code_or_none(self, headers: dict, code: str) -> Activity | None:
-        # TODO use = compare directly in query
-        skip = 0
-        take = 10
-        while True:
-            res = self.get_activities_by_query(
-                headers, {"skip": skip, "take": take, "requireTotalCount": True}
-            )
-            remaining_count = res["totalCount"] - take - skip
-            activity = next(
-                (activity for activity in res["data"] if activity["code"] == code),
-                None,
-            )
-            skip += take
-            if activity is not None:
-                return Activity(activity)
-            if remaining_count <= 0:
-                break
-        return None
-
     def get_created_activity_state_by_id(self, headers: dict, created_id: str):
         if self.client is None:
             r = requests.get(
