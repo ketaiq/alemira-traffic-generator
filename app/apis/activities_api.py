@@ -152,6 +152,8 @@ class ActivitiesAPI(UserAPIEndPoint):
                 headers, created_state_id
             )
             if created_state["completed"]:
+                if created_state["completed"]["state"] == 2:
+                    print(created_state)
                 break
             sleep_for_seconds(1, 3)
         course.id = created_state["entityId"]

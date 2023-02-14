@@ -81,7 +81,7 @@ def gen_random_word() -> str:
 
 
 def gen_random_description() -> str:
-    description_len = random.randint(10, 200)
+    description_len = random.randint(10, 50)
     return " ".join(gen_random_word() for _ in range(description_len))
 
 
