@@ -39,19 +39,7 @@ def gen_random_name() -> str:
 
 
 def gen_random_password() -> str:
-    password = "".join(
-        (
-            random.choice(string.ascii_lowercase),
-            random.choice(string.ascii_uppercase),
-            random.choice(string.digits),
-            random.choice(string.punctuation),
-        )
-    )
-    password += "".join(
-        random.choice(string.ascii_letters + string.digits + string.punctuation)
-        for _ in range(random.randint(2, 30))
-    )
-    return password
+    return "Password123$"
 
 
 def gen_random_city() -> str:
