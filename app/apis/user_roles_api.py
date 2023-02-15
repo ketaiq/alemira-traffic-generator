@@ -43,9 +43,9 @@ class UserRolesAPI(UserAPIEndPoint):
                     json=payload,
                     headers=headers,
                 )
-                if r.status_code == requests.codes.ok:
+                if r.status_code < 300:
                     break
-            if r.status_code != requests.codes.ok:
+            if r.status_code >= 300:
                 print(f"HTTP error with payload {payload}")
             r.raise_for_status()
             created_id = r.json()["id"]
