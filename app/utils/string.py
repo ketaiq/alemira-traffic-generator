@@ -38,7 +38,7 @@ def gen_random_name() -> str:
     return name
 
 
-def gen_random_password() -> str:
+def gen_default_password() -> str:
     return "Password123$"
 
 

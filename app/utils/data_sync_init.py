@@ -88,7 +88,7 @@ def create_default_users():
 
 def main():
     sync_local_data()
-    create_default_courses()
+    # create_default_courses()
     create_default_users()
 
 

@@ -1,5 +1,6 @@
 import logging, random
 import pandas as pd
+from app.utils.string import gen_default_password
 from app.utils.time import sleep_for_seconds
 from app.apis.lms_users_api import LmsUsersAPI
 from app.apis.mail_messages_api import MailMessagesAPI
@@ -145,6 +146,7 @@ class Admin:
                         user._role = Role.STUDENT.value
                     else:
                         user._role = "Unknown"
+                    user.password = gen_default_password()
                     self.db_driver.insert_one_user(user)
             skip += take
             if remaining_count <= 0:

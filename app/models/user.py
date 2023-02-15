@@ -1,7 +1,7 @@
 from app.utils.string import (
     gen_random_name,
     gen_random_email,
-    gen_random_password,
+    gen_default_password,
 )
 from app.models.model import Model
 from app.models.detail import Detail
@@ -9,6 +9,7 @@ from app.models.tenant import Tenant
 import random, copy, logging
 from app.exceptions.unsupported import UnsupportedModeException
 from app.models.dict_mode import DictMode
+import pandas as pd
 
 
 class User(Model):
@@ -102,15 +103,18 @@ class User(Model):
 
     @classmethod
     def filter_original_users(cls, users: list) -> list:
+        invalid_users_df = pd.read_csv("data/invalid_users.csv")
         return [
             user
             for user in users
             if user["email"] not in cls.RESERVED_EMAILS
             and "abitu.net" not in user["email"]
+            and user["email"] not in invalid_users_df["email"].values
+            and user["id"] not in invalid_users_df["id"].values
         ]
 
     def reset_password(self):
-        self.password = gen_random_password()
+        self.password = gen_default_password()
 
     def to_dict(self, mode: DictMode):
         try:
