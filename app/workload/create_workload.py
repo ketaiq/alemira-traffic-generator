@@ -1,18 +1,32 @@
-import os, re, random
+import os, re
 import pandas as pd
+
+MAX_USERS = 30
 
 
 def create_workload(df: pd.DataFrame):
     workload = []
     values = df["Unique visitors"].to_list()
-    num = 12
-    for value in values:
+    num = 60
+    for i in range(len(values) - 1):
         users = [1] * num
-        sum = value - num
-        while sum > 0:
-            i = random.randrange(0, num)
-            users[i] += 1
-            sum -= 1
+        sum = values[i] - num
+        if values[i] >= values[i + 1]:
+            j = 0
+            while sum > 0:
+                users[j] += 1
+                sum -= 1
+                j += 1
+                if j == num:
+                    j = 0
+        else:
+            j = num - 1
+            while sum > 0:
+                users[j] += 1
+                sum -= 1
+                j -= 1
+                if j == -1:
+                    j = num - 1
         workload += users
     return workload
 

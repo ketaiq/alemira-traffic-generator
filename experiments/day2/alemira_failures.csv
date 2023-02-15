@@ -1,7 +1,0 @@
-Method,Name,Error,Occurrences
-POST,start activity workflow,CatchResponseError('HTTP error 400 Bad Request!'),2
-POST,upload attachment to objective,CatchResponseError('HTTP error 500 Internal Server Error!'),18
-POST,upload image to activity,CatchResponseError('HTTP error 500 Internal Server Error!'),9
-POST,upload image to objective,CatchResponseError('HTTP error 500 Internal Server Error!'),18
-POST,start objective workflow,CatchResponseError('HTTP error 400 Bad Request!'),2
-POST,upload attachment to activity,CatchResponseError('HTTP error 500 Internal Server Error!'),4

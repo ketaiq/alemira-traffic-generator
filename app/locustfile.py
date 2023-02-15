@@ -31,7 +31,7 @@ class StudentUser(HttpUser):
 
 
 class StagesShape(LoadTestShape):
-    PERIOD_DURATION = 60 * 5
+    PERIOD_DURATION = 60
     WORKLOAD_FILE = "app/workload/workload.csv"
 
     def __init__(self, time_intervals: int = PERIOD_DURATION):
