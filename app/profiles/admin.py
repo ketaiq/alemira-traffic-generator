@@ -87,8 +87,8 @@ class Admin:
                 self.account_reset_password_api.reset_password(url, new_user)
             else:
                 raise MailNotFoundException(
-                        f"No mail is sent to user {new_user.username}."
-                    )
+                    f"No mail is sent to user {new_user.username}."
+                )
             return new_user
         except MailNotFoundException as e:
             logging.error(e.message)
@@ -125,6 +125,26 @@ class Admin:
             for user in users:
                 user = User(user)
                 if not self.db_driver.check_user_by_id(user):
+                    user_student_roles = self.user_roles_api.get_user_roles_by_query(
+                        headers,
+                        {
+                            "requireTotalCount": True,
+                            "filter": f'[["user.id","=","{user.id}"],"and",["role.name","=","{Role.STUDENT.value}"]]',
+                        },
+                    )
+                    user_instructor_roles = self.user_roles_api.get_user_roles_by_query(
+                        headers,
+                        {
+                            "requireTotalCount": True,
+                            "filter": f'[["user.id","=","{user.id}"],"and",["role.name","=","{Role.INSTRUCTOR.value}"]]',
+                        },
+                    )
+                    if len(user_instructor_roles) != 0:
+                        user._role = Role.INSTRUCTOR.value
+                    elif len(user_student_roles) != 0:
+                        user._role = Role.STUDENT.value
+                    else:
+                        user._role = "Unknown"
                     self.db_driver.insert_one_user(user)
             skip += take
             if remaining_count <= 0:
