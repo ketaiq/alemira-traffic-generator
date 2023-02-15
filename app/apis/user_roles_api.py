@@ -36,11 +36,17 @@ class UserRolesAPI(UserAPIEndPoint):
     def create_user_role(self, headers: dict, user_id: str, role_id: str):
         payload = {"userId": user_id, "roleId": role_id}
         if self.client is None:
-            r = requests.post(
-                self.url,
-                json=payload,
-                headers=headers,
-            )
+            # repeat three times in case of errors
+            for _ in range(3):
+                r = requests.post(
+                    self.url,
+                    json=payload,
+                    headers=headers,
+                )
+                if r.status_code == requests.codes.ok:
+                    break
+            if r.status_code != requests.codes.ok:
+                print(f"HTTP error with payload {payload}")
             r.raise_for_status()
             created_id = r.json()["id"]
             # check entity is created successfully
@@ -73,6 +79,7 @@ class UserRolesAPI(UserAPIEndPoint):
                     response.failure(request_timeout_msg())
                 else:
                     response.failure(request_http_error_msg(response))
+
     def get_user_roles_by_query(self, headers: dict, query: dict) -> dict:
         if self.client is None:
             r = requests.get(self.url + "query", headers=headers, params=query)
