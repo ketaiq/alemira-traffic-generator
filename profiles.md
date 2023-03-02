@@ -1,4 +1,4 @@
-### Admin (deprecated)
+### Admin
 - Create User
 	- Admin
 	- Instructor
@@ -6,11 +6,11 @@
 - Create a course
 
 ### Student
-- Login 1
-- Visit my courses page 2.5
-- Visit a course page 5
+- Login
+- Visit my courses page
+- Visit a course page
 - Download an attachment from a course
-- Start a course 0.15
+- Start a course
 
 
 ### Instructor

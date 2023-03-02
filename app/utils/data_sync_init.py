@@ -12,6 +12,7 @@ from app.apis.user_roles_api import UserRolesAPI
 import pandas as pd
 from app.models.activity.activity import Activity
 from app.profiles.admin import Admin
+import logging
 
 
 def sync_local_data():
@@ -87,6 +88,13 @@ def create_default_users():
 
 
 def main():
+    logging.basicConfig(
+        filename="data_sync_init.log",
+        encoding="utf-8",
+        level=logging.INFO,
+        format="%(asctime)s %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S %z",
+    )
     sync_local_data()
     # create_default_courses()
     create_default_users()
