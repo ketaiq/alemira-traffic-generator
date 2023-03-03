@@ -97,7 +97,7 @@ def main():
     )
     sync_local_data()
     # create_default_courses()
-    create_default_users()
+    # create_default_users()
 
 
 if __name__ == "__main__":

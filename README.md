@@ -2,9 +2,23 @@
 
 ## 1. Environment
 
-Creating an environment
+Install conda and docker
+
+Install chrome if you want to run it on Linux
+```
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install google-chrome-stable
+```
+
+Create an environment
 ```sh
 conda env create -f environment.yml
+```
+
+Activate conda environment
+```sh
+conda activate alemira
 ```
 
 Start mongodb, see Mongo Express at http://localhost:8081
@@ -19,31 +33,16 @@ conda env update --file environment.yml  --prune
 ```
 
 ## 2. Quick Start
-Install conda and docker
 
-Install chrome if you want to run it on Linux
-```
-curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-sudo apt install google-chrome-stable
-```
-
-Activate conda environment
-```sh
-conda activate alemira
-```
-
-Initialize users and courses
+Step 1: initialize users and courses
 ```sh
 nohup python -m app.utils.data_sync_init &
 ```
 
-Start experiment
+Step 2: start experiment
 ```sh
-locust --config=app/locust.conf
+nohup locust --config=app/locust.conf &
 ```
-
-
 
 ## 3. Configuration
 
