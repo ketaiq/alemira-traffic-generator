@@ -48,8 +48,14 @@ locust --config=app/locust.conf
 ## 3. Configuration
 
 The experiment is separated into 14 days. The first two days are considered as the first stage and the other days
-are considered as the second stage. We use corresponding weights for different days and stages. So users should change weights and tasks in *InstructorUser* and *StudentUser* for different days of workload. To do this, you can simply modify `EXPT_CONFIG`
+are considered as the second stage. We use corresponding weights for different days and stages. So users should change weights and tasks in *InstructorUser* and *StudentUser* for different days of workload. To do this, you can simply modify `EXPT_CONFIG` and `WORKLOAD_FILE`
 in `locustfile.py`.
+
+The desired configuration is:
+| Week | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+| ---- | ------ | ------- | --------- | -------- | ------ | -------- | ------ |
+|   1  | DAY_1  |  DAY_2  | DAY_OTHER | DAY_OTHER|DAY_OTHER|DAY_OTHER|DAY_OTHER|
+|   2  |DAY_OTHER|DAY_OTHER|DAY_OTHER | DAY_OTHER|DAY_OTHER|DAY_OTHER|DAY_OTHER|
 
 ## 3. Resources
 

@@ -3,9 +3,11 @@ import pandas as pd
 from app.locusttasks.weights import get_weights, generate_tasks
 from app.locusttasks.users import User
 from app.locusttasks.days import Day
+from app.locusttasks.workload import Weekday, get_workload_path
 
 # modify experiment configuration for different scenarios
 EXPT_CONFIG = {"day": Day.DAY_1}
+WORKLOAD_FILE = get_workload_path(Weekday.MONDAY)
 
 
 class InstructorUser(HttpUser):
@@ -32,10 +34,9 @@ class StudentUser(HttpUser):
 
 class StagesShape(LoadTestShape):
     PERIOD_DURATION = 60
-    WORKLOAD_FILE = "app/workload/workload.csv"
 
     def __init__(self, time_intervals: int = PERIOD_DURATION):
-        df = pd.read_csv(self.WORKLOAD_FILE)
+        df = pd.read_csv(WORKLOAD_FILE)
         self.stages = []
         duration = time_intervals
         for index in df.index:
