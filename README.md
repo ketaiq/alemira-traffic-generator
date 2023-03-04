@@ -26,6 +26,11 @@ Start mongodb, see Mongo Express at http://localhost:8081
 docker compose up -d
 ```
 
+Change open file limit
+```sh
+ulimit -Sn 20000
+```
+
 Useful commands
 ```sh
 conda env export --from-history > environment.yml
