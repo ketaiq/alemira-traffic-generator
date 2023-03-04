@@ -132,14 +132,14 @@ class Admin:
                             "requireTotalCount": True,
                             "filter": f'[["user.id","=","{user.id}"],"and",["role.name","=","{Role.STUDENT.value}"]]',
                         },
-                    )
+                    )["data"]
                     user_instructor_roles = self.user_roles_api.get_user_roles_by_query(
                         headers,
                         {
                             "requireTotalCount": True,
                             "filter": f'[["user.id","=","{user.id}"],"and",["role.name","=","{Role.INSTRUCTOR.value}"]]',
                         },
-                    )
+                    )["data"]
                     if len(user_instructor_roles) != 0:
                         user._role = Role.INSTRUCTOR.value
                     elif len(user_student_roles) != 0:
@@ -147,7 +147,8 @@ class Admin:
                     else:
                         user._role = "Unknown"
                     user.password = gen_default_password()
-                    self.db_driver.insert_one_user(user)
+                    if user._role != "Unknown":
+                        self.db_driver.insert_one_user(user)
             skip += take
             if remaining_count <= 0:
                 break
