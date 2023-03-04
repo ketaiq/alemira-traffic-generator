@@ -56,7 +56,7 @@ class Instructor:
         except ObjectiveNotFoundException as e:
             logging.error(e.message)
         except ObjectivePersonalEnrollmentNotFoundException as e:
-            logging.error(e.message)
+            logging.warning(e.message)
 
     def edit_one_course_description(self):
         # update an objective
