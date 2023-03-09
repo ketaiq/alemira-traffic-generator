@@ -4,6 +4,7 @@ from app.locusttasks.weights import get_weights, generate_tasks
 from app.locusttasks.users import User
 from app.locusttasks.days import Day
 from app.locusttasks.workload import Weekday, get_workload_path
+from requests.adapters import HTTPAdapter
 
 # modify experiment configuration for different scenarios
 EXPT_CONFIG = {"day": Day.DAY_1}
@@ -17,6 +18,8 @@ class InstructorUser(HttpUser):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.client.mount("https://", HTTPAdapter(pool_maxsize=100))
+        self.client.mount("http://", HTTPAdapter(pool_maxsize=100))
         # use specific url for each request
         self.client.base_url = ""
 
@@ -28,6 +31,8 @@ class StudentUser(HttpUser):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.client.mount("https://", HTTPAdapter(pool_maxsize=100))
+        self.client.mount("http://", HTTPAdapter(pool_maxsize=100))
         # use specific url for each request
         self.client.base_url = ""
 
