@@ -64,7 +64,3 @@ The desired configuration is:
 ## 3. Resources
 
 Courses from iCorsi3 history
-
-Images from https://www.pexels.com/search/fruit/
-
-Attachments from https://www.bbc.co.uk/learningenglish/punjabi/course/newsreview-2022/unit-1/downloads and https://www.sampletemplates.com/business-templates/plan-templates/sample-advertising-plan-pdf-word.html
