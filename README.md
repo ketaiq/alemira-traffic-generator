@@ -49,6 +49,11 @@ Step 2: start experiment
 nohup locust --config=app/locust.conf &
 ```
 
+Step 3: restart deployments
+```sh
+kubectl rollout restart deploy -n alms
+```
+
 ## 3. Configuration
 
 The experiment is separated into 14 days. The first two days are considered as the first stage and the other days

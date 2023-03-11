@@ -140,7 +140,7 @@ class ObjectivesAPI(UserAPIEndPoint):
             created_state = self.get_created_objective_state_by_id(
                 headers, created_state_id
             )
-            if created_state["completed"]:
+            if created_state and created_state["completed"]:
                 if created_state["completed"]["state"] == 2:
                     print(created_state)
                 break
@@ -163,7 +163,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                 updated_state = self.get_updated_objective_state_by_id(
                     headers, updated_id
                 )
-                if updated_state["completed"]:
+                if updated_state and updated_state["completed"]:
                     break
                 sleep_for_seconds(1, 3)
         else:
@@ -181,7 +181,7 @@ class ObjectivesAPI(UserAPIEndPoint):
                         updated_state = self.get_updated_objective_state_by_id(
                             headers, updated_id
                         )
-                        if updated_state["completed"]:
+                        if updated_state and updated_state["completed"]:
                             break
                         sleep_for_seconds(1, 3)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:

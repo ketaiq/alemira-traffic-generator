@@ -54,7 +54,11 @@ class IdentityAPIEndPoint:
             # for lru_cache user always should be hashable
             # overriding user credentials with insomnia
             user = json.dumps({**self.DEFAULT_USER, **user})
-        token = self._get_token(role.value, user)
+        # try 10 times if token is none or empty
+        for _ in range(10):
+            token = self._get_token(role.value, user)
+            if token:
+                break
         username = json.loads(user)["username"]
         logging.info(f"{role.value} {username} login")
         return {

@@ -63,8 +63,10 @@ def test_enroll_one_student():
     instructor = Instructor(
         db_driver, identity_api_endpoint, users_api, lms_users_api, objectives_api, personal_enrollments_api, activities_api
     )
-    objective_to_enroll = instructor.select_one_objective()
+    headers = instructor._get_instructor_headers()
+    objective_to_enroll = instructor._select_one_objective(headers)
     count_before_enroll = objectives_api.get_objective_personal_enrollments_by_query(
+        headers,
         objective_to_enroll.id,
         {
             "skip": 0,
@@ -72,8 +74,9 @@ def test_enroll_one_student():
             "requireTotalCount": True,
         },
     )["totalCount"]
-    instructor._enroll_one_student(objective_to_enroll)
+    instructor._enroll_one_student(headers, objective_to_enroll)
     count_after_enroll = objectives_api.get_objective_personal_enrollments_by_query(
+        headers,
         objective_to_enroll.id,
         {
             "skip": 0,
@@ -169,13 +172,13 @@ def test_upload_one_attachment_to_course():
 
 def main():
     # test_select_one_student()
-    test_select_one_objective()
-    # test_enroll_one_student()
+    # test_select_one_objective()
+    test_enroll_one_student()
     # test_expel_one_student()
     # test_edit_one_course_description()
     # test_upload_one_image_to_course()
     # test_upload_one_attachment_to_course()
-    test_select_one_activity()
+    # test_select_one_activity()
 
 
 if __name__ == "__main__":

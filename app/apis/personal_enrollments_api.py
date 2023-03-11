@@ -36,7 +36,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                 created_state = self.get_created_personal_enrollment_state_by_id(
                     headers, created_id
                 )
-                if created_state["completed"]:
+                if created_state and created_state["completed"]:
                     personal_enrollment.id = created_state["entityId"]
                     break
                 sleep_for_seconds(1, 3)
@@ -57,7 +57,7 @@ class PersonalEnrollmentsAPI(UserAPIEndPoint):
                                 headers, created_id
                             )
                         )
-                        if created_state["completed"]:
+                        if created_state and created_state["completed"]:
                             personal_enrollment.id = created_state["entityId"]
                             break
                         sleep_for_seconds(1, 3)
