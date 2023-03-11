@@ -41,7 +41,7 @@ def draw_one(dir):
             ax.plot(df["Users"].to_list())
             ax.set_ylabel("users")
             ax.set_xlabel("time")
-            ax.set_ybound(0, 30)
+            ax.set_ybound(0, 16)
             ax.xaxis.set_major_locator(MultipleLocator(60 * 3))
             ax.set_title(day_of_week)
     for ax in fig.get_axes():
@@ -52,11 +52,11 @@ def draw_one(dir):
 
 
 if __name__ == "__main__":
-    # draw("app/workload", "workload_Monday.csv")
-    # draw("app/workload", "workload_Tuesday.csv")
-    # draw("app/workload", "workload_Wednesday.csv")
-    # draw("app/workload", "workload_Thursday.csv")
-    # draw("app/workload", "workload_Friday.csv")
-    # draw("app/workload", "workload_Saturday.csv")
-    # draw("app/workload", "workload_Sunday.csv")
+    draw("app/workload", "workload_Monday.csv")
+    draw("app/workload", "workload_Tuesday.csv")
+    draw("app/workload", "workload_Wednesday.csv")
+    draw("app/workload", "workload_Thursday.csv")
+    draw("app/workload", "workload_Friday.csv")
+    draw("app/workload", "workload_Saturday.csv")
+    draw("app/workload", "workload_Sunday.csv")
     draw_one("app/workload")

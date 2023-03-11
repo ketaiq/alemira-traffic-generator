@@ -1,11 +1,10 @@
 import os, re
 import pandas as pd
 
-MAX_USERS = 30
-
 
 def create_workload(df: pd.DataFrame):
     workload = []
+    df["Unique visitors"] = df["Unique visitors"] // 2
     values = df["Unique visitors"].to_list()
     num = 60
     for i in range(len(values) - 1):

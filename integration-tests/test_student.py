@@ -154,9 +154,9 @@ def test_visit_my_courses():
 def main():
     # test_take_course()
     # test_finish_one_course()
-    # test_start_one_course()
+    test_start_one_course()
     # test_review_one_course()
-    test_visit_my_courses()
+    # test_visit_my_courses()
 
 
 if __name__ == "__main__":
