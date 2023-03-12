@@ -117,7 +117,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 if created_state["completed"]:
                     new_user.id = created_state["entityId"]
                     break
-                sleep_for_seconds(1, 3)
+                sleep_for_seconds(3, 5)
         else:
             with self.client.post(
                 self.url,
@@ -136,7 +136,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                         if created_state["completed"]:
                             new_user.id = created_state["entityId"]
                             break
-                        sleep_for_seconds(1, 3)
+                        sleep_for_seconds(3, 5)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
@@ -159,7 +159,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                 updated_state = self.get_updated_user_state_by_id(headers, updated_id)
                 if updated_state["completed"]:
                     break
-                sleep_for_seconds(1, 3)
+                sleep_for_seconds(3, 5)
         else:
             with self.client.put(
                 self.url + user.id,
@@ -177,7 +177,7 @@ class LmsUsersAPI(UserAPIEndPoint):
                         )
                         if updated_state["completed"]:
                             break
-                        sleep_for_seconds(1, 3)
+                        sleep_for_seconds(3, 5)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:

@@ -3,6 +3,7 @@ import requests, json, logging
 from app.models.user import User
 from app.models.role import Role
 from app.utils.string import request_http_error_msg, request_timeout_msg
+from app.utils.time import sleep_for_seconds
 
 
 class IdentityAPIEndPoint:
@@ -59,6 +60,7 @@ class IdentityAPIEndPoint:
             token = self._get_token(role.value, user)
             if token:
                 break
+            sleep_for_seconds(3, 5)
         username = json.loads(user)["username"]
         logging.info(f"{role.value} {username} login")
         return {

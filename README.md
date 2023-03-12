@@ -35,6 +35,9 @@ Useful commands
 ```sh
 conda env export --from-history > environment.yml
 conda env update --file environment.yml  --prune
+
+tar -czvf archive.tar.gz alemira.log *.csv nohup.out
+gcloud compute scp alemira-traffic-generator:/home/ketai/alemira-test/archive.tar.gz ~/Downloads/
 ```
 
 ## 2. Quick Start

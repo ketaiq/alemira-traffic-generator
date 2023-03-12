@@ -4,7 +4,7 @@ import pandas as pd
 
 def create_workload(df: pd.DataFrame):
     workload = []
-    df["Unique visitors"] = df["Unique visitors"] // 2
+    df["Unique visitors"] = df["Unique visitors"]
     values = df["Unique visitors"].to_list()
     num = 60
     for i in range(len(values) - 1):

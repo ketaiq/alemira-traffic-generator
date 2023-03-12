@@ -56,7 +56,7 @@ class UserRolesAPI(UserAPIEndPoint):
                 )
                 if created_state["completed"]:
                     break
-                sleep_for_seconds(1, 3)
+                sleep_for_seconds(3, 5)
         else:
             with self.client.post(
                 self.url,
@@ -74,7 +74,7 @@ class UserRolesAPI(UserAPIEndPoint):
                         )
                         if created_state["completed"]:
                             break
-                        sleep_for_seconds(1, 3)
+                        sleep_for_seconds(3, 5)
                 elif response.elapsed.total_seconds() > self.TIMEOUT_MAX:
                     response.failure(request_timeout_msg())
                 else:
