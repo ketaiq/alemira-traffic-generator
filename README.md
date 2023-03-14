@@ -27,8 +27,14 @@ docker compose up -d
 ```
 
 Change open file limit
+Execute the following command in a terminal window to open the `/etc/security/limits.conf` file
 ```sh
-ulimit -Sn 20000
+sudo vi /etc/security/limits.conf
+```
+Add following lines
+```sh
+* hard nofile 20000
+* soft nofile 20000
 ```
 
 Useful commands
@@ -52,7 +58,12 @@ Step 2: start experiment
 nohup locust --config=app/locust.conf &
 ```
 
-Step 3: restart deployments
+Step 3: stop locust gracefully
+```sh
+kill -2 <pid>
+```
+
+Step 4: restart deployments
 ```sh
 kubectl rollout restart deploy -n alms
 ```
