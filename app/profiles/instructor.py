@@ -17,6 +17,7 @@ from app.drivers.database_driver import DatabaseDriver
 from app.models.personal_enrollment import PersonalEnrollment
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.models.role import Role
+from app.utils.time import sleep_for_seconds
 
 
 class Instructor:
@@ -77,6 +78,7 @@ class Instructor:
             logging.error(e.message)
 
     def upload_one_image_to_course_description(self):
+        sleep_for_seconds(60 * 2, 60 * 5)
         headers = self._get_instructor_headers()
         try:
             objective_to_upload_one_image = self._select_one_objective(headers)
@@ -87,6 +89,7 @@ class Instructor:
             logging.error(e.message)
 
     def upload_one_attachment_to_course_description(self):
+        sleep_for_seconds(60 * 2, 60 * 5)
         headers = self._get_instructor_headers()
         try:
             objective_to_upload_one_attachment = self._select_one_objective(headers)
@@ -97,6 +100,7 @@ class Instructor:
             logging.error(e.message)
 
     def upload_one_image_to_course_content(self):
+        sleep_for_seconds(60 * 2, 60 * 5)
         headers = self._get_instructor_headers()
         try:
             activity_to_upload_one_image = self._select_one_activity(headers)
@@ -107,6 +111,7 @@ class Instructor:
             logging.error(e.message)
 
     def upload_one_attachment_to_course_content(self):
+        sleep_for_seconds(60 * 2, 60 * 5)
         headers = self._get_instructor_headers()
         try:
             activity_to_upload_one_attachment = self._select_one_activity(headers)
