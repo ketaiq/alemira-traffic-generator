@@ -42,7 +42,7 @@ Useful commands
 conda env export --from-history > environment.yml
 conda env update --file environment.yml  --prune
 
-tar -czvf archive.tar.gz alemira.log *.csv nohup.out
+tar -czvf archive.tar.gz alemira.log alemira_report.html *.csv nohup.out
 gcloud compute scp alemira-traffic-generator:/home/ketai/alemira-test/archive.tar.gz ~/Downloads/
 ```
 
