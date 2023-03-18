@@ -22,9 +22,9 @@ class InstructorUser(HttpUser):
         super().__init__(*args, **kwargs)
         # use specific url for each request
         self.client.base_url = ""
-        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
-        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
-        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
+        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
 
 
 class StudentUser(HttpUser):
@@ -36,9 +36,9 @@ class StudentUser(HttpUser):
         super().__init__(*args, **kwargs)
         # use specific url for each request
         self.client.base_url = ""
-        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
-        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
-        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_maxsize=100, max_retries=10))
+        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
 
 
 class StagesShape(LoadTestShape):
