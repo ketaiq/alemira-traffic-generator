@@ -1,4 +1,4 @@
-# alemira-test
+# alemira-traffic-generator
 
 ## 1. Environment
 
