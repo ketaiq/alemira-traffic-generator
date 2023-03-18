@@ -142,7 +142,6 @@ class LmsUsersAPI(UserAPIEndPoint):
                 else:
                     response.failure(request_http_error_msg(response))
         new_user._role = role.value
-        self.driver.insert_one_user(new_user)
         return new_user
 
     def update_user(self, headers: dict, user: User):

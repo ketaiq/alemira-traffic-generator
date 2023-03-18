@@ -74,40 +74,38 @@ class Admin:
         """Create a user with a random profile."""
         new_user = self.lms_users_api.create_user(headers, role)
         sleep_for_seconds(20, 30)
-        try:
-            res = self.mail_messages_api.get_mail_messages_by_query(
-                headers,
-                {
-                    "requireTotalCount": True,
-                    "filter": f'["toAddress","=","{new_user.email}"]',
-                },
-            )
-            if len(res) > 0:
-                mail = MailMessage(res["data"][0])
-                url = mail.get_reset_password_url()
-                self.account_reset_password_api.reset_password(url, new_user)
-            else:
-                raise MailNotFoundException(
-                    f"No mail is sent to user {new_user.username}."
-                )
-            return new_user
-        except MailNotFoundException as e:
-            logging.error(e.message)
+        res = self.mail_messages_api.get_mail_messages_by_query(
+            headers,
+            {
+                "requireTotalCount": True,
+                "filter": f'["toAddress","=","{new_user.email}"]',
+            },
+        )
+        if len(res) > 0:
+            mail = MailMessage(res["data"][0])
+            url = mail.get_reset_password_url()
+            self.account_reset_password_api.reset_password(url, new_user)
+        else:
+            raise MailNotFoundException(f"No mail is sent to user {new_user.username}.")
+        return new_user
 
     def create_user(self, role: Role):
-        headers = self._get_admin_headers()
-        user = self._create_user(headers, role)
-        roles = self.roles_api.get_roles_by_query(
-            headers,
-            {"requireTotalCount": True, "filter": f'["name","=","{role.value}"]'},
-        )
         try:
+            headers = self._get_admin_headers()
+            user = self._create_user(headers, role)
+            roles = self.roles_api.get_roles_by_query(
+                headers,
+                {"requireTotalCount": True, "filter": f'["name","=","{role.value}"]'},
+            )
             if roles["totalCount"] > 0:
                 self.user_roles_api.create_user_role(
                     headers, user.id, roles["data"][0]["id"]
                 )
             else:
                 raise RoleNotFoundException(f"Role {role.value} doesn't exist.")
+            self.db_driver.insert_one_user(user)
+        except MailNotFoundException as e:
+            logging.error(e.message)
         except RoleNotFoundException as e:
             logging.error(e.message)
 
