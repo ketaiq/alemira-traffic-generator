@@ -15,30 +15,44 @@ WORKLOAD_FILE = get_workload_path(Weekday.MONDAY)
 
 class InstructorUser(HttpUser):
     weight = get_weights(EXPT_CONFIG["day"], User.INSTRUCTOR)
-    wait_time = between(60, 60 * 5)
+    wait_time = between(60 * 4, 60 * 5)
     tasks = generate_tasks(EXPT_CONFIG["day"], User.INSTRUCTOR)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # use specific url for each request
         self.client.base_url = ""
-        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
-        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
-        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(
+            IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+        )
+        self.client.mount(
+            UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+        )
+        self.client.mount(
+            UserAPIEndPoint.FILE_URI,
+            HTTPAdapter(pool_connections=100, pool_maxsize=100),
+        )
 
 
 class StudentUser(HttpUser):
     weight = get_weights(EXPT_CONFIG["day"], User.STUDENT)
-    wait_time = between(60, 60 * 5)
+    wait_time = between(60 * 4, 60 * 5)
     tasks = generate_tasks(EXPT_CONFIG["day"], User.STUDENT)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # use specific url for each request
         self.client.base_url = ""
-        self.client.mount(IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
-        self.client.mount(UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
-        self.client.mount(UserAPIEndPoint.FILE_URI, HTTPAdapter(pool_connections=100, pool_maxsize=100))
+        self.client.mount(
+            IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+        )
+        self.client.mount(
+            UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+        )
+        self.client.mount(
+            UserAPIEndPoint.FILE_URI,
+            HTTPAdapter(pool_connections=100, pool_maxsize=100),
+        )
 
 
 class StagesShape(LoadTestShape):

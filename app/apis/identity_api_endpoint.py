@@ -21,7 +21,7 @@ class IdentityAPIEndPoint:
         self.uri = self.URI
         self.client = client
 
-    @lru_cache(maxsize=32)
+    @lru_cache(maxsize=64)
     def _get_token(self, role: str, user: str) -> str:
         user = json.loads(user)
         if self.client is None:
