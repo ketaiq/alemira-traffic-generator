@@ -7,10 +7,10 @@ def create_workload(df: pd.DataFrame):
     df["Unique visitors"] = df["Unique visitors"]
     values = df["Unique visitors"].to_list()
     num = 60
-    for i in range(len(values) - 1):
+    for i in range(len(values)):
         users = [1] * num
         sum = values[i] - num
-        if values[i] >= values[i + 1]:
+        if i < len(values) - 1 and values[i] >= values[i + 1]:
             j = 0
             while sum > 0:
                 users[j] += 1
