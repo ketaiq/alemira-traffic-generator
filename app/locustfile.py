@@ -7,6 +7,7 @@ from app.locusttasks.workload import Weekday, get_workload_path
 from requests.adapters import HTTPAdapter
 from app.apis.identity_api_endpoint import IdentityAPIEndPoint
 from app.apis.user_api_endpoint import UserAPIEndPoint
+from urllib3.util.retry import Retry
 
 # modify experiment configuration for different scenarios
 EXPT_CONFIG = {"day": Day.DAY_1}
@@ -23,14 +24,28 @@ class InstructorUser(HttpUser):
         # use specific url for each request
         self.client.base_url = ""
         self.client.mount(
-            IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+            IdentityAPIEndPoint.URI,
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+            ),
         )
         self.client.mount(
-            UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+            UserAPIEndPoint.URI,
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+            ),
         )
         self.client.mount(
             UserAPIEndPoint.FILE_URI,
-            HTTPAdapter(pool_connections=100, pool_maxsize=100),
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+            ),
         )
 
 
