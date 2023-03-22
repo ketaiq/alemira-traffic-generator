@@ -28,7 +28,7 @@ class InstructorUser(HttpUser):
             HTTPAdapter(
                 pool_connections=100,
                 pool_maxsize=100,
-                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+                max_retries=Retry(total=10, backoff_factor=10),
             ),
         )
         self.client.mount(
@@ -36,7 +36,7 @@ class InstructorUser(HttpUser):
             HTTPAdapter(
                 pool_connections=100,
                 pool_maxsize=100,
-                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+                max_retries=Retry(total=10, backoff_factor=10),
             ),
         )
         self.client.mount(
@@ -44,7 +44,7 @@ class InstructorUser(HttpUser):
             HTTPAdapter(
                 pool_connections=100,
                 pool_maxsize=100,
-                max_retries=Retry(total=10, backoff_factor=10, backoff_max=300),
+                max_retries=Retry(total=10, backoff_factor=10),
             ),
         )
 
