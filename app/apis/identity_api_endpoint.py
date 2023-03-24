@@ -1,4 +1,3 @@
-from functools import lru_cache
 import requests, json, logging
 from app.models.user import User
 from app.models.role import Role
@@ -21,7 +20,6 @@ class IdentityAPIEndPoint:
         self.uri = self.URI
         self.client = client
 
-    @lru_cache(maxsize=5)
     def _get_token(self, role: str, user: str) -> str:
         user = json.loads(user)
         if self.client is None:
