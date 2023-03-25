@@ -11,7 +11,7 @@ from urllib3.util.retry import Retry
 
 # modify experiment configuration for different scenarios
 EXPT_CONFIG = {"day": Day.DAY_1}
-WORKLOAD_FILE = get_workload_path(Weekday.TEST)
+WORKLOAD_FILE = get_workload_path(Weekday.MONDAY)
 
 
 class InstructorUser(HttpUser):
