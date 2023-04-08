@@ -59,14 +59,28 @@ class StudentUser(HttpUser):
         # use specific url for each request
         self.client.base_url = ""
         self.client.mount(
-            IdentityAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+            IdentityAPIEndPoint.URI,
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10),
+            ),
         )
         self.client.mount(
-            UserAPIEndPoint.URI, HTTPAdapter(pool_connections=100, pool_maxsize=100)
+            UserAPIEndPoint.URI,
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10),
+            ),
         )
         self.client.mount(
             UserAPIEndPoint.FILE_URI,
-            HTTPAdapter(pool_connections=100, pool_maxsize=100),
+            HTTPAdapter(
+                pool_connections=100,
+                pool_maxsize=100,
+                max_retries=Retry(total=10, backoff_factor=10),
+            ),
         )
 
 

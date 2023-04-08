@@ -58,12 +58,7 @@ Step 2: start experiment
 nohup locust --config=app/locust.conf &
 ```
 
-Step 3: stop locust gracefully
-```sh
-kill -2 <pid>
-```
-
-Step 4: restart deployments
+Step 3: restart deployments
 ```sh
 kubectl rollout restart deploy -n alms
 ```
