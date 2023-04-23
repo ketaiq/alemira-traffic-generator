@@ -10,8 +10,8 @@ from app.apis.user_api_endpoint import UserAPIEndPoint
 from urllib3.util.retry import Retry
 
 # modify experiment configuration for different scenarios
-EXPT_CONFIG = {"day": Day.DAY_1}
-WORKLOAD_FILE = get_workload_path(Weekday.MONDAY)
+EXPT_CONFIG = {"day": Day.DAY_OTHER}
+WORKLOAD_FILE = get_workload_path(Weekday.TEST)
 
 
 class InstructorUser(HttpUser):
