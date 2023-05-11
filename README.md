@@ -43,7 +43,7 @@ conda env export --from-history > environment.yml
 conda env update --file environment.yml  --prune
 
 tar -czvf archive.tar.gz alemira.log alemira_report.html *.csv nohup.out
-gcloud compute scp alemira-traffic-generator:/home/ketai/alemira-test/archive.tar.gz ~/Downloads/
+gcloud compute scp --project "peerless-column-365315" --zone "europe-west6-a" alemira-traffic-generator:/home/ketai/alemira-traffic-generator/archive.tar.gz ~/Downloads/
 ```
 
 ## 2. Quick Start
@@ -58,9 +58,10 @@ Step 2: start experiment
 nohup locust --config=app/locust.conf &
 ```
 
-Step 3: restart deployments
+Step 3: restart deployments and statefulsets
 ```sh
 kubectl rollout restart deploy -n alms
+kubectl rollout restart statefulset -n alms
 ```
 
 ## 3. Configuration
