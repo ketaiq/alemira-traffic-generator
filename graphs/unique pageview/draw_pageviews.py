@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import matplotlib.ticker as tick
+from matplotlib.ticker import PercentFormatter
 import numpy as np
 import pandas as pd
 
@@ -60,11 +60,13 @@ def draw_pageviews():
             weight="bold",
         )
 
-    ax.set_ylabel("percentage")
-    ax.set_xlabel("page")
-    # Percentage of unique pageviews of iCorsi3 from 2017 to 2021
-    ax.yaxis.set_major_formatter(tick.StrMethodFormatter("{x:.2f}"))
-    plt.xticks()
+    ax.set_ylabel("Percentage")
+    ax.set_xlabel("Page category")
+    for pos in ["right", "top", "left", "bottom"]:
+        ax.spines[pos].set_visible(False)
+    ax.yaxis.set_major_formatter(PercentFormatter(decimals=0))
+    ax.tick_params(color="w")
+    ax.grid(axis="y", alpha=0.3)
     plt.savefig("graphs/unique pageview/unique_pageviews.pdf")
 
 

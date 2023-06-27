@@ -13,13 +13,13 @@ def draw(dir, filename):
     ax.set_ylabel("users")
     ax.set_xlabel("time")
     figname = filename[:-4]
-    plt.savefig(os.path.join(dir, figname))
+    plt.savefig(os.path.join(dir, figname + ".pdf"), bbox_inches="tight")
 
 
 def draw_one(dir):
     fig, axs = plt.subplots(2, 4, figsize=(20, 12))
     for filename in os.listdir(dir):
-        if filename.endswith(".csv") and filename != "workload.csv":
+        if filename.endswith(".csv") and filename != "workload_Test.csv":
             filepath = os.path.join(dir, filename)
             match = re.search("workload_([a-zA-Z]*)", filename)
             day_of_week = match.group(1)
@@ -47,8 +47,8 @@ def draw_one(dir):
     for ax in fig.get_axes():
         ax.label_outer()
     fig.delaxes(axs[0, 3])
-    fig_path = os.path.join(dir, f"workload_pattern")
-    plt.savefig(fig_path)
+    fig_path = os.path.join(dir, f"workload_pattern.pdf")
+    plt.savefig(fig_path, bbox_inches="tight")
 
 
 if __name__ == "__main__":
