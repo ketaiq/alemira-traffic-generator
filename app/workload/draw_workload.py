@@ -17,7 +17,9 @@ def draw(dir, filename):
 
 
 def draw_one(dir):
-    fig, axs = plt.subplots(2, 4, figsize=(20, 12))
+    fig, axs = plt.subplots(
+        3, 3, figsize=(15, 20), sharey=True, sharex=True, layout="constrained"
+    )
     for filename in os.listdir(dir):
         if filename.endswith(".csv") and filename != "workload_Test.csv":
             filepath = os.path.join(dir, filename)
@@ -37,26 +39,33 @@ def draw_one(dir):
             elif day_of_week == "Saturday":
                 ax = axs[1, 2]
             elif day_of_week == "Sunday":
-                ax = axs[1, 3]
+                ax = axs[2, 0]
+            else:
+                continue
             ax.plot(df["Users"].to_list())
             ax.set_ylabel("users")
             ax.set_xlabel("time")
             ax.set_ybound(0, 30)
             ax.xaxis.set_major_locator(MultipleLocator(60 * 3))
             ax.set_title(day_of_week)
-    for ax in fig.get_axes():
-        ax.label_outer()
-    fig.delaxes(axs[0, 3])
+
+    fig.delaxes(axs[2, 1])
+    fig.delaxes(axs[2, 2])
+    # for ax in fig.get_axes():
+    #     ax.label_outer()
+    axs[1, 1].xaxis.set_tick_params(which="both", labelbottom=True, labeltop=False)
+    axs[1, 2].xaxis.set_tick_params(which="both", labelbottom=True, labeltop=False)
+
     fig_path = os.path.join(dir, f"workload_pattern.pdf")
     plt.savefig(fig_path, bbox_inches="tight")
 
 
 if __name__ == "__main__":
-    draw("app/workload", "workload_Monday.csv")
-    draw("app/workload", "workload_Tuesday.csv")
-    draw("app/workload", "workload_Wednesday.csv")
-    draw("app/workload", "workload_Thursday.csv")
-    draw("app/workload", "workload_Friday.csv")
-    draw("app/workload", "workload_Saturday.csv")
-    draw("app/workload", "workload_Sunday.csv")
+    # draw("app/workload", "workload_Monday.csv")
+    # draw("app/workload", "workload_Tuesday.csv")
+    # draw("app/workload", "workload_Wednesday.csv")
+    # draw("app/workload", "workload_Thursday.csv")
+    # draw("app/workload", "workload_Friday.csv")
+    # draw("app/workload", "workload_Saturday.csv")
+    # draw("app/workload", "workload_Sunday.csv")
     draw_one("app/workload")
